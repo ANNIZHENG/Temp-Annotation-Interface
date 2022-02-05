@@ -96,8 +96,7 @@ def next():
 def select_recording():
     while (True):
         recording = randrange(192) + 1 # 1 - 192
-        result = eng.execute('''select num_annotation, recording_name from "Recording" where id = ''' + str(recording+ 1) )
-        # vertical = 1
+        result = eng.execute('''select num_annotation, recording_name from "Recording" where id = ''' + str(recording) )
         for r in result:
             if (int(dict(r)['num_annotation']) < 5):
                 if (recording > 96): # in horizontal file not in horizontal_vertical file
@@ -164,7 +163,6 @@ def confirm_annotation():
         result_get_recording = eng.execute('''select id from "Annotation" where survey_id = ''' + "'" + survey_id + "' order by id desc limit 1")
         for r1 in result_get_recording:
             annotation_id = str(dict(r1)['id'])
-        print(annotation_id)
     
         file_name = '''"file_name":{''' # source file_name
         source_id = '''"source_id":{'''
