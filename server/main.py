@@ -1,4 +1,3 @@
-from tkinter import HORIZONTAL
 import uuid
 from sqlalchemy import *
 from sqlalchemy.sql import *
