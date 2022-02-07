@@ -231,7 +231,7 @@ function move_instruction_last(e){
 }
 
 function addSourceCount(){
-	document.getElementById('2d-question').innerHTML = "Please identify the location of each source:";
+	document.getElementById('2d-question').innerHTML = "Please identify the location of each sound:";
 	document.getElementById('feedback').setAttribute('style',"display:inline-block;");
 	document.getElementById('head-wrapper').style.display = 'inline-block';
 	document.getElementById('front-wrapper').style.display = 'inline-block';
