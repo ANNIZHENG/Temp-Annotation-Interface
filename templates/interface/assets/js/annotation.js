@@ -17,7 +17,6 @@ function ajax_select_recording(){
 			vertical = JSON.parse(request_recording.response)["vertical"]["0"] == "0" ? 0 : 1;
 			localStorage.setItem('vertical',vertical);
 			let file_name = vertical ? "horizontal_vertical" : "horizontal";
-			console.log(vertical, file_name);
 			recording_name = JSON.parse(request_recording.response)["recording_name"]["0"];
 
 			document.getElementById('source').src = audio_path+'/recording/'+ file_name + "/" + recording_name;

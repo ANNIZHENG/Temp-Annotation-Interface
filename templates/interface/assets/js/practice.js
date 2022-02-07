@@ -9,13 +9,18 @@ var curr_recording = 0;
 var totalInstructions = 8;
 const audio_path = 'https://assets-audio.s3.amazonaws.com/audio';
 
-// TODO: Something is wrong here
+
 if (localStorage.getItem('practice') == undefined) {
 	curr_recording = 0;
 	localStorage.setItem('practice', curr_recording);
 }
-else if (parseInt(localStorage.getItem('practice')) > totalPractice) curr_recording = 0;
-else curr_recording = localStorage.getItem('practice');
+else if (parseInt(localStorage.getItem('practice')) > totalPractice) {
+	curr_recording = 0;
+}
+else {
+	curr_recording = localStorage.getItem('practice');
+}
+
 
 console.log("curr_recording: ",curr_recording);
 document.getElementById('source').src =  audio_path + '/recording/' + recording_file + '/' + recording_names[curr_recording];
