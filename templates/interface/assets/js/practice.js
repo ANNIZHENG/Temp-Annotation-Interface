@@ -181,7 +181,7 @@ document.getElementById('elevation-minus').addEventListener("click",move_elevati
 
 function popKeyRules(e){
 	e.preventDefault();
-	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to.\nPress [Command] or [Win] key to delete an annotation once you see the cursor turning to '-'.\nDeleting an annotation means to delete both its annotated horizontal location and vertical location.")
+	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to.\nPress [Command] or [Win] key to delete an annotation once you see the cursor turning to '-'.\nDeleting an annotation means to delete both its annotated horizontal location and vertical location.\n\nKeep in mind you must annotate inside of the blue circle.")
 }
 
 function popRules(e){ 
@@ -296,10 +296,10 @@ function displaySelection(){
 function askProceed(){
 	if (document.getElementById('count').value == undefined){ window.alert("You must select a number of distinct sounds"); return false; }
 	if (findUndefinedAzimuth() == -3 && findUndefinedElevation() == -3) { window.alert("You must annotate at least one spatial location"); return false; }
-	if (findUndefinedAzimuth() != findUndefinedElevation()) { window.alert("You must annotate both a horizontal location and a vertical location for each sound"); return false; }
+	if (findUndefinedAzimuth() != findUndefinedElevation()) { window.alert("You must annotate both the horizontal location and the vertical location to fully annotate each sound's spatial location\nIf the warning keeps poping up, we recommend to delete one or all annotations to restart"); return false; }
 	if (findUndefinedAzimuth() == -2 || findUndefinedAzimuth() == -2) { window.alert("You can’t annotate more sounds than the number of distinct sounds selected. Please delete the additional location annotation(s)"); return false; }
 	if (findUndefinedAzimuth() != -1 || findUndefinedElevation() != -1 ) { 
-		if (confirm("You haven’t annotated all sounds yet. Do you still want to proceed?")) return true;
+		if (confirm("You haven’t annotated all sounds yet (your selected source count is greater than the number of your annotation). Do you still want to proceed?")) return true;
 		else return false;
 	}
 	return true;
@@ -900,7 +900,7 @@ function move_azimuth_plus(e){
 	e.preventDefault();
 
 	if (document.getElementById('head-item-'+(current_colors_index+1)).style.display == 'none'){
-		window.alert("Please annotate the sound first using the 2D views"); 
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
 		return false; 
 	}
 
@@ -939,7 +939,7 @@ function move_azimuth_minus(e){
 	e.preventDefault();
 
 	if (document.getElementById('head-item-'+(current_colors_index+1)).style.display == 'none'){ 
-		window.alert("Please annotate the sound first using the 2D views"); 
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
 		return false; 
 	}
 
@@ -979,7 +979,7 @@ function move_elevation_plus(e){
 
 	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display == 'none' 
 	&& document.getElementById('side-item-'+(current_colors_index+1)).style.display == 'none' ){
-		window.alert("Please annotate the sound first using the 2D views"); 
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
 		return false; 
 	}
 
@@ -1030,7 +1030,7 @@ function move_elevation_plus(e){
 function move_elevation_minus(e){
 	e.preventDefault();
 	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display == 'none' && document.getElementById('side-item-'+(current_colors_index+1)).style.display == 'none' ){ 
-		window.alert("Please annotate the sound first using the 2D views"); 
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
 		return false; 
 	}
 
