@@ -166,7 +166,7 @@ document.getElementById('elevation-minus').addEventListener("click",move_elevati
 
 function popKeyRules(e){
 	e.preventDefault();
-	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to.\nPress [Command] or [Win] key to delete an annotation once you see the cursor turning to '-'.\nDeleting an annotation means to delete both its annotated horizontal location and vertical location.\n\nKeep in mind you must annotate at the blue circle.")
+	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to '+'. Press [Command] or [Win] key to delete an annotation once you see the cursor turning to '-'. Deleting an annotation means to delete both its annotated horizontal location and vertical location. You must annotate on the blue circle.")
 }
 
 function popRules(e){ 
@@ -278,7 +278,7 @@ function displaySelection(){
 function askProceed(){
 	if (document.getElementById('count').value == undefined){ window.alert("You must select a number of distinct sounds"); return false; }
 	if (findUndefinedAzimuth() == -3 && findUndefinedElevation() == -3) { window.alert("You must annotate at least one spatial location"); return false; }
-	if (findUndefinedAzimuth() != findUndefinedElevation()) { window.alert("You must annotate both the horizontal location and the vertical location to fully annotate each sound's spatial location\nIf the warning keeps poping up, we recommend to delete one or all annotations to restart"); return false; }
+	if (findUndefinedAzimuth() != findUndefinedElevation()) { window.alert("You must annotate both the horizontal location and the vertical location to fully annotate each sound's spatial location"); return false; }
 	if (findUndefinedAzimuth() == -2 || findUndefinedAzimuth() == -2) { window.alert("You can’t annotate more sounds than the number of distinct sounds selected. Please delete the additional location annotation(s)"); return false; }
 	if (findUndefinedAzimuth() != -1 || findUndefinedElevation() != -1 ) { 
 		if (confirm("You haven’t annotated all sounds yet (your selected source count is greater than the number of your annotation). Do you still want to proceed?")) return true;
@@ -1373,6 +1373,14 @@ function calculateRadius(mouseX, mouseY, frameX, frameY){
 	else return false;
 }
 
+function calculate3dClick(mouseX, mouseY, frameX, frameY){
+	x = frameX - mouseX;
+	y = frameY - mouseY;
+	radius = Math.sqrt( Math.pow(x,2) + Math.pow(y,2) );
+	if ( radius <= 200 ) return true;
+	else return false;
+}
+
 var enable_head = false;
 var enable_front = false;
 var enable_side = false;
@@ -1380,22 +1388,18 @@ var delete_annotation = false;
 var add_third = false;
 
 document.addEventListener("keydown", keyboardEvents);
+
 function keyboardEvents(e){
-	
 	if(e.metaKey){
 		document.getElementById('body').style.cursor = "url('/templates/interface/img/minus.svg'), auto";
-
 		// disable adding events
 		enable_head = false; 
 		enable_front = false; 
 		enable_side = false;
-
 		// enable deleting events
 		delete_annotation = true;
-
 		// prevent dragging event
 		suppress = true;
-		
 		return;
 	}
 
@@ -1407,14 +1411,19 @@ function keyboardEvents(e){
 	head_frameLocation = document.getElementById('circular').getBoundingClientRect();
 	front_frameLocation = document.getElementById('circularF').getBoundingClientRect();
 	side_frameLocation = document.getElementById('circularS').getBoundingClientRect();
+	three_frameLocation = document.getElementById('3d-head').getBoundingClientRect();
+
 	head_cx = ( head_frameLocation.right + head_frameLocation.left ) / 2;
 	head_cy = ( head_frameLocation.top + head_frameLocation.bottom ) / 2;
 	front_cx = ( front_frameLocation.right + front_frameLocation.left ) / 2;
 	front_cy = ( front_frameLocation.top + front_frameLocation.bottom ) / 2;
 	side_cx = ( side_frameLocation.right + side_frameLocation.left ) / 2;
 	side_cy = ( side_frameLocation.top + side_frameLocation.bottom ) / 2;
+	three_cx = ( three_frameLocation.right + three_frameLocation.left ) / 2;
+	three_cy = ( three_frameLocation.top + three_frameLocation.bottom ) / 2;
 
 	if (e.altKey){
+
 		// disable deleting events
 		delete_annotation = false;
 
@@ -1425,11 +1434,21 @@ function keyboardEvents(e){
 		var azimuth_item_index = findUndefinedAzimuth();
 		var elevation_item_index = findUndefinedElevation();
 
-		document.addEventListener('mousedown', function(e){
+		document.addEventListener('click', function(e){
 
 			enable_head = calculateRadius(e.pageX, e.pageY, head_cx, head_cy);
 			enable_front = calculateRadius(e.pageX, e.pageY, front_cx, front_cy);
 			enable_side = calculateRadius(e.pageX, e.pageY, side_cx, side_cy);
+			click_3d_head = calculate3dClick(e.pageX, e.pageY, three_cx, three_cy);
+			
+			if (click_3d_head){
+				window.alert("Please annotate the sound using the 2D views"); 
+				document.getElementById('body').style.cursor = 'default'; 
+				key_perform = false;
+				document.onclick = null;
+				document.onkeydown = null; 
+				return;
+			}
 
 			if (enable_head){
 				if ( azimuth_item_index == -1 ){
@@ -1437,9 +1456,8 @@ function keyboardEvents(e){
 					document.getElementById('body').style.cursor = 'default'; 
 					key_perform = false;
 					enable_head = false;
-
 					// prevent undesired events
-					document.onmousedown = null;
+					document.onclick = null;
 					document.onkeydown = null; 
 					return;
 				}
@@ -1451,7 +1469,7 @@ function keyboardEvents(e){
 					enable_head = false;
 
 					// prevent undesired events
-					document.onmousedown = null;
+					document.onclick = null;
 					document.onkeydown = null; 
 					return;
 				}
@@ -1468,9 +1486,8 @@ function keyboardEvents(e){
 						document.getElementById('body').style.cursor = 'default'; 
 						key_perform = false;
 						enable_head = false;
-
 						// prevent undesired events
-						document.onmousedown = null;
+						document.onclick = null;
 						document.onkeydown = null;
 						return;
 					}
@@ -1529,9 +1546,8 @@ function keyboardEvents(e){
 						document.getElementById('body').style.cursor = 'default'; 
 						key_perform = false;
 						enable_head = false;
-
 						// prevent undesired events
-						document.onmousedown = null;
+						document.onclick = null;
 						document.onkeydown = null;
 						return;
 					}
@@ -1602,7 +1618,7 @@ function keyboardEvents(e){
 				enable_head = false;
 
 				// prevent undesired events
-				document.onmousedown = null;
+				document.onclick = null;
 				document.onkeydown = null;
 
 				value = (curr_azimuth == 360 ? 0 : curr_azimuth);
@@ -1618,7 +1634,7 @@ function keyboardEvents(e){
 					enable_front = false;
 
 					// prevent undesired events
-					document.onmousedown = null;
+					document.onclick = null;
 					document.onkeydown = null;
 					return;
 				}
@@ -1630,7 +1646,7 @@ function keyboardEvents(e){
 					enable_front = false;
 
 					// prevent undesired events
-					document.onmousedown = null;
+					document.onclick = null;
 					document.onkeydown = null;
 					return;
 				}
@@ -1740,7 +1756,7 @@ function keyboardEvents(e){
 				enable_front = false;
 
 				// prevent undesired events
-				document.onmousedown = null;
+				document.onclick = null;
 				document.onkeydown = null;
 
 				value = curr_elevation
@@ -1756,7 +1772,7 @@ function keyboardEvents(e){
 					enable_side = false;
 
 					// prevent undesired events
-					document.onmousedown = null; 
+					document.onclick = null;
 					document.onkeydown = null;
 					return;
 				}
@@ -1768,7 +1784,7 @@ function keyboardEvents(e){
 					enable_side = false;
 
 					// prevent undesired events
-					document.onmousedown = null; 
+					document.onclick = null;
 					document.onkeydown = null;
 					return;
 				}
@@ -1873,7 +1889,7 @@ function keyboardEvents(e){
 				enable_side = false;
 
 				// prevent undesired events
-				document.onmousedown = null; 
+				document.onclick = null;
 				document.onkeydown = null;
 
 				value = curr_elevation
