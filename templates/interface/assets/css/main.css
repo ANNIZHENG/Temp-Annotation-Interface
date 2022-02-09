@@ -100,7 +100,7 @@ body{
 	background-color:#c7c7c7;
 }
 
-#audio-frame-full, #audio-frame, .audio-frame-instruction{
+#audio-frame-full, #audio-frame{
 	margin-bottom: 20px;
 	font-weight: bold;
 	text-align: center;
@@ -113,12 +113,14 @@ body{
 }
 
 .audio-frame-instruction{
-	border: 1px solid black;
-	font-size: 11px;
-	width: 200px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 13px;
 	height: 25px;
-	display: inline-block;
-	margin: 0;
+	width: 250px;
+	border: 2px solid black;
+	background: linear-gradient(to right, #efefef 0%, #ffffff 0%);
+	cursor: pointer;
 }
 
 #user_note{
