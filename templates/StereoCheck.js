@@ -32,7 +32,7 @@ function randomAssign(){
             else {
                 right += 1;
             }
-            if (left > 2 || right > 2) {
+            if (left >= 2 && right >= 2) {
                 return;
             }
         }
