@@ -86,8 +86,12 @@ function setUp(){
 document.getElementById("submit").onclick = function(e){
     let total_check = 0;
     for (let i = 0; i < 6; i++){
+        if (!document.getElementById('checkbox-'+i+"-left").checked && !document.getElementById('checkbox-'+i+"-right").checked){
+            event.preventDefault();
+            window.alert("For each audio, please select either Left or Right");
+            return;
+        }
         if (document.getElementById('checkbox-'+i+"-left").checked){
-            total_check += 1;
             if (filenames[i] != left_filename) {
                 event.preventDefault();
                 window.alert("You've selected one or more wrong choice.");
@@ -95,18 +99,11 @@ document.getElementById("submit").onclick = function(e){
             }
         }
         else if (document.getElementById('checkbox-'+i+"-right").checked){
-            total_check += 1;
             if (filenames[i] != right_filename) {
                 event.preventDefault();
                 window.alert("You've selected one or more wrong choice.");
                 return;
             }
-        }
-
-        if (total_check < 6){
-            event.preventDefault();
-            window.alert("For each audio, please select either Left or Right.");
-            return;
         }
     }
     window.location = '/templates/interface/practice.html';
