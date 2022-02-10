@@ -94,7 +94,7 @@ document.getElementById("submit").onclick = function(e){
                 return;
             }
         }
-        else if (document.getElementById('checkbox-'+i+"-left").checked){
+        else if (document.getElementById('checkbox-'+i+"-right").checked){
             total_check += 1;
             if (filenames[i] != right_filename) {
                 event.preventDefault();
