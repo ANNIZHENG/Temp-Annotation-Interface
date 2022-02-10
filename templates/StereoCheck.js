@@ -90,7 +90,7 @@ document.getElementById("submit").onclick = function(e){
             total_check += 1;
             if (filenames[i] != left_filename) {
                 event.preventDefault();
-                window.alert("You've selected a wrong choice. Please refresh the browser and try again.");
+                window.alert("You've selected one or more wrong choice.");
                 return;
             }
         }
@@ -98,7 +98,7 @@ document.getElementById("submit").onclick = function(e){
             total_check += 1;
             if (filenames[i] != right_filename) {
                 event.preventDefault();
-                window.alert("You've selected a wrong choice. Please refresh the browser and try again.");
+                window.alert("You've selected one or more wrong choice.");
                 return;
             }
         }
