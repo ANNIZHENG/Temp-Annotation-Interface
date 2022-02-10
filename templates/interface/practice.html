@@ -112,6 +112,7 @@
 								<li>Identification of distinct sounds</li>
 								<li>Localization of these sounds</li>
 								<li>Matching each location with its corresponding sound</li>
+								<li>We expect this task to take around 10 minutes of your time. You will be paid $2.5 for completing the task.</li>
 							</ul>
 						</div>
 					</div>
@@ -419,6 +420,9 @@
 	<script src="//cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
 	<script src="/templates/interface/assets/js/practice.js"></script>
 	<script type="text/javascript">
+		if (localStorage.getItem('stereo') != '1' && localStorage.getItem('headphone') != '1'){
+			window.location = '/templates/interface/incomplete.html';
+		}
 		document.body.style.cursor='wait';
 		window.onload = function(){
 			document.body.style.cursor='default';
