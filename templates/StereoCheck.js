@@ -94,14 +94,14 @@ document.getElementById("submit").onclick = function(e){
         if (document.getElementById('checkbox-'+i+"-left").checked){
             if (filenames[i] != left_filename) {
                 event.preventDefault();
-                window.alert("You've selected one or more wrong choice.");
+                window.alert("You've selected at least one wrong choice.");
                 return;
             }
         }
         else if (document.getElementById('checkbox-'+i+"-right").checked){
             if (filenames[i] != right_filename) {
                 event.preventDefault();
-                window.alert("You've selected one or more wrong choice.");
+                window.alert("You've selected at least one wrong choice.");
                 return;
             }
         }
