@@ -621,7 +621,7 @@ function changeSize(item_index){
 	for ( let index = elevation.length - 1; index > -1; index-- ) {
 		const current_index_degree = document.getElementById('circularF'+(index+1)).style.display != 'none' ? parseInt(document.getElementById('circularF'+(index+1)).style.transform.replace('rotate(','').replace('deg)','')) : undefined ;
 
-		if ( selected_elevation != undefined && Math.abs( selected_elevation_degree - current_index_degree ) <= 3 ) {
+		if ( selected_elevation != undefined && Math.abs( selected_elevation_degree - current_index_degree ) <= 5 ) {
 			if ( index != (item_index - 1) ){
 				front_indicators[item_index][index] = true;
 				front_indicators[index+1][item_index-1] = true;
@@ -638,7 +638,7 @@ function changeSize(item_index){
 			document.getElementById('front-item-'+(index + 1)).style.fontSize = (size - 3).toString() + 'px';
 
 		}
-		else if ( selected_elevation == undefined || Math.abs( selected_elevation_degree - current_index_degree ) > 3 ) {
+		else if ( selected_elevation == undefined || Math.abs( selected_elevation_degree - current_index_degree ) > 5 ) {
 			if ( item_index == 1 && front_indicators[1][index] ) {
 				front_indicators[1][index] = undefined;
 				front_indicators[index+1][0] = undefined; 
@@ -764,7 +764,7 @@ function changeSize(item_index){
 	for ( let index = elevation.length - 1; index > -1; index-- ) {
 		const current_index_degree2 = document.getElementById('circularS'+(index+1)).style.display != 'none' ? parseInt(document.getElementById('circularS'+(index+1)).style.transform.replace('rotate(','').replace('deg)','')) : undefined ;
 
-		if ( selected_elevation2 != undefined && Math.abs( selected_elevation_degree2 - current_index_degree2 ) <= 3 ) {
+		if ( selected_elevation2 != undefined && Math.abs( selected_elevation_degree2 - current_index_degree2 ) <= 5 ) {
 			if ( index != (item_index - 1) ){
 				side_indicators[item_index][index] = true;
 				side_indicators[index+1][item_index-1] = true;
@@ -781,7 +781,7 @@ function changeSize(item_index){
 			document.getElementById('side-item-'+(index + 1)).style.fontSize = (size - 3).toString() + 'px';
 
 		}
-		else if ( selected_elevation2 == undefined || Math.abs( selected_elevation_degree2 - current_index_degree2 ) > 3 ) {
+		else if ( selected_elevation2 == undefined || Math.abs( selected_elevation_degree2 - current_index_degree2 ) > 5 ) {
 			if ( item_index == 1 && side_indicators[1][index] ) {
 				side_indicators[1][index] = undefined;
 				side_indicators[index+1][0] = undefined; 
