@@ -795,7 +795,7 @@ function changeSize(item_index){
 	}
 
 	const selected_elevation2 = elevation[item_index - 1];
-	const selected_elevation_degree2 = parseInt(document.getElementById('circularS'+[item_index - 1]).style.transform.replace('rotate(','').replace('deg)',''));
+	const selected_elevation_degree2 = parseInt(document.getElementById('circularS'+color[item_index-1]).style.transform.replace('rotate(','').replace('deg)',''));
 	size = 18 - 8;
 	margin_top = -65 + 4;
 	margin_left = 0 + 4;

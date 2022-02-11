@@ -24,18 +24,6 @@ else {
 document.getElementById('source').src =  audio_path + '/recording/' + recording_file + '/' + recording_names[curr_recording];
 document.getElementById('audio').load();
 
-/* function ajax_start(){
-	var request_start = new XMLHttpRequest();
-	request_start.open('POST', '/annotation_interface');
-	request_start.onreadystatechange = function() {
-		survey_id = request_start.response;
-		localStorage.setItem("survey_id", survey_id);
-	}
-	request_start.send();
-} 
-if (localStorage.getItem('survey_id') == undefined) ajax_start();
-else survey_id = localStorage.getItem('survey_id'); */
-
 survey_id = localStorage.getItem('survey_id');
 
 // check if the user goes through the whole instruction
