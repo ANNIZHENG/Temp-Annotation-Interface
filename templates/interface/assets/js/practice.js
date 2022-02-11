@@ -160,8 +160,8 @@ document.getElementById('body').addEventListener("mouseup",function(){ // for th
 
 document.getElementById('key-message').addEventListener("click",popKeyRules);
 document.getElementById('message').addEventListener("click",popRules);
-document.getElementById('instruction-left').addEventListener("click",move_instruction_last);
 document.getElementById('instruction-right').addEventListener("click",move_instruction_next);
+document.getElementById('instruction-left').addEventListener("click",move_instruction_last);
 document.getElementById('instruction-proceed').addEventListener("click",closeRules);
 document.getElementById('sign').addEventListener("click",closeRules);
 
@@ -210,32 +210,68 @@ function closeRules(e){
 function move_instruction_next(e){
 	e.preventDefault();
 
-	if (curr_instruction == 1) document.getElementById('instruction-video-1').play();
-	else document.getElementById('instruction-video-1').pause();
+	if (curr_instruction == 1) {
+		document.getElementById('instruction-video-1').currentTime = 0;
+		document.getElementById('instruction-video-1').play();
+	}
+	else if (curr_instruction == 2) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-1').currentTime != document.getElementById('instruction-video-1').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		document.getElementById('instruction-video-1').pause();
+	}
 
-
-	if (curr_instruction == 3){ // if move out of the second page then pause all audio
+	if (curr_instruction == 3){
 		let audios = document.getElementsByClassName('audio-frame-instruction');
 		for (let i = 0; i < audios.length; i++) {
 			audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
 			document.getElementById(audio_id).pause();
 			document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
 		}
+		document.getElementById('instruction-video-2').currentTime = 0;
 		document.getElementById('instruction-video-2').play();
 	}
-	else document.getElementById('instruction-video-2').pause();
 
-	if (curr_instruction == 4) document.getElementById('instruction-video-3').play();
-	else document.getElementById('instruction-video-3').pause();
+	if (curr_instruction == 4) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-2').currentTime != document.getElementById('instruction-video-2').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		document.getElementById('instruction-video-2').pause();
+		document.getElementById('instruction-video-3').currentTime = 0;
+		document.getElementById('instruction-video-3').play();
+	}
 
-	if (curr_instruction == 5) document.getElementById('instruction-video-4').play();
-	else document.getElementById('instruction-video-4').pause();
+	if (curr_instruction == 5) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-3').currentTime != document.getElementById('instruction-video-3').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		document.getElementById('instruction-video-3').pause();
+		document.getElementById('instruction-video-4').currentTime = 0;
+		document.getElementById('instruction-video-4').play();
+	}
 
-	if (curr_instruction == 6) document.getElementById('instruction-video-5').play();
-	else document.getElementById('instruction-video-5').pause();
+	if (curr_instruction == 6) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-4').currentTime != document.getElementById('instruction-video-4').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		document.getElementById('instruction-video-4').pause();
+		document.getElementById('instruction-video-5').currentTime = 0;
+		document.getElementById('instruction-video-5').play();
+	}
 
-	if (curr_instruction == 7) document.getElementById('instruction-video-6').play();
-	else document.getElementById('instruction-video-6').pause();
+	if (curr_instruction == 7) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-5').currentTime != document.getElementById('instruction-video-5').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		document.getElementById('instruction-video-5').pause();
+		document.getElementById('instruction-video-6').currentTime = 0;
+		document.getElementById('instruction-video-6').play();
+	}
 
 	if (curr_instruction < totalInstructions) {
 		document.getElementById('instruction'+curr_instruction).style.display = 'none';
@@ -244,6 +280,11 @@ function move_instruction_next(e){
 	}
 
 	if (curr_instruction == totalInstructions) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-6').currentTime != document.getElementById('instruction-video-6').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+
 		document.getElementById("instruction-right").style.display = 'none';
 		document.getElementById("instruction-proceed").style.display = '';
 		read_all_rules = true;
@@ -252,37 +293,47 @@ function move_instruction_next(e){
 
 function move_instruction_last(e){
 	e.preventDefault();
-	if (curr_instruction > 1) {
-		if (curr_instruction == 2) document.getElementById('instruction-video-1').pause();
 
-		if (curr_instruction == 3){ // pause all audios if move out of page 2
+	if (curr_instruction > 1) {
+		if (curr_instruction == 2) {
+			document.getElementById('instruction-video-1').pause();
+		}
+
+		if (curr_instruction == 3){
 			let audios = document.getElementsByClassName('audio-frame-instruction');
 			for (let i = 0; i < audios.length; i++) {
 				audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
 				document.getElementById(audio_id).pause();
 				document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
 			}
+			document.getElementById('instruction-video-1').currentTime = 0;
 			document.getElementById('instruction-video-1').play();
 		}
 
-		if (curr_instruction == 4) document.getElementById('instruction-video-2').pause();
+		if (curr_instruction == 4) {
+			document.getElementById('instruction-video-2').pause();
+		}
 
 		if (curr_instruction == 5) {
+			document.getElementById('instruction-video-2').currentTime = 0;
 			document.getElementById('instruction-video-2').play();
 			document.getElementById('instruction-video-3').pause();
 		}
 
 		if (curr_instruction == 6) {
+			document.getElementById('instruction-video-3').currentTime = 0;
 			document.getElementById('instruction-video-3').play();
 			document.getElementById('instruction-video-4').pause();
 		}
 
 		if (curr_instruction == 7) {
+			document.getElementById('instruction-video-4').currentTime = 0;
 			document.getElementById('instruction-video-4').play();
 			document.getElementById('instruction-video-5').pause();
 		}
 
 		if (curr_instruction == 8) {
+			document.getElementById('instruction-video-5').currentTime = 0;
 			document.getElementById('instruction-video-5').play();
 			document.getElementById('instruction-video-6').pause();
 		}
