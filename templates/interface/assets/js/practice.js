@@ -280,13 +280,12 @@ function move_instruction_next(e){
 	}
 
 	if (curr_instruction == totalInstructions) {
+		document.getElementById("instruction-right").style.display = 'none';
+		document.getElementById("instruction-proceed").style.display = '';
 		if ( !read_all_rules && (document.getElementById('instruction-video-6').currentTime != document.getElementById('instruction-video-6').duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
 		}
-
-		document.getElementById("instruction-right").style.display = 'none';
-		document.getElementById("instruction-proceed").style.display = '';
 		read_all_rules = true;
 	}
 }
