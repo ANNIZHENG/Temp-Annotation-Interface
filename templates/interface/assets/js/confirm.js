@@ -183,7 +183,7 @@ function confirm_annotation(){
 	recording_name = localStorage.getItem('recording')
 	request.onreadystatechange = function() {
 		if (request.readyState == 4){
-			console.log(request.response);
+			// console.log(request.response);
 			if (parseInt(localStorage.getItem('practice'))) {
 				practice = 1;
 				document.getElementById('btn-button-again').style.display = '';

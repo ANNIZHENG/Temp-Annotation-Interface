@@ -14,7 +14,7 @@ function ajax_select_recording(){
 	request_recording.open('POST', '/select_recording');
 	request_recording.onreadystatechange = function() {
 		if (request_recording.readyState == 4){
-			console.log(request_recording.response);
+			// console.log(request_recording.response);
 			vertical = JSON.parse(request_recording.response)["vertical"]["0"] == "0" ? 0 : 1;
 			localStorage.setItem('vertical',vertical);
 			let file_name = vertical ? "horizontal_vertical" : "horizontal";

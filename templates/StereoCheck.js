@@ -42,7 +42,7 @@ function randomAssign(){
 
 function setUp(){
     randomAssign();
-    console.log(filenames);
+    // console.log(filenames);
     let division = document.getElementById('questions');
     for (let i = 0; i < 6; i++){
         let small_div = document.createElement('div');
