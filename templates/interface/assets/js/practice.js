@@ -178,7 +178,7 @@ document.getElementById('elevation-minus').addEventListener("click",move_elevati
 
 function popKeyRules(e){
 	e.preventDefault();
-	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to '+'. Press [Command] or [Win] key to delete an annotation once you see the cursor turning to '-'. Deleting an annotation means to delete both its annotated horizontal location and vertical location.")
+	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to '+'. Press [Control] or [Ctrl] key to delete an annotation once you see the cursor turning to '-'. Deleting an annotation means to delete both its annotated horizontal location and vertical location.")
 }
 
 function popRules(e){ 
@@ -1458,20 +1458,17 @@ var add_third = false;
 document.addEventListener("keydown", keyboardEvents);
 function keyboardEvents(e){
 	
-	if(e.metaKey){
+	if(e.ctrlKey){
+		e.preventDefault();
 		document.getElementById('body').style.cursor = "url('/templates/interface/img/minus.svg'), auto";
-
 		// disable adding events
 		enable_head = false; 
 		enable_front = false; 
 		enable_side = false;
-
 		// enable deleting events
 		delete_annotation = true;
-
 		// prevent dragging event
 		suppress = true;
-		
 		return;
 	}
 
@@ -1495,6 +1492,8 @@ function keyboardEvents(e){
 	three_cy = ( three_frameLocation.top + three_frameLocation.bottom ) / 2;
 	
 	if (e.altKey){
+		e.preventDefault();
+
 		delete_annotation = false; // disable deleting events
 
 		document.getElementById('body').style.cursor = 'cell';
@@ -2030,7 +2029,7 @@ document.getElementById('head-item-1').addEventListener("mousedown",function(e){
 
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2083,7 +2082,7 @@ document.getElementById('head-item-2').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2137,7 +2136,7 @@ document.getElementById('head-item-3').addEventListener("mousedown",function(e){
 
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2190,7 +2189,7 @@ document.getElementById('head-item-4').addEventListener("mousedown",function(e){
 
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2243,7 +2242,7 @@ document.getElementById('head-item-5').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2296,7 +2295,7 @@ document.getElementById('head-item-6').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2349,7 +2348,7 @@ document.getElementById('head-item-7').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2402,7 +2401,7 @@ document.getElementById('head-item-8').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2455,7 +2454,7 @@ document.getElementById('head-item-9').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2508,7 +2507,7 @@ document.getElementById('head-item-10').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2561,7 +2560,7 @@ document.getElementById('front-item-1').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2614,7 +2613,7 @@ document.getElementById('front-item-2').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2667,7 +2666,7 @@ document.getElementById('front-item-3').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2720,7 +2719,7 @@ document.getElementById('front-item-4').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2773,7 +2772,7 @@ document.getElementById('front-item-5').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2826,7 +2825,7 @@ document.getElementById('front-item-6').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2879,7 +2878,7 @@ document.getElementById('front-item-7').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2932,7 +2931,7 @@ document.getElementById('front-item-8').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -2985,7 +2984,7 @@ document.getElementById('front-item-9').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3038,7 +3037,7 @@ document.getElementById('front-item-10').addEventListener("mousedown",function(e
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3092,7 +3091,7 @@ document.getElementById('side-item-1').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3145,7 +3144,7 @@ document.getElementById('side-item-2').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3198,7 +3197,7 @@ document.getElementById('side-item-3').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3251,7 +3250,7 @@ document.getElementById('side-item-4').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3304,7 +3303,7 @@ document.getElementById('side-item-5').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3357,7 +3356,7 @@ document.getElementById('side-item-6').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3410,7 +3409,7 @@ document.getElementById('side-item-7').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3463,7 +3462,7 @@ document.getElementById('side-item-8').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3516,7 +3515,7 @@ document.getElementById('side-item-9').addEventListener("mousedown",function(e){
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
@@ -3569,7 +3568,7 @@ document.getElementById('side-item-10').addEventListener("mousedown",function(e)
 		
 		// disable further deletion
 		delete_annotation = false;
-		e.metaKey = false;
+		e.ctrlKey = false;
 
 		// prevent undesired events
 		document.onmousedown = null; 
