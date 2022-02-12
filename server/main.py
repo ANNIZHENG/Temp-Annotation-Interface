@@ -66,8 +66,8 @@ def next():
         user_note = data['user_note']
         practice = bool(int(data['practice']))
 
-        timestamp= datetime.fromtimestamp(data['timestamp'] / 1000)
-        entry = Interaction(survey_id,"submit annotation",None,timestamp,practice)
+        timestamp = datetime.fromtimestamp(data['timestamp'] / 1000)
+        entry = Interaction(survey_id,"submit annotation", None,timestamp,practice)
         ses.add(entry)
         ses.commit()
 
@@ -159,8 +159,8 @@ def submit_confirmation():
         if (not practice):
             eng.execute('''update "Recording" set num_annotation = num_annotation + 1 where id = '''+ str(recording_id))
         
-        timestamp= datetime.fromtimestamp(data['timestamp'] / 1000)
-        entry = Interaction(survey_id,"submit confirmation",None,timestamp,practice)
+        timestamp = datetime.fromtimestamp(data['timestamp'] / 1000)
+        entry = Interaction(survey_id,"submit confirmation", None, timestamp,practice)
         ses.add(entry)
         ses.commit()
 

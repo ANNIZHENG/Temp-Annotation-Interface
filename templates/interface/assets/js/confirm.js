@@ -488,11 +488,12 @@ function submit_confirmation(){
 	localStorage.setItem('full_round', true);
 	location_id = location_id.substring(0,location_id.length-1);
 	source_id = source_id.substring(0,source_id.length-1);
+	timestamp = Date.now();
 	request.open('POST', '/submit_confirmation', true);
 	request.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 	let survey_id = localStorage.getItem('survey_id');
 	let vertical = parseInt(localStorage.getItem('vertical'));
-	var data = JSON.stringify({recording_name, location_id, source_id, practice, survey_id, vertical});
+	var data = JSON.stringify({recording_name, location_id, source_id, practice, survey_id, vertical, timestamp});
 	request.send(data);
 	return true;
 }
