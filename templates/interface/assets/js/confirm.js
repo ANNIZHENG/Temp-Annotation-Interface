@@ -937,7 +937,6 @@ function changeSize(item_index){
 	}
 }
 
-
 /* Three.js */
 
 container = document.getElementById('3d-head');

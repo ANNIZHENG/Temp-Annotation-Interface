@@ -102,18 +102,19 @@
 		<div id="modal" style="z-index: 2; display: none;">
 			<div class="instructions">
 				<button class="move" id="instruction-left" style="margin-right: 20px;">&#8249;</button>
-				<div id="instruction1" style="margin: 0 auto; position: relative;">
+				<div id="instruction1" style="margin: 0 auto;">
 					<p>&nbsp;</p>
-					<div style="position: relative;">
+					<div>
 						<h2 style="text-align: center; color: blue; margin-top: 3vh;">Annotation Interface Instructions</h2><br>
 						<ul style="font-size: 20px;">
 							This task consists of 3 stages<br><br>
 							<li>Identification of distinct sounds</li>
 							<li>Localization of these sounds</li>
-							<li>Matching each location with its corresponding sound</li>
+							<li>Matching each location with its corresponding sound</li><br>
+							We expect this task to take around 10 minutes of your time.<br>
+							You will be paid $2.5 for completing the task.
 						</ul>
 					</div>
-					<h4 style="position:absolute; bottom:10px; left:0px;">We expect this task to take around 10 minutes of your time. You will be paid $2.5 for completing the task.</h4>
 				</div>
 				<div id="instruction2" style="display: none;">
 					<p style="font-size: 17px;">Page 1 / 7</p>
@@ -413,9 +414,9 @@
 	<script src="//cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
 	<script src="/templates/interface/assets/js/confirm.js"></script>
 	<script type="text/javascript">
-		if (localStorage.getItem('stereo') != '1' && localStorage.getItem('headphone') != '1'){
-			window.location = '/templates/interface/incomplete.html';
-		}
+		// if (localStorage.getItem('stereo') != '1' && localStorage.getItem('headphone') != '1'){
+		// 	window.location = '/templates/interface/incomplete.html';
+		// }
 		document.body.style.cursor='wait';
 		window.onload= function() {
 			document.body.style.cursor='default';

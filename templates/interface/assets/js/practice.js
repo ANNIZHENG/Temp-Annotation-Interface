@@ -106,7 +106,7 @@ var side_indicators = {
 	10: []
 };
 
-document.addEventListener('click', function(e){
+document.addEventListener('click', function(e) {
 	if (e.target.id.substring(0,23) == "audio-frame-instruction") {
 
 		isPlaying = false;
@@ -115,7 +115,7 @@ document.addEventListener('click', function(e){
 
 		var audios = document.getElementsByClassName('audio-frame-instruction');
 
-		playing_id = ''
+		playing_id = '';
 
 		for(let i = 0; i < audios.length; i++) {
 			audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
@@ -147,6 +147,8 @@ document.getElementById('body').addEventListener("mouseup",function(){ // for th
 	delete_annotation = false;
 	document.getElementById('body').style.cursor = 'default';
 });
+
+document.addEventListener('contextmenu', event => event.preventDefault());
 
 document.getElementById('key-message').addEventListener("click",popKeyRules);
 document.getElementById('message').addEventListener("click",popRules);
@@ -183,7 +185,7 @@ function popRules(e){
 }
 
 function closeRules(e){ 
-	if (document.getElementById('instruction-video-6').currentTime != document.getElementById('instruction-video-6').duration) {
+	if (!read_all_rules && document.getElementById('instruction-video-6').currentTime != document.getElementById('instruction-video-6').duration) {
 		window.alert("Please finish watching the current video first");
 		return;
 	}
@@ -1501,9 +1503,10 @@ var add_third = false;
 
 document.addEventListener("keydown", keyboardEvents);
 function keyboardEvents(e){
-	
+
 	if(e.ctrlKey){
 		e.preventDefault();
+
 		document.getElementById('body').style.cursor = "url('/templates/interface/img/minus.svg'), auto";
 		// disable adding events
 		enable_head = false; 
@@ -1548,6 +1551,7 @@ function keyboardEvents(e){
 		var elevation_item_index = findUndefinedElevation();
 
 		document.addEventListener('click', function(e){
+			e.preventDefault();
 
 			enable_head = calculateRadius(e.pageX, e.pageY, head_cx, head_cy);
 			enable_front = calculateRadius(e.pageX, e.pageY, front_cx, front_cy);

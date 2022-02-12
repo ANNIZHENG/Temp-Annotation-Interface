@@ -147,6 +147,8 @@ document.getElementById('body').addEventListener("mouseup",function(){ // for th
 	document.getElementById('body').style.cursor = 'default';
 });
 
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 document.getElementById('key-message').addEventListener("click",popKeyRules);
 document.getElementById('message').addEventListener("click",popRules);
 document.getElementById('instruction-left').addEventListener("click",move_instruction_last);
