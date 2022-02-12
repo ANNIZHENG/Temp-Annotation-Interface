@@ -9,15 +9,19 @@ var curr_recording = 0;
 var totalInstructions = 8;
 const audio_path = 'https://assets-audio.s3.amazonaws.com/audio';
 
+// check if the user goes through the whole instruction
+var read_all_rules = false;
 
 if (localStorage.getItem('practice') == undefined) {
 	curr_recording = 0;
 	localStorage.setItem('practice', curr_recording);
 }
 else if (parseInt(localStorage.getItem('practice')) > totalPractice) {
+	read_all_rules = true;
 	curr_recording = 0;
 }
 else {
+	read_all_rules = true;
 	curr_recording = localStorage.getItem('practice');
 }
 
@@ -25,9 +29,6 @@ document.getElementById('source').src =  audio_path + '/recording/' + recording_
 document.getElementById('audio').load();
 
 survey_id = localStorage.getItem('survey_id');
-
-// check if the user goes through the whole instruction
-var read_all_rules = false;
 
 // colors
 const colors = [0x009dff, 0xff7f0e, 0x00ff00, 0xff0000, 0x9467bd, 0xd3d3d3, 0xc39b77, 0xe377c2, 0xbcbd22, 0x00ffff];
@@ -200,6 +201,7 @@ function closeRules(e){
 		document.getElementById(audio_id).pause();
 		document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
 	}
+	
 	modal.style.display = "none";
 }
 
