@@ -157,9 +157,11 @@ def submit_confirmation():
         eng.execute('''update "Confirmation" set annotation_id = ''' + "'" + annotation_id + "' where annotation_id = '" + survey_id + "'")
 
         timestamp = datetime.fromtimestamp(data['timestamp'] / 1000)
-        entry1 = Interaction(survey_id,"submit confirmation", None, timestamp,practice)
+        entry1 = Interaction(survey_id,"submit confirmation", None, timestamp, practice)
         ses.add(entry1)
         ses.commit()
+
+        eng.execute('''update "Interaction" set annotation_id = ''' + "'" + annotation_id + "' where annotation_id = '" + survey_id + "'")
 
         if (not practice):
             eng.execute('''update "Recording" set num_annotation = num_annotation + 1 where id = '''+ str(recording_id))
