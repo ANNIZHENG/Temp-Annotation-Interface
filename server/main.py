@@ -164,6 +164,15 @@ def submit_confirmation():
         eng.execute('''update "Interaction" set annotation_id = ''' + "'" + annotation_id + "' where annotation_id = '" + survey_id + "'")
 
         if (not practice):
+            eng.execute('''update "Survey" set completed = true where survey_id = ''' + "'" + survey_id + "'")
+
+            if (result_recording_id > 96):
+                place_folder = "horizontal_vertical"
+            else:
+                place_folder = "horizontal"
+    
+            eng.execute('''update "Survey" set horizontal_or_vertical = ''' + "'" + place_folder + "'" + ''' where survey_id = ''' + "'" + survey_id + "'")
+            eng.execute('''update "Survey" set recording_id = ''' + str(recording_id) + " where survey_id = '" + survey_id + "'")
             eng.execute('''update "Recording" set num_annotation = num_annotation + 1 where id = '''+ str(recording_id))
 
         return 'success'
