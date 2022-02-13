@@ -12,6 +12,11 @@ class Survey(Base):
     __tablename__ = "Survey"
     id = Column(Integer, primary_key=True, autoincrement=True)
     survey_id = Column(String)
+    approved = Column(Boolean)
+    completed = Column(Boolean)
+    recording_id = Column(Integer)
+    horizontal_or_vertical = Column(VARCHAR)
+
     def __init__(self,survey_id):
         self.survey_id = survey_id
 

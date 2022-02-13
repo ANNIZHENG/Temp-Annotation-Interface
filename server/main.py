@@ -166,7 +166,7 @@ def submit_confirmation():
         if (not practice):
             eng.execute('''update "Survey" set completed = true where survey_id = ''' + "'" + survey_id + "'")
 
-            if (result_recording_id > 96):
+            if (recording_id > 96):
                 place_folder = "horizontal_vertical"
             else:
                 place_folder = "horizontal"
