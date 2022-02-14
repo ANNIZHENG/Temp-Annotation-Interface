@@ -1,5 +1,3 @@
-// request to server
-var request = new XMLHttpRequest();
 var survey_id = '';
 var practice = 1; // true
 const totalPractice = 4;
@@ -18,10 +16,12 @@ if (localStorage.getItem('practice') == undefined) {
 }
 else if (parseInt(localStorage.getItem('practice')) > totalPractice) {
 	read_all_rules = true;
+	document.getElementById('sign').style.visibility = '';
 	curr_recording = 0;
 }
 else {
 	read_all_rules = true;
+	document.getElementById('sign').style.visibility = '';
 	curr_recording = localStorage.getItem('practice');
 }
 
@@ -191,6 +191,7 @@ function closeRules(e){
 	}
 
 	read_all_rules = true;
+	document.getElementById('sign').style.visibility = '';
 	
 	let videos = document.getElementsByTagName('video');
 	for(let i = 0; i<videos.length; i++){
@@ -451,11 +452,19 @@ function findUndefinedElevation(){
 }
 
 function ajax_interaction() {
-	request.open('POST', '/interaction', true);
-	request.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+	var request_interaction = new XMLHttpRequest();
+	request_interaction.open('POST', '/interaction', true);
+	request_interaction.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 	practice = 1;
 	var data = JSON.stringify({survey_id,action_type,value,timestamp,practice});
-	request.send(data);
+	request_interaction.send(data);
+	request_interaction.onreadystatechange = function() {
+		if (request_interaction.readyState == 4){
+			if (request_interaction.responseText != 'success'){
+				window.alert("Somthing is wrong. Please Refresh.");
+			}
+		}
+	}
 }
 
 function ajax_next(){
@@ -463,17 +472,25 @@ function ajax_next(){
 		event.preventDefault();
 		return false;
 	}
+	var request_next= new XMLHttpRequest();
 	let user_note = document.getElementById("user_note").value;
 	localStorage.setItem("user_note", user_note);
 	timestamp = Date.now();
-	request.open('POST', '/next', true);
-	request.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+	request_next.open('POST', '/next', true);
+	request_next.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 	let recording_name = recording_names[curr_recording];
 	let vertical = 2;
 	localStorage.setItem('vertical', vertical);
 	practice = 1;
 	var data = JSON.stringify({survey_id,recording_name,azimuth,elevation,source_count,timestamp,user_note,practice,vertical});
-	request.send(data);
+	request_next.send(data);
+	request_next.onreadystatechange = function() {
+		if (request_next.readyState == 4){
+			if (request_next.responseText != 'success'){
+				window.alert("Somthing is wrong. Please Refresh.");
+			}
+		}
+	}
 	localStorage.setItem('recording', recording_names[curr_recording]);
     curr_recording = parseInt(curr_recording) + 1;
 	localStorage.setItem('practice', curr_recording);

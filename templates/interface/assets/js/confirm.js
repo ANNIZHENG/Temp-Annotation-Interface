@@ -2,6 +2,8 @@ var file_name = {};
 var azimuth = {};
 var elevation = {};
 var color = {};
+var locations = {};
+var sources = {};
 var user_num_source;
 var actual_num_source;
 var recording_name = '';
@@ -14,7 +16,6 @@ const audio_path = 'https://assets-audio.s3.amazonaws.com/audio';
 
 const colors = [0x009dff, 0xff7f0e, 0x00ff00, 0xff0000, 0x9467bd, 0xd3d3d3, 0xc39b77, 0xe377c2, 0xbcbd22, 0x00ffff];
 const css_colors = ["#009dff", "#ff7f0e", "#00ff00", "#ff0000", "#9467bd", "#d3d3d3", "#c39b77", "#e377c2", "#bcbd22", "#00ffff"];
-var request = new XMLHttpRequest(); 
 
 // these are look up tables for annotation dots' size change
 var indicators = {
@@ -199,12 +200,12 @@ function move_instruction_last(e){
 confirm_annotation();
 
 function confirm_annotation(){
+	var request = new XMLHttpRequest(); 
 	request.open('POST', '/confirm_annotation');
 	let vertical = parseInt(localStorage.getItem('vertical'))
 	recording_name = localStorage.getItem('recording')
 	request.onreadystatechange = function() {
 		if (request.readyState == 4){
-			// console.log(request.response);
 			if (parseInt(localStorage.getItem('practice'))) {
 				practice = 1;
 				document.getElementById('btn-button-again').style.display = '';
@@ -218,7 +219,8 @@ function confirm_annotation(){
 			color = JSON.parse(request.response)["color"];
 			azimuth = JSON.parse(request.response)["azimuth"];
 			elevation = JSON.parse(request.response)["elevation"];
-
+			locations = JSON.parse(request.response)["location_id"];
+			sources = JSON.parse(request.response)["source_id"];
 			user_num_source = parseInt(JSON.parse(request.response)["user_num_source"]["0"]);
 			actual_num_source = parseInt(JSON.parse(request.response)["actual_num_source"]["0"]);
 
@@ -478,23 +480,31 @@ function submit_confirmation(){
 		window.alert("You must match at least one audio recording to an annotated location");
 		return false;
 	}
-	for (const [key,value] of Object.entries( JSON.parse(request.response)["location_id"])) {
+	for (const [key,value] of Object.entries( locations )) {
 		total_confirmation_num += 1;
 		location_id += value + ',';
 	}
-	for (const [key,value] of Object.entries( JSON.parse(request.response)["source_id"] )) {
+	for (const [key,value] of Object.entries( sources )) {
 		source_id += value + ',';
 	}
 	localStorage.setItem('full_round', true);
 	location_id = location_id.substring(0,location_id.length-1);
 	source_id = source_id.substring(0,source_id.length-1);
 	timestamp = Date.now();
-	request.open('POST', '/submit_confirmation', true);
-	request.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+	var request_submit = new XMLHttpRequest(); 
+	request_submit.open('POST', '/submit_confirmation', true);
+	request_submit.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 	let survey_id = localStorage.getItem('survey_id');
 	let vertical = parseInt(localStorage.getItem('vertical'));
 	var data = JSON.stringify({recording_name, location_id, source_id, practice, survey_id, vertical, timestamp});
-	request.send(data);
+	request_submit.send(data);
+	request_submit.onreadystatechange = function() {
+		if (request_submit.readyState == 4){
+			if (request_submit.responseText != 'success'){
+				window.alert("Somthing is wrong. Please Refresh.");
+			}
+		}
+	}
 	return true;
 }
 

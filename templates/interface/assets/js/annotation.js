@@ -1,5 +1,3 @@
-// request to server
-var request = new XMLHttpRequest();
 var survey_id = localStorage.getItem('survey_id');
 var practice = 0;
 var recording_name = '';
@@ -14,16 +12,13 @@ function ajax_select_recording(){
 	request_recording.open('POST', '/select_recording');
 	request_recording.onreadystatechange = function() {
 		if (request_recording.readyState == 4){
-			// console.log(request_recording.response);
 			vertical = JSON.parse(request_recording.response)["vertical"]["0"] == "0" ? 0 : 1;
 			localStorage.setItem('vertical',vertical);
 			let file_name = vertical ? "horizontal_vertical" : "horizontal";
 			recording_name = JSON.parse(request_recording.response)["recording_name"]["0"];
-
 			document.getElementById('source').src = audio_path+'/recording/'+ file_name + "/" + recording_name;
 			document.getElementById('audio').load();
 			localStorage.setItem('recording', recording_name);
-
 		}
 	}
 	request_recording.send();
@@ -363,10 +358,18 @@ function askProceed(){
 }
 
 function ajax_interaction() {
-	request.open('POST', '/interaction', true);
-	request.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+	var request_interaction = new XMLHttpRequest();
+	request_interaction.open('POST', '/interaction', true);
+	request_interaction.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 	var data = JSON.stringify({survey_id,action_type,value,timestamp,practice});
-	request.send(data);
+	request_interaction.send(data);
+	request_interaction.onreadystatechange = function() {
+		if (request_interaction.readyState == 4){
+			if (request_interaction.responseText != 'success'){
+				window.alert("Somthing is wrong. Please Refresh.");
+			}
+		}
+	}
 }
 
 function ajax_next(){
@@ -374,17 +377,22 @@ function ajax_next(){
 		event.preventDefault();
 		return false;
 	}
-
+	var request_next = new XMLHttpRequest();
 	let user_note = document.getElementById("user_note").value;
 	localStorage.setItem("user_note", user_note);
 	timestamp = Date.now();
-	request.open('POST', '/next', true);
-	request.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+	request_next.open('POST', '/next', true);
+	request_next.setRequestHeader('content-type', 'application/json;charset=UTF-8');
 	var data = JSON.stringify({survey_id,recording_name,azimuth,elevation,source_count,timestamp,user_note,practice,vertical});
-	request.send(data);
-
+	request_next.send(data);
+	request_next.onreadystatechange = function() {
+		if (request_next.readyState == 4){
+			if (request_next.responseText != 'success'){
+				window.alert("Somthing is wrong. Please Refresh.");
+			}
+		}
+	}
 	localStorage.setItem('practice',practice);
-
 	window.location = '/templates/interface/confirm.html';
 }
 
