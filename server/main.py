@@ -142,10 +142,13 @@ def submit_confirmation():
             recording_id = int(dict(r)['id'])
 
         for i in range (len(source_id)):
-            if (i < len(location_id)):
-                entry = Confirmation(recording_id, source_id[i], location_id[i], survey_id, practice)
-            else:
+            if (i >= len(location_id)):
                 entry = Confirmation(recording_id, source_id[i], None, survey_id, practice)
+            else:
+                if (location_id[i] != 'undefined'):
+                    entry = Confirmation(recording_id, source_id[i], location_id[i], survey_id, practice)
+                else:
+                    entry = Confirmation(recording_id, source_id[i], None, survey_id, practice)
             ses.add(entry)
             ses.commit()
 
@@ -163,17 +166,20 @@ def submit_confirmation():
 
         eng.execute('''update "Interaction" set annotation_id = ''' + "'" + annotation_id + "' where annotation_id = '" + survey_id + "'")
 
+        if (practice):
+            eng.execute('''insert into "Survey" (survey_id, approved, completed, recording_id, horizontal_or_vertical) values ('''+ "'" + survey_id + "', " + "false, false, "+ str(recording_id) + ", null)")
+
         if (not practice):
+            eng.execute('''update "Recording" set num_annotation = num_annotation + 1 where id = '''+ str(recording_id))
             eng.execute('''update "Survey" set completed = true where survey_id = ''' + "'" + survey_id + "'")
 
             if (recording_id > 96):
-                place_folder = "horizontal_vertical"
-            else:
                 place_folder = "horizontal"
-    
-            eng.execute('''update "Survey" set horizontal_or_vertical = ''' + "'" + place_folder + "'" + ''' where survey_id = ''' + "'" + survey_id + "'")
-            eng.execute('''update "Survey" set recording_id = ''' + str(recording_id) + " where survey_id = '" + survey_id + "'")
-            eng.execute('''update "Recording" set num_annotation = num_annotation + 1 where id = '''+ str(recording_id))
+            else:
+                place_folder = "horizontal_vertical"
+            
+            eng.execute('''update "Survey" set recording_id = ''' + str(recording_id) + " where survey_id = '" + survey_id + "' and recording_id is null")
+            eng.execute('''update "Survey" set horizontal_or_vertical = ''' + "'" + place_folder + "'" + ''' where survey_id = ''' + "'" + survey_id + "' and recording_id < 193")
 
         return 'success'
 

@@ -279,7 +279,7 @@ function confirm_annotation(){
 					let new_td = document.createElement('td');
 					let new_checkbox = document.createElement('input');
 					new_checkbox.id = 'checkbox-'+key+'-'+i;
-					new_checkbox.className = 'checkbox-'+key;
+					new_checkbox.className = 'checkbox-'+key+'-'+locations[key];
 					new_checkbox.type = 'checkbox';
 					new_td.appendChild(new_checkbox);
 					new_tr.appendChild(new_td);
@@ -470,33 +470,42 @@ function submit_confirmation(){
 	let source_id = ''
 	let total_confirmation_num = 0;
 	let checkboxes = document.getElementsByTagName('input');
+
+	let confirm_location_id = [];
 	for (let i = 0; i < checkboxes.length; i++) {
 		if (checkboxes[i].checked) {
+			confirm_location_id[parseInt(checkboxes[i].id.substring(checkboxes[i].id.length-1,checkboxes[i].id.length))] = checkboxes[i].className.split('-')[2];
 			total_confirmation_num += 1;
-			break;
 		}
 	}
+
 	if (total_confirmation_num < 1) {
 		window.alert("You must match at least one audio recording to an annotated location");
 		return false;
 	}
-	for (const [key,value] of Object.entries( locations )) {
-		total_confirmation_num += 1;
-		location_id += value + ',';
+
+	for (let i=0; i<confirm_location_id.length; i++) {
+		temp = confirm_location_id[i] == undefined ? 'undefined' : confirm_location_id[i];
+		location_id += temp + ',';
 	}
+
 	for (const [key,value] of Object.entries( sources )) {
 		source_id += value + ',';
 	}
+
 	localStorage.setItem('full_round', true);
 	location_id = location_id.substring(0,location_id.length-1);
 	source_id = source_id.substring(0,source_id.length-1);
 	timestamp = Date.now();
+
 	var request_submit = new XMLHttpRequest(); 
 	request_submit.open('POST', '/submit_confirmation', true);
 	request_submit.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+
 	let survey_id = localStorage.getItem('survey_id');
 	let vertical = parseInt(localStorage.getItem('vertical'));
 	var data = JSON.stringify({recording_name, location_id, source_id, practice, survey_id, vertical, timestamp});
+
 	request_submit.send(data);
 	request_submit.onreadystatechange = function() {
 		if (request_submit.readyState == 4){
