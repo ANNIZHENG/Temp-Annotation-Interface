@@ -165,8 +165,8 @@ def submit_confirmation():
 
         eng.execute('''update "Interaction" set annotation_id = ''' + "'" + annotation_id + "' where annotation_id = '" + survey_id + "'")
 
-        if (practice):
-            eng.execute('''insert into "Survey" (survey_id, approved, completed, recording_id, horizontal_or_vertical) values ('''+ "'" + survey_id + "', " + "false, false, "+ str(recording_id) + ", null)")
+        # if (practice):
+           # eng.execute('''insert into "Survey" (survey_id, approved, completed, recording_id, horizontal_or_vertical) values ('''+ "'" + survey_id + "', " + "false, false, "+ str(recording_id) + ", null)")
 
         if (not practice):
             eng.execute('''update "Recording" set num_annotation = num_annotation + 1 where id = '''+ str(recording_id))
