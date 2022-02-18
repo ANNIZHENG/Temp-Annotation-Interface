@@ -109,7 +109,6 @@ def select_recording():
             if (int(dict(r)['num_annotation']) < 5):
                 if (recording > 96):
                     vertical = 0
-
                 else:
                     vertical = 1
                 return "{" + '''"recording_name":{"0":''' + '"' + str(dict(r)['recording_name']) + '"' + "}," + '''"vertical":{"0":''' + str(vertical) + "}" + "}"

@@ -1056,6 +1056,7 @@ function move_azimuth_minus(e){
 
 	temp_azimuth = parseInt(document.getElementById('p-azimuth').innerHTML) - 1;
 	temp_azimuth = (temp_azimuth == 360 ? temp_azimuth = 0 : temp_azimuth);
+	temp_azimuth = (temp_azimuth == -1 ? temp_azimuth = 359 : temp_azimuth);
 
 	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display != 'none'){
 		degree = parseInt(document.getElementById('circularF'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
