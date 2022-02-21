@@ -12,16 +12,14 @@ survey_id = localStorage.getItem('survey_id');
 // check if the user goes through the whole instruction
 var read_all_rules = false;
 
-// for practice interface, the instruction is automatically popped up
-action_type = "enter instruction page 0";
-value = null;
-timestamp = Date.now();
-ajax_interaction();
-
 if (localStorage.getItem('practice') == undefined) {
 	curr_recording = 0;
 	localStorage.setItem('practice', curr_recording); // curr_recording = 0;
 	localStorage.setItem('read_all_rules', 0);
+	action_type = "enter instruction page 0";
+	value = null;
+	timestamp = Date.now();
+	ajax_interaction();
 }
 else if (parseInt(localStorage.getItem('practice')) > totalPractice) {
 	curr_recording = 0;
