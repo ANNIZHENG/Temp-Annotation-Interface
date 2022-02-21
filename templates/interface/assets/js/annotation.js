@@ -178,6 +178,7 @@ function popRules(e){
 }
 
 function closeRules(e){ 
+	e.preventDefault();
 	let videos = document.getElementsByTagName('video');
 	for(let i = 0; i<videos.length; i++){
 		videos[i].pause();
@@ -200,8 +201,7 @@ function move_instruction_next(e){
 	}
 	else document.getElementById('instruction-video-1').pause();
 
-
-	if (curr_instruction == 3){ // if move out of the second page then pause all audio
+	if (curr_instruction == 3){
 		let audios = document.getElementsByClassName('audio-frame-instruction');
 		for (let i = 0; i < audios.length; i++) {
 			audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
@@ -253,9 +253,11 @@ function move_instruction_next(e){
 function move_instruction_last(e){
 	e.preventDefault();
 	if (curr_instruction > 1) {
-		if (curr_instruction == 2) document.getElementById('instruction-video-1').pause();
+		if (curr_instruction == 2) {
+			document.getElementById('instruction-video-1').pause();
+		}
 
-		if (curr_instruction == 3){ // pause all audios if move out of page 2
+		if (curr_instruction == 3){
 			let audios = document.getElementsByClassName('audio-frame-instruction');
 			for (let i = 0; i < audios.length; i++) {
 				audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
@@ -266,7 +268,9 @@ function move_instruction_last(e){
 			document.getElementById('instruction-video-1').play();
 		}
 
-		if (curr_instruction == 4) document.getElementById('instruction-video-2').pause();
+		if (curr_instruction == 4) {
+			document.getElementById('instruction-video-2').pause();
+		}
 
 		if (curr_instruction == 5) {
 			document.getElementById('instruction-video-2').currentTime = 0;
@@ -367,6 +371,7 @@ function ajax_interaction() {
 		if (request_interaction.readyState == 4){
 			if (request_interaction.responseText != 'success'){
 				window.alert("Somthing is wrong. Please Refresh.");
+				return;
 			}
 		}
 	}
@@ -389,6 +394,7 @@ function ajax_next(){
 		if (request_next.readyState == 4){
 			if (request_next.responseText != 'success'){
 				window.alert("Somthing is wrong. Please Refresh.");
+				return;
 			}
 		}
 	}

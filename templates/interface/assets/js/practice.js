@@ -1,5 +1,5 @@
 var survey_id = '';
-var practice = 1; // true
+var practice = 1;
 const totalPractice = 4;
 const recording_names = ['sources_3_recording_8.wav', 'sources_3_recording_57.wav', 'sources_3_recording_130.wav', 'sources_3_recording_150.wav', 'sources_3_recording_160.wav'];
 const recording_file = 'practice'
@@ -7,28 +7,37 @@ var curr_recording = 0;
 var totalInstructions = 8;
 const audio_path = 'https://assets-audio.s3.amazonaws.com/audio';
 
+survey_id = localStorage.getItem('survey_id');
+
 // check if the user goes through the whole instruction
 var read_all_rules = false;
 
+// for practice interface, the instruction is automatically popped up
+action_type = "enter instruction page 0";
+value = null;
+timestamp = Date.now();
+ajax_interaction();
+
 if (localStorage.getItem('practice') == undefined) {
 	curr_recording = 0;
-	localStorage.setItem('practice', curr_recording);
+	localStorage.setItem('practice', curr_recording); // curr_recording = 0;
+	localStorage.setItem('read_all_rules', 0);
 }
 else if (parseInt(localStorage.getItem('practice')) > totalPractice) {
+	curr_recording = 0;
 	read_all_rules = true;
 	document.getElementById('sign').style.visibility = '';
-	curr_recording = 0;
 }
 else {
-	read_all_rules = true;
-	document.getElementById('sign').style.visibility = '';
 	curr_recording = localStorage.getItem('practice');
+	if (parseInt(localStorage.getItem('read_all_rules'))){
+		read_all_rules = true;
+		document.getElementById('sign').style.visibility = '';
+	}
 }
 
 document.getElementById('source').src =  audio_path + '/recording/' + recording_file + '/' + recording_names[curr_recording];
 document.getElementById('audio').load();
-
-survey_id = localStorage.getItem('survey_id');
 
 // colors
 const colors = [0x009dff, 0xff7f0e, 0x00ff00, 0xff0000, 0x9467bd, 0xd3d3d3, 0xc39b77, 0xe377c2, 0xbcbd22, 0x00ffff];
@@ -185,14 +194,19 @@ function popRules(e){
 }
 
 function closeRules(e){ 
+	e.preventDefault();
 	if (!read_all_rules && document.getElementById('instruction-video-6').currentTime != document.getElementById('instruction-video-6').duration) {
 		window.alert("Please finish watching the current video first");
 		return;
 	}
-
+	if (!read_all_rules){
+		action_type = "close instruction page";
+		value = null;
+		timestamp = Date.now();
+		ajax_interaction();
+	}
 	read_all_rules = true;
-	document.getElementById('sign').style.visibility = '';
-	
+	localStorage.setItem('read_all_rules', 1);
 	let videos = document.getElementsByTagName('video');
 	for(let i = 0; i<videos.length; i++){
 		videos[i].pause();
@@ -212,6 +226,12 @@ function move_instruction_next(e){
 	e.preventDefault();
 
 	if (curr_instruction == 1) {
+		if (!read_all_rules){
+			action_type = "enter instruction page 1";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
 		document.getElementById('instruction-video-1').currentTime = 0;
 		document.getElementById('instruction-video-1').play();
 	}
@@ -219,6 +239,12 @@ function move_instruction_next(e){
 		if ( !read_all_rules && (document.getElementById('instruction-video-1').currentTime != document.getElementById('instruction-video-1').duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 2";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
 		}
 		document.getElementById('instruction-video-1').pause();
 	}
@@ -230,6 +256,12 @@ function move_instruction_next(e){
 			document.getElementById(audio_id).pause();
 			document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
 		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 3";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
 		document.getElementById('instruction-video-2').currentTime = 0;
 		document.getElementById('instruction-video-2').play();
 	}
@@ -238,6 +270,12 @@ function move_instruction_next(e){
 		if ( !read_all_rules && (document.getElementById('instruction-video-2').currentTime != document.getElementById('instruction-video-2').duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 4";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
 		}
 		document.getElementById('instruction-video-2').pause();
 		document.getElementById('instruction-video-3').currentTime = 0;
@@ -249,6 +287,12 @@ function move_instruction_next(e){
 			window.alert("Please finish watching the current video first");
 			return;
 		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 5";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
 		document.getElementById('instruction-video-3').pause();
 		document.getElementById('instruction-video-4').currentTime = 0;
 		document.getElementById('instruction-video-4').play();
@@ -259,6 +303,12 @@ function move_instruction_next(e){
 			window.alert("Please finish watching the current video first");
 			return;
 		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 6";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
 		document.getElementById('instruction-video-4').pause();
 		document.getElementById('instruction-video-5').currentTime = 0;
 		document.getElementById('instruction-video-5').play();
@@ -268,6 +318,12 @@ function move_instruction_next(e){
 		if (!read_all_rules &&  (document.getElementById('instruction-video-5').currentTime != document.getElementById('instruction-video-5').duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 7";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
 		}
 		document.getElementById('instruction-video-5').pause();
 		document.getElementById('instruction-video-6').currentTime = 0;
@@ -292,10 +348,22 @@ function move_instruction_last(e){
 
 	if (curr_instruction > 1) {
 		if (curr_instruction == 2) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 0";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
 			document.getElementById('instruction-video-1').pause();
 		}
 
 		if (curr_instruction == 3){
+			if (!read_all_rules){
+				action_type = "enter instruction page 1";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
 			let audios = document.getElementsByClassName('audio-frame-instruction');
 			for (let i = 0; i < audios.length; i++) {
 				audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
@@ -307,28 +375,58 @@ function move_instruction_last(e){
 		}
 
 		if (curr_instruction == 4) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 2";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
 			document.getElementById('instruction-video-2').pause();
 		}
 
 		if (curr_instruction == 5) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 3";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
 			document.getElementById('instruction-video-2').currentTime = 0;
 			document.getElementById('instruction-video-2').play();
 			document.getElementById('instruction-video-3').pause();
 		}
 
 		if (curr_instruction == 6) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 4";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
 			document.getElementById('instruction-video-3').currentTime = 0;
 			document.getElementById('instruction-video-3').play();
 			document.getElementById('instruction-video-4').pause();
 		}
 
 		if (curr_instruction == 7) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 5";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
 			document.getElementById('instruction-video-4').currentTime = 0;
 			document.getElementById('instruction-video-4').play();
 			document.getElementById('instruction-video-5').pause();
 		}
 
 		if (curr_instruction == 8) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 6";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
 			document.getElementById('instruction-video-5').currentTime = 0;
 			document.getElementById('instruction-video-5').play();
 			document.getElementById('instruction-video-6').pause();
@@ -462,6 +560,7 @@ function ajax_interaction() {
 		if (request_interaction.readyState == 4){
 			if (request_interaction.responseText != 'success'){
 				window.alert("Somthing is wrong. Please Refresh.");
+				return;
 			}
 		}
 	}
@@ -488,6 +587,7 @@ function ajax_next(){
 		if (request_next.readyState == 4){
 			if (request_next.responseText != 'success'){
 				window.alert("Somthing is wrong. Please Refresh.");
+				return;
 			}
 		}
 	}

@@ -96,8 +96,7 @@ function move_instruction_next(e){
 		document.getElementById('instruction-video-1').play();
 	}
 	else document.getElementById('instruction-video-1').pause();
-
-
+	
 	if (curr_instruction == 3){ // if move out of the second page then pause all audio
 		let audios = document.getElementsByClassName('audio-frame-instruction');
 		for (let i = 0; i < audios.length; i++) {
@@ -511,6 +510,7 @@ function submit_confirmation(){
 		if (request_submit.readyState == 4){
 			if (request_submit.responseText != 'success'){
 				window.alert("Somthing is wrong. Please Refresh.");
+				return;
 			}
 		}
 	}
