@@ -234,7 +234,7 @@ Contact Ray Gonzalez raygon@mit.edu or Kevin J. P. Woods kwoods@mit.edu
     }).appendTo($('#hc-container'));
     $('<div/>', {
       class: 'hc-calibration-instruction',
-      html: '<div> Please make sure <b>you are wearing headphones</b>! </div>'
+      html: '<div style="font-size: 20px;"> Please make sure <b>you are wearing headphones</b>! </div>'
     }).appendTo($('#hc-container'));
     $('<div/>', {
       class: 'hc-calibration-instruction',
