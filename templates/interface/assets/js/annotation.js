@@ -1,3 +1,14 @@
+if (localStorage.getItem('stereo') != '1' 
+	|| localStorage.getItem('headphone') != '1' 
+	|| localStorage.getItem('survey_id') == undefined){
+		window.location = '/templates/interface/incomplete.html';
+}
+
+if (parseInt(localStorage.getItem('complete_practice')) != 1){
+	window.location = '/templates/interface/practice.html';
+	window.alert("You must complete the Practice Round before entering the Annotation Interface");
+}
+
 var survey_id = localStorage.getItem('survey_id');
 var practice = 0;
 var recording_name = '';

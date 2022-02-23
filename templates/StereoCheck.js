@@ -42,7 +42,6 @@ function randomAssign(){
 
 function setUp(){
     randomAssign();
-    // console.log(filenames);
     let division = document.getElementById('questions');
     for (let i = 0; i < 6; i++){
         let small_div = document.createElement('div');
@@ -84,13 +83,18 @@ function setUp(){
     }
 }
 
-function ajax_interaction_pass(pass){
+function ajax_interaction_pass(pass, again){
     let action_type = 'stereo screening: ';
     if (pass){
         action_type += 'pass';
     }
     else{
-        action_type += 'fail';
+        if (again){
+            action_type += 'fail (will swap headphones)'
+        }
+        else{
+            action_type += 'fail';
+        }
     }
 
     let survey_id = localStorage.getItem("survey_id");
@@ -106,40 +110,69 @@ function ajax_interaction_pass(pass){
 }
 
 document.getElementById("submit").onclick = function(e){
+    let count_opposite = 0;
     for (let i = 0; i < 6; i++){
         if (!document.getElementById('radio-'+i+"-left").checked && !document.getElementById('radio-'+i+"-right").checked){
+            // if none of the left or right buttons are checked
             event.preventDefault();
             document.getElementById("main").style.display = 'none';
             let error_text = document.createElement('div');
             error_text.innerHTML = "Screening task failed. Your headphones do not meet the qualifications for the task.";
             document.getElementById("body").appendChild(error_text);
-            ajax_interaction_pass(false);
+            ajax_interaction_pass(false, false);
             return;
         }
         if (document.getElementById('radio-'+i+"-left").checked){
             if (filenames[i] != left_filename) {
-                event.preventDefault();
-                document.getElementById("main").style.display = 'none';
-                let error_text = document.createElement('div');
-                error_text.innerHTML = "Screening task failed. Your headphones do not meet the qualifications for the task.";
-                document.getElementById("body").appendChild(error_text);
-                ajax_interaction_pass(false);
-                return;
+                count_opposite += 1;
             }
         }
         else if (document.getElementById('radio-'+i+"-right").checked){
             if (filenames[i] != right_filename) {
-                event.preventDefault();
-                document.getElementById("main").style.display = 'none';
-                let error_text = document.createElement('div');
-                error_text.innerHTML = "Screening task failed. Your headphones do not meet the qualifications for the task.";
-                document.getElementById("body").appendChild(error_text);
-                ajax_interaction_pass(false);
-                return;
+                count_opposite += 1
             }
         }
     }
-    ajax_interaction_pass(true);
-    localStorage.setItem('stereo',1);
-    window.location = '/templates/interface/practice.html';
+    if (count_opposite == 6){ // All Error
+        event.preventDefault();
+        document.getElementById("main").style.display = 'none';
+        let warning_text = document.createElement('div');
+        warning_text.innerHTML = "Please swap your headphones and try the screening again.";
+        let warning_button = document.createElement('button');
+        warning_button.innerHTML = "Try Again";
+        warning_button.setAttribute("style", "width: 150px;");
+
+        warning_button.onclick = function(){
+            let body = document.getElementById("body");
+            body.removeChild(warning_button);
+            body.removeChild(warning_text);
+            let questions = document.getElementById('questions');
+            while (questions.firstChild) { 
+                questions.removeChild(questions.firstChild); 
+            }
+            filenames = [];
+            setUp();
+            document.getElementById('main').style.display = '';
+            ajax_interaction_pass(false, true)
+            return;
+        }
+        document.getElementById("body").appendChild(warning_text);
+        document.getElementById("body").appendChild(warning_button);
+        return;
+    } 
+    else if (count_opposite == 0){ // No Error
+        ajax_interaction_pass(true, false);
+        localStorage.setItem('stereo',1);
+        window.location = '/templates/interface/practice.html';
+        return;
+    }
+    else{ // Some Error
+        event.preventDefault();
+        document.getElementById("main").style.display = 'none';
+        let error_text = document.createElement('div');
+        error_text.innerHTML = "Screening task failed. Your headphones do not meet the qualifications for the task.";
+        document.getElementById("body").appendChild(error_text);
+        ajax_interaction_pass(false, false);
+        return;
+    }
 };

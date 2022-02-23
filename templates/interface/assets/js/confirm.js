@@ -518,13 +518,19 @@ function submit_confirmation(){
 }
 
 document.getElementById('btn-button-submit').addEventListener('click', function(){
-	if (submit_confirmation()) window.location = '/templates/interface/submit.html';
+	if (submit_confirmation()) {
+		localStorage.setItem('complete_annotation',1);
+		window.location = '/templates/interface/submit.html';
+	}
 });
 document.getElementById('btn-button-again').addEventListener('click', function(){
 	if (submit_confirmation()) window.location = '/templates/interface/practice.html';
 });
 document.getElementById('btn-button-next').addEventListener('click', function(){
-	if (submit_confirmation()) window.location = '/templates/interface/annotation.html';
+	if (submit_confirmation()) {
+		localStorage.setItem('complete_practice',1);
+		window.location = '/templates/interface/annotation.html';
+	}
 });
 
 function changeSize(item_index){

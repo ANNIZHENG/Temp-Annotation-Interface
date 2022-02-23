@@ -1,7 +1,7 @@
 if (localStorage.getItem('stereo') != '1' 
-		|| localStorage.getItem('headphone') != '1' 
-		|| localStorage.getItem('survey_id') == undefined){
-			window.location = '/templates/interface/incomplete.html';
+	|| localStorage.getItem('headphone') != '1' 
+	|| localStorage.getItem('survey_id') == undefined){
+		window.location = '/templates/interface/incomplete.html';
 }
 
 var survey_id = '';
