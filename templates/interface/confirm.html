@@ -414,11 +414,6 @@
 	<script src="//cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
 	<script src="/templates/interface/assets/js/confirm.js"></script>
 	<script type="text/javascript">
-		if (localStorage.getItem('stereo') != '1' 
-		|| localStorage.getItem('headphone') != '1' 
-		|| localStorage.getItem('survey_id') == undefined){
-			window.location = '/templates/interface/incomplete.html';
-		}
 		document.body.style.cursor='wait';
 		window.onload= function() {
 			document.body.style.cursor='default';

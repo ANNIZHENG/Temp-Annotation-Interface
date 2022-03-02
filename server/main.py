@@ -13,7 +13,7 @@ def home():
     result = eng.execute('''select num_annotation from "Recording" order by num_annotation asc limit 1''')
     for r in result:
         least_annotation = int(dict(r)['num_annotation'])
-        if (least_annotation == 5):
+        if (least_annotation == 3):
             return render_template('/templates/interface/finish.html')
         else:
             return render_template('/templates/index.html')
@@ -106,14 +106,14 @@ def select_recording():
         result = eng.execute('''select num_annotation, recording_name from "Recording" where id = ''' + str(recording))
 
         for r in result:
-            if (int(dict(r)['num_annotation']) < 5):
+            if (int(dict(r)['num_annotation']) < 3):
                 if (recording > 96):
                     vertical = 0
                 else:
                     vertical = 1
                 return "{" + '''"recording_name":{"0":''' + '"' + str(dict(r)['recording_name']) + '"' + "}," + '''"vertical":{"0":''' + str(vertical) + "}" + "}"
             else:
-                continue
+                break
 
 
 @app.route('/submit_confirmation', methods=['GET', 'POST'])
