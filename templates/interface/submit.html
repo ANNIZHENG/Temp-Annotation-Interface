@@ -14,7 +14,8 @@
 		if (localStorage.getItem('stereo') != '1' 
 		|| localStorage.getItem('headphone') != '1' 
 		|| localStorage.getItem('survey_id') == undefined
-		|| parseInt(localStorage.getItem('complete_annotation')) != 1){
+		|| localStorage.getItem('complete_annotation') != '1'
+		|| localStorage.getItem('complete_practice') != '1'){
 			window.location = '/templates/interface/incomplete.html';
 		}
 		document.getElementById("survey_id").innerHTML = localStorage.getItem("survey_id");

@@ -4,14 +4,8 @@
 	<title>Annotation Interface</title>
 	<link rel="stylesheet" type="text/css" href="/templates/interface/assets/css/main.css">
 	<style>
-	li{
-		margin-bottom: 7px;
-	}
-	#sound-classes{
-		background-color: aliceblue;
-		display: table;
-		margin: 0 auto;
-	}
+	li{ margin-bottom: 7px; }
+	#sound-classes{ background-color: aliceblue; display: table; margin: 0 auto; }
 	</style>
 </head>
 <body id = "body">
@@ -26,7 +20,7 @@
 			<audio id="audio" controls style="display: none;"><source id = "source" type="audio/wav"> Your browser does not support audio </audio>
 			<button id="audio-frame">Play Audio</button><br>
 			<label id="question" for="count" style="font-size: 15px; font-weight: bold;">How many distinct sounds can you hear?</label>
-			<select id="count" name="count" style="display: none;">
+			<select id="count" name="count" style="visibility: hidden;">
 				<option id="default-option" value="" selected disabled></option>
 				<option id="option1" value=1>1</option> <option id="option2" value=2>2</option>
 				<option id="option3" value=3>3</option> <option id="option4" value=4>4</option>
