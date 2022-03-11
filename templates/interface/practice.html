@@ -17,8 +17,8 @@
 		<div style="position: absolute; color:#eeeeee; top: 0px; font-size: 55px; margin-top: 100px;">Practice Round</div>
 		<div id="3d-head" width="400"></div>
 	</div>
-	<div class="container" id = "container">
-		<div style="z-index: 1;">
+	<div class="container" style="z-index:0;">
+		<div style="width: 450px; padding: 10px; padding-left: 30px;">
 			<button id="message">Instructions</button>
 			<button id="key-message">Keyboard Rules</button>
 			<h2>Please listen to the audio</h2>
@@ -94,7 +94,7 @@
 				</div>
 			</div>
 			<input id="btn-button-submit" type="submit" name="btn-button-submit" value="SUBMIT" onclick="ajax_next()" style="display:none;">
-			<div id="modal" style="z-index:2;">
+			<div id="modal" style="z-index:1;">
 				<div class="instructions">
 					<button class="move" id="instruction-left" style="margin-right: 20px;">&#8249;</button>
 					<div id="instruction1" style="margin: 0 auto;">
@@ -408,7 +408,7 @@
 		</div>
 		<div style="margin-left: 10px;">
 			<div style="font-size: 14px; color:blue; text-align:center; font-weight:bold;">You May Take Notes Here</div>
-			<textarea id="user_note" style="z-index: 1;"></textarea>
+			<textarea id="user_note" style="z-index:0;"></textarea>
 		</div>
 	</div>
 	<script src="//cdn.rawgit.com/mrdoob/three.js/master/build/three.js"></script>
