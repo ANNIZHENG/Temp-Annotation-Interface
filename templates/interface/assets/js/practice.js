@@ -1,1 +1,3921 @@
-var _0x380e68=_0xd4ed;(function(_0x197f72,_0x23006d){var _0x32f44f=_0xd4ed,_0xa9ffc0=_0x197f72();while(!![]){try{var _0x4923ff=parseInt(_0x32f44f(0x15b))/0x1*(-parseInt(_0x32f44f(0x111))/0x2)+-parseInt(_0x32f44f(0xdd))/0x3*(parseInt(_0x32f44f(0x10f))/0x4)+-parseInt(_0x32f44f(0x12a))/0x5*(parseInt(_0x32f44f(0x15e))/0x6)+-parseInt(_0x32f44f(0x139))/0x7+parseInt(_0x32f44f(0x188))/0x8+parseInt(_0x32f44f(0x196))/0x9*(-parseInt(_0x32f44f(0xc8))/0xa)+parseInt(_0x32f44f(0xa3))/0xb;if(_0x4923ff===_0x23006d)break;else _0xa9ffc0['push'](_0xa9ffc0['shift']());}catch(_0x1647f5){_0xa9ffc0['push'](_0xa9ffc0['shift']());}}}(_0x484b,0x5c513));(localStorage[_0x380e68(0x11d)](_0x380e68(0xc7))!='1'||localStorage['getItem']('headphone')!='1'||localStorage[_0x380e68(0x11d)]('survey_id')==undefined||localStorage[_0x380e68(0x11d)](_0x380e68(0x97))==null)&&(window[_0x380e68(0x137)]=_0x380e68(0xd2));var survey_id='',curr_recording=0x0,totalInstructions=0x8,practice=0x1;const totalPractice=0x4,audio_path=_0x380e68(0xf0),recording_names=[_0x380e68(0x163),_0x380e68(0xcd),'sources_3_recording_130.wav','sources_3_recording_150.wav',_0x380e68(0x16f)];survey_id=localStorage[_0x380e68(0x11d)](_0x380e68(0x97));var read_all_rules=![];localStorage[_0x380e68(0x19f)](_0x380e68(0x178),0x1);if(localStorage[_0x380e68(0x11d)]('practice')==undefined||localStorage[_0x380e68(0x11d)](_0x380e68(0xe9))==null)curr_recording=0x0,localStorage[_0x380e68(0x19f)](_0x380e68(0xe9),0x0),localStorage[_0x380e68(0x19f)](_0x380e68(0x13d),0x0),action_type=_0x380e68(0x180),value=null,timestamp=Date['now'](),ajax_interaction();else parseInt(localStorage[_0x380e68(0x11d)](_0x380e68(0xe9)))>totalPractice?(curr_recording=0x0,read_all_rules=!![],document[_0x380e68(0x149)](_0x380e68(0x173))[_0x380e68(0xc0)][_0x380e68(0x109)]=''):(curr_recording=localStorage[_0x380e68(0x11d)](_0x380e68(0xe9)),parseInt(localStorage[_0x380e68(0x11d)](_0x380e68(0x13d)))&&(read_all_rules=!![],document[_0x380e68(0x149)](_0x380e68(0x173))[_0x380e68(0xc0)][_0x380e68(0x109)]=''));document[_0x380e68(0x149)](_0x380e68(0xd1))[_0x380e68(0x16a)]=audio_path+recording_names[curr_recording],document['getElementById'](_0x380e68(0xf9))[_0x380e68(0xaa)]();const colors=[0x9dff,0xff7f0e,0xff00,0xff0000,0x9467bd,0xd3d3d3,0xc39b77,0xe377c2,0xbcbd22,0xffff];var current_colors_index=0x0,suppress=![],not_moving=!![],curr_azimuth=0x0,curr_elevation=0x0,azimuth=new Array(),elevation=new Array(),source_count=0x0,action_type=undefined,value=undefined,timestamp=undefined,key_perform=![],isPlaying=![],modal=document[_0x380e68(0x149)](_0x380e68(0x156)),curr_instruction=0x1,indicators={0x1:[],0x2:[],0x3:[],0x4:[],0x5:[],0x6:[],0x7:[],0x8:[],0x9:[],0xa:[]},front_indicators={0x1:[],0x2:[],0x3:[],0x4:[],0x5:[],0x6:[],0x7:[],0x8:[],0x9:[],0xa:[]},side_indicators={0x1:[],0x2:[],0x3:[],0x4:[],0x5:[],0x6:[],0x7:[],0x8:[],0x9:[],0xa:[]};document[_0x380e68(0x9e)](_0x380e68(0x142),function(_0x2d107e){var _0x2a0cbb=_0x380e68;if(_0x2d107e[_0x2a0cbb(0x165)]['id'][_0x2a0cbb(0xea)](0x0,0x17)==_0x2a0cbb(0x13a)){isPlaying=![],document[_0x2a0cbb(0x149)]('audio')[_0x2a0cbb(0x123)](),document[_0x2a0cbb(0x149)](_0x2a0cbb(0x1a6))[_0x2a0cbb(0xad)]='Play\x20an\x20Example';var _0x1d9da8=document[_0x2a0cbb(0x104)](_0x2a0cbb(0x13a));playing_id='';for(let _0x3ca3ee=0x0;_0x3ca3ee<_0x1d9da8[_0x2a0cbb(0x120)];_0x3ca3ee++){audio_id=_0x2a0cbb(0xf9)+_0x1d9da8[_0x3ca3ee]['id'][_0x2a0cbb(0x18e)](_0x2a0cbb(0x13a),''),_0x1d9da8[_0x3ca3ee]['id']!=_0x2d107e[_0x2a0cbb(0x165)]['id']?(document[_0x2a0cbb(0x149)](audio_id)[_0x2a0cbb(0x123)](),document[_0x2a0cbb(0x149)](_0x1d9da8[_0x3ca3ee]['id'])[_0x2a0cbb(0xad)]=_0x2a0cbb(0x1a1)):(playing_id=audio_id,document[_0x2a0cbb(0x149)](_0x1d9da8[_0x3ca3ee]['id'])['innerHTML']=document[_0x2a0cbb(0x149)](_0x1d9da8[_0x3ca3ee]['id'])[_0x2a0cbb(0xad)]==_0x2a0cbb(0x1a1)?_0x2a0cbb(0x184):_0x2a0cbb(0x1a1),document[_0x2a0cbb(0x149)](_0x1d9da8[_0x3ca3ee]['id'])[_0x2a0cbb(0xad)]==_0x2a0cbb(0x1a1)?document[_0x2a0cbb(0x149)](audio_id)[_0x2a0cbb(0x123)]():document[_0x2a0cbb(0x149)](audio_id)[_0x2a0cbb(0x166)]());}document[_0x2a0cbb(0x149)](playing_id)[_0x2a0cbb(0x9e)]('timeupdate',function(){var _0x2f4f5c=_0x2a0cbb;if(playing_id[_0x2f4f5c(0x18e)](_0x2f4f5c(0xe0),'')==_0x2d107e['target']['id'][_0x2f4f5c(0x18e)](_0x2f4f5c(0x186),'')){let _0xe62086=document['getElementById'](playing_id)[_0x2f4f5c(0x18b)]/document[_0x2f4f5c(0x149)](playing_id)['duration']*0x64;document[_0x2f4f5c(0x149)](_0x2d107e['target']['id'])[_0x2f4f5c(0xc0)]['background']=_0x2f4f5c(0x128)+_0xe62086+_0x2f4f5c(0x17f);}}),document['getElementById'](playing_id)[_0x2a0cbb(0x9e)](_0x2a0cbb(0xca),function(){var _0x48c8af=_0x2a0cbb;document[_0x48c8af(0x149)](_0x2d107e[_0x48c8af(0x165)]['id'])[_0x48c8af(0xad)]=_0x48c8af(0x1a1);});}}),document['getElementById'](_0x380e68(0x1a3))['addEventListener'](_0x380e68(0x18f),function(){var _0x4ba05a=_0x380e68;delete_annotation=![],document[_0x4ba05a(0x149)](_0x4ba05a(0x1a3))[_0x4ba05a(0xc0)][_0x4ba05a(0x17c)]='default';}),document[_0x380e68(0x9e)]('contextmenu',_0x373680=>_0x373680[_0x380e68(0x150)]()),document[_0x380e68(0x149)]('key-message')[_0x380e68(0x9e)](_0x380e68(0x142),popKeyRules),document[_0x380e68(0x149)](_0x380e68(0xd3))['addEventListener']('click',popRules),document[_0x380e68(0x149)](_0x380e68(0x199))[_0x380e68(0x9e)](_0x380e68(0x142),move_instruction_next),document[_0x380e68(0x149)]('instruction-left')[_0x380e68(0x9e)](_0x380e68(0x142),move_instruction_last),document[_0x380e68(0x149)](_0x380e68(0x158))[_0x380e68(0x9e)](_0x380e68(0x142),closeRules),document['getElementById'](_0x380e68(0x173))[_0x380e68(0x9e)](_0x380e68(0x142),closeRules),document[_0x380e68(0x149)]('audio-frame')['addEventListener'](_0x380e68(0x142),addPlaying),document[_0x380e68(0x149)](_0x380e68(0xf9))[_0x380e68(0x9e)]('ended',displaySelection),document['getElementById'](_0x380e68(0xf9))[_0x380e68(0x9e)](_0x380e68(0x157),audioTracker),document['getElementById']('count')[_0x380e68(0x9e)]('change',addSourceCount),document[_0x380e68(0x149)](_0x380e68(0x153))[_0x380e68(0x9e)](_0x380e68(0x142),move_azimuth_plus),document['getElementById']('elevation-plus')[_0x380e68(0x9e)]('click',move_elevation_plus),document[_0x380e68(0x149)]('azimuth-minus')[_0x380e68(0x9e)](_0x380e68(0x142),move_azimuth_minus),document['getElementById']('elevation-minus')[_0x380e68(0x9e)](_0x380e68(0x142),move_elevation_minus);function popKeyRules(_0x264818){var _0x3c1c58=_0x380e68;_0x264818[_0x3c1c58(0x150)](),window[_0x3c1c58(0x100)]('Press\x20[Option]\x20or\x20[Alt]\x20key\x20to\x20add\x20an\x20annotation\x20once\x20you\x20see\x20the\x20cursor\x20turning\x20to\x20\x27+\x27.\x20Press\x20[Control]\x20or\x20[Ctrl]\x20key\x20to\x20delete\x20an\x20annotation\x20once\x20you\x20see\x20the\x20cursor\x20turning\x20to\x20\x27-\x27.\x20Deleting\x20an\x20annotation\x20means\x20to\x20delete\x20both\x20its\x20annotated\x20horizontal\x20location\x20and\x20vertical\x20location.');}function popRules(_0x110976){var _0x2197fa=_0x380e68;_0x110976['preventDefault'](),modal[_0x2197fa(0xc0)][_0x2197fa(0x127)]=_0x2197fa(0x102);if(read_all_rules)document[_0x2197fa(0x149)](_0x2197fa(0x173))[_0x2197fa(0xc0)][_0x2197fa(0x109)]='';document[_0x2197fa(0x149)]('instruction-proceed')[_0x2197fa(0xc0)][_0x2197fa(0x127)]='none',document[_0x2197fa(0x149)](_0x2197fa(0x199))[_0x2197fa(0xc0)][_0x2197fa(0x127)]='',document[_0x2197fa(0x149)](_0x2197fa(0x151)+curr_instruction)[_0x2197fa(0xc0)][_0x2197fa(0x127)]=_0x2197fa(0xdb),document[_0x2197fa(0x149)](_0x2197fa(0x192))[_0x2197fa(0xc0)][_0x2197fa(0x127)]='',curr_instruction=0x1;}function closeRules(_0x28a8ce){var _0x18010b=_0x380e68;_0x28a8ce[_0x18010b(0x150)]();if(!read_all_rules&&document['getElementById']('instruction-video-6')[_0x18010b(0x18b)]!=document[_0x18010b(0x149)](_0x18010b(0x9d))[_0x18010b(0x198)]){window[_0x18010b(0x100)](_0x18010b(0xfe));return;}!read_all_rules&&(action_type=_0x18010b(0x93),value=null,timestamp=Date['now'](),ajax_interaction());read_all_rules=!![],localStorage[_0x18010b(0x19f)](_0x18010b(0x13d),0x1);let _0x240c2d=document['getElementsByTagName'](_0x18010b(0x181));for(let _0x46534e=0x0;_0x46534e<_0x240c2d[_0x18010b(0x120)];_0x46534e++){_0x240c2d[_0x46534e][_0x18010b(0x123)]();}if(read_all_rules)modal[_0x18010b(0xc0)][_0x18010b(0x127)]=_0x18010b(0xdb);let _0x47a3ed=document[_0x18010b(0x104)](_0x18010b(0x13a));for(let _0x194e31=0x0;_0x194e31<_0x47a3ed['length'];_0x194e31++){audio_id='audio'+_0x47a3ed[_0x194e31]['id'][_0x18010b(0x18e)](_0x18010b(0x13a),''),document['getElementById'](audio_id)[_0x18010b(0x123)](),document[_0x18010b(0x149)](_0x47a3ed[_0x194e31]['id'])[_0x18010b(0xad)]=_0x18010b(0x1a1);}modal[_0x18010b(0xc0)][_0x18010b(0x127)]=_0x18010b(0xdb);}function move_instruction_next(_0x1950af){var _0x3f4f52=_0x380e68;_0x1950af['preventDefault']();if(curr_instruction==0x1)!read_all_rules&&(action_type=_0x3f4f52(0x19e),value=null,timestamp=Date['now'](),ajax_interaction()),document[_0x3f4f52(0x149)](_0x3f4f52(0x9b))[_0x3f4f52(0x18b)]=0x0,document[_0x3f4f52(0x149)](_0x3f4f52(0x9b))[_0x3f4f52(0x166)]();else{if(curr_instruction==0x2){if(!read_all_rules&&document['getElementById'](_0x3f4f52(0x9b))[_0x3f4f52(0x18b)]!=document[_0x3f4f52(0x149)](_0x3f4f52(0x9b))[_0x3f4f52(0x198)]){window[_0x3f4f52(0x100)]('Please\x20finish\x20watching\x20the\x20current\x20video\x20first');return;}!read_all_rules&&(action_type='enter\x20instruction\x20page\x202',value=null,timestamp=Date[_0x3f4f52(0xd8)](),ajax_interaction()),document[_0x3f4f52(0x149)](_0x3f4f52(0x9b))['pause']();}}if(curr_instruction==0x3){let _0x624c65=document[_0x3f4f52(0x104)](_0x3f4f52(0x13a));for(let _0x1bb704=0x0;_0x1bb704<_0x624c65['length'];_0x1bb704++){audio_id=_0x3f4f52(0xf9)+_0x624c65[_0x1bb704]['id'][_0x3f4f52(0x18e)]('audio-frame-instruction',''),document['getElementById'](audio_id)['pause'](),document['getElementById'](_0x624c65[_0x1bb704]['id'])['innerHTML']=_0x3f4f52(0x1a1);}!read_all_rules&&(action_type=_0x3f4f52(0x13b),value=null,timestamp=Date[_0x3f4f52(0xd8)](),ajax_interaction()),document[_0x3f4f52(0x149)](_0x3f4f52(0xd6))[_0x3f4f52(0x18b)]=0x0,document[_0x3f4f52(0x149)](_0x3f4f52(0xd6))['play']();}if(curr_instruction==0x4){if(!read_all_rules&&document['getElementById']('instruction-video-2')[_0x3f4f52(0x18b)]!=document[_0x3f4f52(0x149)](_0x3f4f52(0xd6))['duration']){window[_0x3f4f52(0x100)]('Please\x20finish\x20watching\x20the\x20current\x20video\x20first');return;}!read_all_rules&&(action_type=_0x3f4f52(0x11e),value=null,timestamp=Date[_0x3f4f52(0xd8)](),ajax_interaction()),document[_0x3f4f52(0x149)](_0x3f4f52(0xd6))[_0x3f4f52(0x123)](),document['getElementById']('instruction-video-3')['currentTime']=0x0,document[_0x3f4f52(0x149)](_0x3f4f52(0x11a))[_0x3f4f52(0x166)]();}if(curr_instruction==0x5){if(!read_all_rules&&document['getElementById'](_0x3f4f52(0x11a))[_0x3f4f52(0x18b)]!=document['getElementById'](_0x3f4f52(0x11a))[_0x3f4f52(0x198)]){window[_0x3f4f52(0x100)](_0x3f4f52(0xfe));return;}!read_all_rules&&(action_type=_0x3f4f52(0x16e),value=null,timestamp=Date['now'](),ajax_interaction()),document[_0x3f4f52(0x149)]('instruction-video-3')[_0x3f4f52(0x123)](),document[_0x3f4f52(0x149)](_0x3f4f52(0xab))[_0x3f4f52(0x18b)]=0x0,document[_0x3f4f52(0x149)](_0x3f4f52(0xab))[_0x3f4f52(0x166)]();}if(curr_instruction==0x6){if(!read_all_rules&&document['getElementById'](_0x3f4f52(0xab))[_0x3f4f52(0x18b)]!=document[_0x3f4f52(0x149)]('instruction-video-4')[_0x3f4f52(0x198)]){window[_0x3f4f52(0x100)]('Please\x20finish\x20watching\x20the\x20current\x20video\x20first');return;}!read_all_rules&&(action_type=_0x3f4f52(0x195),value=null,timestamp=Date[_0x3f4f52(0xd8)](),ajax_interaction()),document[_0x3f4f52(0x149)](_0x3f4f52(0xab))[_0x3f4f52(0x123)](),document[_0x3f4f52(0x149)]('instruction-video-5')[_0x3f4f52(0x18b)]=0x0,document['getElementById'](_0x3f4f52(0x189))['play']();}if(curr_instruction==0x7){if(!read_all_rules&&document['getElementById'](_0x3f4f52(0x189))['currentTime']!=document[_0x3f4f52(0x149)]('instruction-video-5')[_0x3f4f52(0x198)]){window[_0x3f4f52(0x100)](_0x3f4f52(0xfe));return;}!read_all_rules&&(action_type=_0x3f4f52(0xb0),value=null,timestamp=Date[_0x3f4f52(0xd8)](),ajax_interaction()),document[_0x3f4f52(0x149)]('instruction-video-5')[_0x3f4f52(0x123)](),document['getElementById'](_0x3f4f52(0x9d))['currentTime']=0x0,document[_0x3f4f52(0x149)](_0x3f4f52(0x9d))[_0x3f4f52(0x166)]();}curr_instruction<totalInstructions&&(document['getElementById'](_0x3f4f52(0x151)+curr_instruction)[_0x3f4f52(0xc0)][_0x3f4f52(0x127)]=_0x3f4f52(0xdb),document[_0x3f4f52(0x149)](_0x3f4f52(0x151)+(curr_instruction+0x1))['style'][_0x3f4f52(0x127)]='',curr_instruction+=0x1),curr_instruction==totalInstructions&&(document[_0x3f4f52(0x149)](_0x3f4f52(0x199))[_0x3f4f52(0xc0)]['display']=_0x3f4f52(0xdb),document[_0x3f4f52(0x149)](_0x3f4f52(0x158))[_0x3f4f52(0xc0)][_0x3f4f52(0x127)]='');}function move_instruction_last(_0x445437){var _0x336ba3=_0x380e68;_0x445437[_0x336ba3(0x150)]();if(curr_instruction>0x1){curr_instruction==0x2&&(!read_all_rules&&(action_type=_0x336ba3(0x180),value=null,timestamp=Date[_0x336ba3(0xd8)](),ajax_interaction()),document['getElementById']('instruction-video-1')[_0x336ba3(0x123)]());if(curr_instruction==0x3){!read_all_rules&&(action_type=_0x336ba3(0x19e),value=null,timestamp=Date[_0x336ba3(0xd8)](),ajax_interaction());let _0x2f6ec8=document[_0x336ba3(0x104)](_0x336ba3(0x13a));for(let _0x5d29c5=0x0;_0x5d29c5<_0x2f6ec8['length'];_0x5d29c5++){audio_id='audio'+_0x2f6ec8[_0x5d29c5]['id'][_0x336ba3(0x18e)]('audio-frame-instruction',''),document[_0x336ba3(0x149)](audio_id)['pause'](),document[_0x336ba3(0x149)](_0x2f6ec8[_0x5d29c5]['id'])[_0x336ba3(0xad)]=_0x336ba3(0x1a1);}document[_0x336ba3(0x149)]('instruction-video-1')[_0x336ba3(0x18b)]=0x0,document[_0x336ba3(0x149)](_0x336ba3(0x9b))['play']();}curr_instruction==0x4&&(!read_all_rules&&(action_type=_0x336ba3(0xa9),value=null,timestamp=Date[_0x336ba3(0xd8)](),ajax_interaction()),document[_0x336ba3(0x149)](_0x336ba3(0xd6))[_0x336ba3(0x123)]()),curr_instruction==0x5&&(!read_all_rules&&(action_type=_0x336ba3(0x13b),value=null,timestamp=Date[_0x336ba3(0xd8)](),ajax_interaction()),document['getElementById'](_0x336ba3(0xd6))[_0x336ba3(0x18b)]=0x0,document[_0x336ba3(0x149)](_0x336ba3(0xd6))[_0x336ba3(0x166)](),document[_0x336ba3(0x149)](_0x336ba3(0x11a))[_0x336ba3(0x123)]()),curr_instruction==0x6&&(!read_all_rules&&(action_type=_0x336ba3(0x11e),value=null,timestamp=Date[_0x336ba3(0xd8)](),ajax_interaction()),document[_0x336ba3(0x149)](_0x336ba3(0x11a))[_0x336ba3(0x18b)]=0x0,document[_0x336ba3(0x149)](_0x336ba3(0x11a))[_0x336ba3(0x166)](),document['getElementById'](_0x336ba3(0xab))[_0x336ba3(0x123)]()),curr_instruction==0x7&&(!read_all_rules&&(action_type=_0x336ba3(0x16e),value=null,timestamp=Date['now'](),ajax_interaction()),document[_0x336ba3(0x149)](_0x336ba3(0xab))[_0x336ba3(0x18b)]=0x0,document[_0x336ba3(0x149)](_0x336ba3(0xab))[_0x336ba3(0x166)](),document['getElementById']('instruction-video-5')[_0x336ba3(0x123)]()),curr_instruction==0x8&&(!read_all_rules&&(action_type=_0x336ba3(0x195),value=null,timestamp=Date['now'](),ajax_interaction()),document[_0x336ba3(0x149)](_0x336ba3(0x189))[_0x336ba3(0x18b)]=0x0,document[_0x336ba3(0x149)](_0x336ba3(0x189))['play'](),document[_0x336ba3(0x149)](_0x336ba3(0x9d))[_0x336ba3(0x123)]()),document[_0x336ba3(0x149)]('instruction-right')[_0x336ba3(0xc0)][_0x336ba3(0x127)]='',document[_0x336ba3(0x149)](_0x336ba3(0x158))['style'][_0x336ba3(0x127)]=_0x336ba3(0xdb),document[_0x336ba3(0x149)](_0x336ba3(0x151)+curr_instruction)[_0x336ba3(0xc0)]['display']=_0x336ba3(0xdb),document[_0x336ba3(0x149)]('instruction'+(curr_instruction-0x1))[_0x336ba3(0xc0)][_0x336ba3(0x127)]='',curr_instruction-=0x1;}}function addSourceCount(){var _0x213067=_0x380e68;document[_0x213067(0x149)](_0x213067(0x18a))['innerHTML']=_0x213067(0xed),document[_0x213067(0x149)]('feedback')['style']['visibility']='',document['getElementById'](_0x213067(0x14a))[_0x213067(0xc0)]['display']=_0x213067(0xb6),document[_0x213067(0x149)](_0x213067(0x121))[_0x213067(0xc0)][_0x213067(0x127)]=_0x213067(0xb6),document[_0x213067(0x149)](_0x213067(0xd5))[_0x213067(0xc0)]['display']='inline-block',document[_0x213067(0x149)](_0x213067(0xfb))[_0x213067(0xc0)]['display']=_0x213067(0xb6),document[_0x213067(0x149)]('btn-button-submit')[_0x213067(0xe1)]('style',_0x213067(0x159)),source_count=document[_0x213067(0x149)](_0x213067(0xc9))[_0x213067(0x12e)],value=document[_0x213067(0x149)](_0x213067(0xc9))[_0x213067(0x12e)],timestamp=Date[_0x213067(0xd8)](),action_type=_0x213067(0x98),ajax_interaction();}function audioTracker(){var _0x21a3fc=_0x380e68;let _0x436964=document[_0x21a3fc(0x149)](_0x21a3fc(0xf9))[_0x21a3fc(0x18b)]/document[_0x21a3fc(0x149)](_0x21a3fc(0xf9))[_0x21a3fc(0x198)]*0x64;document['getElementById'](_0x21a3fc(0x1a6))[_0x21a3fc(0xc0)][_0x21a3fc(0x190)]=_0x21a3fc(0x128)+_0x436964+_0x21a3fc(0x17f);}function addPlaying(_0x1be8af){var _0x18e86e=_0x380e68;_0x1be8af['preventDefault'](),!isPlaying?(document[_0x18e86e(0x149)](_0x18e86e(0xf9))[_0x18e86e(0x166)](),document[_0x18e86e(0x149)](_0x18e86e(0x1a6))[_0x18e86e(0xad)]=_0x18e86e(0x10c),isPlaying=!![],value=null,timestamp=Date[_0x18e86e(0xd8)](),action_type=_0x18e86e(0x12c),ajax_interaction()):(isPlaying=![],document['getElementById']('audio')['pause'](),document[_0x18e86e(0x149)](_0x18e86e(0x1a6))[_0x18e86e(0xad)]=_0x18e86e(0xac));}function displaySelection(){var _0xe8db50=_0x380e68;isPlaying=![],document[_0xe8db50(0x149)](_0xe8db50(0x1a6))[_0xe8db50(0xad)]='Play\x20Audio',document['getElementById'](_0xe8db50(0xc9))[_0xe8db50(0xc0)]['visibility']='';}function askProceed(){var _0xfcdb5c=_0x380e68;if(document[_0xfcdb5c(0x149)](_0xfcdb5c(0xc9))[_0xfcdb5c(0x12e)]==undefined)return window['alert'](_0xfcdb5c(0x194)),![];if(findUndefinedAzimuth()==-0x3&&findUndefinedElevation()==-0x3)return window['alert'](_0xfcdb5c(0x164)),![];if(findUndefinedAzimuth()!=findUndefinedElevation())return window['alert'](_0xfcdb5c(0xb8)),![];if(findUndefinedAzimuth()==-0x2||findUndefinedAzimuth()==-0x2)return window['alert'](_0xfcdb5c(0x108)),![];if(findUndefinedAzimuth()!=-0x1||findUndefinedElevation()!=-0x1){if(confirm(_0xfcdb5c(0x113)))return!![];else return![];}return!![];}function findUndefinedAzimuth(){var _0x98bff8=_0x380e68,_0x68e57=0x0,_0x133686=0x0,_0x26acc4=0x0,_0x3680f2=0x0,_0x1cb3e5=![];if(azimuth[_0x98bff8(0x120)]>source_count)_0x133686=azimuth[_0x98bff8(0x120)];else _0x133686=source_count;while(_0x68e57<_0x133686){azimuth[_0x68e57]==undefined&&!_0x1cb3e5&&(_0x26acc4=_0x68e57,_0x1cb3e5=!![]);if(azimuth[_0x68e57]!=undefined)_0x3680f2+=0x1;_0x68e57+=0x1;}if(_0x3680f2==0x0&&!key_perform)return-0x3;if(_0x3680f2>source_count)return-0x2;if(_0x3680f2==source_count)return-0x1;else return _0x26acc4;}function findUndefinedElevation(){var _0x45b5fa=_0x380e68,_0x57e1b4=0x0,_0x8d2b7b=0x0,_0x35b854=0x0,_0xf1f8ad=![],_0x429d67=0x0;if(elevation['length']>source_count)_0x429d67=elevation[_0x45b5fa(0x120)];else _0x429d67=source_count;while(_0x57e1b4<_0x429d67){elevation[_0x57e1b4]==undefined&&!_0xf1f8ad&&(_0x8d2b7b=_0x57e1b4,_0xf1f8ad=!![]);if(_0x35b854>source_count)return-0x2;if(elevation[_0x57e1b4]!=undefined)_0x35b854+=0x1;_0x57e1b4+=0x1;}if(_0x35b854==0x0&&!key_perform)return-0x3;if(_0x35b854>source_count)return-0x2;if(_0x35b854==source_count)return-0x1;else return _0x8d2b7b;}function ajax_interaction(){var _0x1b548d=_0x380e68,_0x3dac1a=new XMLHttpRequest();_0x3dac1a[_0x1b548d(0x19a)]('POST',_0x1b548d(0xf3),!![]),_0x3dac1a[_0x1b548d(0x175)]('content-type',_0x1b548d(0x170)),practice=0x1;var _0x37ba65=JSON[_0x1b548d(0x145)]({'survey_id':survey_id,'action_type':action_type,'value':value,'timestamp':timestamp,'practice':practice});_0x3dac1a['send'](_0x37ba65),_0x3dac1a[_0x1b548d(0xf8)]=function(){var _0x350d7a=_0x1b548d;if(_0x3dac1a[_0x350d7a(0x15d)]==0x4){if(_0x3dac1a[_0x350d7a(0x197)]!=_0x350d7a(0x14e)){window[_0x350d7a(0x100)](_0x350d7a(0x19b));return;}}};}function ajax_next(){var _0xbd2bb4=_0x380e68;if(!askProceed())return event[_0xbd2bb4(0x150)](),![];var _0x148b14=new XMLHttpRequest();let _0x10b347=document[_0xbd2bb4(0x149)](_0xbd2bb4(0x131))[_0xbd2bb4(0x12e)];localStorage[_0xbd2bb4(0x19f)](_0xbd2bb4(0x131),_0x10b347),timestamp=Date[_0xbd2bb4(0xd8)](),_0x148b14[_0xbd2bb4(0x19a)](_0xbd2bb4(0x13c),_0xbd2bb4(0x132),!![]),_0x148b14[_0xbd2bb4(0x175)](_0xbd2bb4(0xbd),'application/json;charset=UTF-8');let _0x41ce70=recording_names[curr_recording],_0x45c416=0x2;localStorage[_0xbd2bb4(0x19f)](_0xbd2bb4(0xf2),_0x45c416),practice=0x1;var _0x511a8d=JSON[_0xbd2bb4(0x145)]({'survey_id':survey_id,'recording_name':_0x41ce70,'azimuth':azimuth,'elevation':elevation,'source_count':source_count,'timestamp':timestamp,'user_note':_0x10b347,'practice':practice,'vertical':_0x45c416});_0x148b14[_0xbd2bb4(0x154)](_0x511a8d),_0x148b14[_0xbd2bb4(0xf8)]=function(){var _0xed07ae=_0xbd2bb4;if(_0x148b14[_0xed07ae(0x15d)]==0x4){if(_0x148b14[_0xed07ae(0x197)]!=_0xed07ae(0x14e)){window[_0xed07ae(0x100)](_0xed07ae(0x19b));return;}}},localStorage[_0xbd2bb4(0x19f)](_0xbd2bb4(0xa0),recording_names[curr_recording]),window[_0xbd2bb4(0x137)]='/templates/interface/confirm.html';}function displayBoth(_0x5048df,_0x1601e5,_0x3c469d,_0x2ab42c){var _0x15168e=_0x380e68;if(_0x5048df){if(_0x3c469d<22.5||_0x3c469d>337.5)document[_0x15168e(0x149)](_0x15168e(0x101)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document['getElementById'](_0x15168e(0xcf)+_0x1601e5)['style'][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0x1a0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='',document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='',document['getElementById'](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+_0x15168e(0x161);else{if(_0x3c469d>67.5&&_0x3c469d<112.5)document[_0x15168e(0x149)](_0x15168e(0x1a0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='none',document['getElementById'](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)]['transform']=_0x15168e(0x10e)+_0x2ab42c+_0x15168e(0x161);else{if(_0x3c469d>157.5&&_0x3c469d<202.5)document[_0x15168e(0x149)](_0x15168e(0x101)+_0x1601e5)['style'][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)]('circularF'+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='none',document[_0x15168e(0x149)]('side-item-'+_0x1601e5)['style']['display']='',document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)]['display']='',document['getElementById'](_0x15168e(0xd0)+_0x1601e5)['style']['transform']=_0x15168e(0x10e)+_0x2ab42c+_0x15168e(0x161);else{if(_0x3c469d>247.5&&_0x3c469d<292.5)document[_0x15168e(0x149)](_0x15168e(0x1a0)+_0x1601e5)['style'][_0x15168e(0x127)]='none',document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)]['display']='none',document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+_0x15168e(0x161);else{document[_0x15168e(0x149)]('side-item-'+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='',document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='';if(_0x3c469d>0x10e||_0x3c469d<0x5a)_0x2ab42c>0xb4?document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+(0x168-_0x2ab42c)+_0x15168e(0x161):document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]='rotate('+_0x2ab42c+'deg)';else _0x3c469d<0x10e&&_0x3c469d>0x5a&&(_0x2ab42c<0xb4?document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)]['transform']=_0x15168e(0x10e)+(0x168-_0x2ab42c)+_0x15168e(0x161):document['getElementById'](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+_0x15168e(0x161));}}}}}if(!_0x5048df){if(_0x3c469d<22.5||_0x3c469d>337.5)document['getElementById'](_0x15168e(0x101)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='none',document[_0x15168e(0x149)]('circularF'+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+'deg)';else{if(_0x3c469d>67.5&&_0x3c469d<112.5)document[_0x15168e(0x149)]('side-item-'+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0x101)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='',document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='',document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+_0x15168e(0x161);else{if(_0x3c469d>157.5&&_0x3c469d<202.5)document[_0x15168e(0x149)]('front-item-'+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)]['display']=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0xd0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+_0x15168e(0x161);else{if(_0x3c469d>247.5&&_0x3c469d<292.5)document['getElementById'](_0x15168e(0x1a0)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)]('circularS'+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]=_0x15168e(0xdb),document[_0x15168e(0x149)](_0x15168e(0x101)+_0x1601e5)['style'][_0x15168e(0x127)]='',document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='',document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+'deg)';else{document[_0x15168e(0x149)](_0x15168e(0x101)+_0x1601e5)[_0x15168e(0xc0)]['display']='',document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x127)]='';if(_0x3c469d<0xb4)_0x2ab42c>0xb4?document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+(0x168-_0x2ab42c)+_0x15168e(0x161):document['getElementById'](_0x15168e(0xcf)+_0x1601e5)[_0x15168e(0xc0)][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+'deg)';else _0x3c469d>0xb4&&(_0x2ab42c<0xb4?document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)['style']['transform']=_0x15168e(0x10e)+(0x168-_0x2ab42c)+_0x15168e(0x161):document[_0x15168e(0x149)](_0x15168e(0xcf)+_0x1601e5)['style'][_0x15168e(0x144)]=_0x15168e(0x10e)+_0x2ab42c+'deg)');}}}}}}function changeSize(_0x191d20){var _0x305819=_0x380e68;const _0x36f7b4=azimuth[_0x191d20-0x1];let _0x140634=0x12-0x8,_0x5612d6=-0x41+0x4,_0x28c39c=0x0+0x4;for(let _0x10a09a=azimuth[_0x305819(0x120)]-0x1;_0x10a09a>-0x1;_0x10a09a--){if(_0x36f7b4!=undefined&&Math['abs'](_0x36f7b4-azimuth[_0x10a09a])<=0x5)_0x10a09a!=_0x191d20-0x1&&(indicators[_0x191d20][_0x10a09a]=!![],indicators[_0x10a09a+0x1][_0x191d20-0x1]=!![]),_0x140634=_0x140634+0x8,_0x5612d6=_0x5612d6-0x4,_0x28c39c=_0x28c39c-0x4,document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=_0x140634[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['height']=_0x140634['toString']()+'px',document['getElementById']('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=_0x5612d6[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginLeft']=_0x28c39c['toString']()+'px',document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=_0x28c39c[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(_0x140634-0x3)['toString']()+'px';else{if(_0x36f7b4==undefined||Math[_0x305819(0xe6)](_0x36f7b4-azimuth[_0x10a09a])>0x5){if(_0x191d20==0x1&&indicators[0x1][_0x10a09a])indicators[0x1][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x0]=undefined;else{if(_0x191d20==0x2&&indicators[0x2][_0x10a09a])indicators[0x2][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x1]=undefined,_0x10a09a<0x1&&(document[_0x305819(0x149)](_0x305819(0x168))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x168))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('head-item-1')[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x168))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x168))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x168))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('head-item-1')[_0x305819(0xc0)]['marginLeft']=(parseInt(document[_0x305819(0x149)](_0x305819(0x168))['style'][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('head-item-1')[_0x305819(0xc0)]['fontSize']=(parseInt(document['getElementById'](_0x305819(0x168))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x3&&indicators[0x3][_0x10a09a])indicators[0x3][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x2]=undefined,_0x10a09a<0x2&&(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['width']['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['height']=(parseInt(document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))['style']['height']['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginTop'][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x4&&indicators[0x4][_0x10a09a])indicators[0x4][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x3]=undefined,_0x10a09a<0x3&&(document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))['style'][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document['getElementById']('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginTop']=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginTop'][_0x305819(0x18e)]('px',''))+0x4)['toString']()+'px',document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))['style'][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]['replace']('px',''))+0x4)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x5&&indicators[0x5][_0x10a09a])indicators[0x5][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x4]=undefined,_0x10a09a<0x4&&(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['height']=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginLeft']=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style']['width'][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x6&&indicators[0x6][_0x10a09a])indicators[0x6][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x5]=undefined,_0x10a09a<0x5&&(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['width']=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)]['height'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x7&&indicators[0x7][_0x10a09a])indicators[0x7][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x6]=undefined,_0x10a09a<0x6&&(document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById']('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbe)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginLeft'][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById']('head-item-'+(_0x10a09a+0x1))['style']['fontSize']=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x3)['toString']()+'px');else{if(_0x191d20==0x8&&indicators[0x8][_0x10a09a])indicators[0x8][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x7]=undefined,_0x10a09a<0x7&&(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['height'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x9&&indicators[0x9][_0x10a09a])indicators[0x9][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x8]=undefined,_0x10a09a<0x8&&(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['fontSize']=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x3)[_0x305819(0xb3)]()+'px');else _0x191d20==0xa&&indicators[0xa][_0x10a09a]&&(indicators[0xa][_0x10a09a]=undefined,indicators[_0x10a09a+0x1][0x9]=undefined,_0x10a09a<0x9&&(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)]['height']=(parseInt(document['getElementById'](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginTop']=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginTop'][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById']('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))[_0x305819(0xc0)]['marginLeft'][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xfc)+(_0x10a09a+0x1))['style'][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)]('head-item-'+(_0x10a09a+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px'));}}}}}}}}}}}const _0x25ed74=elevation[_0x191d20-0x1],_0x1eed84=parseInt(document[_0x305819(0x149)](_0x305819(0xcf)+_0x191d20)[_0x305819(0xc0)]['transform']['replace'](_0x305819(0x10e),'')[_0x305819(0x18e)](_0x305819(0x161),''));_0x140634=0x12-0x8,_0x5612d6=-0x41+0x4,_0x28c39c=0x0+0x4;for(let _0x55cea0=elevation[_0x305819(0x120)]-0x1;_0x55cea0>-0x1;_0x55cea0--){const _0x427ddf=document[_0x305819(0x149)](_0x305819(0xcf)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0x127)]!=_0x305819(0xdb)?parseInt(document[_0x305819(0x149)]('circularF'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0x144)]['replace']('rotate(','')[_0x305819(0x18e)](_0x305819(0x161),'')):undefined;if(_0x25ed74!=undefined&&Math[_0x305819(0xe6)](_0x1eed84-_0x427ddf)<=0x5)_0x55cea0!=_0x191d20-0x1&&(front_indicators[_0x191d20][_0x55cea0]=!![],front_indicators[_0x55cea0+0x1][_0x191d20-0x1]=!![]),_0x140634=_0x140634+0x8,_0x5612d6=_0x5612d6-0x4,_0x28c39c=_0x28c39c-0x4,document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbc)]=_0x140634[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=_0x140634[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=_0x5612d6[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=_0x28c39c[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['fontSize']=(_0x140634-0x3)[_0x305819(0xb3)]()+'px';else{if(_0x25ed74==undefined||Math['abs'](_0x1eed84-_0x427ddf)>0x5){if(_0x191d20==0x1&&front_indicators[0x1][_0x55cea0])front_indicators[0x1][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x0]=undefined;else{if(_0x191d20==0x2&&front_indicators[0x2][_0x55cea0])front_indicators[0x2][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x1]=undefined,_0x55cea0<0x1&&(document[_0x305819(0x149)](_0x305819(0xc5))[_0x305819(0xc0)]['width']=(parseInt(document['getElementById']('front-item-1')[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xc5))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document['getElementById'](_0x305819(0xc5))[_0x305819(0xc0)]['height'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xc5))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)]('front-item-1')['style'][_0x305819(0xbe)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('front-item-1')[_0x305819(0xc0)]['marginLeft']=(parseInt(document[_0x305819(0x149)](_0x305819(0xc5))['style']['marginLeft']['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xc5))['style'][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xc5))['style'][_0x305819(0xbc)]['replace']('px',''))-0x3)['toString']()+'px');else{if(_0x191d20==0x3&&front_indicators[0x3][_0x55cea0])front_indicators[0x3][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x2]=undefined,_0x55cea0<0x2&&(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['width']=(parseInt(document['getElementById']('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document['getElementById']('front-item-'+(_0x55cea0+0x1))['style'][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById']('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document['getElementById']('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x4&&front_indicators[0x4][_0x55cea0])front_indicators[0x4][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x3]=undefined,_0x55cea0<0x3&&(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['width']=(parseInt(document['getElementById']('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbe)]=(parseInt(document['getElementById']('front-item-'+(_0x55cea0+0x1))['style'][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['fontSize']=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x5&&front_indicators[0x5][_0x55cea0])front_indicators[0x5][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x4]=undefined,_0x55cea0<0x4&&(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['width']['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbe)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['width']['replace']('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x6&&front_indicators[0x6][_0x55cea0])front_indicators[0x6][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x5]=undefined,_0x55cea0<0x5&&(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]['replace']('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x7&&front_indicators[0x7][_0x55cea0])front_indicators[0x7][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x6]=undefined,_0x55cea0<0x6&&(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style']['width']['replace']('px',''))-0x8)['toString']()+'px',document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xd7)]=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xd7)]['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['marginTop']=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style']['marginTop']['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x8&&front_indicators[0x8][_0x55cea0])front_indicators[0x8][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x7]=undefined,_0x55cea0<0x7&&(document['getElementById']('front-item-'+(_0x55cea0+0x1))['style'][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]['replace']('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById']('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x9&&front_indicators[0x9][_0x55cea0])front_indicators[0x9][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x8]=undefined,_0x55cea0<0x8&&(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbc)]=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))['style']['height']=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style']['marginTop']=(parseInt(document['getElementById']('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['marginLeft']=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))['style']['fontSize']=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else _0x191d20==0xa&&front_indicators[0xa][_0x55cea0]&&(front_indicators[0xa][_0x55cea0]=undefined,front_indicators[_0x55cea0+0x1][0x9]=undefined,_0x55cea0<0x9&&(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)]['height'][_0x305819(0x18e)]('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)]['marginTop']=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))['style'][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)['toString']()+'px',document[_0x305819(0x149)]('front-item-'+(_0x55cea0+0x1))[_0x305819(0xc0)]['marginLeft']=(parseInt(document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x101)+(_0x55cea0+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)['toString']()+'px'));}}}}}}}}}}}const _0x4f6a4c=elevation[_0x191d20-0x1],_0x5583bc=parseInt(document[_0x305819(0x149)](_0x305819(0xd0)+_0x191d20)['style'][_0x305819(0x144)]['replace']('rotate(','')[_0x305819(0x18e)](_0x305819(0x161),''));_0x140634=0x12-0x8,_0x5612d6=-0x41+0x4,_0x28c39c=0x0+0x4;for(let _0x132ba2=elevation['length']-0x1;_0x132ba2>-0x1;_0x132ba2--){const _0x1df9ab=document[_0x305819(0x149)](_0x305819(0xd0)+(_0x132ba2+0x1))['style'][_0x305819(0x127)]!='none'?parseInt(document[_0x305819(0x149)](_0x305819(0xd0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0x144)][_0x305819(0x18e)](_0x305819(0x10e),'')[_0x305819(0x18e)](_0x305819(0x161),'')):undefined;if(_0x4f6a4c!=undefined&&Math['abs'](_0x5583bc-_0x1df9ab)<=0x5)_0x132ba2!=_0x191d20-0x1&&(side_indicators[_0x191d20][_0x132ba2]=!![],side_indicators[_0x132ba2+0x1][_0x191d20-0x1]=!![]),_0x140634=_0x140634+0x8,_0x5612d6=_0x5612d6-0x4,_0x28c39c=_0x28c39c-0x4,document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['width']=_0x140634[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xd7)]=_0x140634[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=_0x5612d6['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbb)]=_0x28c39c[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(_0x140634-0x3)['toString']()+'px';else{if(_0x4f6a4c==undefined||Math[_0x305819(0xe6)](_0x5583bc-_0x1df9ab)>0x5){if(_0x191d20==0x1&&side_indicators[0x1][_0x132ba2])side_indicators[0x1][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x0]=undefined;else{if(_0x191d20==0x2&&side_indicators[0x2][_0x132ba2])side_indicators[0x2][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x1]=undefined,_0x132ba2<0x1&&(document[_0x305819(0x149)]('side-item-1')[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)]('side-item-1')[_0x305819(0xc0)]['width']['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('side-item-1')[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xae))[_0x305819(0xc0)]['height'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0xae))[_0x305819(0xc0)]['marginTop']=(parseInt(document[_0x305819(0x149)](_0x305819(0xae))['style'][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0xae))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0xae))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)['toString']()+'px',document['getElementById'](_0x305819(0xae))['style']['fontSize']=(parseInt(document['getElementById'](_0x305819(0xae))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x3&&side_indicators[0x3][_0x132ba2])side_indicators[0x3][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x2]=undefined,_0x132ba2<0x2&&(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['width']=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))['style']['width'][_0x305819(0x18e)]('px',''))-0x8)['toString']()+'px',document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))['style'][_0x305819(0xbe)]=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['marginLeft']=(parseInt(document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))['style'][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x3)['toString']()+'px');else{if(_0x191d20==0x4&&side_indicators[0x4][_0x132ba2])side_indicators[0x4][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x3]=undefined,_0x132ba2<0x3&&(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document['getElementById']('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)]['width']['replace']('px',''))-0x8)['toString']()+'px',document['getElementById']('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)]['fontSize']=(parseInt(document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x5&&side_indicators[0x5][_0x132ba2])side_indicators[0x5][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x4]=undefined,_0x132ba2<0x4&&(document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]['replace']('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['marginLeft']=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x6&&side_indicators[0x6][_0x132ba2])side_indicators[0x6][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x5]=undefined,_0x132ba2<0x5&&(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['width']=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['height'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['marginLeft'][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x7&&side_indicators[0x7][_0x132ba2])side_indicators[0x7][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x6]=undefined,_0x132ba2<0x6&&(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbc)]=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)['toString']()+'px',document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document['getElementById']('side-item-'+(_0x132ba2+0x1))['style'][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['marginTop']=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document['getElementById']('side-item-'+(_0x132ba2+0x1))['style']['marginLeft'][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['fontSize']=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else{if(_0x191d20==0x8&&side_indicators[0x8][_0x132ba2])side_indicators[0x8][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x7]=undefined,_0x132ba2<0x7&&(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbc)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]=(parseInt(document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)]['replace']('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbc)]['replace']('px',''))-0x3)['toString']()+'px');else{if(_0x191d20==0x9&&side_indicators[0x9][_0x132ba2])side_indicators[0x9][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x8]=undefined,_0x132ba2<0x8&&(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style']['marginTop']=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)['toString']()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)]['width'][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px');else _0x191d20==0xa&&side_indicators[0xa][_0x132ba2]&&(side_indicators[0xa][_0x132ba2]=undefined,side_indicators[_0x132ba2+0x1][0x9]=undefined,_0x132ba2<0x9&&(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)]=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)]=(parseInt(document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xd7)][_0x305819(0x18e)]('px',''))-0x8)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style']['marginTop']=(parseInt(document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbe)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)]=(parseInt(document['getElementById'](_0x305819(0x1a0)+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbb)][_0x305819(0x18e)]('px',''))+0x4)[_0x305819(0xb3)]()+'px',document[_0x305819(0x149)](_0x305819(0x1a0)+(_0x132ba2+0x1))['style'][_0x305819(0x117)]=(parseInt(document[_0x305819(0x149)]('side-item-'+(_0x132ba2+0x1))[_0x305819(0xc0)][_0x305819(0xbc)][_0x305819(0x18e)]('px',''))-0x3)[_0x305819(0xb3)]()+'px'));}}}}}}}}}}}}function move_azimuth_plus(_0x126d6b){var _0x2e5d50=_0x380e68;_0x126d6b[_0x2e5d50(0x150)]();if(document['getElementById'](_0x2e5d50(0xfc)+(current_colors_index+0x1))['style'][_0x2e5d50(0x127)]==_0x2e5d50(0xdb))return window[_0x2e5d50(0x100)](_0x2e5d50(0x119)),![];temp_azimuth=parseInt(document[_0x2e5d50(0x149)](_0x2e5d50(0x134))['innerHTML'])+0x1,temp_azimuth=temp_azimuth==0x168?temp_azimuth=0x0:temp_azimuth,document[_0x2e5d50(0x149)]('front-item-'+(current_colors_index+0x1))[_0x2e5d50(0xc0)]['display']!='none'&&(degree=parseInt(document[_0x2e5d50(0x149)](_0x2e5d50(0xcf)+(current_colors_index+0x1))[_0x2e5d50(0xc0)][_0x2e5d50(0x144)][_0x2e5d50(0x18e)](_0x2e5d50(0x10e),'')[_0x2e5d50(0x18e)](_0x2e5d50(0x161),'')),(temp_azimuth<0xb4&&degree>0xb4||temp_azimuth>0xb4&&degree<0xb4)&&(degree=0x168-degree),displayBoth(!![],current_colors_index+0x1,temp_azimuth,degree)),document[_0x2e5d50(0x149)](_0x2e5d50(0x1a0)+(current_colors_index+0x1))['style']['display']!=_0x2e5d50(0xdb)&&(degree=parseInt(document[_0x2e5d50(0x149)](_0x2e5d50(0xd0)+(current_colors_index+0x1))[_0x2e5d50(0xc0)][_0x2e5d50(0x144)]['replace'](_0x2e5d50(0x10e),'')[_0x2e5d50(0x18e)]('deg)','')),((temp_azimuth>0x10e||temp_azimuth<0x5a)&&degree>0xb4||temp_azimuth<0x10e&&temp_azimuth>0x5a&&degree<0xb4)&&(degree=0x168-degree),displayBoth(![],current_colors_index+0x1,temp_azimuth,degree)),document['getElementById'](_0x2e5d50(0x134))['innerHTML']=temp_azimuth+_0x2e5d50(0xa5),azimuth[current_colors_index]=temp_azimuth,document[_0x2e5d50(0x149)](_0x2e5d50(0xfd)+(current_colors_index+0x1))[_0x2e5d50(0xc0)][_0x2e5d50(0x144)]=_0x2e5d50(0x10e)+temp_azimuth+_0x2e5d50(0x161),changeSize(current_colors_index+0x1),current_elevation=elevation[current_colors_index]==undefined?0x0:elevation[current_colors_index],displayBall(azimuth[current_colors_index]-0xb4,current_elevation,current_colors_index+0x1),value=temp_azimuth,timestamp=Date[_0x2e5d50(0xd8)](),action_type=_0x2e5d50(0x147),ajax_interaction();}function move_azimuth_minus(_0x409c53){var _0x1ed252=_0x380e68;_0x409c53['preventDefault']();if(document['getElementById']('head-item-'+(current_colors_index+0x1))[_0x1ed252(0xc0)][_0x1ed252(0x127)]==_0x1ed252(0xdb))return window['alert'](_0x1ed252(0x119)),![];temp_azimuth=parseInt(document['getElementById'](_0x1ed252(0x134))[_0x1ed252(0xad)])-0x1,temp_azimuth=temp_azimuth==0x168?temp_azimuth=0x0:temp_azimuth,temp_azimuth=temp_azimuth==-0x1?temp_azimuth=0x167:temp_azimuth,document[_0x1ed252(0x149)](_0x1ed252(0x101)+(current_colors_index+0x1))['style'][_0x1ed252(0x127)]!=_0x1ed252(0xdb)&&(degree=parseInt(document[_0x1ed252(0x149)]('circularF'+(current_colors_index+0x1))[_0x1ed252(0xc0)][_0x1ed252(0x144)][_0x1ed252(0x18e)](_0x1ed252(0x10e),'')[_0x1ed252(0x18e)](_0x1ed252(0x161),'')),(temp_azimuth<0xb4&&degree>0xb4||temp_azimuth>0xb4&&degree<0xb4)&&(degree=0x168-degree),displayBoth(!![],current_colors_index+0x1,temp_azimuth,degree)),document[_0x1ed252(0x149)](_0x1ed252(0x1a0)+(current_colors_index+0x1))[_0x1ed252(0xc0)][_0x1ed252(0x127)]!=_0x1ed252(0xdb)&&(degree=parseInt(document['getElementById'](_0x1ed252(0xd0)+(current_colors_index+0x1))[_0x1ed252(0xc0)][_0x1ed252(0x144)][_0x1ed252(0x18e)](_0x1ed252(0x10e),'')['replace'](_0x1ed252(0x161),'')),((temp_azimuth>0x10e||temp_azimuth<0x5a)&&degree>0xb4||temp_azimuth<0x10e&&temp_azimuth>0x5a&&degree<0xb4)&&(degree=0x168-degree),displayBoth(![],current_colors_index+0x1,temp_azimuth,degree)),document[_0x1ed252(0x149)](_0x1ed252(0x134))[_0x1ed252(0xad)]=temp_azimuth+_0x1ed252(0xa5),azimuth[current_colors_index]=temp_azimuth,document[_0x1ed252(0x149)](_0x1ed252(0xfd)+(current_colors_index+0x1))[_0x1ed252(0xc0)][_0x1ed252(0x144)]=_0x1ed252(0x10e)+temp_azimuth+_0x1ed252(0x161),changeSize(current_colors_index+0x1),current_elevation=elevation[current_colors_index]==undefined?0x0:elevation[current_colors_index],displayBall(azimuth[current_colors_index]-0xb4,current_elevation,current_colors_index+0x1),value=temp_azimuth,timestamp=Date[_0x1ed252(0xd8)](),action_type='azimuth',ajax_interaction();}function move_elevation_plus(_0x66629a){var _0x2718b2=_0x380e68;_0x66629a[_0x2718b2(0x150)]();if(document[_0x2718b2(0x149)]('front-item-'+(current_colors_index+0x1))['style'][_0x2718b2(0x127)]==_0x2718b2(0xdb)&&document[_0x2718b2(0x149)](_0x2718b2(0x1a0)+(current_colors_index+0x1))[_0x2718b2(0xc0)][_0x2718b2(0x127)]==_0x2718b2(0xdb))return window[_0x2718b2(0x100)]('Please\x20annotate\x20or\x20click\x20to\x20select\x20an\x20annotation\x20first\x20using\x20the\x202D\x20views'),![];new_elevation=parseInt(document[_0x2718b2(0x149)](_0x2718b2(0xe4))[_0x2718b2(0xad)])+0x1;if(new_elevation>0x5a)return![];document[_0x2718b2(0x149)](_0x2718b2(0x101)+(current_colors_index+0x1))[_0x2718b2(0xc0)]['display']!=_0x2718b2(0xdb)&&(document[_0x2718b2(0x149)](_0x2718b2(0xe4))[_0x2718b2(0xad)]=new_elevation+_0x2718b2(0xa5),elevation[current_colors_index]=new_elevation,old_elevation_degree=parseInt(document['getElementById'](_0x2718b2(0xcf)+(current_colors_index+0x1))['style'][_0x2718b2(0x144)][_0x2718b2(0x18e)](_0x2718b2(0x10e),'')['replace'](_0x2718b2(0x161),'')),old_elevation_degree<0xb4?(new_elevation_degree=old_elevation_degree-0x1,document[_0x2718b2(0x149)](_0x2718b2(0xcf)+(current_colors_index+0x1))[_0x2718b2(0xc0)]['transform']='rotate('+new_elevation_degree+'deg)',displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1)):(new_elevation_degree=old_elevation_degree+0x1,document[_0x2718b2(0x149)](_0x2718b2(0xcf)+(current_colors_index+0x1))['style'][_0x2718b2(0x144)]='rotate('+new_elevation_degree+_0x2718b2(0x161),displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1))),document['getElementById'](_0x2718b2(0x1a0)+(current_colors_index+0x1))[_0x2718b2(0xc0)]['display']!=_0x2718b2(0xdb)&&(document[_0x2718b2(0x149)](_0x2718b2(0xe4))['innerHTML']=new_elevation+_0x2718b2(0xa5),elevation[current_colors_index]=new_elevation,old_elevation_degree=parseInt(document['getElementById'](_0x2718b2(0xd0)+(current_colors_index+0x1))[_0x2718b2(0xc0)][_0x2718b2(0x144)][_0x2718b2(0x18e)]('rotate(','')[_0x2718b2(0x18e)](_0x2718b2(0x161),'')),old_elevation_degree<0xb4?(new_elevation_degree=old_elevation_degree-0x1,document['getElementById'](_0x2718b2(0xd0)+(current_colors_index+0x1))[_0x2718b2(0xc0)]['transform']=_0x2718b2(0x10e)+new_elevation_degree+_0x2718b2(0x161),displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1)):(new_elevation_degree=old_elevation_degree+0x1,document[_0x2718b2(0x149)](_0x2718b2(0xd0)+(current_colors_index+0x1))[_0x2718b2(0xc0)][_0x2718b2(0x144)]=_0x2718b2(0x10e)+new_elevation_degree+'deg)',displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1))),changeSize(current_colors_index+0x1),value=new_elevation,timestamp=Date[_0x2718b2(0xd8)](),action_type=_0x2718b2(0x185),ajax_interaction();}function move_elevation_minus(_0x2c7018){var _0x2bf97c=_0x380e68;_0x2c7018[_0x2bf97c(0x150)]();if(document['getElementById']('front-item-'+(current_colors_index+0x1))[_0x2bf97c(0xc0)]['display']==_0x2bf97c(0xdb)&&document[_0x2bf97c(0x149)](_0x2bf97c(0x1a0)+(current_colors_index+0x1))['style']['display']==_0x2bf97c(0xdb))return window[_0x2bf97c(0x100)](_0x2bf97c(0x119)),![];new_elevation=parseInt(document[_0x2bf97c(0x149)](_0x2bf97c(0xe4))[_0x2bf97c(0xad)])-0x1;if(new_elevation<-0x5a)return![];document[_0x2bf97c(0x149)](_0x2bf97c(0x101)+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x127)]!=_0x2bf97c(0xdb)&&(degree=parseInt(document[_0x2bf97c(0x149)](_0x2bf97c(0xfd)+(current_colors_index+0x1))['style']['transform'][_0x2bf97c(0x18e)]('rotate(','')[_0x2bf97c(0x18e)](_0x2bf97c(0x161),'')),document[_0x2bf97c(0x149)](_0x2bf97c(0xe4))[_0x2bf97c(0xad)]=new_elevation+_0x2bf97c(0xa5),elevation[current_colors_index]=new_elevation,old_elevation_degree=parseInt(document[_0x2bf97c(0x149)](_0x2bf97c(0xcf)+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x144)][_0x2bf97c(0x18e)](_0x2bf97c(0x10e),'')['replace'](_0x2bf97c(0x161),'')),old_elevation_degree<0xb4?(new_elevation_degree=old_elevation_degree+0x1,document['getElementById'](_0x2bf97c(0xcf)+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x144)]=_0x2bf97c(0x10e)+new_elevation_degree+_0x2bf97c(0x161),displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1)):(new_elevation_degree=old_elevation_degree-0x1,document[_0x2bf97c(0x149)](_0x2bf97c(0xcf)+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x144)]='rotate('+new_elevation_degree+_0x2bf97c(0x161),displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1))),document['getElementById'](_0x2bf97c(0x1a0)+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x127)]!=_0x2bf97c(0xdb)&&(degree=parseInt(document[_0x2bf97c(0x149)]('circular'+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x144)][_0x2bf97c(0x18e)](_0x2bf97c(0x10e),'')[_0x2bf97c(0x18e)](_0x2bf97c(0x161),'')),document['getElementById'](_0x2bf97c(0xe4))[_0x2bf97c(0xad)]=new_elevation+_0x2bf97c(0xa5),elevation[current_colors_index]=new_elevation,old_elevation_degree=parseInt(document[_0x2bf97c(0x149)](_0x2bf97c(0xd0)+(current_colors_index+0x1))['style'][_0x2bf97c(0x144)][_0x2bf97c(0x18e)]('rotate(','')[_0x2bf97c(0x18e)](_0x2bf97c(0x161),'')),old_elevation_degree<0xb4?(new_elevation_degree=old_elevation_degree+0x1,document[_0x2bf97c(0x149)](_0x2bf97c(0xd0)+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x144)]=_0x2bf97c(0x10e)+new_elevation_degree+_0x2bf97c(0x161),displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1)):(new_elevation_degree=old_elevation_degree-0x1,document['getElementById']('circularS'+(current_colors_index+0x1))[_0x2bf97c(0xc0)][_0x2bf97c(0x144)]=_0x2bf97c(0x10e)+new_elevation_degree+_0x2bf97c(0x161),displayBall(azimuth[current_colors_index]==undefined?-0xb4:azimuth[current_colors_index]-0xb4,new_elevation,current_colors_index+0x1))),changeSize(current_colors_index+0x1),value=new_elevation,timestamp=Date[_0x2bf97c(0xd8)](),action_type='elevation',ajax_interaction();}function dragElement(_0x1d187c,_0x4fc11e,_0x4b39e0){var _0x59162a=_0x380e68,_0x2edbab,_0x152aa9,_0x3fc136;_0x2edbab=document[_0x59162a(0x149)](_0x59162a(0xfd)+_0x1d187c),inner_item=document[_0x59162a(0x149)]('head-item-'+_0x1d187c),frame=document['getElementById']('head'),_0x152aa9=document[_0x59162a(0x149)](_0x59162a(0xcf)+_0x1d187c),inner_itemF=document[_0x59162a(0x149)](_0x59162a(0x101)+_0x1d187c),frameF=document[_0x59162a(0x149)](_0x59162a(0xb5)),_0x3fc136=document[_0x59162a(0x149)](_0x59162a(0xd0)+_0x1d187c),inner_itemS=document[_0x59162a(0x149)](_0x59162a(0x1a0)+_0x1d187c),frameS=document[_0x59162a(0x149)](_0x59162a(0x96)),original_head_degree=parseInt(document[_0x59162a(0x149)](_0x59162a(0xfd)+_0x1d187c)[_0x59162a(0xc0)][_0x59162a(0x144)][_0x59162a(0x18e)](_0x59162a(0x10e),'')[_0x59162a(0x18e)]('deg)','')),original_front_degree=parseInt(document[_0x59162a(0x149)]('circularF'+_0x1d187c)['style'][_0x59162a(0x144)][_0x59162a(0x18e)](_0x59162a(0x10e),'')[_0x59162a(0x18e)](_0x59162a(0x161),'')),original_side_degree=parseInt(document[_0x59162a(0x149)](_0x59162a(0xd0)+_0x1d187c)['style'][_0x59162a(0x144)]['replace'](_0x59162a(0x10e),'')[_0x59162a(0x18e)](_0x59162a(0x161),'')),_0x3fc136[_0x59162a(0x191)]=function(){var _0x3d7705=_0x59162a;if(suppress){document['onmousedown']=null,document[_0x3d7705(0x143)]=null,document[_0x3d7705(0xc3)]=null;return;}document[_0x3d7705(0xc3)]=_0x50e6c1,document[_0x3d7705(0x143)]=function(){var _0x1fb1cf=_0x3d7705;if(not_moving){document[_0x1fb1cf(0x191)]=null,document['onmouseup']=null,document[_0x1fb1cf(0xc3)]=null;return;}temp_azimuthS=parseInt(document[_0x1fb1cf(0x149)]('circularS'+_0x1d187c)[_0x1fb1cf(0xc0)][_0x1fb1cf(0x144)][_0x1fb1cf(0x18e)]('rotate(','')[_0x1fb1cf(0x18e)]('deg)',''));if(document[_0x1fb1cf(0x149)](_0x1fb1cf(0xfc)+_0x1d187c)[_0x1fb1cf(0xc0)]['display']!=_0x1fb1cf(0xdb)){degree=parseInt(document[_0x1fb1cf(0x149)](_0x1fb1cf(0xfd)+_0x1d187c)[_0x1fb1cf(0xc0)][_0x1fb1cf(0x144)][_0x1fb1cf(0x18e)](_0x1fb1cf(0x10e),'')[_0x1fb1cf(0x18e)]('deg)',''));if((degree<0x5a||degree>0x10e)&&temp_azimuthS>0xb4||degree>0x5a&&degree<0x10e&&temp_azimuthS<0xb4){window[_0x1fb1cf(0x100)](_0x1fb1cf(0x1a2)),_0x3fc136[_0x1fb1cf(0xc0)]['transform']=_0x1fb1cf(0x10e)+original_side_degree+_0x1fb1cf(0x161),document['getElementById']('p-elevation')[_0x1fb1cf(0xad)]=elevation[_0x4b39e0]+_0x1fb1cf(0xa5),document[_0x1fb1cf(0x191)]=null,document['onmouseup']=null,document[_0x1fb1cf(0xc3)]=null;return;}if(azimuth[_0x4b39e0]>=22.5&&azimuth[_0x4b39e0]<=67.5)document['getElementById'](_0x1fb1cf(0xcf)+_0x1d187c)['setAttribute']('style',''),document[_0x1fb1cf(0x149)](_0x1fb1cf(0xcf)+_0x1d187c)['style'][_0x1fb1cf(0x144)]='rotate('+temp_azimuthS+_0x1fb1cf(0x161),document[_0x1fb1cf(0x149)](_0x1fb1cf(0x101)+_0x1d187c)[_0x1fb1cf(0xe1)](_0x1fb1cf(0xc0),'');else{if(azimuth[_0x4b39e0]>=112.5&&azimuth[_0x4b39e0]<=157.5)document[_0x1fb1cf(0x149)](_0x1fb1cf(0xcf)+_0x1d187c)['setAttribute'](_0x1fb1cf(0xc0),''),document[_0x1fb1cf(0x149)](_0x1fb1cf(0xcf)+_0x1d187c)[_0x1fb1cf(0xc0)][_0x1fb1cf(0x144)]=_0x1fb1cf(0x10e)+(0x168-temp_azimuthS)+_0x1fb1cf(0x161),document[_0x1fb1cf(0x149)]('front-item-'+_0x1d187c)[_0x1fb1cf(0xe1)]('style','');else{if(azimuth[_0x4b39e0]>=202.5&&azimuth[_0x4b39e0]<=247.5)document[_0x1fb1cf(0x149)]('circularF'+_0x1d187c)[_0x1fb1cf(0xe1)](_0x1fb1cf(0xc0),''),document['getElementById'](_0x1fb1cf(0xcf)+_0x1d187c)[_0x1fb1cf(0xc0)]['transform']='rotate('+temp_azimuthS+'deg)',document[_0x1fb1cf(0x149)](_0x1fb1cf(0x101)+_0x1d187c)['setAttribute'](_0x1fb1cf(0xc0),'');else azimuth[_0x4b39e0]>=292.5&&azimuth[_0x4b39e0]<=337.5?(document[_0x1fb1cf(0x149)]('circularF'+_0x1d187c)[_0x1fb1cf(0xe1)]('style',''),document[_0x1fb1cf(0x149)](_0x1fb1cf(0xcf)+_0x1d187c)[_0x1fb1cf(0xc0)][_0x1fb1cf(0x144)]=_0x1fb1cf(0x10e)+(0x168-temp_azimuthS)+'deg)',document[_0x1fb1cf(0x149)](_0x1fb1cf(0x101)+_0x1d187c)[_0x1fb1cf(0xe1)](_0x1fb1cf(0xc0),'')):(document[_0x1fb1cf(0x149)](_0x1fb1cf(0x101)+_0x1d187c)[_0x1fb1cf(0xc0)]['display']=_0x1fb1cf(0xdb),document[_0x1fb1cf(0x149)]('circularF'+_0x1d187c)[_0x1fb1cf(0xc0)][_0x1fb1cf(0x127)]='none');}}}displayBall(azimuth[_0x4b39e0]!=undefined?azimuth[_0x4b39e0]-0xb4:-0xb4,curr_elevation,_0x1d187c),elevation[_0x4b39e0]=curr_elevation,changeSize(_0x1d187c),value=curr_elevation,timestamp=Date[_0x1fb1cf(0xd8)](),action_type=_0x1fb1cf(0x185),ajax_interaction(),suppress=!![],not_moving=!![],document[_0x1fb1cf(0x191)]=null,document[_0x1fb1cf(0x143)]=null,document[_0x1fb1cf(0xc3)]=null;};},_0x152aa9[_0x59162a(0x191)]=function(){var _0x1e9b8a=_0x59162a;if(suppress){document[_0x1e9b8a(0x191)]=null,document[_0x1e9b8a(0x143)]=null,document[_0x1e9b8a(0xc3)]=null;return;}document[_0x1e9b8a(0xc3)]=_0x50e6c1,document['onmouseup']=function(_0x30ad7b){var _0x8c5369=_0x1e9b8a;if(not_moving){document[_0x8c5369(0x191)]=null,document[_0x8c5369(0x143)]=null,document['onmousemove']=null;return;}temp_azimuthF=parseInt(document[_0x8c5369(0x149)](_0x8c5369(0xcf)+_0x1d187c)['style']['transform']['replace'](_0x8c5369(0x10e),'')['replace'](_0x8c5369(0x161),''));if(document[_0x8c5369(0x149)](_0x8c5369(0xfc)+_0x1d187c)[_0x8c5369(0xc0)]['display']!=_0x8c5369(0xdb)){degree=parseInt(document[_0x8c5369(0x149)]('circular'+_0x1d187c)[_0x8c5369(0xc0)][_0x8c5369(0x144)]['replace'](_0x8c5369(0x10e),'')[_0x8c5369(0x18e)](_0x8c5369(0x161),''));if(degree<0xb4&&temp_azimuthF>0xb4||degree>0xb4&&temp_azimuthF<0xb4){window[_0x8c5369(0x100)](_0x8c5369(0x1a2)),_0x152aa9[_0x8c5369(0xc0)][_0x8c5369(0x144)]=_0x8c5369(0x10e)+original_front_degree+_0x8c5369(0x161),document[_0x8c5369(0x149)](_0x8c5369(0xe4))[_0x8c5369(0xad)]=elevation[_0x4b39e0]+'\x20degrees',document[_0x8c5369(0x191)]=null,document['onmouseup']=null,document[_0x8c5369(0xc3)]=null;return;}if(azimuth[_0x4b39e0]>=22.5&&azimuth[_0x4b39e0]<=67.5)document[_0x8c5369(0x149)](_0x8c5369(0xd0)+_0x1d187c)[_0x8c5369(0xe1)](_0x8c5369(0xc0),''),document[_0x8c5369(0x149)]('circularS'+_0x1d187c)[_0x8c5369(0xc0)][_0x8c5369(0x144)]=_0x8c5369(0x10e)+temp_azimuthF+_0x8c5369(0x161),document[_0x8c5369(0x149)](_0x8c5369(0x1a0)+_0x1d187c)[_0x8c5369(0xe1)](_0x8c5369(0xc0),'');else{if(azimuth[_0x4b39e0]>=112.5&&azimuth[_0x4b39e0]<=157.5)document['getElementById'](_0x8c5369(0xd0)+_0x1d187c)['setAttribute'](_0x8c5369(0xc0),''),document[_0x8c5369(0x149)](_0x8c5369(0xd0)+_0x1d187c)[_0x8c5369(0xc0)][_0x8c5369(0x144)]=_0x8c5369(0x10e)+(0x168-temp_azimuthF)+_0x8c5369(0x161),document[_0x8c5369(0x149)](_0x8c5369(0x1a0)+_0x1d187c)[_0x8c5369(0xe1)](_0x8c5369(0xc0),'');else{if(azimuth[_0x4b39e0]>=202.5&&azimuth[_0x4b39e0]<=247.5)document['getElementById'](_0x8c5369(0xd0)+_0x1d187c)[_0x8c5369(0xe1)]('style',''),document[_0x8c5369(0x149)](_0x8c5369(0xd0)+_0x1d187c)[_0x8c5369(0xc0)][_0x8c5369(0x144)]=_0x8c5369(0x10e)+temp_azimuthF+_0x8c5369(0x161),document[_0x8c5369(0x149)](_0x8c5369(0x1a0)+_0x1d187c)[_0x8c5369(0xe1)](_0x8c5369(0xc0),'');else azimuth[_0x4b39e0]>=292.5&&azimuth[_0x4b39e0]<=337.5?(document[_0x8c5369(0x149)](_0x8c5369(0xd0)+_0x1d187c)[_0x8c5369(0xe1)](_0x8c5369(0xc0),''),document['getElementById'](_0x8c5369(0xd0)+_0x1d187c)[_0x8c5369(0xc0)][_0x8c5369(0x144)]=_0x8c5369(0x10e)+(0x168-temp_azimuthF)+_0x8c5369(0x161),document[_0x8c5369(0x149)](_0x8c5369(0x1a0)+_0x1d187c)['setAttribute'](_0x8c5369(0xc0),'')):(document[_0x8c5369(0x149)](_0x8c5369(0x1a0)+_0x1d187c)[_0x8c5369(0xc0)][_0x8c5369(0x127)]=_0x8c5369(0xdb),document[_0x8c5369(0x149)](_0x8c5369(0xd0)+_0x1d187c)[_0x8c5369(0xc0)]['display']='none');}}}displayBall(azimuth[_0x4b39e0]!=undefined?azimuth[_0x4b39e0]-0xb4:-0xb4,curr_elevation,_0x1d187c),elevation[_0x4b39e0]=curr_elevation,changeSize(_0x1d187c),value=curr_elevation,timestamp=Date['now'](),action_type=_0x8c5369(0x185),ajax_interaction(),suppress=!![],not_moving=!![],document[_0x8c5369(0x191)]=null,document[_0x8c5369(0x143)]=null,document[_0x8c5369(0xc3)]=null;};},_0x2edbab[_0x59162a(0x191)]=function(){var _0xaca2f1=_0x59162a;if(suppress)return;document[_0xaca2f1(0xc3)]=_0x50e6c1,document['onmouseup']=function(_0xfee3e4){var _0x7434ed=_0xaca2f1;if(suppress)return;_0xfee3e4['preventDefault'](),suppress=!![],temp_azimuth=parseInt(document[_0x7434ed(0x149)](_0x7434ed(0x134))[_0x7434ed(0xad)]),document[_0x7434ed(0x149)]('front-item-'+_0x1d187c)['style']['display']!=_0x7434ed(0xdb)&&(degree=parseInt(document[_0x7434ed(0x149)]('circularF'+_0x1d187c)['style'][_0x7434ed(0x144)]['replace'](_0x7434ed(0x10e),'')[_0x7434ed(0x18e)]('deg)','')),(temp_azimuth<0xb4&&degree>0xb4||temp_azimuth>0xb4&&degree<0xb4)&&(degree=0x168-degree),displayBoth(!![],_0x1d187c,temp_azimuth,degree)),document['getElementById'](_0x7434ed(0x1a0)+_0x1d187c)[_0x7434ed(0xc0)]['display']!='none'&&(degree=parseInt(document[_0x7434ed(0x149)](_0x7434ed(0xd0)+_0x1d187c)[_0x7434ed(0xc0)][_0x7434ed(0x144)][_0x7434ed(0x18e)]('rotate(','')[_0x7434ed(0x18e)](_0x7434ed(0x161),'')),((temp_azimuth>0x10e||temp_azimuth<0x5a)&&degree>0xb4||temp_azimuth<0x10e&&temp_azimuth>0x5a&&degree<0xb4)&&(degree=0x168-degree),displayBoth(![],_0x1d187c,temp_azimuth,degree)),displayBall(temp_azimuth-0xb4,elevation[_0x4b39e0]!=undefined?elevation[_0x4b39e0]:0x0,_0x1d187c),curr_azimuth=temp_azimuth,azimuth[_0x4b39e0]=curr_azimuth,changeSize(_0x1d187c),value=curr_azimuth,timestamp=Date[_0x7434ed(0xd8)](),action_type=_0x7434ed(0x185),ajax_interaction(),suppress=!![],not_moving=!![],document[_0x7434ed(0x191)]=null,document['onmouseup']=null,document[_0x7434ed(0xc3)]=null;};};function _0x50e6c1(_0x160e66){var _0x116b68=_0x59162a;if(_0x4fc11e==0x1){var _0x355346=_0x152aa9['getBoundingClientRect'](),_0x17c796=(_0x355346[_0x116b68(0x129)]+_0x355346[_0x116b68(0x167)])/0x2,_0x160896=(_0x355346['top']+_0x355346['bottom'])/0x2,_0x3a23da=calculateAzimuth(_0x160e66['pageX'],_0x160e66[_0x116b68(0x183)],_0x17c796,_0x160896);_0x3a23da=_0x3a23da==0x168?0x0:_0x3a23da,_0x3a23da<=0xb4?curr_elevation=0x5a-_0x3a23da:curr_elevation=_0x3a23da-0xb4-0x5a,_0x152aa9['style'][_0x116b68(0x144)]='rotate('+_0x3a23da+_0x116b68(0x161),document['getElementById'](_0x116b68(0x134))[_0x116b68(0xad)]=(azimuth[_0x4b39e0]!=undefined?azimuth[_0x4b39e0]:0x0)+_0x116b68(0xa5),document[_0x116b68(0x149)](_0x116b68(0xe4))[_0x116b68(0xad)]=curr_elevation+'\x20degrees';}else{if(_0x4fc11e==0x2){var _0x118931=_0x3fc136['getBoundingClientRect'](),_0x39da76=(_0x118931['right']+_0x118931[_0x116b68(0x167)])/0x2,_0x403059=(_0x118931[_0x116b68(0x193)]+_0x118931[_0x116b68(0x19c)])/0x2,_0x2dadf0=calculateAzimuth(_0x160e66[_0x116b68(0x106)],_0x160e66[_0x116b68(0x183)],_0x39da76,_0x403059);_0x2dadf0=_0x2dadf0==0x168?0x0:_0x2dadf0,_0x2dadf0<=0xb4?curr_elevation=0x5a-_0x2dadf0:curr_elevation=_0x2dadf0-0xb4-0x5a,_0x3fc136['style'][_0x116b68(0x144)]=_0x116b68(0x10e)+_0x2dadf0+_0x116b68(0x161),document['getElementById'](_0x116b68(0x134))[_0x116b68(0xad)]=(azimuth[_0x4b39e0]!=undefined?azimuth[_0x4b39e0]:0x0)+_0x116b68(0xa5),document[_0x116b68(0x149)](_0x116b68(0xe4))[_0x116b68(0xad)]=curr_elevation+_0x116b68(0xa5);}else{var _0x10fe4a=_0x2edbab[_0x116b68(0x19d)](),_0x5ae0c5=(_0x10fe4a[_0x116b68(0x129)]+_0x10fe4a[_0x116b68(0x167)])/0x2,_0x421151=(_0x10fe4a[_0x116b68(0x193)]+_0x10fe4a[_0x116b68(0x19c)])/0x2,_0x76d278=calculateAzimuth(_0x160e66['pageX'],_0x160e66['pageY'],_0x5ae0c5,_0x421151);_0x76d278=_0x76d278==0x168?0x0:_0x76d278,_0x2edbab[_0x116b68(0xc0)][_0x116b68(0x144)]=_0x116b68(0x10e)+_0x76d278+_0x116b68(0x161),document[_0x116b68(0x149)](_0x116b68(0x134))['innerHTML']=_0x76d278+'\x20degrees',document[_0x116b68(0x149)](_0x116b68(0xe4))[_0x116b68(0xad)]=(elevation[_0x4b39e0]!=undefined?elevation[_0x4b39e0]:0x0)+_0x116b68(0xa5);}}suppress=![],not_moving=![];}}function calculateAzimuth(_0x516abd,_0x375196,_0x852d79,_0x1a864a){var _0x22998e=_0x380e68,_0x255a47,_0x3a45d7;if(_0x516abd>_0x852d79&&_0x375196<_0x1a864a)return _0x255a47=_0x516abd-_0x852d79,_0x3a45d7=_0x1a864a-_0x375196,arccosine=Math[_0x22998e(0x148)](_0x3a45d7/Math[_0x22998e(0x14f)](Math[_0x22998e(0xd9)](_0x255a47,0x2)+Math[_0x22998e(0xd9)](_0x3a45d7,0x2))),Math[_0x22998e(0x182)](arccosine*(0xb4/Math['PI']));else{if(_0x516abd>_0x852d79&&_0x375196>_0x1a864a)return _0x255a47=_0x516abd-_0x852d79,_0x3a45d7=_0x375196-_0x1a864a,arccosine=Math[_0x22998e(0x148)](_0x255a47/Math['sqrt'](Math[_0x22998e(0xd9)](_0x255a47,0x2)+Math[_0x22998e(0xd9)](_0x3a45d7,0x2))),Math['round'](arccosine*(0xb4/Math['PI']))+0x5a;else return _0x516abd<_0x852d79&&_0x375196>_0x1a864a?(_0x255a47=_0x852d79-_0x516abd,_0x3a45d7=_0x1a864a-_0x375196,arccosine=Math['acos'](_0x255a47/Math[_0x22998e(0x14f)](Math[_0x22998e(0xd9)](_0x255a47,0x2)+Math[_0x22998e(0xd9)](_0x3a45d7,0x2))),0x10e-Math[_0x22998e(0x182)](arccosine*(0xb4/Math['PI']))):(_0x255a47=_0x852d79-_0x516abd,_0x3a45d7=_0x375196-_0x1a864a,arccosine=Math['acos'](_0x255a47/Math['sqrt'](Math['pow'](_0x255a47,0x2)+Math[_0x22998e(0xd9)](_0x3a45d7,0x2))),Math[_0x22998e(0x182)](arccosine*(0xb4/Math['PI']))+0x10e);}}function calculateRadius(_0x5cbeba,_0x40db4b,_0x38ee2a,_0x4fa66e){var _0x13cf33=_0x380e68;x=_0x38ee2a-_0x5cbeba,y=_0x4fa66e-_0x40db4b,radius=Math[_0x13cf33(0x14f)](Math['pow'](x,0x2)+Math['pow'](y,0x2));if(radius<=0x64)return!![];else return![];}function calculate3dClick(_0x20f98c,_0x3b6f77,_0x19bdcf,_0x503afd){var _0x4a1880=_0x380e68;x=_0x19bdcf-_0x20f98c,y=_0x503afd-_0x3b6f77,radius=Math[_0x4a1880(0x14f)](Math['pow'](x,0x2)+Math[_0x4a1880(0xd9)](y,0x2));if(radius<=0xc8)return!![];else return![];}var enable_head=![],enable_front=![],enable_side=![],delete_annotation=![],add_third=![];document['addEventListener'](_0x380e68(0xaf),keyboardEvents);function keyboardEvents(_0x10cd73){var _0x39b5d2=_0x380e68;if(_0x10cd73['ctrlKey']){_0x10cd73[_0x39b5d2(0x150)](),document['getElementById'](_0x39b5d2(0x1a3))['style'][_0x39b5d2(0x17c)]=_0x39b5d2(0xb7),enable_head=![],enable_front=![],enable_side=![],delete_annotation=!![],suppress=!![];return;}document['getElementById'](_0x39b5d2(0xfd))[_0x39b5d2(0xe1)](_0x39b5d2(0xc0),''),document[_0x39b5d2(0x149)](_0x39b5d2(0xcf))[_0x39b5d2(0xe1)]('style',''),document[_0x39b5d2(0x149)](_0x39b5d2(0xd0))['setAttribute'](_0x39b5d2(0xc0),''),head_frameLocation=document[_0x39b5d2(0x149)]('circular')[_0x39b5d2(0x19d)](),front_frameLocation=document[_0x39b5d2(0x149)](_0x39b5d2(0xcf))['getBoundingClientRect'](),side_frameLocation=document[_0x39b5d2(0x149)]('circularS')['getBoundingClientRect'](),three_frameLocation=document[_0x39b5d2(0x149)]('3d-head')[_0x39b5d2(0x19d)](),head_cx=(head_frameLocation[_0x39b5d2(0x129)]+head_frameLocation['left'])/0x2,head_cy=(head_frameLocation['top']+head_frameLocation[_0x39b5d2(0x19c)])/0x2,front_cx=(front_frameLocation[_0x39b5d2(0x129)]+front_frameLocation[_0x39b5d2(0x167)])/0x2,front_cy=(front_frameLocation[_0x39b5d2(0x193)]+front_frameLocation[_0x39b5d2(0x19c)])/0x2,side_cx=(side_frameLocation[_0x39b5d2(0x129)]+side_frameLocation[_0x39b5d2(0x167)])/0x2,side_cy=(side_frameLocation[_0x39b5d2(0x193)]+side_frameLocation[_0x39b5d2(0x19c)])/0x2,three_cx=(three_frameLocation[_0x39b5d2(0x129)]+three_frameLocation[_0x39b5d2(0x167)])/0x2,three_cy=(three_frameLocation[_0x39b5d2(0x193)]+three_frameLocation[_0x39b5d2(0x19c)])/0x2;if(_0x10cd73[_0x39b5d2(0x1a4)]){_0x10cd73[_0x39b5d2(0x150)](),delete_annotation=![],document[_0x39b5d2(0x149)](_0x39b5d2(0x1a3))['style']['cursor']='cell',key_perform=!![];var _0x870c25=findUndefinedAzimuth(),_0x8ae5d1=findUndefinedElevation();document[_0x39b5d2(0x9e)](_0x39b5d2(0x142),function(_0x14b981){var _0x24c78e=_0x39b5d2;_0x14b981['preventDefault'](),enable_head=calculateRadius(_0x14b981[_0x24c78e(0x106)],_0x14b981[_0x24c78e(0x183)],head_cx,head_cy),enable_front=calculateRadius(_0x14b981['pageX'],_0x14b981['pageY'],front_cx,front_cy),enable_side=calculateRadius(_0x14b981[_0x24c78e(0x106)],_0x14b981[_0x24c78e(0x183)],side_cx,side_cy),click_3d_head=calculate3dClick(_0x14b981[_0x24c78e(0x106)],_0x14b981[_0x24c78e(0x183)],three_cx,three_cy);if(click_3d_head){window[_0x24c78e(0x100)](_0x24c78e(0xdc)),document[_0x24c78e(0x149)](_0x24c78e(0x1a3))[_0x24c78e(0xc0)][_0x24c78e(0x17c)]=_0x24c78e(0x10b),key_perform=![],document[_0x24c78e(0xc4)]=null,document[_0x24c78e(0x16b)]=null;return;}if(enable_head){if(_0x870c25==-0x1){window['alert'](_0x24c78e(0xf5)+source_count+_0x24c78e(0x15c)),document[_0x24c78e(0x149)]('body')[_0x24c78e(0xc0)]['cursor']=_0x24c78e(0x10b),key_perform=![],enable_head=![],document[_0x24c78e(0xc4)]=null,document[_0x24c78e(0x16b)]=null;return;}if(_0x870c25>_0x8ae5d1&&_0x8ae5d1!=-0x1){window[_0x24c78e(0x100)](_0x24c78e(0x112)),document[_0x24c78e(0x149)](_0x24c78e(0x1a3))[_0x24c78e(0xc0)][_0x24c78e(0x17c)]=_0x24c78e(0x10b),key_perform=![],enable_head=![],document[_0x24c78e(0xc4)]=null,document[_0x24c78e(0x16b)]=null;return;}_0x870c25+=0x1,curr_azimuth=calculateAzimuth(_0x14b981[_0x24c78e(0x106)],_0x14b981[_0x24c78e(0x183)],head_cx,head_cy),curr_azimuth=curr_azimuth==0x168?0x0:curr_azimuth;if(document['getElementById'](_0x24c78e(0x101)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]!='none'){original_front=parseInt(document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)['style'][_0x24c78e(0x144)]['replace'](_0x24c78e(0x10e),'')[_0x24c78e(0x18e)](_0x24c78e(0x161),''));if(original_front<0xb4&&curr_azimuth>0xb4||original_front>0xb4&&curr_azimuth<0xb4){window[_0x24c78e(0x100)](_0x24c78e(0x136)),document[_0x24c78e(0x149)]('body')['style'][_0x24c78e(0x17c)]=_0x24c78e(0x10b),key_perform=![],enable_head=![],document[_0x24c78e(0xc4)]=null,document[_0x24c78e(0x16b)]=null;return;}degree=parseInt(document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)]['transform'][_0x24c78e(0x18e)](_0x24c78e(0x10e),'')[_0x24c78e(0x18e)](_0x24c78e(0x161),''));(curr_azimuth<0xb4&&degree>0xb4||curr_azimuth>0xb4&&degree<0xb4)&&(document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)['style'][_0x24c78e(0x144)]='rotate('+(0x168-degree)+_0x24c78e(0x161));if(curr_azimuth<22.5||curr_azimuth>337.5)document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x870c25)['style'][_0x24c78e(0x127)]=_0x24c78e(0xdb),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)['style'][_0x24c78e(0x127)]='none',document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x870c25)['style']['display']='',document[_0x24c78e(0x149)]('circularS'+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]='',degree>0xb4?document[_0x24c78e(0x149)]('circularS'+_0x870c25)[_0x24c78e(0xc0)]['transform']='rotate('+(0x168-degree)+_0x24c78e(0x161):document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+degree+_0x24c78e(0x161);else{if(curr_azimuth>67.5&&curr_azimuth<112.5)document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]='none',document[_0x24c78e(0x149)]('circularS'+_0x870c25)[_0x24c78e(0xc0)]['display']=_0x24c78e(0xdb);else{if(curr_azimuth>157.5&&curr_azimuth<202.5)document[_0x24c78e(0x149)]('front-item-'+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]=_0x24c78e(0xdb),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]=_0x24c78e(0xdb),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x870c25)['style'][_0x24c78e(0x127)]='',document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)['style']['display']='',degree<0xb4?document[_0x24c78e(0x149)]('circularS'+_0x870c25)['style'][_0x24c78e(0x144)]=_0x24c78e(0x10e)+(0x168-degree)+_0x24c78e(0x161):document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+degree+_0x24c78e(0x161);else{if(curr_azimuth>247.5&&curr_azimuth<292.5)document[_0x24c78e(0x149)]('side-item-'+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]=_0x24c78e(0xdb),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]=_0x24c78e(0xdb);else{document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x870c25)[_0x24c78e(0xc0)]['display']='',document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)['style'][_0x24c78e(0x127)]='';if(curr_azimuth>0x10e||curr_azimuth<0x5a)degree<0xb4?document['getElementById']('circularS'+_0x870c25)['style'][_0x24c78e(0x144)]='rotate('+degree+_0x24c78e(0x161):document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)['style']['transform']=_0x24c78e(0x10e)+(0x168-degree)+_0x24c78e(0x161);else curr_azimuth<0x10e&&curr_azimuth>0x5a&&(degree>0xb4?document[_0x24c78e(0x149)]('circularS'+_0x870c25)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+degree+_0x24c78e(0x161):document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+(0x168-degree)+_0x24c78e(0x161));}}}}}else{if(document['getElementById'](_0x24c78e(0x1a0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]!='none'){original_side=parseInt(document[_0x24c78e(0x149)]('circularS'+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)][_0x24c78e(0x18e)](_0x24c78e(0x10e),'')[_0x24c78e(0x18e)]('deg)',''));if((curr_azimuth<0x5a||curr_azimuth>0x10e)&&original_side>0xb4||curr_azimuth>0x5a&&curr_azimuth<0x10e&&original_side<0xb4){window[_0x24c78e(0x100)](_0x24c78e(0x136)),document[_0x24c78e(0x149)](_0x24c78e(0x1a3))[_0x24c78e(0xc0)][_0x24c78e(0x17c)]=_0x24c78e(0x10b),key_perform=![],enable_head=![],document[_0x24c78e(0xc4)]=null,document[_0x24c78e(0x16b)]=null;return;}degree=parseInt(document['getElementById'](_0x24c78e(0xd0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)][_0x24c78e(0x18e)](_0x24c78e(0x10e),'')[_0x24c78e(0x18e)](_0x24c78e(0x161),''));((curr_azimuth>0x10e||curr_azimuth<0x5a)&&degree>0xb4||curr_azimuth<0x10e&&curr_azimuth>0x5a&&degree<0xb4)&&(document['getElementById'](_0x24c78e(0xd0)+_0x870c25)['style']['transform']=_0x24c78e(0x10e)+(0x168-degree)+_0x24c78e(0x161));if(curr_azimuth<22.5||curr_azimuth>337.5)document[_0x24c78e(0x149)]('front-item-'+_0x870c25)[_0x24c78e(0xc0)]['display']=_0x24c78e(0xdb),document[_0x24c78e(0x149)]('circularF'+_0x870c25)[_0x24c78e(0xc0)]['display']=_0x24c78e(0xdb);else{if(curr_azimuth>67.5&&curr_azimuth<112.5)document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]=_0x24c78e(0xdb),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]=_0x24c78e(0xdb),document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x870c25)[_0x24c78e(0xc0)]['display']='',document['getElementById'](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]='',degree>0xb4?document['getElementById']('circularF'+_0x870c25)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+(0x168-degree)+_0x24c78e(0x161):document['getElementById'](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+degree+_0x24c78e(0x161);else{if(curr_azimuth>157.5&&curr_azimuth<202.5)document[_0x24c78e(0x149)]('front-item-'+_0x870c25)[_0x24c78e(0xc0)]['display']=_0x24c78e(0xdb),document['getElementById'](_0x24c78e(0xcf)+_0x870c25)['style']['display']='none';else{if(curr_azimuth>247.5&&curr_azimuth<292.5)document['getElementById'](_0x24c78e(0x1a0)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]=_0x24c78e(0xdb),document[_0x24c78e(0x149)]('circularS'+_0x870c25)[_0x24c78e(0xc0)]['display']='none',document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x870c25)['style'][_0x24c78e(0x127)]='',document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)['style'][_0x24c78e(0x127)]='',degree<0xb4?document['getElementById'](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+(0x168-degree)+_0x24c78e(0x161):document['getElementById']('circularF'+_0x870c25)['style'][_0x24c78e(0x144)]=_0x24c78e(0x10e)+degree+'deg)';else{document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]='',document['getElementById'](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x127)]='';if(curr_azimuth<0xb4)degree>0xb4?document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+(0x168-degree)+_0x24c78e(0x161):document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+degree+_0x24c78e(0x161);else curr_azimuth>0xb4&&(degree<0xb4?document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+(0x168-degree)+_0x24c78e(0x161):document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x870c25)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+degree+_0x24c78e(0x161));}}}}}}azimuth[_0x870c25-0x1]=curr_azimuth,document[_0x24c78e(0x149)](_0x24c78e(0xfd)+_0x870c25)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xfd)+_0x870c25)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+curr_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0xfc)+_0x870c25)['setAttribute'](_0x24c78e(0xc0),''),changeSize(_0x870c25),displayBall(curr_azimuth-0xb4,elevation[_0x870c25-0x1]!=undefined?elevation[_0x870c25-0x1]:0x0,_0x870c25),document['getElementById'](_0x24c78e(0x134))[_0x24c78e(0xad)]=curr_azimuth+_0x24c78e(0xa5),document[_0x24c78e(0x149)](_0x24c78e(0xe4))[_0x24c78e(0xad)]=(elevation[_0x870c25-0x1]!=undefined?elevation[_0x870c25-0x1]:0x0)+_0x24c78e(0xa5),current_colors_index=_0x870c25-0x1,color_hex='000000'+colors[_0x870c25-0x1][_0x24c78e(0xb3)](0x10),document[_0x24c78e(0x149)](_0x24c78e(0xe5))[_0x24c78e(0xc0)][_0x24c78e(0xb9)]='#'+color_hex['substring'](color_hex[_0x24c78e(0x120)]-0x6,color_hex['length']),document[_0x24c78e(0x149)](_0x24c78e(0xde))[_0x24c78e(0xc0)][_0x24c78e(0xb9)]='#'+color_hex['substring'](color_hex[_0x24c78e(0x120)]-0x6,color_hex['length']),key_perform=![],enable_head=![],document['onclick']=null,document[_0x24c78e(0x16b)]=null,value=curr_azimuth==0x168?0x0:curr_azimuth,timestamp=Date[_0x24c78e(0xd8)](),action_type=_0x24c78e(0x147),ajax_interaction();}else{if(enable_front){if(_0x8ae5d1==-0x1){window[_0x24c78e(0x100)](_0x24c78e(0xf5)+source_count+_0x24c78e(0xd4)),document[_0x24c78e(0x149)](_0x24c78e(0x1a3))[_0x24c78e(0xc0)][_0x24c78e(0x17c)]='default',key_perform=![],enable_front=![],document[_0x24c78e(0xc4)]=null,document[_0x24c78e(0x16b)]=null;return;}if(_0x8ae5d1>_0x870c25&&_0x870c25!=-0x1){window[_0x24c78e(0x100)](_0x24c78e(0x118)),document[_0x24c78e(0x149)]('body')[_0x24c78e(0xc0)][_0x24c78e(0x17c)]=_0x24c78e(0x10b),key_perform=![],enable_front=![],document[_0x24c78e(0xc4)]=null,document[_0x24c78e(0x16b)]=null;return;}_0x8ae5d1+=0x1,temp_azimuth=calculateAzimuth(_0x14b981['pageX'],_0x14b981[_0x24c78e(0x183)],front_cx,front_cy);if(azimuth[_0x8ae5d1-0x1]!=undefined){if(azimuth[_0x8ae5d1-0x1]>0xb4&&temp_azimuth<0xb4)temp_azimuth=0x168-temp_azimuth;else azimuth[_0x8ae5d1-0x1]<0xb4&&temp_azimuth>0xb4&&(temp_azimuth=0x168-temp_azimuth);if(azimuth[_0x8ae5d1-0x1]>=22.5&&azimuth[_0x8ae5d1-0x1]<=67.5)document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)['style']['transform']=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)['setAttribute']('style',''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)]('circularF'+_0x8ae5d1)['style'][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]>=112.5&&azimuth[_0x8ae5d1-0x1]<=157.5)document['getElementById']('circularS'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+(0x168-temp_azimuth)+_0x24c78e(0x161),document[_0x24c78e(0x149)]('side-item-'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)]['transform']='rotate('+temp_azimuth+'deg)',document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)]('style','');else{if(azimuth[_0x8ae5d1-0x1]>=202.5&&azimuth[_0x8ae5d1-0x1]<=247.5)document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+temp_azimuth+'deg)',document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),''),document['getElementById'](_0x24c78e(0xcf)+_0x8ae5d1)['style'][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)]('style','');else{if(azimuth[_0x8ae5d1-0x1]>=292.5&&azimuth[_0x8ae5d1-0x1]<=337.5)document['getElementById'](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)['style'][_0x24c78e(0x144)]=_0x24c78e(0x10e)+(0x168-temp_azimuth)+_0x24c78e(0x161),document[_0x24c78e(0x149)]('side-item-'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)['style']['transform']=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)]('front-item-'+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]>157.5&&azimuth[_0x8ae5d1-0x1]<=0xb4)document[_0x24c78e(0x149)]('circularS'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document['getElementById'](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+(0x168-temp_azimuth)+_0x24c78e(0x161),document['getElementById'](_0x24c78e(0x1a0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]<202.5&&azimuth[_0x8ae5d1-0x1]>0xb4)document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)[_0x24c78e(0xe1)]('style','');else{if(azimuth[_0x8ae5d1-0x1]>337.5)document[_0x24c78e(0x149)]('circularS'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+(0x168-temp_azimuth)+_0x24c78e(0x161),document['getElementById']('side-item-'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'');else azimuth[_0x8ae5d1-0x1]<22.5?(document['getElementById'](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)['style']['transform']=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'')):(document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+temp_azimuth+'deg)',document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''));}}}}}}}else document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document['getElementById'](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)]('style','');temp_azimuth<=0xb4?curr_elevation=0x5a-temp_azimuth:curr_elevation=temp_azimuth-0xb4-0x5a,elevation[_0x8ae5d1-0x1]=curr_elevation,temp_azimuth=azimuth[_0x8ae5d1-0x1]!=undefined?azimuth[_0x8ae5d1-0x1]-0xb4:-0xb4,changeSize(_0x8ae5d1),displayBall(temp_azimuth,curr_elevation,_0x8ae5d1),document[_0x24c78e(0x149)]('p-azimuth')[_0x24c78e(0xad)]=(azimuth[_0x8ae5d1-0x1]!=undefined?azimuth[_0x8ae5d1-0x1]:0x0)+'\x20degrees',document['getElementById'](_0x24c78e(0xe4))[_0x24c78e(0xad)]=curr_elevation+_0x24c78e(0xa5),current_colors_index=_0x8ae5d1-0x1,color_hex=_0x24c78e(0xe3)+colors[_0x8ae5d1-0x1][_0x24c78e(0xb3)](0x10),document[_0x24c78e(0x149)](_0x24c78e(0xe5))['style'][_0x24c78e(0xb9)]='#'+color_hex[_0x24c78e(0xea)](color_hex[_0x24c78e(0x120)]-0x6,color_hex[_0x24c78e(0x120)]),document[_0x24c78e(0x149)](_0x24c78e(0xde))[_0x24c78e(0xc0)][_0x24c78e(0xb9)]='#'+color_hex['substring'](color_hex[_0x24c78e(0x120)]-0x6,color_hex[_0x24c78e(0x120)]),enable_front=![],key_perform=![],enable_front=![],document[_0x24c78e(0xc4)]=null,document['onkeydown']=null,value=curr_elevation,timestamp=Date[_0x24c78e(0xd8)](),action_type='elevation',ajax_interaction();}else{if(enable_side){if(_0x8ae5d1==-0x1){window[_0x24c78e(0x100)](_0x24c78e(0xf5)+source_count+_0x24c78e(0xd4)),document['getElementById'](_0x24c78e(0x1a3))[_0x24c78e(0xc0)][_0x24c78e(0x17c)]=_0x24c78e(0x10b),key_perform=![],enable_side=![],document['onclick']=null,document['onkeydown']=null;return;}if(_0x8ae5d1>_0x870c25&&_0x870c25!=-0x1){window[_0x24c78e(0x100)](_0x24c78e(0x118)),document['getElementById']('body')['style'][_0x24c78e(0x17c)]=_0x24c78e(0x10b),key_perform=![],enable_side=![],document['onclick']=null,document['onkeydown']=null;return;}_0x8ae5d1+=0x1,temp_azimuth=calculateAzimuth(_0x14b981[_0x24c78e(0x106)],_0x14b981[_0x24c78e(0x183)],side_cx,side_cy);if(azimuth[_0x8ae5d1-0x1]!=undefined){if(azimuth[_0x8ae5d1-0x1]<0x5a||azimuth[_0x8ae5d1-0x1]>0x10e)temp_azimuth>0xb4&&(temp_azimuth=0x168-temp_azimuth);else azimuth[_0x8ae5d1-0x1]>0x5a&&azimuth[_0x8ae5d1-0x1]<0x10e&&(temp_azimuth<0xb4&&(temp_azimuth=0x168-temp_azimuth));if(azimuth[_0x8ae5d1-0x1]>=22.5&&azimuth[_0x8ae5d1-0x1]<=67.5)document[_0x24c78e(0x149)]('circularF'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+temp_azimuth+'deg)',document[_0x24c78e(0x149)]('front-item-'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),''),document['getElementById'](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+'deg)',document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)['setAttribute']('style','');else{if(azimuth[_0x8ae5d1-0x1]>=112.5&&azimuth[_0x8ae5d1-0x1]<=157.5)document['getElementById'](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)]('style',''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+(0x168-temp_azimuth)+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)]('circularS'+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document['getElementById'](_0x24c78e(0x1a0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]>=202.5&&azimuth[_0x8ae5d1-0x1]<=247.5)document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)]('circularS'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]='rotate('+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]>=292.5&&azimuth[_0x8ae5d1-0x1]<=337.5)document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)]('style',''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)]['transform']=_0x24c78e(0x10e)+(0x168-temp_azimuth)+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]>67.5&&azimuth[_0x8ae5d1-0x1]<=0x5a)document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),''),document['getElementById']('circularF'+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document['getElementById'](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]>0x5a&&azimuth[_0x8ae5d1-0x1]<112.5)document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)]('style',''),document[_0x24c78e(0x149)](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+(0x168-temp_azimuth)+_0x24c78e(0x161),document[_0x24c78e(0x149)]('front-item-'+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),'');else{if(azimuth[_0x8ae5d1-0x1]>257.5&&azimuth[_0x8ae5d1-0x1]<=0x10e)document['getElementById'](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)]('circularF'+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document['getElementById']('front-item-'+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),'');else azimuth[_0x8ae5d1-0x1]>0x10e&&azimuth[_0x8ae5d1-0x1]<292.5?(document['getElementById'](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xe1)](_0x24c78e(0xc0),''),document['getElementById'](_0x24c78e(0xcf)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+(0x168-temp_azimuth)+_0x24c78e(0x161),document['getElementById'](_0x24c78e(0x101)+_0x8ae5d1)[_0x24c78e(0xe1)]('style','')):(document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xe1)]('style',''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)['style'][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)['setAttribute']('style',''));}}}}}}}else document[_0x24c78e(0x149)]('circularS'+_0x8ae5d1)['setAttribute'](_0x24c78e(0xc0),''),document[_0x24c78e(0x149)](_0x24c78e(0xd0)+_0x8ae5d1)[_0x24c78e(0xc0)][_0x24c78e(0x144)]=_0x24c78e(0x10e)+temp_azimuth+_0x24c78e(0x161),document[_0x24c78e(0x149)](_0x24c78e(0x1a0)+_0x8ae5d1)[_0x24c78e(0xe1)]('style','');temp_azimuth<=0xb4?curr_elevation=0x5a-temp_azimuth:curr_elevation=temp_azimuth-0xb4-0x5a,elevation[_0x8ae5d1-0x1]=curr_elevation,temp_azimuth=azimuth[_0x8ae5d1-0x1]!=undefined?azimuth[_0x8ae5d1-0x1]-0xb4:-0xb4,changeSize(_0x8ae5d1),displayBall(temp_azimuth,curr_elevation,_0x8ae5d1),document[_0x24c78e(0x149)](_0x24c78e(0x134))[_0x24c78e(0xad)]=(azimuth[_0x8ae5d1-0x1]!=undefined?azimuth[_0x8ae5d1-0x1]:0x0)+_0x24c78e(0xa5),document['getElementById']('p-elevation')[_0x24c78e(0xad)]=curr_elevation+'\x20degrees',current_colors_index=_0x8ae5d1-0x1,color_hex=_0x24c78e(0xe3)+colors[_0x8ae5d1-0x1][_0x24c78e(0xb3)](0x10),document[_0x24c78e(0x149)]('azimuth-dot')['style'][_0x24c78e(0xb9)]='#'+color_hex[_0x24c78e(0xea)](color_hex['length']-0x6,color_hex[_0x24c78e(0x120)]),document['getElementById']('elevation-dot')[_0x24c78e(0xc0)]['backgroundColor']='#'+color_hex[_0x24c78e(0xea)](color_hex[_0x24c78e(0x120)]-0x6,color_hex[_0x24c78e(0x120)]),enable_side=![],document['onclick']=null,document['onkeydown']=null,value=curr_elevation,timestamp=Date['now'](),action_type=_0x24c78e(0x185),ajax_interaction();}}}key_perform=![];},{'once':!![]});}return;}function findDefinedAnnotation(_0x38bbee){var _0x5d0f4c=_0x380e68;let _0x14cebf=0x0,_0x4af1dc=-0x1;while(_0x14cebf<azimuth[_0x5d0f4c(0x120)]||_0x14cebf<elevation[_0x5d0f4c(0x120)]){if(_0x14cebf>_0x38bbee-0x1){if(elevation[_0x14cebf]!=undefined||azimuth[_0x14cebf]!=undefined)return _0x4af1dc=_0x14cebf,_0x4af1dc;}else{if(elevation[_0x14cebf]!=undefined||azimuth[_0x14cebf]!=undefined)_0x4af1dc=_0x14cebf;if(_0x14cebf==_0x38bbee-0x1&&_0x4af1dc!=-0x1)return _0x4af1dc;}_0x14cebf+=0x1;}return _0x4af1dc==-0x1?-0x1:_0x4af1dc;}document['getElementById'](_0x380e68(0x168))[_0x380e68(0x9e)]('mousedown',function(_0x30f6bc){var _0x3d0834=_0x380e68;_0x30f6bc[_0x3d0834(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x0]=undefined,elevation[0x0]=undefined,changeSize(0x1),document[_0x3d0834(0x149)](_0x3d0834(0x168))['style']['display']=_0x3d0834(0xdb),document[_0x3d0834(0x149)](_0x3d0834(0xc5))[_0x3d0834(0xc0)][_0x3d0834(0x127)]=_0x3d0834(0xdb),document[_0x3d0834(0x149)](_0x3d0834(0xae))['style'][_0x3d0834(0x127)]=_0x3d0834(0xdb),document[_0x3d0834(0x149)](_0x3d0834(0xf7))[_0x3d0834(0xc0)][_0x3d0834(0x127)]=_0x3d0834(0xdb),document[_0x3d0834(0x149)]('circularF1')[_0x3d0834(0xc0)]['display']='none',document[_0x3d0834(0x149)](_0x3d0834(0x9f))['style'][_0x3d0834(0x127)]=_0x3d0834(0xdb),key_perform=!![];let _0x866e0d=findDefinedAnnotation(0x1);document[_0x3d0834(0x149)](_0x3d0834(0x134))[_0x3d0834(0xad)]=(_0x866e0d==-0x1?'':azimuth[_0x866e0d]==undefined?0x0:azimuth[_0x866e0d])+_0x3d0834(0xa5),document[_0x3d0834(0x149)]('p-elevation')['innerHTML']=(_0x866e0d==-0x1?'':elevation[_0x866e0d]==undefined?0x0:elevation[_0x866e0d])+_0x3d0834(0xa5),_0x866e0d!=-0x1?(color_hex=_0x3d0834(0xe3)+colors[_0x866e0d][_0x3d0834(0xb3)](0x10),document['getElementById'](_0x3d0834(0xe5))[_0x3d0834(0xc0)][_0x3d0834(0xb9)]='#'+color_hex[_0x3d0834(0xea)](color_hex['length']-0x6,color_hex[_0x3d0834(0x120)]),document[_0x3d0834(0x149)](_0x3d0834(0xde))[_0x3d0834(0xc0)][_0x3d0834(0xb9)]='#'+color_hex[_0x3d0834(0xea)](color_hex[_0x3d0834(0x120)]-0x6,color_hex['length'])):(document[_0x3d0834(0x149)]('azimuth-dot')[_0x3d0834(0xc0)][_0x3d0834(0xb9)]='',document[_0x3d0834(0x149)](_0x3d0834(0xde))[_0x3d0834(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=0x0,deleteBall(0x1),delete_annotation=![],_0x30f6bc[_0x3d0834(0x15a)]=![],document['onmousedown']=null,document[_0x3d0834(0x16b)]=null;}else document[_0x3d0834(0x149)]('body')[_0x3d0834(0xc0)][_0x3d0834(0x17c)]=='default'&&(document[_0x3d0834(0x149)](_0x3d0834(0x134))[_0x3d0834(0xad)]=(azimuth[0x0]==undefined?0x0:azimuth[0x0])+_0x3d0834(0xa5),document[_0x3d0834(0x149)](_0x3d0834(0xe4))[_0x3d0834(0xad)]=(elevation[0x0]==undefined?0x0:elevation[0x0])+_0x3d0834(0xa5),color_hex=_0x3d0834(0xe3)+colors[0x0][_0x3d0834(0xb3)](0x10),document[_0x3d0834(0x149)](_0x3d0834(0xe5))['style'][_0x3d0834(0xb9)]='#'+color_hex['substring'](color_hex[_0x3d0834(0x120)]-0x6,color_hex['length']),document[_0x3d0834(0x149)]('elevation-dot')[_0x3d0834(0xc0)][_0x3d0834(0xb9)]='#'+color_hex[_0x3d0834(0xea)](color_hex[_0x3d0834(0x120)]-0x6,color_hex[_0x3d0834(0x120)]),current_colors_index=0x0,suppress=![],dragElement(0x1,0x0,0x0));}),document[_0x380e68(0x149)](_0x380e68(0xb4))['addEventListener'](_0x380e68(0xa4),function(_0x5c07fb){var _0x5bc40d=_0x380e68;_0x5c07fb[_0x5bc40d(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x1]=undefined,elevation[0x1]=undefined,changeSize(0x2),document['getElementById'](_0x5bc40d(0xb4))[_0x5bc40d(0xc0)][_0x5bc40d(0x127)]=_0x5bc40d(0xdb),document[_0x5bc40d(0x149)]('front-item-2')[_0x5bc40d(0xc0)]['display']=_0x5bc40d(0xdb),document[_0x5bc40d(0x149)]('side-item-2')['style'][_0x5bc40d(0x127)]=_0x5bc40d(0xdb),document[_0x5bc40d(0x149)](_0x5bc40d(0x103))['style'][_0x5bc40d(0x127)]=_0x5bc40d(0xdb),document[_0x5bc40d(0x149)]('circularF2')[_0x5bc40d(0xc0)][_0x5bc40d(0x127)]=_0x5bc40d(0xdb),document[_0x5bc40d(0x149)](_0x5bc40d(0x17b))[_0x5bc40d(0xc0)][_0x5bc40d(0x127)]=_0x5bc40d(0xdb),key_perform=!![];let _0x33e590=findDefinedAnnotation(0x2);document[_0x5bc40d(0x149)]('p-azimuth')['innerHTML']=(_0x33e590==-0x1?'':azimuth[_0x33e590]==undefined?0x0:azimuth[_0x33e590])+_0x5bc40d(0xa5),document['getElementById'](_0x5bc40d(0xe4))[_0x5bc40d(0xad)]=(_0x33e590==-0x1?'':elevation[_0x33e590]==undefined?0x0:elevation[_0x33e590])+_0x5bc40d(0xa5),_0x33e590!=-0x1?(color_hex=_0x5bc40d(0xe3)+colors[_0x33e590][_0x5bc40d(0xb3)](0x10),document[_0x5bc40d(0x149)](_0x5bc40d(0xe5))['style']['backgroundColor']='#'+color_hex['substring'](color_hex[_0x5bc40d(0x120)]-0x6,color_hex[_0x5bc40d(0x120)]),document[_0x5bc40d(0x149)](_0x5bc40d(0xde))[_0x5bc40d(0xc0)][_0x5bc40d(0xb9)]='#'+color_hex[_0x5bc40d(0xea)](color_hex[_0x5bc40d(0x120)]-0x6,color_hex['length'])):(document[_0x5bc40d(0x149)]('azimuth-dot')[_0x5bc40d(0xc0)][_0x5bc40d(0xb9)]='',document[_0x5bc40d(0x149)](_0x5bc40d(0xde))[_0x5bc40d(0xc0)][_0x5bc40d(0xb9)]=''),key_perform=![],current_colors_index=_0x33e590,deleteBall(0x2),delete_annotation=![],_0x5c07fb[_0x5bc40d(0x15a)]=![],document[_0x5bc40d(0x191)]=null,document[_0x5bc40d(0x16b)]=null;}else document[_0x5bc40d(0x149)](_0x5bc40d(0x1a3))[_0x5bc40d(0xc0)][_0x5bc40d(0x17c)]=='default'&&(document[_0x5bc40d(0x149)](_0x5bc40d(0x134))[_0x5bc40d(0xad)]=(azimuth[0x1]==undefined?0x0:azimuth[0x1])+_0x5bc40d(0xa5),document['getElementById']('p-elevation')['innerHTML']=(elevation[0x1]==undefined?0x0:elevation[0x1])+_0x5bc40d(0xa5),color_hex=_0x5bc40d(0xe3)+colors[0x1]['toString'](0x10),document['getElementById']('azimuth-dot')['style'][_0x5bc40d(0xb9)]='#'+color_hex['substring'](color_hex['length']-0x6,color_hex[_0x5bc40d(0x120)]),document['getElementById'](_0x5bc40d(0xde))[_0x5bc40d(0xc0)][_0x5bc40d(0xb9)]='#'+color_hex[_0x5bc40d(0xea)](color_hex[_0x5bc40d(0x120)]-0x6,color_hex['length']),current_colors_index=0x1,suppress=![],dragElement(0x2,0x0,0x1));}),document[_0x380e68(0x149)]('head-item-3')[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x49b1b8){var _0x580509=_0x380e68;_0x49b1b8['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x2]=undefined,elevation[0x2]=undefined,changeSize(0x3),document[_0x580509(0x149)]('head-item-3')[_0x580509(0xc0)][_0x580509(0x127)]=_0x580509(0xdb),document[_0x580509(0x149)]('front-item-3')['style'][_0x580509(0x127)]=_0x580509(0xdb),document[_0x580509(0x149)]('side-item-3')[_0x580509(0xc0)][_0x580509(0x127)]=_0x580509(0xdb),document[_0x580509(0x149)](_0x580509(0xda))[_0x580509(0xc0)][_0x580509(0x127)]=_0x580509(0xdb),document[_0x580509(0x149)](_0x580509(0x124))[_0x580509(0xc0)][_0x580509(0x127)]=_0x580509(0xdb),document[_0x580509(0x149)](_0x580509(0x107))[_0x580509(0xc0)]['display']=_0x580509(0xdb),key_perform=!![];let _0x345001=findDefinedAnnotation(0x3);document['getElementById'](_0x580509(0x134))[_0x580509(0xad)]=(_0x345001==-0x1?'':azimuth[_0x345001]==undefined?0x0:azimuth[_0x345001])+_0x580509(0xa5),document['getElementById']('p-elevation')[_0x580509(0xad)]=(_0x345001==-0x1?'':elevation[_0x345001]==undefined?0x0:elevation[_0x345001])+'\x20degrees',_0x345001!=-0x1?(color_hex=_0x580509(0xe3)+colors[_0x345001][_0x580509(0xb3)](0x10),document[_0x580509(0x149)](_0x580509(0xe5))[_0x580509(0xc0)][_0x580509(0xb9)]='#'+color_hex[_0x580509(0xea)](color_hex['length']-0x6,color_hex[_0x580509(0x120)]),document['getElementById'](_0x580509(0xde))[_0x580509(0xc0)][_0x580509(0xb9)]='#'+color_hex[_0x580509(0xea)](color_hex['length']-0x6,color_hex[_0x580509(0x120)])):(document[_0x580509(0x149)](_0x580509(0xe5))[_0x580509(0xc0)][_0x580509(0xb9)]='',document['getElementById']('elevation-dot')[_0x580509(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=_0x345001,deleteBall(0x3),delete_annotation=![],_0x49b1b8[_0x580509(0x15a)]=![],document[_0x580509(0x191)]=null,document['onkeydown']=null;}else document[_0x580509(0x149)]('body')[_0x580509(0xc0)][_0x580509(0x17c)]==_0x580509(0x10b)&&(document['getElementById'](_0x580509(0x134))['innerHTML']=(azimuth[0x2]==undefined?0x0:azimuth[0x2])+_0x580509(0xa5),document['getElementById'](_0x580509(0xe4))['innerHTML']=(elevation[0x2]==undefined?0x0:elevation[0x2])+'\x20degrees',color_hex=_0x580509(0xe3)+colors[0x2][_0x580509(0xb3)](0x10),document['getElementById'](_0x580509(0xe5))[_0x580509(0xc0)][_0x580509(0xb9)]='#'+color_hex[_0x580509(0xea)](color_hex[_0x580509(0x120)]-0x6,color_hex[_0x580509(0x120)]),document['getElementById'](_0x580509(0xde))[_0x580509(0xc0)][_0x580509(0xb9)]='#'+color_hex[_0x580509(0xea)](color_hex[_0x580509(0x120)]-0x6,color_hex[_0x580509(0x120)]),current_colors_index=0x2,suppress=![],dragElement(0x3,0x0,0x2));}),document[_0x380e68(0x149)](_0x380e68(0xce))['addEventListener'](_0x380e68(0xa4),function(_0x3fb55f){var _0x2f5913=_0x380e68;_0x3fb55f[_0x2f5913(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x3]=undefined,elevation[0x3]=undefined,changeSize(0x4),document[_0x2f5913(0x149)](_0x2f5913(0xce))[_0x2f5913(0xc0)][_0x2f5913(0x127)]=_0x2f5913(0xdb),document[_0x2f5913(0x149)](_0x2f5913(0x125))['style'][_0x2f5913(0x127)]='none',document['getElementById'](_0x2f5913(0x94))[_0x2f5913(0xc0)][_0x2f5913(0x127)]='none',document[_0x2f5913(0x149)](_0x2f5913(0x179))[_0x2f5913(0xc0)]['display']='none',document['getElementById'](_0x2f5913(0x17d))[_0x2f5913(0xc0)][_0x2f5913(0x127)]=_0x2f5913(0xdb),document[_0x2f5913(0x149)](_0x2f5913(0x10a))['style'][_0x2f5913(0x127)]=_0x2f5913(0xdb),key_perform=!![];let _0xb3ce71=findDefinedAnnotation(0x4);document['getElementById'](_0x2f5913(0x134))[_0x2f5913(0xad)]=(_0xb3ce71==-0x1?'':azimuth[_0xb3ce71]==undefined?0x0:azimuth[_0xb3ce71])+_0x2f5913(0xa5),document['getElementById'](_0x2f5913(0xe4))[_0x2f5913(0xad)]=(_0xb3ce71==-0x1?'':elevation[_0xb3ce71]==undefined?0x0:elevation[_0xb3ce71])+'\x20degrees',_0xb3ce71!=-0x1?(color_hex=_0x2f5913(0xe3)+colors[_0xb3ce71][_0x2f5913(0xb3)](0x10),document[_0x2f5913(0x149)](_0x2f5913(0xe5))[_0x2f5913(0xc0)][_0x2f5913(0xb9)]='#'+color_hex[_0x2f5913(0xea)](color_hex[_0x2f5913(0x120)]-0x6,color_hex[_0x2f5913(0x120)]),document[_0x2f5913(0x149)]('elevation-dot')[_0x2f5913(0xc0)]['backgroundColor']='#'+color_hex['substring'](color_hex['length']-0x6,color_hex[_0x2f5913(0x120)])):(document['getElementById'](_0x2f5913(0xe5))['style'][_0x2f5913(0xb9)]='',document[_0x2f5913(0x149)](_0x2f5913(0xde))[_0x2f5913(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=_0xb3ce71,deleteBall(0x4),delete_annotation=![],_0x3fb55f[_0x2f5913(0x15a)]=![],document[_0x2f5913(0x191)]=null,document['onkeydown']=null;}else document['getElementById'](_0x2f5913(0x1a3))[_0x2f5913(0xc0)][_0x2f5913(0x17c)]=='default'&&(document[_0x2f5913(0x149)]('p-azimuth')[_0x2f5913(0xad)]=(azimuth[0x3]==undefined?0x0:azimuth[0x3])+'\x20degrees',document[_0x2f5913(0x149)](_0x2f5913(0xe4))[_0x2f5913(0xad)]=(elevation[0x3]==undefined?0x0:elevation[0x3])+_0x2f5913(0xa5),color_hex=_0x2f5913(0xe3)+colors[0x3][_0x2f5913(0xb3)](0x10),document[_0x2f5913(0x149)](_0x2f5913(0xe5))['style']['backgroundColor']='#'+color_hex[_0x2f5913(0xea)](color_hex['length']-0x6,color_hex[_0x2f5913(0x120)]),document[_0x2f5913(0x149)](_0x2f5913(0xde))[_0x2f5913(0xc0)]['backgroundColor']='#'+color_hex['substring'](color_hex[_0x2f5913(0x120)]-0x6,color_hex[_0x2f5913(0x120)]),current_colors_index=0x3,suppress=![],dragElement(0x4,0x0,0x3));}),document[_0x380e68(0x149)](_0x380e68(0xbf))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x2a6ae3){var _0x47b5ad=_0x380e68;_0x2a6ae3[_0x47b5ad(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x4]=undefined,elevation[0x4]=undefined,changeSize(0x5),document[_0x47b5ad(0x149)]('head-item-5')['style'][_0x47b5ad(0x127)]=_0x47b5ad(0xdb),document['getElementById'](_0x47b5ad(0x130))[_0x47b5ad(0xc0)][_0x47b5ad(0x127)]='none',document[_0x47b5ad(0x149)](_0x47b5ad(0x12f))[_0x47b5ad(0xc0)][_0x47b5ad(0x127)]=_0x47b5ad(0xdb),document['getElementById'](_0x47b5ad(0x176))[_0x47b5ad(0xc0)]['display']='none',document[_0x47b5ad(0x149)](_0x47b5ad(0x155))[_0x47b5ad(0xc0)]['display']=_0x47b5ad(0xdb),document[_0x47b5ad(0x149)](_0x47b5ad(0x16c))[_0x47b5ad(0xc0)][_0x47b5ad(0x127)]='none',key_perform=!![];let _0x4d0ba8=findDefinedAnnotation(0x5);document['getElementById']('p-azimuth')['innerHTML']=(_0x4d0ba8==-0x1?'':azimuth[_0x4d0ba8]==undefined?0x0:azimuth[_0x4d0ba8])+_0x47b5ad(0xa5),document[_0x47b5ad(0x149)](_0x47b5ad(0xe4))['innerHTML']=(_0x4d0ba8==-0x1?'':elevation[_0x4d0ba8]==undefined?0x0:elevation[_0x4d0ba8])+'\x20degrees',_0x4d0ba8!=-0x1?(color_hex=_0x47b5ad(0xe3)+colors[_0x4d0ba8][_0x47b5ad(0xb3)](0x10),document['getElementById']('azimuth-dot')[_0x47b5ad(0xc0)][_0x47b5ad(0xb9)]='#'+color_hex[_0x47b5ad(0xea)](color_hex['length']-0x6,color_hex['length']),document[_0x47b5ad(0x149)]('elevation-dot')[_0x47b5ad(0xc0)][_0x47b5ad(0xb9)]='#'+color_hex['substring'](color_hex['length']-0x6,color_hex[_0x47b5ad(0x120)])):(document['getElementById'](_0x47b5ad(0xe5))[_0x47b5ad(0xc0)]['backgroundColor']='',document[_0x47b5ad(0x149)](_0x47b5ad(0xde))['style'][_0x47b5ad(0xb9)]=''),key_perform=![],current_colors_index=_0x4d0ba8,deleteBall(0x5),delete_annotation=![],_0x2a6ae3[_0x47b5ad(0x15a)]=![],document[_0x47b5ad(0x191)]=null,document[_0x47b5ad(0x16b)]=null;}else document['getElementById'](_0x47b5ad(0x1a3))[_0x47b5ad(0xc0)][_0x47b5ad(0x17c)]==_0x47b5ad(0x10b)&&(document[_0x47b5ad(0x149)]('p-azimuth')[_0x47b5ad(0xad)]=(azimuth[0x4]==undefined?0x0:azimuth[0x4])+_0x47b5ad(0xa5),document[_0x47b5ad(0x149)](_0x47b5ad(0xe4))['innerHTML']=(elevation[0x4]==undefined?0x0:elevation[0x4])+_0x47b5ad(0xa5),color_hex=_0x47b5ad(0xe3)+colors[0x4][_0x47b5ad(0xb3)](0x10),document[_0x47b5ad(0x149)]('azimuth-dot')['style'][_0x47b5ad(0xb9)]='#'+color_hex['substring'](color_hex[_0x47b5ad(0x120)]-0x6,color_hex[_0x47b5ad(0x120)]),document[_0x47b5ad(0x149)]('elevation-dot')[_0x47b5ad(0xc0)]['backgroundColor']='#'+color_hex[_0x47b5ad(0xea)](color_hex[_0x47b5ad(0x120)]-0x6,color_hex['length']),current_colors_index=0x4,suppress=![],dragElement(0x5,0x0,0x4));}),document[_0x380e68(0x149)]('head-item-6')[_0x380e68(0x9e)]('mousedown',function(_0x2d403d){var _0x20d9fe=_0x380e68;_0x2d403d['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x5]=undefined,elevation[0x5]=undefined,changeSize(0x6),document['getElementById'](_0x20d9fe(0x11b))[_0x20d9fe(0xc0)][_0x20d9fe(0x127)]=_0x20d9fe(0xdb),document[_0x20d9fe(0x149)](_0x20d9fe(0x133))[_0x20d9fe(0xc0)][_0x20d9fe(0x127)]=_0x20d9fe(0xdb),document[_0x20d9fe(0x149)](_0x20d9fe(0x9c))[_0x20d9fe(0xc0)][_0x20d9fe(0x127)]=_0x20d9fe(0xdb),document[_0x20d9fe(0x149)](_0x20d9fe(0x140))[_0x20d9fe(0xc0)][_0x20d9fe(0x127)]=_0x20d9fe(0xdb),document[_0x20d9fe(0x149)]('circularF6')['style'][_0x20d9fe(0x127)]='none',document['getElementById'](_0x20d9fe(0x177))[_0x20d9fe(0xc0)]['display']=_0x20d9fe(0xdb),key_perform=!![];let _0x34fd99=findDefinedAnnotation(0x6);document[_0x20d9fe(0x149)]('p-azimuth')[_0x20d9fe(0xad)]=(_0x34fd99==-0x1?'':azimuth[_0x34fd99]==undefined?0x0:azimuth[_0x34fd99])+_0x20d9fe(0xa5),document['getElementById'](_0x20d9fe(0xe4))[_0x20d9fe(0xad)]=(_0x34fd99==-0x1?'':elevation[_0x34fd99]==undefined?0x0:elevation[_0x34fd99])+_0x20d9fe(0xa5),_0x34fd99!=-0x1?(color_hex='000000'+colors[_0x34fd99][_0x20d9fe(0xb3)](0x10),document[_0x20d9fe(0x149)](_0x20d9fe(0xe5))[_0x20d9fe(0xc0)]['backgroundColor']='#'+color_hex['substring'](color_hex[_0x20d9fe(0x120)]-0x6,color_hex['length']),document[_0x20d9fe(0x149)](_0x20d9fe(0xde))[_0x20d9fe(0xc0)]['backgroundColor']='#'+color_hex[_0x20d9fe(0xea)](color_hex[_0x20d9fe(0x120)]-0x6,color_hex['length'])):(document[_0x20d9fe(0x149)](_0x20d9fe(0xe5))['style'][_0x20d9fe(0xb9)]='',document[_0x20d9fe(0x149)](_0x20d9fe(0xde))[_0x20d9fe(0xc0)][_0x20d9fe(0xb9)]=''),key_perform=![],current_colors_index=_0x34fd99,deleteBall(0x6),delete_annotation=![],_0x2d403d['ctrlKey']=![],document[_0x20d9fe(0x191)]=null,document[_0x20d9fe(0x16b)]=null;}else document[_0x20d9fe(0x149)](_0x20d9fe(0x1a3))[_0x20d9fe(0xc0)][_0x20d9fe(0x17c)]==_0x20d9fe(0x10b)&&(document[_0x20d9fe(0x149)](_0x20d9fe(0x134))['innerHTML']=(azimuth[0x5]==undefined?0x0:azimuth[0x5])+_0x20d9fe(0xa5),document[_0x20d9fe(0x149)]('p-elevation')[_0x20d9fe(0xad)]=(elevation[0x5]==undefined?0x0:elevation[0x5])+_0x20d9fe(0xa5),color_hex='000000'+colors[0x5][_0x20d9fe(0xb3)](0x10),document[_0x20d9fe(0x149)](_0x20d9fe(0xe5))[_0x20d9fe(0xc0)][_0x20d9fe(0xb9)]='#'+color_hex[_0x20d9fe(0xea)](color_hex[_0x20d9fe(0x120)]-0x6,color_hex[_0x20d9fe(0x120)]),document[_0x20d9fe(0x149)](_0x20d9fe(0xde))['style']['backgroundColor']='#'+color_hex[_0x20d9fe(0xea)](color_hex[_0x20d9fe(0x120)]-0x6,color_hex[_0x20d9fe(0x120)]),current_colors_index=0x5,suppress=![],dragElement(0x6,0x0,0x5));}),document[_0x380e68(0x149)](_0x380e68(0xec))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x26a7ab){var _0x32c4d2=_0x380e68;_0x26a7ab[_0x32c4d2(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x6]=undefined,elevation[0x6]=undefined,changeSize(0x7),document[_0x32c4d2(0x149)](_0x32c4d2(0xec))[_0x32c4d2(0xc0)][_0x32c4d2(0x127)]=_0x32c4d2(0xdb),document[_0x32c4d2(0x149)](_0x32c4d2(0x11f))[_0x32c4d2(0xc0)][_0x32c4d2(0x127)]=_0x32c4d2(0xdb),document[_0x32c4d2(0x149)](_0x32c4d2(0xdf))[_0x32c4d2(0xc0)][_0x32c4d2(0x127)]=_0x32c4d2(0xdb),document[_0x32c4d2(0x149)](_0x32c4d2(0x162))[_0x32c4d2(0xc0)]['display']=_0x32c4d2(0xdb),document[_0x32c4d2(0x149)](_0x32c4d2(0xba))[_0x32c4d2(0xc0)][_0x32c4d2(0x127)]=_0x32c4d2(0xdb),document[_0x32c4d2(0x149)](_0x32c4d2(0x17e))[_0x32c4d2(0xc0)][_0x32c4d2(0x127)]=_0x32c4d2(0xdb),key_perform=!![];let _0x7397b1=findDefinedAnnotation(0x7);document[_0x32c4d2(0x149)](_0x32c4d2(0x134))[_0x32c4d2(0xad)]=(_0x7397b1==-0x1?'':azimuth[_0x7397b1]==undefined?0x0:azimuth[_0x7397b1])+_0x32c4d2(0xa5),document['getElementById'](_0x32c4d2(0xe4))[_0x32c4d2(0xad)]=(_0x7397b1==-0x1?'':elevation[_0x7397b1]==undefined?0x0:elevation[_0x7397b1])+_0x32c4d2(0xa5),_0x7397b1!=-0x1?(color_hex=_0x32c4d2(0xe3)+colors[_0x7397b1][_0x32c4d2(0xb3)](0x10),document[_0x32c4d2(0x149)](_0x32c4d2(0xe5))[_0x32c4d2(0xc0)][_0x32c4d2(0xb9)]='#'+color_hex[_0x32c4d2(0xea)](color_hex[_0x32c4d2(0x120)]-0x6,color_hex[_0x32c4d2(0x120)]),document[_0x32c4d2(0x149)]('elevation-dot')['style'][_0x32c4d2(0xb9)]='#'+color_hex[_0x32c4d2(0xea)](color_hex['length']-0x6,color_hex[_0x32c4d2(0x120)])):(document[_0x32c4d2(0x149)](_0x32c4d2(0xe5))[_0x32c4d2(0xc0)]['backgroundColor']='',document[_0x32c4d2(0x149)](_0x32c4d2(0xde))[_0x32c4d2(0xc0)][_0x32c4d2(0xb9)]=''),key_perform=![],current_colors_index=_0x7397b1,deleteBall(0x7),delete_annotation=![],_0x26a7ab[_0x32c4d2(0x15a)]=![],document[_0x32c4d2(0x191)]=null,document['onkeydown']=null;}else document[_0x32c4d2(0x149)](_0x32c4d2(0x1a3))[_0x32c4d2(0xc0)]['cursor']==_0x32c4d2(0x10b)&&(document[_0x32c4d2(0x149)](_0x32c4d2(0x134))[_0x32c4d2(0xad)]=(azimuth[0x6]==undefined?0x0:azimuth[0x6])+_0x32c4d2(0xa5),document[_0x32c4d2(0x149)](_0x32c4d2(0xe4))[_0x32c4d2(0xad)]=(elevation[0x6]==undefined?0x0:elevation[0x6])+_0x32c4d2(0xa5),color_hex=_0x32c4d2(0xe3)+colors[0x6][_0x32c4d2(0xb3)](0x10),document['getElementById']('azimuth-dot')['style'][_0x32c4d2(0xb9)]='#'+color_hex[_0x32c4d2(0xea)](color_hex[_0x32c4d2(0x120)]-0x6,color_hex[_0x32c4d2(0x120)]),document['getElementById']('elevation-dot')['style'][_0x32c4d2(0xb9)]='#'+color_hex[_0x32c4d2(0xea)](color_hex['length']-0x6,color_hex[_0x32c4d2(0x120)]),current_colors_index=0x6,suppress=![],dragElement(0x7,0x0,0x6));}),document[_0x380e68(0x149)](_0x380e68(0xcb))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x4d91a1){var _0x2975da=_0x380e68;_0x4d91a1[_0x2975da(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x7]=undefined,elevation[0x7]=undefined,changeSize(0x8),document[_0x2975da(0x149)](_0x2975da(0xcb))[_0x2975da(0xc0)][_0x2975da(0x127)]=_0x2975da(0xdb),document[_0x2975da(0x149)](_0x2975da(0xa2))[_0x2975da(0xc0)]['display']=_0x2975da(0xdb),document[_0x2975da(0x149)](_0x2975da(0x17a))['style'][_0x2975da(0x127)]=_0x2975da(0xdb),document['getElementById'](_0x2975da(0x146))[_0x2975da(0xc0)][_0x2975da(0x127)]=_0x2975da(0xdb),document[_0x2975da(0x149)](_0x2975da(0xef))[_0x2975da(0xc0)][_0x2975da(0x127)]=_0x2975da(0xdb),document[_0x2975da(0x149)](_0x2975da(0x13f))[_0x2975da(0xc0)][_0x2975da(0x127)]='none',key_perform=!![];let _0x2b114e=findDefinedAnnotation(0x8);document[_0x2975da(0x149)](_0x2975da(0x134))['innerHTML']=(_0x2b114e==-0x1?'':azimuth[_0x2b114e]==undefined?0x0:azimuth[_0x2b114e])+_0x2975da(0xa5),document[_0x2975da(0x149)]('p-elevation')[_0x2975da(0xad)]=(_0x2b114e==-0x1?'':elevation[_0x2b114e]==undefined?0x0:elevation[_0x2b114e])+'\x20degrees',_0x2b114e!=-0x1?(color_hex=_0x2975da(0xe3)+colors[_0x2b114e]['toString'](0x10),document['getElementById'](_0x2975da(0xe5))[_0x2975da(0xc0)][_0x2975da(0xb9)]='#'+color_hex[_0x2975da(0xea)](color_hex[_0x2975da(0x120)]-0x6,color_hex['length']),document[_0x2975da(0x149)]('elevation-dot')['style']['backgroundColor']='#'+color_hex[_0x2975da(0xea)](color_hex[_0x2975da(0x120)]-0x6,color_hex['length'])):(document[_0x2975da(0x149)](_0x2975da(0xe5))['style'][_0x2975da(0xb9)]='',document[_0x2975da(0x149)](_0x2975da(0xde))['style']['backgroundColor']=''),key_perform=![],current_colors_index=_0x2b114e,deleteBall(0x8),delete_annotation=![],_0x4d91a1[_0x2975da(0x15a)]=![],document[_0x2975da(0x191)]=null,document[_0x2975da(0x16b)]=null;}else document[_0x2975da(0x149)](_0x2975da(0x1a3))[_0x2975da(0xc0)][_0x2975da(0x17c)]==_0x2975da(0x10b)&&(document['getElementById'](_0x2975da(0x134))[_0x2975da(0xad)]=(azimuth[0x7]==undefined?0x0:azimuth[0x7])+_0x2975da(0xa5),document['getElementById'](_0x2975da(0xe4))[_0x2975da(0xad)]=(elevation[0x7]==undefined?0x0:elevation[0x7])+_0x2975da(0xa5),color_hex=_0x2975da(0xe3)+colors[0x7][_0x2975da(0xb3)](0x10),document[_0x2975da(0x149)]('azimuth-dot')[_0x2975da(0xc0)][_0x2975da(0xb9)]='#'+color_hex[_0x2975da(0xea)](color_hex[_0x2975da(0x120)]-0x6,color_hex['length']),document[_0x2975da(0x149)](_0x2975da(0xde))[_0x2975da(0xc0)][_0x2975da(0xb9)]='#'+color_hex['substring'](color_hex[_0x2975da(0x120)]-0x6,color_hex[_0x2975da(0x120)]),current_colors_index=0x7,suppress=![],dragElement(0x8,0x0,0x7));}),document[_0x380e68(0x149)]('head-item-9')[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x7d9996){var _0x1a8483=_0x380e68;_0x7d9996[_0x1a8483(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x8]=undefined,elevation[0x8]=undefined,changeSize(0x9),document['getElementById'](_0x1a8483(0x14d))[_0x1a8483(0xc0)][_0x1a8483(0x127)]=_0x1a8483(0xdb),document['getElementById'](_0x1a8483(0xcc))[_0x1a8483(0xc0)][_0x1a8483(0x127)]='none',document[_0x1a8483(0x149)](_0x1a8483(0x16d))[_0x1a8483(0xc0)][_0x1a8483(0x127)]='none',document[_0x1a8483(0x149)](_0x1a8483(0xa7))[_0x1a8483(0xc0)][_0x1a8483(0x127)]=_0x1a8483(0xdb),document[_0x1a8483(0x149)]('circularF9')['style'][_0x1a8483(0x127)]=_0x1a8483(0xdb),document[_0x1a8483(0x149)]('circularS9')[_0x1a8483(0xc0)][_0x1a8483(0x127)]=_0x1a8483(0xdb),key_perform=!![];let _0x5e45a3=findDefinedAnnotation(0x9);document['getElementById'](_0x1a8483(0x134))[_0x1a8483(0xad)]=(_0x5e45a3==-0x1?'':azimuth[_0x5e45a3]==undefined?0x0:azimuth[_0x5e45a3])+_0x1a8483(0xa5),document['getElementById'](_0x1a8483(0xe4))[_0x1a8483(0xad)]=(_0x5e45a3==-0x1?'':elevation[_0x5e45a3]==undefined?0x0:elevation[_0x5e45a3])+_0x1a8483(0xa5),_0x5e45a3!=-0x1?(color_hex='000000'+colors[_0x5e45a3][_0x1a8483(0xb3)](0x10),document[_0x1a8483(0x149)]('azimuth-dot')[_0x1a8483(0xc0)][_0x1a8483(0xb9)]='#'+color_hex[_0x1a8483(0xea)](color_hex[_0x1a8483(0x120)]-0x6,color_hex[_0x1a8483(0x120)]),document['getElementById'](_0x1a8483(0xde))[_0x1a8483(0xc0)][_0x1a8483(0xb9)]='#'+color_hex[_0x1a8483(0xea)](color_hex[_0x1a8483(0x120)]-0x6,color_hex[_0x1a8483(0x120)])):(document[_0x1a8483(0x149)](_0x1a8483(0xe5))[_0x1a8483(0xc0)]['backgroundColor']='',document[_0x1a8483(0x149)](_0x1a8483(0xde))['style'][_0x1a8483(0xb9)]=''),key_perform=![],current_colors_index=_0x5e45a3,deleteBall(0x9),delete_annotation=![],_0x7d9996[_0x1a8483(0x15a)]=![],document[_0x1a8483(0x191)]=null,document[_0x1a8483(0x16b)]=null;}else document['getElementById'](_0x1a8483(0x1a3))[_0x1a8483(0xc0)]['cursor']==_0x1a8483(0x10b)&&(document[_0x1a8483(0x149)]('p-azimuth')[_0x1a8483(0xad)]=(azimuth[0x8]==undefined?0x0:azimuth[0x8])+_0x1a8483(0xa5),document[_0x1a8483(0x149)](_0x1a8483(0xe4))[_0x1a8483(0xad)]=(elevation[0x8]==undefined?0x0:elevation[0x8])+_0x1a8483(0xa5),color_hex=_0x1a8483(0xe3)+colors[0x8]['toString'](0x10),document[_0x1a8483(0x149)](_0x1a8483(0xe5))[_0x1a8483(0xc0)]['backgroundColor']='#'+color_hex['substring'](color_hex['length']-0x6,color_hex['length']),document[_0x1a8483(0x149)](_0x1a8483(0xde))[_0x1a8483(0xc0)][_0x1a8483(0xb9)]='#'+color_hex[_0x1a8483(0xea)](color_hex[_0x1a8483(0x120)]-0x6,color_hex['length']),current_colors_index=0x8,suppress=![],dragElement(0x9,0x0,0x8));}),document[_0x380e68(0x149)]('head-item-10')[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x58085f){var _0x20b00e=_0x380e68;_0x58085f[_0x20b00e(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x9]=undefined,elevation[0x9]=undefined,changeSize(0xa),document[_0x20b00e(0x149)](_0x20b00e(0x122))['style'][_0x20b00e(0x127)]=_0x20b00e(0xdb),document[_0x20b00e(0x149)](_0x20b00e(0x95))['style'][_0x20b00e(0x127)]=_0x20b00e(0xdb),document[_0x20b00e(0x149)]('side-item-10')['style'][_0x20b00e(0x127)]=_0x20b00e(0xdb),document[_0x20b00e(0x149)](_0x20b00e(0xc2))['style'][_0x20b00e(0x127)]=_0x20b00e(0xdb),document[_0x20b00e(0x149)](_0x20b00e(0x12d))[_0x20b00e(0xc0)]['display']='none',document[_0x20b00e(0x149)](_0x20b00e(0x9a))[_0x20b00e(0xc0)]['display']=_0x20b00e(0xdb),key_perform=!![];let _0x3c52fd=findDefinedAnnotation(0xa);document['getElementById'](_0x20b00e(0x134))['innerHTML']=(_0x3c52fd==-0x1?'':azimuth[_0x3c52fd]==undefined?0x0:azimuth[_0x3c52fd])+'\x20degrees',document[_0x20b00e(0x149)](_0x20b00e(0xe4))[_0x20b00e(0xad)]=(_0x3c52fd==-0x1?'':elevation[_0x3c52fd]==undefined?0x0:elevation[_0x3c52fd])+_0x20b00e(0xa5),_0x3c52fd!=-0x1?(color_hex=_0x20b00e(0xe3)+colors[_0x3c52fd][_0x20b00e(0xb3)](0x10),document[_0x20b00e(0x149)](_0x20b00e(0xe5))[_0x20b00e(0xc0)][_0x20b00e(0xb9)]='#'+color_hex[_0x20b00e(0xea)](color_hex[_0x20b00e(0x120)]-0x6,color_hex['length']),document[_0x20b00e(0x149)]('elevation-dot')['style']['backgroundColor']='#'+color_hex[_0x20b00e(0xea)](color_hex[_0x20b00e(0x120)]-0x6,color_hex['length'])):(document['getElementById']('azimuth-dot')[_0x20b00e(0xc0)]['backgroundColor']='',document[_0x20b00e(0x149)](_0x20b00e(0xde))[_0x20b00e(0xc0)][_0x20b00e(0xb9)]=''),key_perform=![],current_colors_index=_0x3c52fd,deleteBall(0xa),delete_annotation=![],_0x58085f[_0x20b00e(0x15a)]=![],document[_0x20b00e(0x191)]=null,document[_0x20b00e(0x16b)]=null;}else document[_0x20b00e(0x149)](_0x20b00e(0x1a3))['style']['cursor']==_0x20b00e(0x10b)&&(document[_0x20b00e(0x149)](_0x20b00e(0x134))['innerHTML']=(azimuth[0x9]==undefined?0x0:azimuth[0x9])+_0x20b00e(0xa5),document['getElementById'](_0x20b00e(0xe4))[_0x20b00e(0xad)]=(elevation[0x9]==undefined?0x0:elevation[0x9])+_0x20b00e(0xa5),color_hex=_0x20b00e(0xe3)+colors[0x9]['toString'](0x10),document[_0x20b00e(0x149)](_0x20b00e(0xe5))[_0x20b00e(0xc0)][_0x20b00e(0xb9)]='#'+color_hex['substring'](color_hex['length']-0x6,color_hex['length']),document[_0x20b00e(0x149)](_0x20b00e(0xde))[_0x20b00e(0xc0)]['backgroundColor']='#'+color_hex[_0x20b00e(0xea)](color_hex[_0x20b00e(0x120)]-0x6,color_hex['length']),current_colors_index=0x9,suppress=![],dragElement(0xa,0x0,0x9));}),document[_0x380e68(0x149)](_0x380e68(0xc5))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0xc39e6a){var _0x141dd0=_0x380e68;_0xc39e6a['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x0]=undefined,elevation[0x0]=undefined,changeSize(0x1),document[_0x141dd0(0x149)](_0x141dd0(0x168))[_0x141dd0(0xc0)]['display']=_0x141dd0(0xdb),document[_0x141dd0(0x149)](_0x141dd0(0xc5))['style'][_0x141dd0(0x127)]='none',document[_0x141dd0(0x149)](_0x141dd0(0xae))[_0x141dd0(0xc0)]['display']=_0x141dd0(0xdb),document['getElementById'](_0x141dd0(0xf7))[_0x141dd0(0xc0)][_0x141dd0(0x127)]=_0x141dd0(0xdb),document['getElementById'](_0x141dd0(0x110))[_0x141dd0(0xc0)]['display']=_0x141dd0(0xdb),document['getElementById'](_0x141dd0(0x9f))[_0x141dd0(0xc0)]['display']=_0x141dd0(0xdb),key_perform=!![];let _0x23479b=findDefinedAnnotation(0x1);document['getElementById'](_0x141dd0(0x134))[_0x141dd0(0xad)]=(_0x23479b==-0x1?'':azimuth[_0x23479b]==undefined?0x0:azimuth[_0x23479b])+'\x20degrees',document['getElementById']('p-elevation')[_0x141dd0(0xad)]=(_0x23479b==-0x1?'':elevation[_0x23479b]==undefined?0x0:elevation[_0x23479b])+_0x141dd0(0xa5),_0x23479b!=-0x1?(color_hex=_0x141dd0(0xe3)+colors[_0x23479b][_0x141dd0(0xb3)](0x10),document['getElementById'](_0x141dd0(0xe5))[_0x141dd0(0xc0)][_0x141dd0(0xb9)]='#'+color_hex[_0x141dd0(0xea)](color_hex[_0x141dd0(0x120)]-0x6,color_hex[_0x141dd0(0x120)]),document['getElementById'](_0x141dd0(0xde))[_0x141dd0(0xc0)][_0x141dd0(0xb9)]='#'+color_hex[_0x141dd0(0xea)](color_hex[_0x141dd0(0x120)]-0x6,color_hex[_0x141dd0(0x120)])):(document['getElementById']('azimuth-dot')[_0x141dd0(0xc0)][_0x141dd0(0xb9)]='',document[_0x141dd0(0x149)]('elevation-dot')[_0x141dd0(0xc0)][_0x141dd0(0xb9)]=''),key_perform=![],current_colors_index=0x0,deleteBall(0x1),delete_annotation=![],_0xc39e6a[_0x141dd0(0x15a)]=![],document['onmousedown']=null,document[_0x141dd0(0x16b)]=null;}else document[_0x141dd0(0x149)](_0x141dd0(0x1a3))[_0x141dd0(0xc0)][_0x141dd0(0x17c)]==_0x141dd0(0x10b)&&(document[_0x141dd0(0x149)](_0x141dd0(0x134))[_0x141dd0(0xad)]=(azimuth[0x0]==undefined?0x0:azimuth[0x0])+_0x141dd0(0xa5),document[_0x141dd0(0x149)]('p-elevation')[_0x141dd0(0xad)]=(elevation[0x0]==undefined?0x0:elevation[0x0])+_0x141dd0(0xa5),color_hex=_0x141dd0(0xe3)+colors[0x0][_0x141dd0(0xb3)](0x10),document[_0x141dd0(0x149)](_0x141dd0(0xe5))[_0x141dd0(0xc0)][_0x141dd0(0xb9)]='#'+color_hex[_0x141dd0(0xea)](color_hex['length']-0x6,color_hex[_0x141dd0(0x120)]),document['getElementById'](_0x141dd0(0xde))[_0x141dd0(0xc0)]['backgroundColor']='#'+color_hex[_0x141dd0(0xea)](color_hex['length']-0x6,color_hex[_0x141dd0(0x120)]),current_colors_index=0x0,suppress=![],dragElement(0x1,0x1,0x0));}),document[_0x380e68(0x149)](_0x380e68(0xc1))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x256e9b){var _0x260465=_0x380e68;_0x256e9b[_0x260465(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x1]=undefined,elevation[0x1]=undefined,changeSize(0x2),document[_0x260465(0x149)]('head-item-2')[_0x260465(0xc0)]['display']=_0x260465(0xdb),document['getElementById'](_0x260465(0xc1))[_0x260465(0xc0)][_0x260465(0x127)]=_0x260465(0xdb),document['getElementById'](_0x260465(0x138))[_0x260465(0xc0)][_0x260465(0x127)]=_0x260465(0xdb),document['getElementById'](_0x260465(0x103))[_0x260465(0xc0)][_0x260465(0x127)]=_0x260465(0xdb),document[_0x260465(0x149)](_0x260465(0x169))[_0x260465(0xc0)][_0x260465(0x127)]=_0x260465(0xdb),document[_0x260465(0x149)]('circularS2')[_0x260465(0xc0)]['display']=_0x260465(0xdb),key_perform=!![];let _0x4dfe49=findDefinedAnnotation(0x2);document[_0x260465(0x149)](_0x260465(0x134))[_0x260465(0xad)]=(_0x4dfe49==-0x1?'':azimuth[_0x4dfe49]==undefined?0x0:azimuth[_0x4dfe49])+_0x260465(0xa5),document[_0x260465(0x149)](_0x260465(0xe4))[_0x260465(0xad)]=(_0x4dfe49==-0x1?'':elevation[_0x4dfe49]==undefined?0x0:elevation[_0x4dfe49])+'\x20degrees',_0x4dfe49!=-0x1?(color_hex=_0x260465(0xe3)+colors[_0x4dfe49][_0x260465(0xb3)](0x10),document[_0x260465(0x149)]('azimuth-dot')[_0x260465(0xc0)][_0x260465(0xb9)]='#'+color_hex[_0x260465(0xea)](color_hex[_0x260465(0x120)]-0x6,color_hex[_0x260465(0x120)]),document['getElementById'](_0x260465(0xde))[_0x260465(0xc0)][_0x260465(0xb9)]='#'+color_hex[_0x260465(0xea)](color_hex[_0x260465(0x120)]-0x6,color_hex['length'])):(document[_0x260465(0x149)](_0x260465(0xe5))[_0x260465(0xc0)]['backgroundColor']='',document[_0x260465(0x149)]('elevation-dot')['style'][_0x260465(0xb9)]=''),key_perform=![],current_colors_index=_0x4dfe49,deleteBall(0x2),delete_annotation=![],_0x256e9b[_0x260465(0x15a)]=![],document[_0x260465(0x191)]=null,document[_0x260465(0x16b)]=null;}else document['getElementById'](_0x260465(0x1a3))['style'][_0x260465(0x17c)]==_0x260465(0x10b)&&(document[_0x260465(0x149)]('p-azimuth')[_0x260465(0xad)]=(azimuth[0x1]==undefined?0x0:azimuth[0x1])+'\x20degrees',document[_0x260465(0x149)]('p-elevation')[_0x260465(0xad)]=(elevation[0x1]==undefined?0x0:elevation[0x1])+_0x260465(0xa5),color_hex=_0x260465(0xe3)+colors[0x1][_0x260465(0xb3)](0x10),document['getElementById']('azimuth-dot')[_0x260465(0xc0)][_0x260465(0xb9)]='#'+color_hex['substring'](color_hex[_0x260465(0x120)]-0x6,color_hex[_0x260465(0x120)]),document[_0x260465(0x149)](_0x260465(0xde))[_0x260465(0xc0)]['backgroundColor']='#'+color_hex[_0x260465(0xea)](color_hex[_0x260465(0x120)]-0x6,color_hex[_0x260465(0x120)]),current_colors_index=0x1,suppress=![],dragElement(0x2,0x1,0x1));}),document[_0x380e68(0x149)](_0x380e68(0xe7))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x58a333){var _0x27363c=_0x380e68;_0x58a333[_0x27363c(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x2]=undefined,elevation[0x2]=undefined,changeSize(0x3),document[_0x27363c(0x149)](_0x27363c(0x14c))[_0x27363c(0xc0)][_0x27363c(0x127)]='none',document['getElementById'](_0x27363c(0xe7))[_0x27363c(0xc0)][_0x27363c(0x127)]=_0x27363c(0xdb),document['getElementById'](_0x27363c(0x105))[_0x27363c(0xc0)][_0x27363c(0x127)]=_0x27363c(0xdb),document[_0x27363c(0x149)](_0x27363c(0xda))[_0x27363c(0xc0)][_0x27363c(0x127)]=_0x27363c(0xdb),document[_0x27363c(0x149)](_0x27363c(0x124))[_0x27363c(0xc0)][_0x27363c(0x127)]=_0x27363c(0xdb),document[_0x27363c(0x149)](_0x27363c(0x107))['style'][_0x27363c(0x127)]=_0x27363c(0xdb),key_perform=!![];let _0x8234cb=findDefinedAnnotation(0x3);document[_0x27363c(0x149)]('p-azimuth')[_0x27363c(0xad)]=(_0x8234cb==-0x1?'':azimuth[_0x8234cb]==undefined?0x0:azimuth[_0x8234cb])+_0x27363c(0xa5),document['getElementById'](_0x27363c(0xe4))[_0x27363c(0xad)]=(_0x8234cb==-0x1?'':elevation[_0x8234cb]==undefined?0x0:elevation[_0x8234cb])+_0x27363c(0xa5),_0x8234cb!=-0x1?(color_hex=_0x27363c(0xe3)+colors[_0x8234cb][_0x27363c(0xb3)](0x10),document['getElementById'](_0x27363c(0xe5))[_0x27363c(0xc0)][_0x27363c(0xb9)]='#'+color_hex['substring'](color_hex[_0x27363c(0x120)]-0x6,color_hex[_0x27363c(0x120)]),document[_0x27363c(0x149)](_0x27363c(0xde))[_0x27363c(0xc0)]['backgroundColor']='#'+color_hex[_0x27363c(0xea)](color_hex[_0x27363c(0x120)]-0x6,color_hex[_0x27363c(0x120)])):(document['getElementById'](_0x27363c(0xe5))[_0x27363c(0xc0)][_0x27363c(0xb9)]='',document[_0x27363c(0x149)](_0x27363c(0xde))[_0x27363c(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=_0x8234cb,deleteBall(0x3),delete_annotation=![],_0x58a333[_0x27363c(0x15a)]=![],document[_0x27363c(0x191)]=null,document[_0x27363c(0x16b)]=null;}else document['getElementById']('body')[_0x27363c(0xc0)]['cursor']==_0x27363c(0x10b)&&(document[_0x27363c(0x149)](_0x27363c(0x134))[_0x27363c(0xad)]=(azimuth[0x2]==undefined?0x0:azimuth[0x2])+_0x27363c(0xa5),document[_0x27363c(0x149)]('p-elevation')['innerHTML']=(elevation[0x2]==undefined?0x0:elevation[0x2])+'\x20degrees',color_hex=_0x27363c(0xe3)+colors[0x2][_0x27363c(0xb3)](0x10),document['getElementById']('azimuth-dot')[_0x27363c(0xc0)][_0x27363c(0xb9)]='#'+color_hex[_0x27363c(0xea)](color_hex[_0x27363c(0x120)]-0x6,color_hex['length']),document[_0x27363c(0x149)](_0x27363c(0xde))[_0x27363c(0xc0)]['backgroundColor']='#'+color_hex[_0x27363c(0xea)](color_hex[_0x27363c(0x120)]-0x6,color_hex['length']),current_colors_index=0x2,suppress=![],dragElement(0x3,0x1,0x2));}),document[_0x380e68(0x149)](_0x380e68(0x125))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x4d04d9){var _0x4ee415=_0x380e68;_0x4d04d9[_0x4ee415(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x3]=undefined,elevation[0x3]=undefined,changeSize(0x4),document[_0x4ee415(0x149)](_0x4ee415(0xce))[_0x4ee415(0xc0)][_0x4ee415(0x127)]=_0x4ee415(0xdb),document['getElementById'](_0x4ee415(0x125))[_0x4ee415(0xc0)][_0x4ee415(0x127)]=_0x4ee415(0xdb),document[_0x4ee415(0x149)](_0x4ee415(0x94))[_0x4ee415(0xc0)]['display']='none',document[_0x4ee415(0x149)]('circular4')['style'][_0x4ee415(0x127)]=_0x4ee415(0xdb),document[_0x4ee415(0x149)](_0x4ee415(0x17d))[_0x4ee415(0xc0)][_0x4ee415(0x127)]=_0x4ee415(0xdb),document[_0x4ee415(0x149)](_0x4ee415(0x10a))['style'][_0x4ee415(0x127)]=_0x4ee415(0xdb),key_perform=!![];let _0x269be3=findDefinedAnnotation(0x4);document[_0x4ee415(0x149)](_0x4ee415(0x134))[_0x4ee415(0xad)]=(_0x269be3==-0x1?'':azimuth[_0x269be3]==undefined?0x0:azimuth[_0x269be3])+_0x4ee415(0xa5),document[_0x4ee415(0x149)](_0x4ee415(0xe4))[_0x4ee415(0xad)]=(_0x269be3==-0x1?'':elevation[_0x269be3]==undefined?0x0:elevation[_0x269be3])+_0x4ee415(0xa5),_0x269be3!=-0x1?(color_hex=_0x4ee415(0xe3)+colors[_0x269be3]['toString'](0x10),document[_0x4ee415(0x149)](_0x4ee415(0xe5))['style']['backgroundColor']='#'+color_hex[_0x4ee415(0xea)](color_hex[_0x4ee415(0x120)]-0x6,color_hex['length']),document[_0x4ee415(0x149)](_0x4ee415(0xde))[_0x4ee415(0xc0)][_0x4ee415(0xb9)]='#'+color_hex[_0x4ee415(0xea)](color_hex[_0x4ee415(0x120)]-0x6,color_hex['length'])):(document[_0x4ee415(0x149)](_0x4ee415(0xe5))['style'][_0x4ee415(0xb9)]='',document[_0x4ee415(0x149)](_0x4ee415(0xde))[_0x4ee415(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=_0x269be3,deleteBall(0x4),delete_annotation=![],_0x4d04d9[_0x4ee415(0x15a)]=![],document[_0x4ee415(0x191)]=null,document[_0x4ee415(0x16b)]=null;}else document[_0x4ee415(0x149)]('body')['style'][_0x4ee415(0x17c)]==_0x4ee415(0x10b)&&(document[_0x4ee415(0x149)](_0x4ee415(0x134))[_0x4ee415(0xad)]=(azimuth[0x3]==undefined?0x0:azimuth[0x3])+_0x4ee415(0xa5),document['getElementById']('p-elevation')[_0x4ee415(0xad)]=(elevation[0x3]==undefined?0x0:elevation[0x3])+_0x4ee415(0xa5),color_hex=_0x4ee415(0xe3)+colors[0x3][_0x4ee415(0xb3)](0x10),document[_0x4ee415(0x149)](_0x4ee415(0xe5))[_0x4ee415(0xc0)][_0x4ee415(0xb9)]='#'+color_hex[_0x4ee415(0xea)](color_hex[_0x4ee415(0x120)]-0x6,color_hex[_0x4ee415(0x120)]),document[_0x4ee415(0x149)]('elevation-dot')[_0x4ee415(0xc0)][_0x4ee415(0xb9)]='#'+color_hex['substring'](color_hex[_0x4ee415(0x120)]-0x6,color_hex[_0x4ee415(0x120)]),current_colors_index=0x3,suppress=![],dragElement(0x4,0x1,0x3));}),document[_0x380e68(0x149)]('front-item-5')['addEventListener'](_0x380e68(0xa4),function(_0x444d7c){var _0x1b4914=_0x380e68;_0x444d7c[_0x1b4914(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x4]=undefined,elevation[0x4]=undefined,changeSize(0x5),document[_0x1b4914(0x149)](_0x1b4914(0xbf))[_0x1b4914(0xc0)][_0x1b4914(0x127)]=_0x1b4914(0xdb),document[_0x1b4914(0x149)](_0x1b4914(0x130))[_0x1b4914(0xc0)]['display']=_0x1b4914(0xdb),document[_0x1b4914(0x149)](_0x1b4914(0x12f))['style']['display']=_0x1b4914(0xdb),document[_0x1b4914(0x149)](_0x1b4914(0x176))[_0x1b4914(0xc0)]['display']=_0x1b4914(0xdb),document[_0x1b4914(0x149)](_0x1b4914(0x155))[_0x1b4914(0xc0)][_0x1b4914(0x127)]=_0x1b4914(0xdb),document[_0x1b4914(0x149)](_0x1b4914(0x16c))[_0x1b4914(0xc0)][_0x1b4914(0x127)]=_0x1b4914(0xdb),key_perform=!![];let _0x4331ed=findDefinedAnnotation(0x5);document[_0x1b4914(0x149)](_0x1b4914(0x134))[_0x1b4914(0xad)]=(_0x4331ed==-0x1?'':azimuth[_0x4331ed]==undefined?0x0:azimuth[_0x4331ed])+_0x1b4914(0xa5),document[_0x1b4914(0x149)](_0x1b4914(0xe4))[_0x1b4914(0xad)]=(_0x4331ed==-0x1?'':elevation[_0x4331ed]==undefined?0x0:elevation[_0x4331ed])+_0x1b4914(0xa5),_0x4331ed!=-0x1?(color_hex=_0x1b4914(0xe3)+colors[_0x4331ed]['toString'](0x10),document['getElementById'](_0x1b4914(0xe5))[_0x1b4914(0xc0)][_0x1b4914(0xb9)]='#'+color_hex[_0x1b4914(0xea)](color_hex[_0x1b4914(0x120)]-0x6,color_hex[_0x1b4914(0x120)]),document[_0x1b4914(0x149)](_0x1b4914(0xde))[_0x1b4914(0xc0)][_0x1b4914(0xb9)]='#'+color_hex['substring'](color_hex[_0x1b4914(0x120)]-0x6,color_hex[_0x1b4914(0x120)])):(document[_0x1b4914(0x149)](_0x1b4914(0xe5))[_0x1b4914(0xc0)][_0x1b4914(0xb9)]='',document['getElementById'](_0x1b4914(0xde))[_0x1b4914(0xc0)][_0x1b4914(0xb9)]=''),key_perform=![],current_colors_index=_0x4331ed,deleteBall(0x5),delete_annotation=![],_0x444d7c[_0x1b4914(0x15a)]=![],document['onmousedown']=null,document[_0x1b4914(0x16b)]=null;}else document[_0x1b4914(0x149)](_0x1b4914(0x1a3))[_0x1b4914(0xc0)][_0x1b4914(0x17c)]==_0x1b4914(0x10b)&&(document['getElementById']('p-azimuth')[_0x1b4914(0xad)]=(azimuth[0x4]==undefined?0x0:azimuth[0x4])+_0x1b4914(0xa5),document['getElementById'](_0x1b4914(0xe4))[_0x1b4914(0xad)]=(elevation[0x4]==undefined?0x0:elevation[0x4])+_0x1b4914(0xa5),color_hex=_0x1b4914(0xe3)+colors[0x4]['toString'](0x10),document[_0x1b4914(0x149)](_0x1b4914(0xe5))[_0x1b4914(0xc0)][_0x1b4914(0xb9)]='#'+color_hex[_0x1b4914(0xea)](color_hex['length']-0x6,color_hex[_0x1b4914(0x120)]),document['getElementById'](_0x1b4914(0xde))[_0x1b4914(0xc0)][_0x1b4914(0xb9)]='#'+color_hex[_0x1b4914(0xea)](color_hex[_0x1b4914(0x120)]-0x6,color_hex[_0x1b4914(0x120)]),current_colors_index=0x4,suppress=![],dragElement(0x5,0x1,0x4));}),document['getElementById'](_0x380e68(0x133))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x3db39f){var _0x1c904e=_0x380e68;_0x3db39f[_0x1c904e(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x5]=undefined,elevation[0x5]=undefined,changeSize(0x6),document[_0x1c904e(0x149)](_0x1c904e(0x11b))[_0x1c904e(0xc0)]['display']=_0x1c904e(0xdb),document[_0x1c904e(0x149)](_0x1c904e(0x133))['style'][_0x1c904e(0x127)]='none',document[_0x1c904e(0x149)]('side-item-6')[_0x1c904e(0xc0)][_0x1c904e(0x127)]=_0x1c904e(0xdb),document[_0x1c904e(0x149)](_0x1c904e(0x140))[_0x1c904e(0xc0)]['display']=_0x1c904e(0xdb),document[_0x1c904e(0x149)]('circularF6')[_0x1c904e(0xc0)][_0x1c904e(0x127)]='none',document['getElementById']('circularS6')[_0x1c904e(0xc0)][_0x1c904e(0x127)]=_0x1c904e(0xdb),key_perform=!![];let _0x4f685a=findDefinedAnnotation(0x6);document[_0x1c904e(0x149)](_0x1c904e(0x134))['innerHTML']=(_0x4f685a==-0x1?'':azimuth[_0x4f685a]==undefined?0x0:azimuth[_0x4f685a])+_0x1c904e(0xa5),document['getElementById'](_0x1c904e(0xe4))['innerHTML']=(_0x4f685a==-0x1?'':elevation[_0x4f685a]==undefined?0x0:elevation[_0x4f685a])+_0x1c904e(0xa5),_0x4f685a!=-0x1?(color_hex=_0x1c904e(0xe3)+colors[_0x4f685a][_0x1c904e(0xb3)](0x10),document['getElementById'](_0x1c904e(0xe5))['style'][_0x1c904e(0xb9)]='#'+color_hex['substring'](color_hex[_0x1c904e(0x120)]-0x6,color_hex[_0x1c904e(0x120)]),document[_0x1c904e(0x149)](_0x1c904e(0xde))[_0x1c904e(0xc0)][_0x1c904e(0xb9)]='#'+color_hex[_0x1c904e(0xea)](color_hex['length']-0x6,color_hex['length'])):(document[_0x1c904e(0x149)](_0x1c904e(0xe5))[_0x1c904e(0xc0)][_0x1c904e(0xb9)]='',document['getElementById']('elevation-dot')['style'][_0x1c904e(0xb9)]=''),key_perform=![],current_colors_index=_0x4f685a,deleteBall(0x6),delete_annotation=![],_0x3db39f[_0x1c904e(0x15a)]=![],document[_0x1c904e(0x191)]=null,document['onkeydown']=null;}else document[_0x1c904e(0x149)](_0x1c904e(0x1a3))['style'][_0x1c904e(0x17c)]==_0x1c904e(0x10b)&&(document['getElementById'](_0x1c904e(0x134))[_0x1c904e(0xad)]=(azimuth[0x5]==undefined?0x0:azimuth[0x5])+_0x1c904e(0xa5),document[_0x1c904e(0x149)](_0x1c904e(0xe4))[_0x1c904e(0xad)]=(elevation[0x5]==undefined?0x0:elevation[0x5])+'\x20degrees',color_hex=_0x1c904e(0xe3)+colors[0x5]['toString'](0x10),document[_0x1c904e(0x149)](_0x1c904e(0xe5))[_0x1c904e(0xc0)][_0x1c904e(0xb9)]='#'+color_hex[_0x1c904e(0xea)](color_hex['length']-0x6,color_hex[_0x1c904e(0x120)]),document['getElementById']('elevation-dot')[_0x1c904e(0xc0)][_0x1c904e(0xb9)]='#'+color_hex[_0x1c904e(0xea)](color_hex[_0x1c904e(0x120)]-0x6,color_hex[_0x1c904e(0x120)]),current_colors_index=0x5,suppress=![],dragElement(0x6,0x1,0x5));}),document[_0x380e68(0x149)]('front-item-7')[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x3edbc7){var _0x4cbb2d=_0x380e68;_0x3edbc7[_0x4cbb2d(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x6]=undefined,elevation[0x6]=undefined,changeSize(0x7),document[_0x4cbb2d(0x149)](_0x4cbb2d(0xec))[_0x4cbb2d(0xc0)]['display']=_0x4cbb2d(0xdb),document[_0x4cbb2d(0x149)](_0x4cbb2d(0x11f))[_0x4cbb2d(0xc0)][_0x4cbb2d(0x127)]='none',document[_0x4cbb2d(0x149)](_0x4cbb2d(0xdf))[_0x4cbb2d(0xc0)]['display']=_0x4cbb2d(0xdb),document[_0x4cbb2d(0x149)](_0x4cbb2d(0x162))[_0x4cbb2d(0xc0)]['display']=_0x4cbb2d(0xdb),document[_0x4cbb2d(0x149)](_0x4cbb2d(0xba))[_0x4cbb2d(0xc0)]['display']=_0x4cbb2d(0xdb),document['getElementById'](_0x4cbb2d(0x17e))['style'][_0x4cbb2d(0x127)]='none',key_perform=!![];let _0x1601e3=findDefinedAnnotation(0x7);document[_0x4cbb2d(0x149)](_0x4cbb2d(0x134))[_0x4cbb2d(0xad)]=(_0x1601e3==-0x1?'':azimuth[_0x1601e3]==undefined?0x0:azimuth[_0x1601e3])+_0x4cbb2d(0xa5),document['getElementById'](_0x4cbb2d(0xe4))[_0x4cbb2d(0xad)]=(_0x1601e3==-0x1?'':elevation[_0x1601e3]==undefined?0x0:elevation[_0x1601e3])+'\x20degrees',_0x1601e3!=-0x1?(color_hex=_0x4cbb2d(0xe3)+colors[_0x1601e3][_0x4cbb2d(0xb3)](0x10),document[_0x4cbb2d(0x149)](_0x4cbb2d(0xe5))['style'][_0x4cbb2d(0xb9)]='#'+color_hex['substring'](color_hex['length']-0x6,color_hex[_0x4cbb2d(0x120)]),document[_0x4cbb2d(0x149)](_0x4cbb2d(0xde))[_0x4cbb2d(0xc0)][_0x4cbb2d(0xb9)]='#'+color_hex['substring'](color_hex[_0x4cbb2d(0x120)]-0x6,color_hex[_0x4cbb2d(0x120)])):(document[_0x4cbb2d(0x149)](_0x4cbb2d(0xe5))[_0x4cbb2d(0xc0)][_0x4cbb2d(0xb9)]='',document[_0x4cbb2d(0x149)](_0x4cbb2d(0xde))[_0x4cbb2d(0xc0)][_0x4cbb2d(0xb9)]=''),key_perform=![],current_colors_index=_0x1601e3,deleteBall(0x7),delete_annotation=![],_0x3edbc7[_0x4cbb2d(0x15a)]=![],document['onmousedown']=null,document[_0x4cbb2d(0x16b)]=null;}else document[_0x4cbb2d(0x149)](_0x4cbb2d(0x1a3))['style'][_0x4cbb2d(0x17c)]==_0x4cbb2d(0x10b)&&(document[_0x4cbb2d(0x149)](_0x4cbb2d(0x134))['innerHTML']=(azimuth[0x6]==undefined?0x0:azimuth[0x6])+_0x4cbb2d(0xa5),document['getElementById'](_0x4cbb2d(0xe4))['innerHTML']=(elevation[0x6]==undefined?0x0:elevation[0x6])+'\x20degrees',color_hex='000000'+colors[0x6][_0x4cbb2d(0xb3)](0x10),document[_0x4cbb2d(0x149)](_0x4cbb2d(0xe5))[_0x4cbb2d(0xc0)][_0x4cbb2d(0xb9)]='#'+color_hex[_0x4cbb2d(0xea)](color_hex[_0x4cbb2d(0x120)]-0x6,color_hex[_0x4cbb2d(0x120)]),document['getElementById'](_0x4cbb2d(0xde))[_0x4cbb2d(0xc0)][_0x4cbb2d(0xb9)]='#'+color_hex[_0x4cbb2d(0xea)](color_hex['length']-0x6,color_hex[_0x4cbb2d(0x120)]),current_colors_index=0x6,suppress=![],dragElement(0x7,0x1,0x6));}),document['getElementById'](_0x380e68(0xa2))[_0x380e68(0x9e)]('mousedown',function(_0x18f50c){var _0x1a90d0=_0x380e68;_0x18f50c[_0x1a90d0(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x7]=undefined,elevation[0x7]=undefined,changeSize(0x8),document[_0x1a90d0(0x149)](_0x1a90d0(0xcb))[_0x1a90d0(0xc0)][_0x1a90d0(0x127)]='none',document[_0x1a90d0(0x149)](_0x1a90d0(0xa2))[_0x1a90d0(0xc0)][_0x1a90d0(0x127)]='none',document[_0x1a90d0(0x149)](_0x1a90d0(0x17a))[_0x1a90d0(0xc0)][_0x1a90d0(0x127)]=_0x1a90d0(0xdb),document[_0x1a90d0(0x149)](_0x1a90d0(0x146))[_0x1a90d0(0xc0)][_0x1a90d0(0x127)]=_0x1a90d0(0xdb),document['getElementById'](_0x1a90d0(0xef))[_0x1a90d0(0xc0)]['display']='none',document[_0x1a90d0(0x149)](_0x1a90d0(0x13f))['style'][_0x1a90d0(0x127)]='none',key_perform=!![];let _0x51da37=findDefinedAnnotation(0x8);document[_0x1a90d0(0x149)](_0x1a90d0(0x134))[_0x1a90d0(0xad)]=(_0x51da37==-0x1?'':azimuth[_0x51da37]==undefined?0x0:azimuth[_0x51da37])+_0x1a90d0(0xa5),document[_0x1a90d0(0x149)]('p-elevation')[_0x1a90d0(0xad)]=(_0x51da37==-0x1?'':elevation[_0x51da37]==undefined?0x0:elevation[_0x51da37])+_0x1a90d0(0xa5),_0x51da37!=-0x1?(color_hex=_0x1a90d0(0xe3)+colors[_0x51da37][_0x1a90d0(0xb3)](0x10),document[_0x1a90d0(0x149)](_0x1a90d0(0xe5))[_0x1a90d0(0xc0)]['backgroundColor']='#'+color_hex[_0x1a90d0(0xea)](color_hex[_0x1a90d0(0x120)]-0x6,color_hex['length']),document['getElementById'](_0x1a90d0(0xde))[_0x1a90d0(0xc0)][_0x1a90d0(0xb9)]='#'+color_hex[_0x1a90d0(0xea)](color_hex[_0x1a90d0(0x120)]-0x6,color_hex[_0x1a90d0(0x120)])):(document['getElementById'](_0x1a90d0(0xe5))[_0x1a90d0(0xc0)][_0x1a90d0(0xb9)]='',document[_0x1a90d0(0x149)]('elevation-dot')[_0x1a90d0(0xc0)][_0x1a90d0(0xb9)]=''),key_perform=![],current_colors_index=_0x51da37,deleteBall(0x8),delete_annotation=![],_0x18f50c['ctrlKey']=![],document[_0x1a90d0(0x191)]=null,document[_0x1a90d0(0x16b)]=null;}else document[_0x1a90d0(0x149)]('body')['style']['cursor']==_0x1a90d0(0x10b)&&(document[_0x1a90d0(0x149)](_0x1a90d0(0x134))[_0x1a90d0(0xad)]=(azimuth[0x7]==undefined?0x0:azimuth[0x7])+_0x1a90d0(0xa5),document[_0x1a90d0(0x149)](_0x1a90d0(0xe4))[_0x1a90d0(0xad)]=(elevation[0x7]==undefined?0x0:elevation[0x7])+_0x1a90d0(0xa5),color_hex=_0x1a90d0(0xe3)+colors[0x7]['toString'](0x10),document[_0x1a90d0(0x149)](_0x1a90d0(0xe5))[_0x1a90d0(0xc0)]['backgroundColor']='#'+color_hex[_0x1a90d0(0xea)](color_hex[_0x1a90d0(0x120)]-0x6,color_hex[_0x1a90d0(0x120)]),document[_0x1a90d0(0x149)]('elevation-dot')[_0x1a90d0(0xc0)][_0x1a90d0(0xb9)]='#'+color_hex[_0x1a90d0(0xea)](color_hex[_0x1a90d0(0x120)]-0x6,color_hex[_0x1a90d0(0x120)]),current_colors_index=0x7,suppress=![],dragElement(0x8,0x1,0x7));}),document['getElementById'](_0x380e68(0xcc))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x1ebdfb){var _0x2cf0a3=_0x380e68;_0x1ebdfb['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x8]=undefined,elevation[0x8]=undefined,changeSize(0x9),document[_0x2cf0a3(0x149)](_0x2cf0a3(0x14d))[_0x2cf0a3(0xc0)]['display']=_0x2cf0a3(0xdb),document[_0x2cf0a3(0x149)](_0x2cf0a3(0xcc))[_0x2cf0a3(0xc0)][_0x2cf0a3(0x127)]=_0x2cf0a3(0xdb),document['getElementById'](_0x2cf0a3(0x16d))[_0x2cf0a3(0xc0)][_0x2cf0a3(0x127)]=_0x2cf0a3(0xdb),document['getElementById'](_0x2cf0a3(0xa7))[_0x2cf0a3(0xc0)][_0x2cf0a3(0x127)]=_0x2cf0a3(0xdb),document[_0x2cf0a3(0x149)](_0x2cf0a3(0x172))[_0x2cf0a3(0xc0)][_0x2cf0a3(0x127)]=_0x2cf0a3(0xdb),document[_0x2cf0a3(0x149)](_0x2cf0a3(0x1a5))['style'][_0x2cf0a3(0x127)]=_0x2cf0a3(0xdb),key_perform=!![];let _0xb3e62b=findDefinedAnnotation(0x9);document[_0x2cf0a3(0x149)](_0x2cf0a3(0x134))[_0x2cf0a3(0xad)]=(_0xb3e62b==-0x1?'':azimuth[_0xb3e62b]==undefined?0x0:azimuth[_0xb3e62b])+_0x2cf0a3(0xa5),document[_0x2cf0a3(0x149)](_0x2cf0a3(0xe4))[_0x2cf0a3(0xad)]=(_0xb3e62b==-0x1?'':elevation[_0xb3e62b]==undefined?0x0:elevation[_0xb3e62b])+_0x2cf0a3(0xa5),_0xb3e62b!=-0x1?(color_hex=_0x2cf0a3(0xe3)+colors[_0xb3e62b][_0x2cf0a3(0xb3)](0x10),document[_0x2cf0a3(0x149)]('azimuth-dot')[_0x2cf0a3(0xc0)]['backgroundColor']='#'+color_hex['substring'](color_hex[_0x2cf0a3(0x120)]-0x6,color_hex[_0x2cf0a3(0x120)]),document[_0x2cf0a3(0x149)](_0x2cf0a3(0xde))[_0x2cf0a3(0xc0)][_0x2cf0a3(0xb9)]='#'+color_hex[_0x2cf0a3(0xea)](color_hex[_0x2cf0a3(0x120)]-0x6,color_hex[_0x2cf0a3(0x120)])):(document[_0x2cf0a3(0x149)](_0x2cf0a3(0xe5))['style'][_0x2cf0a3(0xb9)]='',document[_0x2cf0a3(0x149)](_0x2cf0a3(0xde))['style'][_0x2cf0a3(0xb9)]=''),key_perform=![],current_colors_index=_0xb3e62b,deleteBall(0x9),delete_annotation=![],_0x1ebdfb[_0x2cf0a3(0x15a)]=![],document[_0x2cf0a3(0x191)]=null,document[_0x2cf0a3(0x16b)]=null;}else document['getElementById']('body')['style'][_0x2cf0a3(0x17c)]==_0x2cf0a3(0x10b)&&(document[_0x2cf0a3(0x149)](_0x2cf0a3(0x134))['innerHTML']=(azimuth[0x8]==undefined?0x0:azimuth[0x8])+'\x20degrees',document['getElementById'](_0x2cf0a3(0xe4))['innerHTML']=(elevation[0x8]==undefined?0x0:elevation[0x8])+_0x2cf0a3(0xa5),color_hex=_0x2cf0a3(0xe3)+colors[0x8]['toString'](0x10),document[_0x2cf0a3(0x149)](_0x2cf0a3(0xe5))[_0x2cf0a3(0xc0)][_0x2cf0a3(0xb9)]='#'+color_hex[_0x2cf0a3(0xea)](color_hex['length']-0x6,color_hex[_0x2cf0a3(0x120)]),document[_0x2cf0a3(0x149)](_0x2cf0a3(0xde))[_0x2cf0a3(0xc0)]['backgroundColor']='#'+color_hex[_0x2cf0a3(0xea)](color_hex['length']-0x6,color_hex['length']),current_colors_index=0x8,suppress=![],dragElement(0x9,0x1,0x8));}),document[_0x380e68(0x149)](_0x380e68(0x95))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x2b89bf){var _0x1389d4=_0x380e68;_0x2b89bf[_0x1389d4(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x9]=undefined,elevation[0x9]=undefined,changeSize(0xa),document['getElementById'](_0x1389d4(0x122))['style'][_0x1389d4(0x127)]='none',document[_0x1389d4(0x149)](_0x1389d4(0x95))[_0x1389d4(0xc0)][_0x1389d4(0x127)]=_0x1389d4(0xdb),document[_0x1389d4(0x149)](_0x1389d4(0xeb))[_0x1389d4(0xc0)]['display']='none',document['getElementById'](_0x1389d4(0xc2))[_0x1389d4(0xc0)][_0x1389d4(0x127)]=_0x1389d4(0xdb),document[_0x1389d4(0x149)](_0x1389d4(0x12d))[_0x1389d4(0xc0)][_0x1389d4(0x127)]=_0x1389d4(0xdb),document[_0x1389d4(0x149)](_0x1389d4(0x9a))[_0x1389d4(0xc0)][_0x1389d4(0x127)]=_0x1389d4(0xdb),key_perform=!![];let _0x33b6f0=findDefinedAnnotation(0xa);document['getElementById'](_0x1389d4(0x134))[_0x1389d4(0xad)]=(_0x33b6f0==-0x1?'':azimuth[_0x33b6f0]==undefined?0x0:azimuth[_0x33b6f0])+_0x1389d4(0xa5),document[_0x1389d4(0x149)](_0x1389d4(0xe4))[_0x1389d4(0xad)]=(_0x33b6f0==-0x1?'':elevation[_0x33b6f0]==undefined?0x0:elevation[_0x33b6f0])+_0x1389d4(0xa5),_0x33b6f0!=-0x1?(color_hex='000000'+colors[_0x33b6f0]['toString'](0x10),document[_0x1389d4(0x149)](_0x1389d4(0xe5))[_0x1389d4(0xc0)][_0x1389d4(0xb9)]='#'+color_hex[_0x1389d4(0xea)](color_hex[_0x1389d4(0x120)]-0x6,color_hex[_0x1389d4(0x120)]),document[_0x1389d4(0x149)](_0x1389d4(0xde))[_0x1389d4(0xc0)][_0x1389d4(0xb9)]='#'+color_hex[_0x1389d4(0xea)](color_hex[_0x1389d4(0x120)]-0x6,color_hex['length'])):(document['getElementById'](_0x1389d4(0xe5))['style'][_0x1389d4(0xb9)]='',document[_0x1389d4(0x149)](_0x1389d4(0xde))[_0x1389d4(0xc0)][_0x1389d4(0xb9)]=''),key_perform=![],current_colors_index=_0x33b6f0,deleteBall(0xa),delete_annotation=![],_0x2b89bf[_0x1389d4(0x15a)]=![],document[_0x1389d4(0x191)]=null,document[_0x1389d4(0x16b)]=null;}else document[_0x1389d4(0x149)](_0x1389d4(0x1a3))[_0x1389d4(0xc0)][_0x1389d4(0x17c)]=='default'&&(document['getElementById']('p-azimuth')['innerHTML']=(azimuth[0x9]==undefined?0x0:azimuth[0x9])+_0x1389d4(0xa5),document[_0x1389d4(0x149)](_0x1389d4(0xe4))[_0x1389d4(0xad)]=(elevation[0x9]==undefined?0x0:elevation[0x9])+_0x1389d4(0xa5),color_hex=_0x1389d4(0xe3)+colors[0x9][_0x1389d4(0xb3)](0x10),document[_0x1389d4(0x149)](_0x1389d4(0xe5))[_0x1389d4(0xc0)]['backgroundColor']='#'+color_hex[_0x1389d4(0xea)](color_hex[_0x1389d4(0x120)]-0x6,color_hex[_0x1389d4(0x120)]),document[_0x1389d4(0x149)]('elevation-dot')['style'][_0x1389d4(0xb9)]='#'+color_hex[_0x1389d4(0xea)](color_hex['length']-0x6,color_hex[_0x1389d4(0x120)]),current_colors_index=0x9,suppress=![],dragElement(0xa,0x1,0x9));}),document[_0x380e68(0x149)]('side-item-1')[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x1cf62a){var _0x3cadd8=_0x380e68;_0x1cf62a[_0x3cadd8(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x0]=undefined,elevation[0x0]=undefined,changeSize(0x1),document[_0x3cadd8(0x149)](_0x3cadd8(0x168))['style'][_0x3cadd8(0x127)]=_0x3cadd8(0xdb),document[_0x3cadd8(0x149)]('front-item-1')[_0x3cadd8(0xc0)][_0x3cadd8(0x127)]=_0x3cadd8(0xdb),document[_0x3cadd8(0x149)](_0x3cadd8(0xae))['style'][_0x3cadd8(0x127)]=_0x3cadd8(0xdb),document[_0x3cadd8(0x149)](_0x3cadd8(0xf7))['style'][_0x3cadd8(0x127)]='none',document[_0x3cadd8(0x149)](_0x3cadd8(0x110))[_0x3cadd8(0xc0)]['display']=_0x3cadd8(0xdb),document['getElementById']('circularS1')[_0x3cadd8(0xc0)][_0x3cadd8(0x127)]=_0x3cadd8(0xdb),key_perform=!![];let _0x592159=findDefinedAnnotation(0x1);document[_0x3cadd8(0x149)](_0x3cadd8(0x134))[_0x3cadd8(0xad)]=(_0x592159==-0x1?'':azimuth[_0x592159]==undefined?0x0:azimuth[_0x592159])+'\x20degrees',document[_0x3cadd8(0x149)](_0x3cadd8(0xe4))['innerHTML']=(_0x592159==-0x1?'':elevation[_0x592159]==undefined?0x0:elevation[_0x592159])+_0x3cadd8(0xa5),_0x592159!=-0x1?(color_hex=_0x3cadd8(0xe3)+colors[_0x592159][_0x3cadd8(0xb3)](0x10),document[_0x3cadd8(0x149)](_0x3cadd8(0xe5))[_0x3cadd8(0xc0)][_0x3cadd8(0xb9)]='#'+color_hex[_0x3cadd8(0xea)](color_hex[_0x3cadd8(0x120)]-0x6,color_hex[_0x3cadd8(0x120)]),document[_0x3cadd8(0x149)](_0x3cadd8(0xde))['style'][_0x3cadd8(0xb9)]='#'+color_hex['substring'](color_hex[_0x3cadd8(0x120)]-0x6,color_hex[_0x3cadd8(0x120)])):(document['getElementById'](_0x3cadd8(0xe5))[_0x3cadd8(0xc0)][_0x3cadd8(0xb9)]='',document['getElementById'](_0x3cadd8(0xde))[_0x3cadd8(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=0x0,deleteBall(0x1),delete_annotation=![],_0x1cf62a[_0x3cadd8(0x15a)]=![],document[_0x3cadd8(0x191)]=null,document[_0x3cadd8(0x16b)]=null;}else document[_0x3cadd8(0x149)](_0x3cadd8(0x1a3))[_0x3cadd8(0xc0)][_0x3cadd8(0x17c)]=='default'&&(document[_0x3cadd8(0x149)]('p-azimuth')['innerHTML']=(azimuth[0x0]==undefined?0x0:azimuth[0x0])+_0x3cadd8(0xa5),document[_0x3cadd8(0x149)](_0x3cadd8(0xe4))[_0x3cadd8(0xad)]=(elevation[0x0]==undefined?0x0:elevation[0x0])+_0x3cadd8(0xa5),color_hex=_0x3cadd8(0xe3)+colors[0x0][_0x3cadd8(0xb3)](0x10),document[_0x3cadd8(0x149)](_0x3cadd8(0xe5))[_0x3cadd8(0xc0)]['backgroundColor']='#'+color_hex['substring'](color_hex['length']-0x6,color_hex[_0x3cadd8(0x120)]),document[_0x3cadd8(0x149)](_0x3cadd8(0xde))[_0x3cadd8(0xc0)][_0x3cadd8(0xb9)]='#'+color_hex[_0x3cadd8(0xea)](color_hex[_0x3cadd8(0x120)]-0x6,color_hex[_0x3cadd8(0x120)]),current_colors_index=0x0,suppress=![],dragElement(0x1,0x2,0x0));}),document[_0x380e68(0x149)](_0x380e68(0x138))[_0x380e68(0x9e)]('mousedown',function(_0x5813ee){var _0x140333=_0x380e68;_0x5813ee['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x1]=undefined,elevation[0x1]=undefined,changeSize(0x2),document[_0x140333(0x149)](_0x140333(0xb4))[_0x140333(0xc0)][_0x140333(0x127)]=_0x140333(0xdb),document[_0x140333(0x149)](_0x140333(0xc1))['style'][_0x140333(0x127)]=_0x140333(0xdb),document['getElementById']('side-item-2')['style'][_0x140333(0x127)]=_0x140333(0xdb),document[_0x140333(0x149)](_0x140333(0x103))[_0x140333(0xc0)]['display']=_0x140333(0xdb),document[_0x140333(0x149)](_0x140333(0x169))[_0x140333(0xc0)][_0x140333(0x127)]=_0x140333(0xdb),document[_0x140333(0x149)](_0x140333(0x17b))[_0x140333(0xc0)]['display']=_0x140333(0xdb),key_perform=!![];let _0x21b73e=findDefinedAnnotation(0x2);document[_0x140333(0x149)](_0x140333(0x134))['innerHTML']=(_0x21b73e==-0x1?'':azimuth[_0x21b73e]==undefined?0x0:azimuth[_0x21b73e])+_0x140333(0xa5),document[_0x140333(0x149)]('p-elevation')[_0x140333(0xad)]=(_0x21b73e==-0x1?'':elevation[_0x21b73e]==undefined?0x0:elevation[_0x21b73e])+_0x140333(0xa5),_0x21b73e!=-0x1?(color_hex=_0x140333(0xe3)+colors[_0x21b73e][_0x140333(0xb3)](0x10),document[_0x140333(0x149)](_0x140333(0xe5))[_0x140333(0xc0)][_0x140333(0xb9)]='#'+color_hex[_0x140333(0xea)](color_hex[_0x140333(0x120)]-0x6,color_hex[_0x140333(0x120)]),document[_0x140333(0x149)]('elevation-dot')[_0x140333(0xc0)][_0x140333(0xb9)]='#'+color_hex[_0x140333(0xea)](color_hex[_0x140333(0x120)]-0x6,color_hex[_0x140333(0x120)])):(document[_0x140333(0x149)](_0x140333(0xe5))[_0x140333(0xc0)][_0x140333(0xb9)]='',document[_0x140333(0x149)](_0x140333(0xde))[_0x140333(0xc0)][_0x140333(0xb9)]=''),key_perform=![],current_colors_index=_0x21b73e,deleteBall(0x2),delete_annotation=![],_0x5813ee['ctrlKey']=![],document[_0x140333(0x191)]=null,document[_0x140333(0x16b)]=null;}else document[_0x140333(0x149)](_0x140333(0x1a3))[_0x140333(0xc0)][_0x140333(0x17c)]==_0x140333(0x10b)&&(document[_0x140333(0x149)](_0x140333(0x134))['innerHTML']=(azimuth[0x1]==undefined?0x0:azimuth[0x1])+_0x140333(0xa5),document[_0x140333(0x149)](_0x140333(0xe4))[_0x140333(0xad)]=(elevation[0x1]==undefined?0x0:elevation[0x1])+'\x20degrees',color_hex='000000'+colors[0x1][_0x140333(0xb3)](0x10),document[_0x140333(0x149)](_0x140333(0xe5))['style'][_0x140333(0xb9)]='#'+color_hex['substring'](color_hex['length']-0x6,color_hex[_0x140333(0x120)]),document[_0x140333(0x149)](_0x140333(0xde))[_0x140333(0xc0)][_0x140333(0xb9)]='#'+color_hex[_0x140333(0xea)](color_hex['length']-0x6,color_hex[_0x140333(0x120)]),current_colors_index=0x1,suppress=![],dragElement(0x2,0x2,0x1));}),document['getElementById'](_0x380e68(0x105))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x40554a){var _0x19f9c5=_0x380e68;_0x40554a['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x2]=undefined,elevation[0x2]=undefined,changeSize(0x3),document['getElementById'](_0x19f9c5(0x14c))[_0x19f9c5(0xc0)]['display']=_0x19f9c5(0xdb),document[_0x19f9c5(0x149)]('front-item-3')[_0x19f9c5(0xc0)][_0x19f9c5(0x127)]=_0x19f9c5(0xdb),document[_0x19f9c5(0x149)](_0x19f9c5(0x105))[_0x19f9c5(0xc0)][_0x19f9c5(0x127)]=_0x19f9c5(0xdb),document[_0x19f9c5(0x149)](_0x19f9c5(0xda))[_0x19f9c5(0xc0)][_0x19f9c5(0x127)]=_0x19f9c5(0xdb),document[_0x19f9c5(0x149)](_0x19f9c5(0x124))[_0x19f9c5(0xc0)][_0x19f9c5(0x127)]=_0x19f9c5(0xdb),document[_0x19f9c5(0x149)](_0x19f9c5(0x107))[_0x19f9c5(0xc0)][_0x19f9c5(0x127)]=_0x19f9c5(0xdb),key_perform=!![];let _0x587ca2=findDefinedAnnotation(0x3);document['getElementById'](_0x19f9c5(0x134))[_0x19f9c5(0xad)]=(_0x587ca2==-0x1?'':azimuth[_0x587ca2]==undefined?0x0:azimuth[_0x587ca2])+_0x19f9c5(0xa5),document[_0x19f9c5(0x149)](_0x19f9c5(0xe4))['innerHTML']=(_0x587ca2==-0x1?'':elevation[_0x587ca2]==undefined?0x0:elevation[_0x587ca2])+_0x19f9c5(0xa5),_0x587ca2!=-0x1?(color_hex=_0x19f9c5(0xe3)+colors[_0x587ca2][_0x19f9c5(0xb3)](0x10),document['getElementById']('azimuth-dot')['style'][_0x19f9c5(0xb9)]='#'+color_hex[_0x19f9c5(0xea)](color_hex['length']-0x6,color_hex['length']),document[_0x19f9c5(0x149)](_0x19f9c5(0xde))[_0x19f9c5(0xc0)][_0x19f9c5(0xb9)]='#'+color_hex['substring'](color_hex[_0x19f9c5(0x120)]-0x6,color_hex[_0x19f9c5(0x120)])):(document[_0x19f9c5(0x149)](_0x19f9c5(0xe5))[_0x19f9c5(0xc0)][_0x19f9c5(0xb9)]='',document['getElementById'](_0x19f9c5(0xde))['style']['backgroundColor']=''),key_perform=![],current_colors_index=_0x587ca2,deleteBall(0x3),delete_annotation=![],_0x40554a[_0x19f9c5(0x15a)]=![],document[_0x19f9c5(0x191)]=null,document[_0x19f9c5(0x16b)]=null;}else document['getElementById'](_0x19f9c5(0x1a3))[_0x19f9c5(0xc0)]['cursor']==_0x19f9c5(0x10b)&&(document[_0x19f9c5(0x149)](_0x19f9c5(0x134))[_0x19f9c5(0xad)]=(azimuth[0x2]==undefined?0x0:azimuth[0x2])+_0x19f9c5(0xa5),document[_0x19f9c5(0x149)](_0x19f9c5(0xe4))['innerHTML']=(elevation[0x2]==undefined?0x0:elevation[0x2])+_0x19f9c5(0xa5),color_hex=_0x19f9c5(0xe3)+colors[0x2]['toString'](0x10),document['getElementById']('azimuth-dot')[_0x19f9c5(0xc0)][_0x19f9c5(0xb9)]='#'+color_hex['substring'](color_hex[_0x19f9c5(0x120)]-0x6,color_hex[_0x19f9c5(0x120)]),document[_0x19f9c5(0x149)]('elevation-dot')['style'][_0x19f9c5(0xb9)]='#'+color_hex['substring'](color_hex[_0x19f9c5(0x120)]-0x6,color_hex[_0x19f9c5(0x120)]),current_colors_index=0x2,suppress=![],dragElement(0x3,0x2,0x2));}),document[_0x380e68(0x149)](_0x380e68(0x94))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x444652){var _0x55ea9c=_0x380e68;_0x444652[_0x55ea9c(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x3]=undefined,elevation[0x3]=undefined,changeSize(0x4),document[_0x55ea9c(0x149)](_0x55ea9c(0xce))[_0x55ea9c(0xc0)]['display']=_0x55ea9c(0xdb),document['getElementById']('front-item-4')['style'][_0x55ea9c(0x127)]=_0x55ea9c(0xdb),document['getElementById'](_0x55ea9c(0x94))[_0x55ea9c(0xc0)][_0x55ea9c(0x127)]=_0x55ea9c(0xdb),document['getElementById']('circular4')[_0x55ea9c(0xc0)][_0x55ea9c(0x127)]=_0x55ea9c(0xdb),document[_0x55ea9c(0x149)]('circularF4')[_0x55ea9c(0xc0)]['display']=_0x55ea9c(0xdb),document[_0x55ea9c(0x149)](_0x55ea9c(0x10a))[_0x55ea9c(0xc0)][_0x55ea9c(0x127)]=_0x55ea9c(0xdb),key_perform=!![];let _0x4af5d6=findDefinedAnnotation(0x4);document['getElementById'](_0x55ea9c(0x134))[_0x55ea9c(0xad)]=(_0x4af5d6==-0x1?'':azimuth[_0x4af5d6]==undefined?0x0:azimuth[_0x4af5d6])+_0x55ea9c(0xa5),document['getElementById'](_0x55ea9c(0xe4))[_0x55ea9c(0xad)]=(_0x4af5d6==-0x1?'':elevation[_0x4af5d6]==undefined?0x0:elevation[_0x4af5d6])+_0x55ea9c(0xa5),_0x4af5d6!=-0x1?(color_hex=_0x55ea9c(0xe3)+colors[_0x4af5d6][_0x55ea9c(0xb3)](0x10),document['getElementById'](_0x55ea9c(0xe5))['style'][_0x55ea9c(0xb9)]='#'+color_hex[_0x55ea9c(0xea)](color_hex[_0x55ea9c(0x120)]-0x6,color_hex[_0x55ea9c(0x120)]),document[_0x55ea9c(0x149)](_0x55ea9c(0xde))[_0x55ea9c(0xc0)][_0x55ea9c(0xb9)]='#'+color_hex[_0x55ea9c(0xea)](color_hex[_0x55ea9c(0x120)]-0x6,color_hex[_0x55ea9c(0x120)])):(document[_0x55ea9c(0x149)](_0x55ea9c(0xe5))[_0x55ea9c(0xc0)][_0x55ea9c(0xb9)]='',document[_0x55ea9c(0x149)](_0x55ea9c(0xde))[_0x55ea9c(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=_0x4af5d6,deleteBall(0x4),delete_annotation=![],_0x444652[_0x55ea9c(0x15a)]=![],document['onmousedown']=null,document[_0x55ea9c(0x16b)]=null;}else document[_0x55ea9c(0x149)]('body')[_0x55ea9c(0xc0)]['cursor']==_0x55ea9c(0x10b)&&(document['getElementById']('p-azimuth')['innerHTML']=(azimuth[0x3]==undefined?0x0:azimuth[0x3])+_0x55ea9c(0xa5),document[_0x55ea9c(0x149)](_0x55ea9c(0xe4))[_0x55ea9c(0xad)]=(elevation[0x3]==undefined?0x0:elevation[0x3])+_0x55ea9c(0xa5),color_hex=_0x55ea9c(0xe3)+colors[0x3]['toString'](0x10),document[_0x55ea9c(0x149)](_0x55ea9c(0xe5))[_0x55ea9c(0xc0)][_0x55ea9c(0xb9)]='#'+color_hex[_0x55ea9c(0xea)](color_hex[_0x55ea9c(0x120)]-0x6,color_hex[_0x55ea9c(0x120)]),document[_0x55ea9c(0x149)](_0x55ea9c(0xde))[_0x55ea9c(0xc0)][_0x55ea9c(0xb9)]='#'+color_hex['substring'](color_hex[_0x55ea9c(0x120)]-0x6,color_hex[_0x55ea9c(0x120)]),current_colors_index=0x3,suppress=![],dragElement(0x4,0x2,0x3));}),document['getElementById']('side-item-5')[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x170cc2){var _0x53fc02=_0x380e68;_0x170cc2[_0x53fc02(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x4]=undefined,elevation[0x4]=undefined,changeSize(0x5),document[_0x53fc02(0x149)](_0x53fc02(0xbf))['style'][_0x53fc02(0x127)]='none',document[_0x53fc02(0x149)](_0x53fc02(0x130))[_0x53fc02(0xc0)][_0x53fc02(0x127)]=_0x53fc02(0xdb),document[_0x53fc02(0x149)](_0x53fc02(0x12f))[_0x53fc02(0xc0)][_0x53fc02(0x127)]='none',document['getElementById']('circular5')[_0x53fc02(0xc0)][_0x53fc02(0x127)]='none',document[_0x53fc02(0x149)](_0x53fc02(0x155))['style'][_0x53fc02(0x127)]=_0x53fc02(0xdb),document[_0x53fc02(0x149)](_0x53fc02(0x16c))['style']['display']=_0x53fc02(0xdb),key_perform=!![];let _0x544ef4=findDefinedAnnotation(0x5);document[_0x53fc02(0x149)](_0x53fc02(0x134))[_0x53fc02(0xad)]=(_0x544ef4==-0x1?'':azimuth[_0x544ef4]==undefined?0x0:azimuth[_0x544ef4])+_0x53fc02(0xa5),document['getElementById'](_0x53fc02(0xe4))[_0x53fc02(0xad)]=(_0x544ef4==-0x1?'':elevation[_0x544ef4]==undefined?0x0:elevation[_0x544ef4])+_0x53fc02(0xa5),_0x544ef4!=-0x1?(color_hex='000000'+colors[_0x544ef4][_0x53fc02(0xb3)](0x10),document['getElementById'](_0x53fc02(0xe5))[_0x53fc02(0xc0)][_0x53fc02(0xb9)]='#'+color_hex[_0x53fc02(0xea)](color_hex['length']-0x6,color_hex['length']),document['getElementById'](_0x53fc02(0xde))[_0x53fc02(0xc0)]['backgroundColor']='#'+color_hex[_0x53fc02(0xea)](color_hex['length']-0x6,color_hex[_0x53fc02(0x120)])):(document[_0x53fc02(0x149)](_0x53fc02(0xe5))[_0x53fc02(0xc0)][_0x53fc02(0xb9)]='',document[_0x53fc02(0x149)]('elevation-dot')['style'][_0x53fc02(0xb9)]=''),key_perform=![],current_colors_index=_0x544ef4,deleteBall(0x5),delete_annotation=![],_0x170cc2['ctrlKey']=![],document[_0x53fc02(0x191)]=null,document[_0x53fc02(0x16b)]=null;}else document[_0x53fc02(0x149)](_0x53fc02(0x1a3))[_0x53fc02(0xc0)][_0x53fc02(0x17c)]==_0x53fc02(0x10b)&&(document[_0x53fc02(0x149)](_0x53fc02(0x134))[_0x53fc02(0xad)]=(azimuth[0x4]==undefined?0x0:azimuth[0x4])+'\x20degrees',document[_0x53fc02(0x149)](_0x53fc02(0xe4))[_0x53fc02(0xad)]=(elevation[0x4]==undefined?0x0:elevation[0x4])+_0x53fc02(0xa5),color_hex='000000'+colors[0x4][_0x53fc02(0xb3)](0x10),document[_0x53fc02(0x149)](_0x53fc02(0xe5))['style'][_0x53fc02(0xb9)]='#'+color_hex[_0x53fc02(0xea)](color_hex[_0x53fc02(0x120)]-0x6,color_hex[_0x53fc02(0x120)]),document['getElementById'](_0x53fc02(0xde))['style'][_0x53fc02(0xb9)]='#'+color_hex[_0x53fc02(0xea)](color_hex[_0x53fc02(0x120)]-0x6,color_hex['length']),current_colors_index=0x4,suppress=![],dragElement(0x5,0x2,0x4));}),document[_0x380e68(0x149)]('side-item-6')[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x30f2b9){var _0x563ac4=_0x380e68;_0x30f2b9[_0x563ac4(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x5]=undefined,elevation[0x5]=undefined,changeSize(0x6),document[_0x563ac4(0x149)]('head-item-6')[_0x563ac4(0xc0)][_0x563ac4(0x127)]=_0x563ac4(0xdb),document[_0x563ac4(0x149)](_0x563ac4(0x133))[_0x563ac4(0xc0)][_0x563ac4(0x127)]=_0x563ac4(0xdb),document[_0x563ac4(0x149)](_0x563ac4(0x9c))[_0x563ac4(0xc0)]['display']=_0x563ac4(0xdb),document[_0x563ac4(0x149)]('circular6')[_0x563ac4(0xc0)]['display']=_0x563ac4(0xdb),document[_0x563ac4(0x149)](_0x563ac4(0xee))[_0x563ac4(0xc0)][_0x563ac4(0x127)]=_0x563ac4(0xdb),document[_0x563ac4(0x149)]('circularS6')[_0x563ac4(0xc0)]['display']='none',key_perform=!![];let _0xca0e82=findDefinedAnnotation(0x6);document['getElementById']('p-azimuth')['innerHTML']=(_0xca0e82==-0x1?'':azimuth[_0xca0e82]==undefined?0x0:azimuth[_0xca0e82])+_0x563ac4(0xa5),document[_0x563ac4(0x149)](_0x563ac4(0xe4))[_0x563ac4(0xad)]=(_0xca0e82==-0x1?'':elevation[_0xca0e82]==undefined?0x0:elevation[_0xca0e82])+_0x563ac4(0xa5),_0xca0e82!=-0x1?(color_hex=_0x563ac4(0xe3)+colors[_0xca0e82][_0x563ac4(0xb3)](0x10),document[_0x563ac4(0x149)](_0x563ac4(0xe5))[_0x563ac4(0xc0)]['backgroundColor']='#'+color_hex[_0x563ac4(0xea)](color_hex[_0x563ac4(0x120)]-0x6,color_hex[_0x563ac4(0x120)]),document[_0x563ac4(0x149)](_0x563ac4(0xde))[_0x563ac4(0xc0)]['backgroundColor']='#'+color_hex[_0x563ac4(0xea)](color_hex[_0x563ac4(0x120)]-0x6,color_hex[_0x563ac4(0x120)])):(document[_0x563ac4(0x149)](_0x563ac4(0xe5))['style'][_0x563ac4(0xb9)]='',document[_0x563ac4(0x149)](_0x563ac4(0xde))[_0x563ac4(0xc0)][_0x563ac4(0xb9)]=''),key_perform=![],current_colors_index=_0xca0e82,deleteBall(0x6),delete_annotation=![],_0x30f2b9[_0x563ac4(0x15a)]=![],document[_0x563ac4(0x191)]=null,document[_0x563ac4(0x16b)]=null;}else document[_0x563ac4(0x149)](_0x563ac4(0x1a3))[_0x563ac4(0xc0)][_0x563ac4(0x17c)]==_0x563ac4(0x10b)&&(document[_0x563ac4(0x149)](_0x563ac4(0x134))[_0x563ac4(0xad)]=(azimuth[0x5]==undefined?0x0:azimuth[0x5])+_0x563ac4(0xa5),document[_0x563ac4(0x149)](_0x563ac4(0xe4))[_0x563ac4(0xad)]=(elevation[0x5]==undefined?0x0:elevation[0x5])+_0x563ac4(0xa5),color_hex=_0x563ac4(0xe3)+colors[0x5][_0x563ac4(0xb3)](0x10),document['getElementById'](_0x563ac4(0xe5))['style'][_0x563ac4(0xb9)]='#'+color_hex[_0x563ac4(0xea)](color_hex[_0x563ac4(0x120)]-0x6,color_hex[_0x563ac4(0x120)]),document[_0x563ac4(0x149)](_0x563ac4(0xde))['style'][_0x563ac4(0xb9)]='#'+color_hex[_0x563ac4(0xea)](color_hex[_0x563ac4(0x120)]-0x6,color_hex['length']),current_colors_index=0x5,suppress=![],dragElement(0x6,0x2,0x5));}),document['getElementById'](_0x380e68(0xdf))['addEventListener'](_0x380e68(0xa4),function(_0x3f4512){var _0x5be922=_0x380e68;_0x3f4512['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x6]=undefined,elevation[0x6]=undefined,changeSize(0x7),document[_0x5be922(0x149)]('head-item-7')[_0x5be922(0xc0)][_0x5be922(0x127)]=_0x5be922(0xdb),document['getElementById'](_0x5be922(0x11f))['style'][_0x5be922(0x127)]=_0x5be922(0xdb),document['getElementById'](_0x5be922(0xdf))[_0x5be922(0xc0)][_0x5be922(0x127)]=_0x5be922(0xdb),document[_0x5be922(0x149)](_0x5be922(0x162))[_0x5be922(0xc0)][_0x5be922(0x127)]=_0x5be922(0xdb),document[_0x5be922(0x149)](_0x5be922(0xba))[_0x5be922(0xc0)][_0x5be922(0x127)]='none',document['getElementById'](_0x5be922(0x17e))[_0x5be922(0xc0)][_0x5be922(0x127)]=_0x5be922(0xdb),key_perform=!![];let _0x1a6dae=findDefinedAnnotation(0x7);document[_0x5be922(0x149)](_0x5be922(0x134))['innerHTML']=(_0x1a6dae==-0x1?'':azimuth[_0x1a6dae]==undefined?0x0:azimuth[_0x1a6dae])+'\x20degrees',document[_0x5be922(0x149)](_0x5be922(0xe4))[_0x5be922(0xad)]=(_0x1a6dae==-0x1?'':elevation[_0x1a6dae]==undefined?0x0:elevation[_0x1a6dae])+'\x20degrees',_0x1a6dae!=-0x1?(color_hex='000000'+colors[_0x1a6dae][_0x5be922(0xb3)](0x10),document[_0x5be922(0x149)](_0x5be922(0xe5))[_0x5be922(0xc0)][_0x5be922(0xb9)]='#'+color_hex[_0x5be922(0xea)](color_hex[_0x5be922(0x120)]-0x6,color_hex[_0x5be922(0x120)]),document[_0x5be922(0x149)](_0x5be922(0xde))['style'][_0x5be922(0xb9)]='#'+color_hex[_0x5be922(0xea)](color_hex[_0x5be922(0x120)]-0x6,color_hex[_0x5be922(0x120)])):(document[_0x5be922(0x149)]('azimuth-dot')[_0x5be922(0xc0)][_0x5be922(0xb9)]='',document[_0x5be922(0x149)](_0x5be922(0xde))[_0x5be922(0xc0)][_0x5be922(0xb9)]=''),key_perform=![],current_colors_index=_0x1a6dae,deleteBall(0x7),delete_annotation=![],_0x3f4512[_0x5be922(0x15a)]=![],document[_0x5be922(0x191)]=null,document[_0x5be922(0x16b)]=null;}else document['getElementById']('body')[_0x5be922(0xc0)]['cursor']==_0x5be922(0x10b)&&(document[_0x5be922(0x149)](_0x5be922(0x134))[_0x5be922(0xad)]=(azimuth[0x6]==undefined?0x0:azimuth[0x6])+_0x5be922(0xa5),document[_0x5be922(0x149)](_0x5be922(0xe4))[_0x5be922(0xad)]=(elevation[0x6]==undefined?0x0:elevation[0x6])+_0x5be922(0xa5),color_hex=_0x5be922(0xe3)+colors[0x6]['toString'](0x10),document[_0x5be922(0x149)]('azimuth-dot')[_0x5be922(0xc0)][_0x5be922(0xb9)]='#'+color_hex['substring'](color_hex[_0x5be922(0x120)]-0x6,color_hex[_0x5be922(0x120)]),document[_0x5be922(0x149)](_0x5be922(0xde))[_0x5be922(0xc0)][_0x5be922(0xb9)]='#'+color_hex[_0x5be922(0xea)](color_hex[_0x5be922(0x120)]-0x6,color_hex[_0x5be922(0x120)]),current_colors_index=0x6,suppress=![],dragElement(0x7,0x2,0x6));}),document[_0x380e68(0x149)](_0x380e68(0x17a))[_0x380e68(0x9e)](_0x380e68(0xa4),function(_0x229ab0){var _0x37cd73=_0x380e68;_0x229ab0[_0x37cd73(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x7]=undefined,elevation[0x7]=undefined,changeSize(0x8),document[_0x37cd73(0x149)]('head-item-8')[_0x37cd73(0xc0)][_0x37cd73(0x127)]=_0x37cd73(0xdb),document[_0x37cd73(0x149)]('front-item-8')[_0x37cd73(0xc0)]['display']=_0x37cd73(0xdb),document[_0x37cd73(0x149)](_0x37cd73(0x17a))[_0x37cd73(0xc0)][_0x37cd73(0x127)]=_0x37cd73(0xdb),document['getElementById']('circular8')['style'][_0x37cd73(0x127)]=_0x37cd73(0xdb),document[_0x37cd73(0x149)](_0x37cd73(0xef))[_0x37cd73(0xc0)][_0x37cd73(0x127)]=_0x37cd73(0xdb),document[_0x37cd73(0x149)](_0x37cd73(0x13f))[_0x37cd73(0xc0)]['display']=_0x37cd73(0xdb),key_perform=!![];let _0x212817=findDefinedAnnotation(0x8);document[_0x37cd73(0x149)]('p-azimuth')[_0x37cd73(0xad)]=(_0x212817==-0x1?'':azimuth[_0x212817]==undefined?0x0:azimuth[_0x212817])+_0x37cd73(0xa5),document[_0x37cd73(0x149)]('p-elevation')[_0x37cd73(0xad)]=(_0x212817==-0x1?'':elevation[_0x212817]==undefined?0x0:elevation[_0x212817])+_0x37cd73(0xa5),_0x212817!=-0x1?(color_hex=_0x37cd73(0xe3)+colors[_0x212817][_0x37cd73(0xb3)](0x10),document[_0x37cd73(0x149)](_0x37cd73(0xe5))[_0x37cd73(0xc0)]['backgroundColor']='#'+color_hex[_0x37cd73(0xea)](color_hex[_0x37cd73(0x120)]-0x6,color_hex[_0x37cd73(0x120)]),document[_0x37cd73(0x149)]('elevation-dot')[_0x37cd73(0xc0)]['backgroundColor']='#'+color_hex[_0x37cd73(0xea)](color_hex[_0x37cd73(0x120)]-0x6,color_hex[_0x37cd73(0x120)])):(document[_0x37cd73(0x149)]('azimuth-dot')['style'][_0x37cd73(0xb9)]='',document['getElementById'](_0x37cd73(0xde))[_0x37cd73(0xc0)][_0x37cd73(0xb9)]=''),key_perform=![],current_colors_index=_0x212817,deleteBall(0x8),delete_annotation=![],_0x229ab0[_0x37cd73(0x15a)]=![],document['onmousedown']=null,document[_0x37cd73(0x16b)]=null;}else document[_0x37cd73(0x149)](_0x37cd73(0x1a3))[_0x37cd73(0xc0)]['cursor']==_0x37cd73(0x10b)&&(document[_0x37cd73(0x149)](_0x37cd73(0x134))[_0x37cd73(0xad)]=(azimuth[0x7]==undefined?0x0:azimuth[0x7])+_0x37cd73(0xa5),document[_0x37cd73(0x149)](_0x37cd73(0xe4))[_0x37cd73(0xad)]=(elevation[0x7]==undefined?0x0:elevation[0x7])+_0x37cd73(0xa5),color_hex='000000'+colors[0x7][_0x37cd73(0xb3)](0x10),document[_0x37cd73(0x149)](_0x37cd73(0xe5))[_0x37cd73(0xc0)]['backgroundColor']='#'+color_hex[_0x37cd73(0xea)](color_hex[_0x37cd73(0x120)]-0x6,color_hex['length']),document[_0x37cd73(0x149)](_0x37cd73(0xde))['style'][_0x37cd73(0xb9)]='#'+color_hex[_0x37cd73(0xea)](color_hex['length']-0x6,color_hex[_0x37cd73(0x120)]),current_colors_index=0x7,suppress=![],dragElement(0x8,0x2,0x7));}),document['getElementById']('side-item-9')[_0x380e68(0x9e)]('mousedown',function(_0x368514){var _0x412722=_0x380e68;_0x368514['preventDefault']();if(delete_annotation){suppress=!![],azimuth[0x8]=undefined,elevation[0x8]=undefined,changeSize(0x9),document[_0x412722(0x149)](_0x412722(0x14d))[_0x412722(0xc0)][_0x412722(0x127)]='none',document[_0x412722(0x149)](_0x412722(0xcc))[_0x412722(0xc0)][_0x412722(0x127)]='none',document['getElementById']('side-item-9')[_0x412722(0xc0)]['display']='none',document['getElementById'](_0x412722(0xa7))[_0x412722(0xc0)]['display']=_0x412722(0xdb),document[_0x412722(0x149)](_0x412722(0x172))['style'][_0x412722(0x127)]='none',document[_0x412722(0x149)](_0x412722(0x1a5))[_0x412722(0xc0)][_0x412722(0x127)]='none',key_perform=!![];let _0x1e423c=findDefinedAnnotation(0x9);document[_0x412722(0x149)](_0x412722(0x134))[_0x412722(0xad)]=(_0x1e423c==-0x1?'':azimuth[_0x1e423c]==undefined?0x0:azimuth[_0x1e423c])+_0x412722(0xa5),document['getElementById'](_0x412722(0xe4))[_0x412722(0xad)]=(_0x1e423c==-0x1?'':elevation[_0x1e423c]==undefined?0x0:elevation[_0x1e423c])+_0x412722(0xa5),_0x1e423c!=-0x1?(color_hex=_0x412722(0xe3)+colors[_0x1e423c][_0x412722(0xb3)](0x10),document[_0x412722(0x149)](_0x412722(0xe5))[_0x412722(0xc0)]['backgroundColor']='#'+color_hex[_0x412722(0xea)](color_hex[_0x412722(0x120)]-0x6,color_hex[_0x412722(0x120)]),document[_0x412722(0x149)](_0x412722(0xde))[_0x412722(0xc0)][_0x412722(0xb9)]='#'+color_hex[_0x412722(0xea)](color_hex[_0x412722(0x120)]-0x6,color_hex[_0x412722(0x120)])):(document[_0x412722(0x149)](_0x412722(0xe5))[_0x412722(0xc0)][_0x412722(0xb9)]='',document['getElementById'](_0x412722(0xde))[_0x412722(0xc0)]['backgroundColor']=''),key_perform=![],current_colors_index=_0x1e423c,deleteBall(0x9),delete_annotation=![],_0x368514[_0x412722(0x15a)]=![],document['onmousedown']=null,document[_0x412722(0x16b)]=null;}else document[_0x412722(0x149)](_0x412722(0x1a3))[_0x412722(0xc0)][_0x412722(0x17c)]==_0x412722(0x10b)&&(document[_0x412722(0x149)](_0x412722(0x134))['innerHTML']=(azimuth[0x8]==undefined?0x0:azimuth[0x8])+_0x412722(0xa5),document['getElementById'](_0x412722(0xe4))[_0x412722(0xad)]=(elevation[0x8]==undefined?0x0:elevation[0x8])+'\x20degrees',color_hex='000000'+colors[0x8][_0x412722(0xb3)](0x10),document[_0x412722(0x149)](_0x412722(0xe5))[_0x412722(0xc0)][_0x412722(0xb9)]='#'+color_hex[_0x412722(0xea)](color_hex[_0x412722(0x120)]-0x6,color_hex[_0x412722(0x120)]),document[_0x412722(0x149)](_0x412722(0xde))[_0x412722(0xc0)][_0x412722(0xb9)]='#'+color_hex[_0x412722(0xea)](color_hex[_0x412722(0x120)]-0x6,color_hex['length']),current_colors_index=0x8,suppress=![],dragElement(0x9,0x2,0x8));}),document[_0x380e68(0x149)](_0x380e68(0xeb))[_0x380e68(0x9e)]('mousedown',function(_0x76c214){var _0x5b3351=_0x380e68;_0x76c214[_0x5b3351(0x150)]();if(delete_annotation){suppress=!![],azimuth[0x9]=undefined,elevation[0x9]=undefined,changeSize(0xa),document[_0x5b3351(0x149)](_0x5b3351(0x122))['style'][_0x5b3351(0x127)]=_0x5b3351(0xdb),document[_0x5b3351(0x149)]('front-item-10')['style']['display']=_0x5b3351(0xdb),document[_0x5b3351(0x149)](_0x5b3351(0xeb))[_0x5b3351(0xc0)]['display']=_0x5b3351(0xdb),document[_0x5b3351(0x149)](_0x5b3351(0xc2))[_0x5b3351(0xc0)][_0x5b3351(0x127)]=_0x5b3351(0xdb),document['getElementById'](_0x5b3351(0x12d))['style'][_0x5b3351(0x127)]=_0x5b3351(0xdb),document[_0x5b3351(0x149)](_0x5b3351(0x9a))[_0x5b3351(0xc0)]['display']=_0x5b3351(0xdb),key_perform=!![];let _0x4f8c06=findDefinedAnnotation(0xa);document['getElementById'](_0x5b3351(0x134))['innerHTML']=(_0x4f8c06==-0x1?'':azimuth[_0x4f8c06]==undefined?0x0:azimuth[_0x4f8c06])+_0x5b3351(0xa5),document[_0x5b3351(0x149)]('p-elevation')[_0x5b3351(0xad)]=(_0x4f8c06==-0x1?'':elevation[_0x4f8c06]==undefined?0x0:elevation[_0x4f8c06])+_0x5b3351(0xa5),_0x4f8c06!=-0x1?(color_hex=_0x5b3351(0xe3)+colors[_0x4f8c06][_0x5b3351(0xb3)](0x10),document[_0x5b3351(0x149)]('azimuth-dot')[_0x5b3351(0xc0)]['backgroundColor']='#'+color_hex['substring'](color_hex[_0x5b3351(0x120)]-0x6,color_hex[_0x5b3351(0x120)]),document['getElementById'](_0x5b3351(0xde))[_0x5b3351(0xc0)]['backgroundColor']='#'+color_hex[_0x5b3351(0xea)](color_hex[_0x5b3351(0x120)]-0x6,color_hex[_0x5b3351(0x120)])):(document[_0x5b3351(0x149)](_0x5b3351(0xe5))['style'][_0x5b3351(0xb9)]='',document['getElementById'](_0x5b3351(0xde))[_0x5b3351(0xc0)][_0x5b3351(0xb9)]=''),key_perform=![],current_colors_index=_0x4f8c06,deleteBall(0xa),delete_annotation=![],_0x76c214[_0x5b3351(0x15a)]=![],document['onmousedown']=null,document[_0x5b3351(0x16b)]=null;}else document[_0x5b3351(0x149)]('body')[_0x5b3351(0xc0)]['cursor']==_0x5b3351(0x10b)&&(document['getElementById'](_0x5b3351(0x134))['innerHTML']=(azimuth[0x9]==undefined?0x0:azimuth[0x9])+_0x5b3351(0xa5),document[_0x5b3351(0x149)]('p-elevation')['innerHTML']=(elevation[0x9]==undefined?0x0:elevation[0x9])+_0x5b3351(0xa5),color_hex=_0x5b3351(0xe3)+colors[0x9][_0x5b3351(0xb3)](0x10),document['getElementById'](_0x5b3351(0xe5))['style'][_0x5b3351(0xb9)]='#'+color_hex[_0x5b3351(0xea)](color_hex[_0x5b3351(0x120)]-0x6,color_hex[_0x5b3351(0x120)]),document[_0x5b3351(0x149)](_0x5b3351(0xde))[_0x5b3351(0xc0)][_0x5b3351(0xb9)]='#'+color_hex[_0x5b3351(0xea)](color_hex['length']-0x6,color_hex[_0x5b3351(0x120)]),current_colors_index=0x9,suppress=![],dragElement(0xa,0x2,0x9));}),container=document[_0x380e68(0x149)]('3d-head');const scene=new THREE[(_0x380e68(0xf1))]();scene[_0x380e68(0x190)]=new THREE[(_0x380e68(0xa8))](0x0);var light=new THREE[(_0x380e68(0xa1))](0xffffff,0x1);scene[_0x380e68(0x13e)](light);var pointLight=new THREE[(_0x380e68(0xb2))](0xffffff,0.8,0x0);pointLight['position'][_0x380e68(0xff)](0x1e,0x1e,0xfa),scene[_0x380e68(0x13e)](pointLight);var pointLight2=new THREE[(_0x380e68(0xb2))](0xffffff,0.8,0x0);pointLight2[_0x380e68(0xe2)]['set'](0x1e,0x1e,-0xfa),scene[_0x380e68(0x13e)](pointLight2);const camera=new THREE['PerspectiveCamera'](0x4b,0x1,0.1,0x3e8);camera['position']['z']=0x1e;function _0x484b(){var _0x4cb1ea=['onreadystatechange','audio','maxDistance','side-wrapper','head-item-','circular','Please\x20finish\x20watching\x20the\x20current\x20video\x20first','set','alert','front-item-','block','circular2','getElementsByClassName','side-item-3','pageX','circularS3','You\x20can’t\x20annotate\x20more\x20sounds\x20than\x20the\x20number\x20of\x20distinct\x20sounds\x20selected.\x20Please\x20delete\x20the\x20additional\x20location\x20annotation(s)','visibility','circularS4','default','Pause\x20Audio','LineSegments','rotate(','4kCePNp','circularF1','6334kMMWJl','You\x20must\x20annotate\x20a\x20vertical\x20location\x20before\x20adding\x20a\x20new\x20sound\x20annotation','You\x20haven’t\x20annotated\x20all\x20sounds\x20yet\x20(your\x20selected\x20source\x20count\x20is\x20greater\x20than\x20the\x20number\x20of\x20your\x20annotation).\x20Do\x20you\x20still\x20want\x20to\x20proceed?','name','ball','getObjectByName','fontSize','You\x20must\x20annotate\x20a\x20horizontal\x20location\x20before\x20adding\x20a\x20new\x20sound\x20annotation','Please\x20annotate\x20or\x20click\x20to\x20select\x20an\x20annotation\x20first\x20using\x20the\x202D\x20views','instruction-video-3','head-item-6','rotation','getItem','enter\x20instruction\x20page\x204','front-item-7','length','head-wrapper','head-item-10','pause','circularF3','front-item-4','setSize','display','linear-gradient(to\x20right,\x20#efefef\x20','right','725lEkyln','/templates/interface/img/face.png','play\x20audio','circularF10','value','side-item-5','front-item-5','user_note','/next','front-item-6','p-azimuth','TextureLoader','The\x20annotation\x20for\x20the\x20horizontal\x20location\x20is\x20inconsistent\x20with\x20the\x20annotation\x20for\x20the\x20vertical\x20location','location','side-item-2','3168781nneoCG','audio-frame-instruction','enter\x20instruction\x20page\x203','POST','read_all_rules','add','circularS8','circular6','lookAt','click','onmouseup','transform','stringify','circular8','azimuth','acos','getElementById','feedback','Mesh','head-item-3','head-item-9','success','sqrt','preventDefault','instruction','update','azimuth-plus','send','circularF5','modal','timeupdate','instruction-proceed','float:right;','ctrlKey','131FNOfob','\x20horizontal\x20locations.\x20Please\x20update\x20the\x20number\x20of\x20distinct\x20sounds\x20before\x20continuing.','readyState','18582yIiTBn','SphereGeometry','domElement','deg)','circular7','sources_3_recording_8.wav','You\x20must\x20annotate\x20at\x20least\x20one\x20spatial\x20location','target','play','left','head-item-1','circularF2','src','onkeydown','circularS5','side-item-9','enter\x20instruction\x20page\x205','sources_3_recording_160.wav','application/json;charset=UTF-8','SphereBufferGeometry','circularF9','sign','MeshLambertMaterial','setRequestHeader','circular5','circularS6','practice_boolean','circular4','side-item-8','circularS2','cursor','circularF4','circularS7','%,\x20#ffffff\x200%)','enter\x20instruction\x20page\x200','video','round','pageY','Pause\x20This\x20Example','elevation','audio-frame-instruction-','OrbitControls','1162512xJTEqC','instruction-video-5','2d-question','currentTime','remove','TorusGeometry','replace','mouseup','background','onmousedown','instruction1','top','You\x20must\x20select\x20a\x20number\x20of\x20distinct\x20sounds','enter\x20instruction\x20page\x206','18fCnlBT','responseText','duration','instruction-right','open','Somthing\x20is\x20wrong.\x20Please\x20Refresh.','bottom','getBoundingClientRect','enter\x20instruction\x20page\x201','setItem','side-item-','Play\x20an\x20Example','The\x20annotation\x20for\x20the\x20vertical\x20location\x20is\x20inconsistent\x20with\x20the\x20annotation\x20for\x20the\x20horizontal\x20location','body','altKey','circularS9','audio-frame','close\x20instruction\x20page','side-item-4','front-item-10','side','survey_id','source\x20count','render','circularS10','instruction-video-1','side-item-6','instruction-video-6','addEventListener','circularS1','recording','HemisphereLight','front-item-8','23931842eWsAmH','mousedown','\x20degrees','cos','circular9','Color','enter\x20instruction\x20page\x202','load','instruction-video-4','Play\x20Audio','innerHTML','side-item-1','keydown','enter\x20instruction\x20page\x207','sin','PointLight','toString','head-item-2','front','inline-block','url(\x27/templates/interface/img/minus.svg\x27),\x20auto','You\x20must\x20annotate\x20both\x20the\x20horizontal\x20location\x20and\x20the\x20vertical\x20location\x20to\x20fully\x20annotate\x20each\x20sound\x27s\x20spatial\x20location','backgroundColor','circularF7','marginLeft','width','content-type','marginTop','head-item-5','style','front-item-2','circular10','onmousemove','onclick','front-item-1','minDistance','stereo','435770Xwwsqy','count','ended','head-item-8','front-item-9','sources_3_recording_57.wav','head-item-4','circularF','circularS','source','/templates/interface/incomplete.html','message','\x20vertical\x20locations.\x20Please\x20update\x20the\x20number\x20of\x20distinct\x20sounds\x20before\x20continuing.','front-wrapper','instruction-video-2','height','now','pow','circular3','none','Please\x20annotate\x20the\x20sound\x20using\x20the\x202D\x20views','1617078NRJcuw','elevation-dot','side-item-7','audio-','setAttribute','position','000000','p-elevation','azimuth-dot','abs','front-item-3','LineBasicMaterial','practice','substring','side-item-10','head-item-7','Please\x20identify\x20the\x20location\x20of\x20each\x20sound','circularF6','circularF8','/templates/interface/assets/audio/practice/','Scene','vertical','/interaction','/templates/interface/img/item-','You\x20have\x20already\x20annotated\x20','EdgesGeometry','circular1'];_0x484b=function(){return _0x4cb1ea;};return _0x484b();}var sphereGeometry=new THREE[(_0x380e68(0x15f))](0x8,0x3c,0x1e),sphereMaterial=new THREE[(_0x380e68(0x174))]({'map':new THREE[(_0x380e68(0x135))]()['load'](_0x380e68(0x12b)),'color':0xefd8c3}),sphere=new THREE[(_0x380e68(0x14b))](sphereGeometry,sphereMaterial);sphere[_0x380e68(0xe2)][_0x380e68(0xff)](0x0,0x0,0x0);var ear1Geometry=new THREE[(_0x380e68(0x18d))](0x1,1.2,0x1e,0x64),ear1Material=new THREE[(_0x380e68(0x174))]({'color':0xc2a68b}),ear1=new THREE[(_0x380e68(0x14b))](ear1Geometry,ear1Material);ear1[_0x380e68(0xe2)]['set'](7.8,0x0,0x0);var ear2Geometry=new THREE[(_0x380e68(0x18d))](0x1,1.2,0x1e,0x64),ear2Material=new THREE[(_0x380e68(0x174))]({'color':0xc2a68b}),ear2=new THREE[(_0x380e68(0x14b))](ear2Geometry,ear2Material);ear2[_0x380e68(0xe2)][_0x380e68(0xff)](-7.8,0x0,0x0);var noseGeometry=new THREE[(_0x380e68(0x18d))](0.3,0.8,0x1e,0x64),noseMaterial=new THREE[(_0x380e68(0x174))]({'color':0xc2a68b}),nose=new THREE[(_0x380e68(0x14b))](noseGeometry,noseMaterial);nose[_0x380e68(0xe2)]['set'](0x0,0x0,7.4),nose[_0x380e68(0x11c)]['y']=0x5a;var frameGeometry=new THREE[(_0x380e68(0x171))](0xf,0x14,0x14),frameMaterial=new THREE['MeshLambertMaterial']({}),frame=new THREE[(_0x380e68(0x14b))](frameGeometry,frameMaterial),edgesGeometry=new THREE[(_0x380e68(0xf6))](frameGeometry),wireframe=new THREE[(_0x380e68(0x10d))](edgesGeometry,new THREE[(_0x380e68(0xe8))]({'color':0xff})),frontGeometry=new THREE['TorusGeometry'](0xf,0.1,0x1e,0x64),frontMaterial=new THREE['MeshLambertMaterial']({'color':0x808000}),front=new THREE[(_0x380e68(0x14b))](frontGeometry,frontMaterial);front[_0x380e68(0xe2)]['set'](0x0,0x0,0x0);var sideGeometry=new THREE[(_0x380e68(0x18d))](0xf,0.1,0x1e,0x64),sideMaterial=new THREE[(_0x380e68(0x174))]({'color':0x964b00}),side=new THREE['Mesh'](sideGeometry,sideMaterial);side['rotation']['y']=Math['PI']/0x2;var headGeometry=new THREE[(_0x380e68(0x18d))](0xf,0.1,0x1e,0x64),headMaterial=new THREE[(_0x380e68(0x174))]({'color':0x6a0dad}),head=new THREE[(_0x380e68(0x14b))](headGeometry,headMaterial);head[_0x380e68(0x11c)]['x']=Math['PI']/0x2;var ballGeometry,ballMaterial;function toRadian(_0x556509){return _0x556509*Math['PI']/0xb4;}function polarToCartesian(_0x5314fa,_0x43a5ba,_0x42a902){var _0x58942c=_0x380e68,_0x7a2df6=(0x5a-_0x43a5ba)*Math['PI']/0xb4,_0x45240e=(_0x5314fa+0xb4)*Math['PI']/0xb4;return{'x':-(_0x42a902*Math[_0x58942c(0xb1)](_0x7a2df6)*Math['sin'](_0x45240e)),'y':_0x42a902*Math['cos'](_0x7a2df6),'z':_0x42a902*Math['sin'](_0x7a2df6)*Math[_0x58942c(0xa6)](_0x45240e)};}const clock=new THREE['Clock']();function displayBall(_0x56b97b,_0x248ff1,_0x164aa9){var _0x208f83=_0x380e68,_0x1d7e9c=polarToCartesian(_0x56b97b,_0x248ff1,0xf);ballGeometry=new THREE[(_0x208f83(0x15f))](0.8,0x3c,0x1e),ballMaterial=new THREE[(_0x208f83(0x174))]({'map':new THREE['TextureLoader']()[_0x208f83(0xaa)](_0x208f83(0xf4)+_0x164aa9+'.jpg')});var _0x17fa71=new THREE[(_0x208f83(0x14b))](ballGeometry,ballMaterial);return _0x17fa71[_0x208f83(0x114)]='ball'+_0x164aa9,_0x17fa71[_0x208f83(0xe2)][_0x208f83(0xff)](_0x1d7e9c['x'],_0x1d7e9c['y'],_0x1d7e9c['z']),scene[_0x208f83(0x18c)](scene[_0x208f83(0x116)](_0x208f83(0x115)+_0x164aa9)),scene['add'](_0x17fa71),_0x17fa71;}function deleteBall(_0x4bad8f){var _0x226052=_0x380e68;document[_0x226052(0x149)](_0x226052(0x134))[_0x226052(0xad)]==_0x226052(0xa5)&&(document[_0x226052(0x149)](_0x226052(0x134))[_0x226052(0xad)]='',document[_0x226052(0x149)](_0x226052(0xe4))[_0x226052(0xad)]=''),scene[_0x226052(0x18c)](scene[_0x226052(0x116)](_0x226052(0x115)+_0x4bad8f));}function removeAllBalls(){var _0x332709=_0x380e68,_0x46fe8a=0x0;while(_0x46fe8a<0xa){scene[_0x332709(0x18c)](scene[_0x332709(0x116)](_0x332709(0x115)+(_0x46fe8a+0x1))),_0x46fe8a+=0x1;}}function _0xd4ed(_0x21dc9f,_0x2280ee){var _0x484b0a=_0x484b();return _0xd4ed=function(_0xd4edb8,_0x18aff4){_0xd4edb8=_0xd4edb8-0x93;var _0x561273=_0x484b0a[_0xd4edb8];return _0x561273;},_0xd4ed(_0x21dc9f,_0x2280ee);}scene['add'](wireframe),scene[_0x380e68(0x13e)](head),scene['add'](side),scene[_0x380e68(0x13e)](front),scene[_0x380e68(0x13e)](sphere),scene[_0x380e68(0x13e)](ear1),scene['add'](ear2),scene['add'](nose);const renderer=new THREE['WebGLRenderer']();renderer[_0x380e68(0x126)](0x1f4,0x1f4),container['appendChild'](renderer[_0x380e68(0x160)]),camera[_0x380e68(0x141)](sphere[_0x380e68(0xe2)]),controls=new THREE[(_0x380e68(0x187))](camera,renderer[_0x380e68(0x160)]),controls[_0x380e68(0xc6)]=0x1,controls[_0x380e68(0xfa)]=0x1f4;function animate(){var _0x3dd173=_0x380e68;requestAnimationFrame(animate);for(let _0x1d02ff=0x0;_0x1d02ff<0xa;_0x1d02ff++){if(scene['getObjectByName']('ball'+(_0x1d02ff+0x1))!=null)scene[_0x3dd173(0x116)](_0x3dd173(0x115)+(_0x1d02ff+0x1))[_0x3dd173(0x11c)]['y']+=0.05;}controls[_0x3dd173(0x152)](),renderer[_0x3dd173(0x99)](scene,camera);}animate();
+if (localStorage.getItem('stereo') != '1' 
+	|| localStorage.getItem('headphone') != '1' 
+	|| localStorage.getItem('survey_id') == undefined
+	|| localStorage.getItem('survey_id') == null){
+		window.location = '/templates/interface/incomplete.html';
+}
+
+var survey_id = '';
+var curr_recording = 0;
+var totalInstructions = 8;
+var practice = 1;
+const totalPractice = 4;
+const audio_path = '/templates/interface/assets/audio/practice/';
+const recording_names = ['sources_3_recording_8.wav', 
+'sources_3_recording_57.wav', 'sources_3_recording_130.wav', 'sources_3_recording_150.wav', 
+'sources_3_recording_160.wav'];
+
+survey_id = localStorage.getItem('survey_id');
+
+// check if the user goes through the whole instruction
+var read_all_rules = false;
+
+// To confirm that it is the practice round
+localStorage.setItem('practice_boolean', 1);
+
+if (localStorage.getItem('practice') == undefined 
+|| localStorage.getItem('practice') == null) {
+	curr_recording = 0;
+	localStorage.setItem('practice', 0);
+	localStorage.setItem('read_all_rules', 0);
+	action_type = "enter instruction page 0";
+	value = null;
+	timestamp = Date.now();
+	ajax_interaction();
+}
+else if (parseInt(localStorage.getItem('practice')) > totalPractice) {
+	curr_recording = 0;
+	read_all_rules = true;
+	document.getElementById('sign').style.visibility = '';
+}
+else {
+	curr_recording = localStorage.getItem('practice');
+	if (parseInt(localStorage.getItem('read_all_rules'))){
+		read_all_rules = true;
+		document.getElementById('sign').style.visibility = '';
+	}
+}
+
+document.getElementById('source').src = audio_path + recording_names[curr_recording];
+document.getElementById('audio').load();
+
+// colors
+const colors = [0x009dff, 0xff7f0e, 0x00ff00, 0xff0000, 0x9467bd, 0xd3d3d3, 0xc39b77, 0xe377c2, 0xbcbd22, 0x00ffff];
+var current_colors_index = 0;
+
+// prevent deletion and mousemove happen at the same time
+var suppress = false;
+
+// prevent moving and clicking happening at the same time
+var not_moving = true;
+
+// Location
+var curr_azimuth = 0;
+var curr_elevation = 0;
+var azimuth = new Array();
+var elevation = new Array();
+
+// Annotation
+var source_count = 0;
+
+// Interaction
+var action_type = undefined;
+var value = undefined;
+var timestamp = undefined;
+
+// this is used to distinguish between adding event and determining event
+var key_perform = false;
+
+// user control of audio
+var isPlaying = false;
+
+// modal box
+var modal = document.getElementById("modal");
+
+// instruction number
+var curr_instruction = 1;
+
+// these are look up tables for annotation dots' size change
+var indicators = {
+	1: [],
+	2: [],
+	3: [],
+	4: [],
+	5: [],
+	6: [],
+	7: [],
+	8: [],
+	9: [],
+	10: []
+};
+
+var front_indicators = {
+	1: [],
+	2: [],
+	3: [],
+	4: [],
+	5: [],
+	6: [],
+	7: [],
+	8: [],
+	9: [],
+	10: []
+};
+
+var side_indicators = {
+	1: [],
+	2: [],
+	3: [],
+	4: [],
+	5: [],
+	6: [],
+	7: [],
+	8: [],
+	9: [],
+	10: []
+};
+
+document.addEventListener('click', function(e) {
+	if (e.target.id.substring(0,23) == "audio-frame-instruction") {
+
+		isPlaying = false;
+		document.getElementById('audio').pause();
+		document.getElementById('audio-frame').innerHTML='Play an Example';
+
+		var audios = document.getElementsByClassName('audio-frame-instruction');
+
+		playing_id = '';
+
+		for(let i = 0; i < audios.length; i++) {
+			audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
+			if (audios[i].id != e.target.id) {
+				document.getElementById(audio_id).pause();
+				document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
+			}
+			else {
+				playing_id = audio_id;
+				document.getElementById(audios[i].id).innerHTML = document.getElementById(audios[i].id).innerHTML == 'Play an Example' ? 'Pause This Example' : 'Play an Example';
+				document.getElementById(audios[i].id).innerHTML == 'Play an Example' ? document.getElementById(audio_id).pause() : document.getElementById(audio_id).play();
+			}
+		}
+
+		document.getElementById(playing_id).addEventListener("timeupdate",function(){
+			if (playing_id.replace('audio-','') == e.target.id.replace('audio-frame-instruction-','')) {
+				let track = document.getElementById(playing_id).currentTime / document.getElementById(playing_id).duration * 100;
+				document.getElementById(e.target.id).style.background = 'linear-gradient(to right, #efefef '+ track +'%, #ffffff 0%)';
+			}
+		});
+
+		document.getElementById(playing_id).addEventListener("ended",function(){
+			document.getElementById(e.target.id).innerHTML = 'Play an Example';
+		});
+	}
+});
+
+document.querySelector('body').addEventListener("mouseup", () => { // for the case when the user deletes nothing
+	delete_annotation = false;
+	document.querySelector('body').style.cursor = 'default';
+});
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.getElementById('key-message').addEventListener("click",popKeyRules);
+document.getElementById('message').addEventListener("click",popRules);
+document.getElementById('instruction-right').addEventListener("click",move_instruction_next);
+document.getElementById('instruction-left').addEventListener("click",move_instruction_last);
+document.getElementById('instruction-proceed').addEventListener("click",closeRules);
+document.getElementById('sign').addEventListener("click",closeRules);
+
+document.getElementById('audio-frame').addEventListener("click",addPlaying);
+document.getElementById('audio').addEventListener("ended",displaySelection);
+document.getElementById('audio').addEventListener("timeupdate",audioTracker);
+
+document.getElementById('count').addEventListener("change",addSourceCount);
+
+document.getElementById('azimuth-plus').addEventListener("click",move_azimuth_plus);
+document.getElementById('elevation-plus').addEventListener("click",move_elevation_plus);
+document.getElementById('azimuth-minus').addEventListener("click",move_azimuth_minus);
+document.getElementById('elevation-minus').addEventListener("click",move_elevation_minus);
+
+function popKeyRules(e){
+	e.preventDefault();
+	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to '+'. Press [Control] or [Ctrl] key to delete an annotation once you see the cursor turning to '-'. Deleting an annotation means to delete both its annotated horizontal location and vertical location.")
+}
+
+function popRules(e){ 
+	e.preventDefault();
+	modal.style.display = "block";
+	if (read_all_rules) document.getElementById('sign').style.visibility = '';
+	document.getElementById('instruction-proceed').style.display = 'none';
+	document.getElementById('instruction-right').style.display = '';
+	document.getElementById('instruction'+curr_instruction).style.display = 'none';
+	document.getElementById('instruction1').style.display = '';
+	curr_instruction = 1;
+}
+
+function closeRules(e){ 
+	e.preventDefault();
+	if (!read_all_rules && document.getElementById('instruction-video-6').currentTime != document.getElementById('instruction-video-6').duration) {
+		window.alert("Please finish watching the current video first");
+		return;
+	}
+	if (!read_all_rules){
+		action_type = "close instruction page";
+		value = null;
+		timestamp = Date.now();
+		ajax_interaction();
+	}
+	read_all_rules = true;
+	localStorage.setItem('read_all_rules', 1);
+	let videos = document.getElementsByTagName('video');
+	for(let i = 0; i<videos.length; i++){
+		videos[i].pause();
+	}
+	if (read_all_rules) modal.style.display = "none";
+	let audios = document.getElementsByClassName('audio-frame-instruction');
+	for (let i = 0; i < audios.length; i++) {
+		audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
+		document.getElementById(audio_id).pause();
+		document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
+	}
+	
+	modal.style.display = "none";
+}
+
+function move_instruction_next(e){
+	e.preventDefault();
+
+	if (curr_instruction == 1) {
+		if (!read_all_rules){
+			action_type = "enter instruction page 1";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
+		document.getElementById('instruction-video-1').currentTime = 0;
+		document.getElementById('instruction-video-1').play();
+	}
+	else if (curr_instruction == 2) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-1').currentTime != document.getElementById('instruction-video-1').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 2";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
+		document.getElementById('instruction-video-1').pause();
+	}
+
+	if (curr_instruction == 3){
+		let audios = document.getElementsByClassName('audio-frame-instruction');
+		for (let i = 0; i < audios.length; i++) {
+			audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
+			document.getElementById(audio_id).pause();
+			document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 3";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
+		document.getElementById('instruction-video-2').currentTime = 0;
+		document.getElementById('instruction-video-2').play();
+	}
+
+	if (curr_instruction == 4) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-2').currentTime != document.getElementById('instruction-video-2').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 4";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
+		document.getElementById('instruction-video-2').pause();
+		document.getElementById('instruction-video-3').currentTime = 0;
+		document.getElementById('instruction-video-3').play();
+	}
+
+	if (curr_instruction == 5) {
+		if ( !read_all_rules && (document.getElementById('instruction-video-3').currentTime != document.getElementById('instruction-video-3').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 5";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
+		document.getElementById('instruction-video-3').pause();
+		document.getElementById('instruction-video-4').currentTime = 0;
+		document.getElementById('instruction-video-4').play();
+	}
+
+	if (curr_instruction == 6) {
+		if (!read_all_rules && (document.getElementById('instruction-video-4').currentTime != document.getElementById('instruction-video-4').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 6";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
+		document.getElementById('instruction-video-4').pause();
+		document.getElementById('instruction-video-5').currentTime = 0;
+		document.getElementById('instruction-video-5').play();
+	}
+
+	if (curr_instruction == 7) {
+		if (!read_all_rules &&  (document.getElementById('instruction-video-5').currentTime != document.getElementById('instruction-video-5').duration) ) {
+			window.alert("Please finish watching the current video first");
+			return;
+		}
+		if (!read_all_rules){
+			action_type = "enter instruction page 7";
+			value = null;
+			timestamp = Date.now();
+			ajax_interaction();
+		}
+		document.getElementById('instruction-video-5').pause();
+		document.getElementById('instruction-video-6').currentTime = 0;
+		document.getElementById('instruction-video-6').play();
+	}
+
+	if (curr_instruction < totalInstructions) {
+		document.getElementById('instruction'+curr_instruction).style.display = 'none';
+		document.getElementById('instruction'+(curr_instruction+1)).style.display = '';
+		curr_instruction += 1;
+	}
+
+	if (curr_instruction == totalInstructions) {
+		document.getElementById("instruction-right").style.display = 'none';
+		document.getElementById("instruction-proceed").style.display = '';
+	}
+
+}
+
+function move_instruction_last(e){
+	e.preventDefault();
+
+	if (curr_instruction > 1) {
+		if (curr_instruction == 2) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 0";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
+			document.getElementById('instruction-video-1').pause();
+		}
+
+		if (curr_instruction == 3){
+			if (!read_all_rules){
+				action_type = "enter instruction page 1";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
+			let audios = document.getElementsByClassName('audio-frame-instruction');
+			for (let i = 0; i < audios.length; i++) {
+				audio_id = "audio" + audios[i].id.replace("audio-frame-instruction","");
+				document.getElementById(audio_id).pause();
+				document.getElementById(audios[i].id ).innerHTML = 'Play an Example';
+			}
+			document.getElementById('instruction-video-1').currentTime = 0;
+			document.getElementById('instruction-video-1').play();
+		}
+
+		if (curr_instruction == 4) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 2";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
+			document.getElementById('instruction-video-2').pause();
+		}
+
+		if (curr_instruction == 5) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 3";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
+			document.getElementById('instruction-video-2').currentTime = 0;
+			document.getElementById('instruction-video-2').play();
+			document.getElementById('instruction-video-3').pause();
+		}
+
+		if (curr_instruction == 6) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 4";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
+			document.getElementById('instruction-video-3').currentTime = 0;
+			document.getElementById('instruction-video-3').play();
+			document.getElementById('instruction-video-4').pause();
+		}
+
+		if (curr_instruction == 7) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 5";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
+			document.getElementById('instruction-video-4').currentTime = 0;
+			document.getElementById('instruction-video-4').play();
+			document.getElementById('instruction-video-5').pause();
+		}
+
+		if (curr_instruction == 8) {
+			if (!read_all_rules){
+				action_type = "enter instruction page 6";
+				value = null;
+				timestamp = Date.now();
+				ajax_interaction();
+			}
+			document.getElementById('instruction-video-5').currentTime = 0;
+			document.getElementById('instruction-video-5').play();
+			document.getElementById('instruction-video-6').pause();
+		}
+
+		document.getElementById("instruction-right").style.display = '';
+		document.getElementById("instruction-proceed").style.display = 'none';
+		document.getElementById('instruction'+curr_instruction).style.display = 'none';
+		document.getElementById('instruction'+(curr_instruction-1)).style.display = '';
+		curr_instruction -= 1;
+	}
+}
+
+function addSourceCount(){
+	document.getElementById('2d-question').innerHTML = "Please identify the location of each sound";
+	document.getElementById('feedback').style.visibility = '';
+	document.getElementById('feedback').style.display = 'inline-block';
+	document.getElementById('head-wrapper').style.display = 'inline-block';
+	document.getElementById('front-wrapper').style.display = 'inline-block';
+	document.getElementById('side-wrapper').style.display = 'inline-block';
+	document.getElementById('btn-button-submit').setAttribute('style', 'float:right;');
+
+	source_count = document.getElementById('count').value;
+	value = document.getElementById('count').value;
+	timestamp = Date.now();
+	action_type = "source count";
+	ajax_interaction();
+}
+
+function audioTracker(){
+	let track = document.getElementById('audio').currentTime / document.getElementById('audio').duration * 100;
+	document.getElementById('audio-frame').style.background = 'linear-gradient(to right, #efefef '+track+'%, #ffffff 0%)';
+}
+
+function addPlaying(e){
+	e.preventDefault();
+	if (!isPlaying){
+		document.getElementById('audio').play();
+		document.getElementById('audio-frame').innerHTML='Pause Audio';
+		isPlaying = true;
+
+		value = null;
+		timestamp = Date.now();
+		action_type = "play audio";
+		ajax_interaction();
+	}
+	else{
+		isPlaying = false
+		document.getElementById('audio').pause();
+		document.getElementById('audio-frame').innerHTML='Play Audio';
+	}
+}
+
+function displaySelection(){ 
+	isPlaying = false;
+	document.getElementById('audio-frame').innerHTML = 'Play Audio';
+	// document.getElementById('count').style.display = '';
+	document.getElementById('count').style.visibility = '';
+}
+
+function askProceed(){
+	if (document.getElementById('count').value == undefined){ window.alert("You must select a number of distinct sounds"); return false; }
+	if (findUndefinedAzimuth() == -3 && findUndefinedElevation() == -3) { window.alert("You must annotate at least one spatial location"); return false; }
+	if (findUndefinedAzimuth() != findUndefinedElevation()) { window.alert("You must annotate both the horizontal location and the vertical location to fully annotate each sound's spatial location"); return false; }
+	if (findUndefinedAzimuth() == -2 || findUndefinedAzimuth() == -2) { window.alert("You can’t annotate more sounds than the number of distinct sounds selected. Please delete the additional location annotation(s)"); return false; }
+	if (findUndefinedAzimuth() != -1 || findUndefinedElevation() != -1 ) { 
+		if (confirm("You haven’t annotated all sounds yet (your selected source count is greater than the number of your annotation). Do you still want to proceed?")) return true;
+		else return false;
+	}
+	return true;
+}
+
+function findUndefinedAzimuth(){
+	var index = 0;
+	var lock = 0;
+	var azimuth_item_index = 0;
+	var azimuth_count = 0;
+	var find_undefined = false;
+
+	if (azimuth.length > source_count) lock = azimuth.length
+	else lock = source_count;
+
+	while ( index < lock ){
+		if ( azimuth[index] == undefined && !find_undefined ){
+			azimuth_item_index = index;
+			find_undefined = true;
+		}
+		if ( azimuth[index] != undefined ) azimuth_count += 1;
+		index += 1;
+	}
+
+	if (azimuth_count == 0 && !key_perform) return -3; // when user hit 'submit' but there is no annotation
+	if (azimuth_count > source_count) return -2; // when user hit submit but annotate more annotation
+	if (azimuth_count == source_count) return -1; // when user hit submit and annotate all annotation(s)
+	else return azimuth_item_index; // when user hit submit but annotate less annotation(s)
+}
+
+function findUndefinedElevation(){
+	var index = 0;
+	var elevation_item_index = 0;
+	var elevation_count = 0;
+	var find_undefined = false;
+	var lock = 0;
+
+	if (elevation.length > source_count) lock = elevation.length;
+	else lock = source_count;
+
+	while ( index < lock ){
+		if ( elevation[index] == undefined && !find_undefined ){
+			elevation_item_index = index;
+			find_undefined = true;
+		}
+		if ( elevation_count > source_count ) return -2;
+		if ( elevation[index] != undefined ) elevation_count += 1;
+		index += 1;
+	}
+
+	if (elevation_count == 0 && !key_perform) return -3;
+	if (elevation_count > source_count) return -2;
+	if (elevation_count == source_count) return -1;
+	else return elevation_item_index;
+}
+
+function ajax_interaction() {
+	var request_interaction = new XMLHttpRequest();
+	request_interaction.open('POST', '/interaction', true);
+	request_interaction.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+	practice = 1;
+	var data = JSON.stringify({survey_id,action_type,value,timestamp,practice});
+	request_interaction.send(data);
+	request_interaction.onreadystatechange = function() {
+		if (request_interaction.readyState == 4){
+			if (request_interaction.responseText != 'success'){
+				window.alert("Somthing is wrong. Please Refresh.");
+				return;
+			}
+		}
+	}
+}
+
+function ajax_next(){
+	if (!askProceed()){
+		event.preventDefault();
+		return false;
+	}
+	var request_next= new XMLHttpRequest();
+	let user_note = document.getElementById("user_note").value;
+	localStorage.setItem("user_note", user_note);
+	timestamp = Date.now();
+	request_next.open('POST', '/next', true);
+	request_next.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+	let recording_name = recording_names[curr_recording];
+	let vertical = 2;
+	localStorage.setItem('vertical', vertical);
+	practice = 1;
+	var data = JSON.stringify({survey_id,recording_name,azimuth,elevation,source_count,timestamp,user_note,practice,vertical});
+	request_next.send(data);
+	request_next.onreadystatechange = function() {
+		if (request_next.readyState == 4){
+			if (request_next.responseText != 'success'){
+				window.alert("Somthing is wrong. Please Refresh.");
+				return;
+			}
+		}
+	}
+	localStorage.setItem('recording', recording_names[curr_recording]);
+	window.location = '/templates/interface/confirm.html';
+}
+
+function displayBoth(hasFront, index, temp_azimuth, degree){
+	if (hasFront){
+		if (temp_azimuth < 22.5 || temp_azimuth > 337.5){ 
+			document.getElementById('front-item-'+index).style.display = 'none';
+			document.getElementById('circularF'+index).style.display = 'none';
+
+			document.getElementById('side-item-'+index).style.display = '';
+			document.getElementById('circularS'+index).style.display = '';
+			document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else if (temp_azimuth > 67.5 && temp_azimuth < 112.5){
+			document.getElementById('side-item-'+index).style.display = 'none';
+			document.getElementById('circularS'+index).style.display = 'none';
+			document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else if (temp_azimuth > 157.5 && temp_azimuth < 202.5){ 
+			document.getElementById('front-item-'+index).style.display = 'none';
+			document.getElementById('circularF'+index).style.display = 'none';
+
+			document.getElementById('side-item-'+index).style.display = '';
+			document.getElementById('circularS'+index).style.display = '';
+			document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else if (temp_azimuth > 247.5 && temp_azimuth < 292.5){
+			document.getElementById('side-item-'+index).style.display = 'none';
+			document.getElementById('circularS'+index).style.display = 'none';
+			document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else{
+			document.getElementById('side-item-'+index).style.display = '';
+			document.getElementById('circularS'+index).style.display = '';
+			if (temp_azimuth > 270 || temp_azimuth < 90){
+				if (degree > 180) { document.getElementById('circularS'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+				else { document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)'; }
+			}
+			else if (temp_azimuth < 270 && temp_azimuth > 90){
+				if (degree < 180) { document.getElementById('circularS'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+				else { document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)'; }
+			}
+		}
+	}
+	if (!hasFront){
+		if (temp_azimuth < 22.5 || temp_azimuth > 337.5){ 
+			document.getElementById('front-item-'+index).style.display = 'none';
+			document.getElementById('circularF'+index).style.display = 'none';
+			document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else if (temp_azimuth > 67.5 && temp_azimuth < 112.5){
+			document.getElementById('side-item-'+index).style.display = 'none';
+			document.getElementById('circularS'+index).style.display = 'none';
+
+			document.getElementById('front-item-'+index).style.display = '';
+			document.getElementById('circularF'+index).style.display = '';
+			document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else if (temp_azimuth > 157.5 && temp_azimuth < 202.5){ 
+			document.getElementById('front-item-'+index).style.display = 'none';
+			document.getElementById('circularF'+index).style.display = 'none';
+			document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else if (temp_azimuth > 247.5 && temp_azimuth < 292.5){
+			document.getElementById('side-item-'+index).style.display = 'none';
+			document.getElementById('circularS'+index).style.display = 'none';
+
+			document.getElementById('front-item-'+index).style.display = '';
+			document.getElementById('circularF'+index).style.display = '';
+			document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';
+		}
+		else{
+			document.getElementById('front-item-'+index).style.display = '';
+			document.getElementById('circularF'+index).style.display = '';
+			if (temp_azimuth < 180){
+				if (degree > 180){ document.getElementById('circularF'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+				else{ document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';  }
+			}
+			else if (temp_azimuth > 180){
+				if (degree < 180){ document.getElementById('circularF'+index).style.transform = 'rotate('+(360-degree)+'deg)';  }
+				else{ document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)'; }
+			}
+		}
+	}
+}
+
+function changeSize(item_index){
+
+	const selected_azimuth = azimuth[item_index - 1];
+	let size = 18 - 8;
+	let margin_top = -65 + 4;
+	let margin_left = 0 + 4;
+
+	for ( let index = azimuth.length - 1; index > -1; index-- ){
+		if ( selected_azimuth != undefined && Math.abs( selected_azimuth - azimuth[index] ) <= 5) {
+			if ( index != (item_index - 1) ){
+				indicators[item_index][index] = true;
+				indicators[index+1][item_index-1] = true;
+			}
+
+			size = size + 8;
+			margin_top = margin_top - 4;
+			margin_left = margin_left - 4;
+
+			document.getElementById('head-item-'+(index + 1)).style.width = size.toString() + 'px';
+			document.getElementById('head-item-'+(index + 1)).style.height = size.toString() + 'px';
+			document.getElementById('head-item-'+(index + 1)).style.marginTop = margin_top.toString() + 'px';
+			document.getElementById('head-item-'+(index + 1)).style.marginLeft = margin_left.toString() + 'px';
+			document.getElementById('head-item-'+(index + 1)).style.marginLeft = margin_left.toString() + 'px';
+			document.getElementById('head-item-'+(index + 1)).style.fontSize = (size - 3).toString() + 'px';
+
+		}
+		else if ( selected_azimuth == undefined || Math.abs( selected_azimuth - azimuth[index] ) > 5 ) {
+			if ( item_index == 1 && indicators[1][index] ) {
+				indicators[1][index] = undefined;
+				indicators[index+1][0] = undefined; 
+			}
+			else if ( item_index == 2 && indicators[2][index] ){
+				indicators[2][index] = undefined;
+				indicators[index+1][1] = undefined;
+
+				if (index < 1){
+					document.getElementById('head-item-1').style.width = (parseInt(document.getElementById('head-item-1').style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-1').style.height = (parseInt(document.getElementById('head-item-1').style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-1').style.marginTop = (parseInt(document.getElementById('head-item-1').style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-1').style.marginLeft = (parseInt(document.getElementById('head-item-1').style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-1').style.fontSize = (parseInt(document.getElementById('head-item-1').style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 3 && indicators[3][index] ) {
+				indicators[3][index] = undefined;
+				indicators[index+1][2] = undefined;
+
+				if (index < 2){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 4 && indicators[4][index] ) {
+				indicators[4][index] = undefined;
+				indicators[index+1][3] = undefined;
+
+				if (index < 3){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 5 && indicators[5][index] ) {
+				indicators[5][index] = undefined;
+				indicators[index+1][4] = undefined;
+
+				if (index < 4){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 6 && indicators[6][index]) {
+				indicators[6][index] = undefined;
+				indicators[index+1][5] = undefined;
+
+				if (index < 5){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 7 && indicators[7][index] ) {
+				indicators[7][index] = undefined;
+				indicators[index+1][6] = undefined;
+
+				if (index < 6){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 8 && indicators[8][index] ) {
+				indicators[8][index] = undefined;
+				indicators[index+1][7] = undefined;
+
+				if (index < 7){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 9 && indicators[9][index] ) {
+				indicators[9][index] = undefined;
+				indicators[index+1][8] = undefined;
+
+				if (index < 8){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 10 && indicators[10][index] )  {
+				indicators[10][index] = undefined;
+				indicators[index+1][9] = undefined;
+
+				if (index < 9){
+					document.getElementById('head-item-'+(index + 1)).style.width = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.height = (parseInt(document.getElementById('head-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('head-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('head-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('head-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+		}
+	}
+
+	const selected_elevation = elevation[item_index - 1];
+	const selected_elevation_degree = parseInt(document.getElementById('circularF'+item_index).style.transform.replace('rotate(','').replace('deg)',''));
+	size = 18 - 8;
+	margin_top = -65 + 4;
+	margin_left = 0 + 4;
+
+	for ( let index = elevation.length - 1; index > -1; index-- ) {
+		const current_index_degree = document.getElementById('circularF'+(index+1)).style.display != 'none' ? parseInt(document.getElementById('circularF'+(index+1)).style.transform.replace('rotate(','').replace('deg)','')) : undefined ;
+
+		if ( selected_elevation != undefined && Math.abs( selected_elevation_degree - current_index_degree ) <= 5 ) {
+			if ( index != (item_index - 1) ){
+				front_indicators[item_index][index] = true;
+				front_indicators[index+1][item_index-1] = true;
+			}
+
+			size = size + 8;
+			margin_top = margin_top - 4;
+			margin_left = margin_left - 4;
+
+			document.getElementById('front-item-'+(index + 1)).style.width = size.toString() + 'px';
+			document.getElementById('front-item-'+(index + 1)).style.height = size.toString() + 'px';
+			document.getElementById('front-item-'+(index + 1)).style.marginTop = margin_top.toString() + 'px';
+			document.getElementById('front-item-'+(index + 1)).style.marginLeft = margin_left.toString() + 'px';
+			document.getElementById('front-item-'+(index + 1)).style.fontSize = (size - 3).toString() + 'px';
+
+		}
+		else if ( selected_elevation == undefined || Math.abs( selected_elevation_degree - current_index_degree ) > 5 ) {
+			if ( item_index == 1 && front_indicators[1][index] ) {
+				front_indicators[1][index] = undefined;
+				front_indicators[index+1][0] = undefined; 
+			}
+			else if ( item_index == 2 && front_indicators[2][index] ){
+				front_indicators[2][index] = undefined;
+				front_indicators[index+1][1] = undefined;
+
+				if (index < 1){
+					document.getElementById('front-item-1').style.width = (parseInt(document.getElementById('front-item-1').style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-1').style.height = (parseInt(document.getElementById('front-item-1').style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-1').style.marginTop = (parseInt(document.getElementById('front-item-1').style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-1').style.marginLeft = (parseInt(document.getElementById('front-item-1').style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-1').style.fontSize = (parseInt(document.getElementById('front-item-1').style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 3 && front_indicators[3][index] ) {
+				front_indicators[3][index] = undefined;
+				front_indicators[index+1][2] = undefined;
+
+				if (index < 2){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 4 && front_indicators[4][index] ) {
+				front_indicators[4][index] = undefined;
+				front_indicators[index+1][3] = undefined;
+
+				if (index < 3){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 5 && front_indicators[5][index] ) {
+				front_indicators[5][index] = undefined;
+				front_indicators[index+1][4] = undefined;
+
+				if (index < 4){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 6 && front_indicators[6][index]) {
+				front_indicators[6][index] = undefined;
+				front_indicators[index+1][5] = undefined;
+
+				if (index < 5){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 7 && front_indicators[7][index] ) {
+				front_indicators[7][index] = undefined;
+				front_indicators[index+1][6] = undefined;
+
+				if (index < 6){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 8 && front_indicators[8][index] ) {
+				front_indicators[8][index] = undefined;
+				front_indicators[index+1][7] = undefined;
+
+				if (index < 7){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 9 && front_indicators[9][index] ) {
+				front_indicators[9][index] = undefined;
+				front_indicators[index+1][8] = undefined;
+
+				if (index < 8){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 10 && front_indicators[10][index] )  {
+				front_indicators[10][index] = undefined;
+				front_indicators[index+1][9] = undefined;
+
+				if (index < 9){
+					document.getElementById('front-item-'+(index + 1)).style.width = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.height = (parseInt(document.getElementById('front-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('front-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('front-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('front-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+		}
+	}
+
+	const selected_elevation2 = elevation[item_index - 1];
+	const selected_elevation_degree2 = parseInt(document.getElementById('circularS'+item_index).style.transform.replace('rotate(','').replace('deg)',''));
+	size = 18 - 8;
+	margin_top = -65 + 4;
+	margin_left = 0 + 4;
+
+	for ( let index = elevation.length - 1; index > -1; index-- ) {
+		const current_index_degree2 = document.getElementById('circularS'+(index+1)).style.display != 'none' ? parseInt(document.getElementById('circularS'+(index+1)).style.transform.replace('rotate(','').replace('deg)','')) : undefined ;
+
+		if ( selected_elevation2 != undefined && Math.abs( selected_elevation_degree2 - current_index_degree2 ) <= 5 ) {
+			if ( index != (item_index - 1) ){
+				side_indicators[item_index][index] = true;
+				side_indicators[index+1][item_index-1] = true;
+			}
+
+			size = size + 8;
+			margin_top = margin_top - 4;
+			margin_left = margin_left - 4;
+
+			document.getElementById('side-item-'+(index + 1)).style.width = size.toString() + 'px';
+			document.getElementById('side-item-'+(index + 1)).style.height = size.toString() + 'px';
+			document.getElementById('side-item-'+(index + 1)).style.marginTop = margin_top.toString() + 'px';
+			document.getElementById('side-item-'+(index + 1)).style.marginLeft = margin_left.toString() + 'px';
+			document.getElementById('side-item-'+(index + 1)).style.fontSize = (size - 3).toString() + 'px';
+
+		}
+		else if ( selected_elevation2 == undefined || Math.abs( selected_elevation_degree2 - current_index_degree2 ) > 5 ) {
+			if ( item_index == 1 && side_indicators[1][index] ) {
+				side_indicators[1][index] = undefined;
+				side_indicators[index+1][0] = undefined; 
+			}
+			else if ( item_index == 2 && side_indicators[2][index] ){
+				side_indicators[2][index] = undefined;
+				side_indicators[index+1][1] = undefined;
+
+				if (index < 1){
+					document.getElementById('side-item-1').style.width = (parseInt(document.getElementById('side-item-1').style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-1').style.height = (parseInt(document.getElementById('side-item-1').style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-1').style.marginTop = (parseInt(document.getElementById('side-item-1').style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-1').style.marginLeft = (parseInt(document.getElementById('side-item-1').style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-1').style.fontSize = (parseInt(document.getElementById('side-item-1').style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 3 && side_indicators[3][index] ) {
+				side_indicators[3][index] = undefined;
+				side_indicators[index+1][2] = undefined;
+
+				if (index < 2){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 4 && side_indicators[4][index] ) {
+				side_indicators[4][index] = undefined;
+				side_indicators[index+1][3] = undefined;
+
+				if (index < 3){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 5 && side_indicators[5][index] ) {
+				side_indicators[5][index] = undefined;
+				side_indicators[index+1][4] = undefined;
+
+				if (index < 4){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 6 && side_indicators[6][index]) {
+				side_indicators[6][index] = undefined;
+				side_indicators[index+1][5] = undefined;
+
+				if (index < 5){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 7 && side_indicators[7][index] ) {
+				side_indicators[7][index] = undefined;
+				side_indicators[index+1][6] = undefined;
+
+				if (index < 6){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 8 && side_indicators[8][index] ) {
+				side_indicators[8][index] = undefined;
+				side_indicators[index+1][7] = undefined;
+
+				if (index < 7){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 9 && side_indicators[9][index] ) {
+				side_indicators[9][index] = undefined;
+				side_indicators[index+1][8] = undefined;
+
+				if (index < 8){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+			else if ( item_index == 10 && side_indicators[10][index] )  {
+				side_indicators[10][index] = undefined;
+				side_indicators[index+1][9] = undefined;
+
+				if (index < 9){
+					document.getElementById('side-item-'+(index + 1)).style.width = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.height = (parseInt(document.getElementById('side-item-'+(index + 1)).style.height.replace('px','')) - 8).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginTop = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginTop.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.marginLeft = (parseInt(document.getElementById('side-item-'+(index + 1)).style.marginLeft.replace('px','')) + 4).toString() + 'px';
+					document.getElementById('side-item-'+(index + 1)).style.fontSize = (parseInt(document.getElementById('side-item-'+(index + 1)).style.width.replace('px','')) - 3).toString() + 'px';
+				}
+			}
+		}
+	}
+}
+
+function move_azimuth_plus(e){
+	e.preventDefault();
+
+	if (document.getElementById('head-item-'+(current_colors_index+1)).style.display == 'none'){
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
+		return false; 
+	}
+
+	temp_azimuth = parseInt(document.getElementById('p-azimuth').innerHTML) + 1;
+	temp_azimuth = (temp_azimuth == 360 ? temp_azimuth = 0 : temp_azimuth);
+
+	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display != 'none'){
+		degree = parseInt(document.getElementById('circularF'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+
+		if ((temp_azimuth < 180 && degree > 180) || (temp_azimuth > 180 && degree < 180)){ degree = 360 - degree; }
+		displayBoth(true, (current_colors_index+1), temp_azimuth, degree);
+	}
+
+	if (document.getElementById('side-item-'+(current_colors_index+1)).style.display != 'none'){
+		degree = parseInt(document.getElementById('circularS'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+
+		if ( ((temp_azimuth > 270 || temp_azimuth < 90) && degree>180)
+		|| ((temp_azimuth < 270 && temp_azimuth > 90) && degree<180) ){ degree = 360 - degree; }
+		displayBoth(false, (current_colors_index+1), temp_azimuth, degree);
+	}
+
+	document.getElementById('p-azimuth').innerHTML = temp_azimuth + " degrees";
+	azimuth[current_colors_index] = temp_azimuth;
+	document.getElementById('circular'+(current_colors_index+1)).style.transform = 'rotate('+temp_azimuth+'deg)';
+	changeSize(current_colors_index+1);
+	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
+	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
+
+	value = temp_azimuth;
+	timestamp = Date.now();
+	action_type = 'azimuth';
+	ajax_interaction();
+}
+
+function move_azimuth_minus(e){
+	e.preventDefault();
+
+	if (document.getElementById('head-item-'+(current_colors_index+1)).style.display == 'none'){ 
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
+		return false; 
+	}
+
+	temp_azimuth = parseInt(document.getElementById('p-azimuth').innerHTML) - 1;
+	temp_azimuth = (temp_azimuth == 360 ? temp_azimuth = 0 : temp_azimuth);
+	temp_azimuth = (temp_azimuth == -1 ? temp_azimuth = 359 : temp_azimuth);
+
+	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display != 'none'){
+		degree = parseInt(document.getElementById('circularF'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+
+		if ((temp_azimuth < 180 && degree > 180) || (temp_azimuth > 180 && degree < 180)){ degree = 360 - degree; }
+		displayBoth(true, (current_colors_index+1), temp_azimuth, degree);
+	}
+
+	if (document.getElementById('side-item-'+(current_colors_index+1)).style.display != 'none'){
+		degree = parseInt(document.getElementById('circularS'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+
+		if ( ((temp_azimuth > 270 || temp_azimuth < 90) && degree>180)
+		|| ((temp_azimuth < 270 && temp_azimuth > 90) && degree<180) ){ degree = 360 - degree; }
+		displayBoth(false, (current_colors_index+1), temp_azimuth, degree);
+	}
+
+	document.getElementById('p-azimuth').innerHTML = temp_azimuth + " degrees";
+	azimuth[current_colors_index] = temp_azimuth;
+	document.getElementById('circular'+(current_colors_index+1)).style.transform = 'rotate('+temp_azimuth+'deg)';
+	changeSize(current_colors_index+1);
+	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
+	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
+
+	value = temp_azimuth;
+	timestamp = Date.now();
+	action_type = 'azimuth';
+	ajax_interaction();
+}
+
+function move_elevation_plus(e){
+	e.preventDefault();
+
+	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display == 'none' 
+	&& document.getElementById('side-item-'+(current_colors_index+1)).style.display == 'none' ){
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
+		return false; 
+	}
+
+	new_elevation = parseInt(document.getElementById('p-elevation').innerHTML) + 1;
+	if (new_elevation > 90) { return false; }
+
+	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display != 'none'){
+		document.getElementById('p-elevation').innerHTML = new_elevation + " degrees";
+		elevation[current_colors_index] = new_elevation;
+
+		old_elevation_degree = parseInt(document.getElementById('circularF'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+		if (old_elevation_degree < 180){
+			new_elevation_degree = old_elevation_degree-1;
+			document.getElementById('circularF'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+		else {
+			new_elevation_degree = old_elevation_degree+1;
+			document.getElementById('circularF'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+	}
+	if (document.getElementById('side-item-'+(current_colors_index+1)).style.display != 'none'){
+		document.getElementById('p-elevation').innerHTML = new_elevation + " degrees";
+		elevation[current_colors_index] = new_elevation;
+
+		old_elevation_degree = parseInt(document.getElementById('circularS'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+		if (old_elevation_degree < 180){
+			new_elevation_degree = old_elevation_degree-1;
+			document.getElementById('circularS'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+		else {
+			new_elevation_degree = old_elevation_degree+1;
+			document.getElementById('circularS'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+	}
+
+	changeSize(current_colors_index+1);
+
+	value = new_elevation;
+	timestamp = Date.now();
+	action_type = 'elevation';
+	ajax_interaction();
+}
+
+function move_elevation_minus(e){
+	e.preventDefault();
+	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display == 'none' && document.getElementById('side-item-'+(current_colors_index+1)).style.display == 'none' ){ 
+		window.alert("Please annotate or click to select an annotation first using the 2D views"); 
+		return false; 
+	}
+
+	new_elevation = parseInt(document.getElementById('p-elevation').innerHTML) - 1;
+	if (new_elevation < (-90)) { return false; }
+
+	if (document.getElementById('front-item-'+(current_colors_index+1)).style.display != 'none'){
+		degree = parseInt(document.getElementById('circular'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+		document.getElementById('p-elevation').innerHTML = new_elevation + " degrees";
+		elevation[current_colors_index] = new_elevation;
+
+		old_elevation_degree = parseInt(document.getElementById('circularF'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+
+		if (old_elevation_degree < 180){
+			new_elevation_degree = old_elevation_degree+1;
+			document.getElementById('circularF'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+		else {
+			new_elevation_degree = old_elevation_degree-1;
+			document.getElementById('circularF'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+	}
+	if (document.getElementById('side-item-'+(current_colors_index+1)).style.display != 'none'){
+		degree = parseInt(document.getElementById('circular'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+		document.getElementById('p-elevation').innerHTML = new_elevation + " degrees";
+		elevation[current_colors_index] = new_elevation;
+
+		old_elevation_degree = parseInt(document.getElementById('circularS'+(current_colors_index+1)).style.transform.replace('rotate(','').replace('deg)',''));
+
+		if (old_elevation_degree < 180){
+			new_elevation_degree = old_elevation_degree+1;
+			document.getElementById('circularS'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+		else {
+			new_elevation_degree = old_elevation_degree-1;
+			document.getElementById('circularS'+(current_colors_index+1)).style.transform = 'rotate('+new_elevation_degree+'deg)';
+			displayBall((azimuth[current_colors_index]==undefined ? -180 : azimuth[current_colors_index]-180), new_elevation, (current_colors_index+1));
+		}
+	}
+
+	changeSize(current_colors_index+1);
+
+	value = new_elevation;
+	timestamp = Date.now();
+	action_type = 'elevation';
+	ajax_interaction();
+}
+
+function dragElement(index,indicator,add_index){
+	var item, itemF, itemS;
+
+	item = document.getElementById('circular'+index); 
+	inner_item = document.getElementById('head-item-'+index); 
+	frame = document.getElementById('head');
+
+	itemF = document.getElementById('circularF'+index); 
+	inner_itemF = document.getElementById('front-item-'+index); 
+	frameF = document.getElementById('front');
+
+	itemS = document.getElementById('circularS'+index); 
+	inner_itemS = document.getElementById('side-item-'+index); 
+	frameS = document.getElementById('side');
+
+	original_head_degree = parseInt(document.getElementById('circular'+index).style.transform.replace('rotate(','').replace('deg)',''));
+	original_front_degree = parseInt(document.getElementById('circularF'+index).style.transform.replace('rotate(','').replace('deg)',''));
+	original_side_degree = parseInt(document.getElementById('circularS'+index).style.transform.replace('rotate(','').replace('deg)',''));
+
+	itemS.onmousedown = function(){
+		if(suppress) {
+			// prevent undesired behaviors
+			document.onmousedown = null;
+			document.onmouseup = null;
+			document.onmousemove = null;
+			return;
+		}
+
+		document.onmousemove = mouse;
+		document.onmouseup = function(){
+			if(not_moving){
+				// prevent undesired behaviors
+				document.onmousedown = null;
+				document.onmouseup = null;
+				document.onmousemove = null;
+				return;
+			}
+
+			temp_azimuthS = parseInt(document.getElementById('circularS'+index).style.transform.replace('rotate(','').replace('deg)',''));
+
+			if (document.getElementById('head-item-'+index).style.display != 'none'){
+				degree = parseInt(document.getElementById('circular'+index).style.transform.replace('rotate(','').replace('deg)',''));
+
+				if ( ((degree < 90 || degree > 270) && (temp_azimuthS > 180)) || ((degree > 90 && degree < 270) && (temp_azimuthS < 180)) ){
+					window.alert("The annotation for the vertical location is inconsistent with the annotation for the horizontal location");
+					itemS.style.transform = 'rotate('+original_side_degree+'deg)';
+					document.getElementById('p-elevation').innerHTML = elevation[add_index] + " degrees";
+
+					// prevent undesired behaviors
+					document.onmousedown = null;
+					document.onmouseup = null;
+					document.onmousemove = null;
+					return;
+				}
+
+				if (azimuth[add_index] >= 22.5 && azimuth[add_index] <= 67.5) {
+					document.getElementById('circularF'+index).setAttribute('style','');
+					document.getElementById('circularF'+index).style.transform = 'rotate('+temp_azimuthS+'deg)';
+					document.getElementById('front-item-'+index).setAttribute('style','');
+				}
+				else if (azimuth[add_index] >= 112.5 && azimuth[add_index] <= 157.5) {
+					document.getElementById('circularF'+index).setAttribute('style','');
+					document.getElementById('circularF'+index).style.transform = 'rotate('+(360-temp_azimuthS)+'deg)';
+					document.getElementById('front-item-'+index).setAttribute('style','');
+				}
+				else if (azimuth[add_index] >= 202.5 && azimuth[add_index] <= 247.5) {
+					document.getElementById('circularF'+index).setAttribute('style','');
+					document.getElementById('circularF'+index).style.transform = 'rotate('+temp_azimuthS+'deg)';
+					document.getElementById('front-item-'+index).setAttribute('style','');
+				}
+				else if (azimuth[add_index] >= 292.5 && azimuth[add_index] <= 337.5) {
+					document.getElementById('circularF'+index).setAttribute('style','');
+					document.getElementById('circularF'+index).style.transform = 'rotate('+(360-temp_azimuthS)+'deg)';
+					document.getElementById('front-item-'+index).setAttribute('style','');
+				}
+				else{
+					document.getElementById('front-item-'+index).style.display = 'none';
+					document.getElementById('circularF'+index).style.display = 'none';
+				}
+			}
+
+			displayBall( (azimuth[add_index] != undefined ? azimuth[add_index] - 180 : -180) , curr_elevation, index);
+			elevation[add_index] = curr_elevation;
+
+			changeSize(index);
+
+			value = curr_elevation;
+			timestamp = Date.now();
+			action_type = "elevation";
+			ajax_interaction();
+
+			suppress = true;
+			not_moving = true;
+
+			// prevent undesired behaviors
+			document.onmousedown = null;
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+	}
+
+	itemF.onmousedown = function(){
+		if(suppress) {
+			// prevent undesired behaviors
+			document.onmousedown = null;
+			document.onmouseup = null;
+			document.onmousemove = null;
+			return; 
+		}
+
+		document.onmousemove = mouse;
+		document.onmouseup = function(e){
+			if (not_moving){
+				// prevent undesired behaviors
+				document.onmousedown = null;
+				document.onmouseup = null;
+				document.onmousemove = null;
+				return;
+			}
+
+			temp_azimuthF = parseInt(document.getElementById('circularF'+index).style.transform.replace('rotate(','').replace('deg)',''));
+
+			if (document.getElementById('head-item-'+index).style.display != 'none'){
+				degree = parseInt(document.getElementById('circular'+index).style.transform.replace('rotate(','').replace('deg)',''));
+
+				if ( (degree < 180 && temp_azimuthF > 180) || (degree > 180 && temp_azimuthF < 180) ){
+					window.alert("The annotation for the vertical location is inconsistent with the annotation for the horizontal location");
+					itemF.style.transform = 'rotate('+original_front_degree+'deg)';
+					document.getElementById('p-elevation').innerHTML = elevation[add_index] + " degrees";
+
+					// prevent undesired behaviors
+					document.onmousedown = null;
+					document.onmouseup = null;
+					document.onmousemove = null;
+					return;
+				}
+
+				if (azimuth[add_index] >= 22.5 && azimuth[add_index] <= 67.5) {
+					document.getElementById('circularS'+index).setAttribute('style','');
+					document.getElementById('circularS'+index).style.transform = 'rotate('+temp_azimuthF+'deg)';
+					document.getElementById('side-item-'+index).setAttribute('style','');
+				}
+				else if (azimuth[add_index] >= 112.5 && azimuth[add_index] <= 157.5) {
+					document.getElementById('circularS'+index).setAttribute('style','');
+					document.getElementById('circularS'+index).style.transform = 'rotate('+(360-temp_azimuthF)+'deg)';
+					document.getElementById('side-item-'+index).setAttribute('style','');
+				}
+				else if (azimuth[add_index] >= 202.5 && azimuth[add_index] <= 247.5) {
+					document.getElementById('circularS'+index).setAttribute('style','');
+					document.getElementById('circularS'+index).style.transform = 'rotate('+temp_azimuthF+'deg)';
+					document.getElementById('side-item-'+index).setAttribute('style','');
+				}
+				else if (azimuth[add_index] >= 292.5 && azimuth[add_index] <= 337.5) {
+					document.getElementById('circularS'+index).setAttribute('style','');
+					document.getElementById('circularS'+index).style.transform = 'rotate('+(360-temp_azimuthF)+'deg)';
+					document.getElementById('side-item-'+index).setAttribute('style','');
+				}
+				else{
+					document.getElementById('side-item-'+index).style.display = 'none';
+					document.getElementById('circularS'+index).style.display = 'none';
+				}
+			}
+
+			displayBall( (azimuth[add_index] != undefined ? azimuth[add_index] - 180 : -180) , curr_elevation, index);
+			elevation[add_index] = curr_elevation;
+
+			changeSize(index);
+
+			value = curr_elevation;
+			timestamp = Date.now();
+			action_type = "elevation";
+			ajax_interaction();
+
+			suppress = true;
+			not_moving = true;
+
+			// prevent undesired behaviors
+			document.onmousedown = null;
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+	}
+
+	item.onmousedown = function() {
+		if (suppress) return;
+
+   		document.onmousemove = mouse;
+		document.onmouseup = function(e) {
+			if (suppress) return; 
+			e.preventDefault();
+			suppress = true;
+
+			temp_azimuth = parseInt(document.getElementById('p-azimuth').innerHTML);
+
+			if (document.getElementById('front-item-'+index).style.display != 'none'){
+				degree = parseInt(document.getElementById('circularF'+index).style.transform.replace('rotate(','').replace('deg)',''));
+
+				if ((temp_azimuth < 180 && degree > 180) || (temp_azimuth > 180 && degree < 180)){ degree = 360 - degree; }
+				displayBoth(true, index, temp_azimuth, degree);
+			}
+
+			if (document.getElementById('side-item-'+index).style.display != 'none'){
+				degree = parseInt(document.getElementById('circularS'+index).style.transform.replace('rotate(','').replace('deg)',''));
+
+				if ( ((temp_azimuth > 270 || temp_azimuth < 90) && degree>180)
+					|| ((temp_azimuth < 270 && temp_azimuth > 90) && degree<180) ){ degree = 360 - degree; }
+				displayBoth(false, index, temp_azimuth, degree);
+			}
+
+			displayBall(temp_azimuth-180, (elevation[add_index] != undefined ? elevation[add_index] : 0), index);
+			curr_azimuth = temp_azimuth;
+			azimuth[add_index] = curr_azimuth;
+
+			changeSize(index);
+
+			value = curr_azimuth;
+			timestamp = Date.now();
+			action_type = "elevation";
+			ajax_interaction();
+
+			suppress = true;
+			not_moving = true;
+
+			// prevent undesired behaviors
+			document.onmousedown = null;
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+	}
+
+	function mouse(e) {
+		if (indicator == 1) {
+			var ilocationF = itemF.getBoundingClientRect();
+			var cxF = (ilocationF.right + ilocationF.left) / 2;
+			var cyF = (ilocationF.top + ilocationF.bottom) / 2;
+			var temp_azimuthF = calculateAzimuth(e.pageX, e.pageY, cxF, cyF);
+			temp_azimuthF = (temp_azimuthF == 360 ? 0 : temp_azimuthF);
+
+			if (temp_azimuthF <= 180){ curr_elevation = 90 - temp_azimuthF; }
+			else{ curr_elevation = (temp_azimuthF - 180) - 90 }
+
+			itemF.style.transform = 'rotate('+temp_azimuthF+'deg)';
+			document.getElementById('p-azimuth').innerHTML = (azimuth[add_index] != undefined ? azimuth[add_index] : 0) + " degrees";
+			document.getElementById('p-elevation').innerHTML = curr_elevation + " degrees";
+		}
+		else if (indicator == 2){
+			var ilocationS = itemS.getBoundingClientRect();
+			var cxS = (ilocationS.right + ilocationS.left) / 2;
+			var cyS = (ilocationS.top + ilocationS.bottom) / 2;
+			var temp_azimuthS = calculateAzimuth(e.pageX, e.pageY, cxS, cyS);
+			temp_azimuthS = (temp_azimuthS == 360 ? 0 : temp_azimuthS);
+
+			if (temp_azimuthS <= 180){ curr_elevation = 90 - temp_azimuthS; }
+			else{ curr_elevation = (temp_azimuthS - 180) - 90 }
+
+			itemS.style.transform = 'rotate('+temp_azimuthS+'deg)';
+			document.getElementById('p-azimuth').innerHTML = (azimuth[add_index] != undefined ? azimuth[add_index] : 0) + " degrees";
+			document.getElementById('p-elevation').innerHTML = curr_elevation + " degrees";
+		}
+		else{
+			var ilocation = item.getBoundingClientRect();
+			var cx = (ilocation.right + ilocation.left) / 2;
+			var cy = (ilocation.top + ilocation.bottom) / 2;
+			var temp_azimuth = calculateAzimuth(e.pageX, e.pageY, cx, cy);
+			temp_azimuth = (temp_azimuth == 360 ? 0 : temp_azimuth);
+
+			item.style.transform = 'rotate('+temp_azimuth+'deg)';
+			document.getElementById('p-azimuth').innerHTML = temp_azimuth + " degrees";
+			document.getElementById('p-elevation').innerHTML = (elevation[add_index] != undefined ? elevation[add_index] : 0) + " degrees";
+		}
+		suppress = false;
+		not_moving = false;
+	}
+}
+
+function calculateAzimuth(x,y,cx,cy){
+	var newx, newy;
+	if ( x>cx && y<cy ){
+		newx = x - cx;
+		newy = cy - y;
+		arccosine = Math.acos(newy / (Math.sqrt(Math.pow(newx,2) + Math.pow(newy,2))));
+		return Math.round(arccosine * (180 / Math.PI));
+	}
+	else if ( x>cx && y>cy ){
+		newx = x - cx;
+		newy = y - cy;
+		arccosine = Math.acos(newx / (Math.sqrt(Math.pow(newx,2) + Math.pow(newy,2))));
+		return Math.round(arccosine * (180 / Math.PI)) + 90;
+	}
+	else if ( x < cx && y > cy ){
+		newx = cx - x;
+		newy = cy - y;
+		arccosine = Math.acos(newx / (Math.sqrt(Math.pow(newx,2) + Math.pow(newy,2))));
+		return 270 - Math.round(arccosine * (180 / Math.PI));
+	}
+	else{
+		newx = cx - x;
+		newy = y - cy;
+		arccosine = Math.acos(newx / (Math.sqrt(Math.pow(newx,2) + Math.pow(newy,2))));
+		return Math.round(arccosine * (180 / Math.PI)) + 270;
+	}
+}
+
+function calculateRadius(mouseX, mouseY, frameX, frameY){
+	x = frameX - mouseX;
+	y = frameY - mouseY;
+	radius = Math.sqrt( Math.pow(x,2) + Math.pow(y,2) );
+	if ( radius <= 100 ) return true;
+	else return false;
+}
+
+function calculate3dClick(mouseX, mouseY, frameX, frameY){
+	x = frameX - mouseX;
+	y = frameY - mouseY;
+	radius = Math.sqrt( Math.pow(x,2) + Math.pow(y,2) );
+	if ( radius <= 200 ) return true;
+	else return false;
+}
+
+var enable_head = false;
+var enable_front = false;
+var enable_side = false;
+var delete_annotation = false;
+var add_third = false;
+
+document.addEventListener("keydown", keyboardEvents);
+function keyboardEvents(e){
+
+	if(e.ctrlKey){
+		e.preventDefault();
+
+        document.querySelector('body').style.cursor = "url('/templates/interface/img/minus.svg'), auto";
+		// disable adding events
+		enable_head = false; 
+		enable_front = false; 
+		enable_side = false;
+		// enable deleting events
+		delete_annotation = true;
+		// prevent dragging event
+		suppress = true;
+		return;
+	}
+
+	// set up to get location
+	document.getElementById('circular').setAttribute('style','');
+	document.getElementById('circularF').setAttribute('style','');
+	document.getElementById('circularS').setAttribute('style','');
+
+	head_frameLocation = document.getElementById('circular').getBoundingClientRect();
+	front_frameLocation = document.getElementById('circularF').getBoundingClientRect();
+	side_frameLocation = document.getElementById('circularS').getBoundingClientRect();
+	three_frameLocation = document.getElementById('3d-head').getBoundingClientRect();
+
+	head_cx = ( head_frameLocation.right + head_frameLocation.left ) / 2;
+	head_cy = ( head_frameLocation.top + head_frameLocation.bottom ) / 2;
+	front_cx = ( front_frameLocation.right + front_frameLocation.left ) / 2;
+	front_cy = ( front_frameLocation.top + front_frameLocation.bottom ) / 2;
+	side_cx = ( side_frameLocation.right + side_frameLocation.left ) / 2;
+	side_cy = ( side_frameLocation.top + side_frameLocation.bottom ) / 2;
+	three_cx = ( three_frameLocation.right + three_frameLocation.left ) / 2;
+	three_cy = ( three_frameLocation.top + three_frameLocation.bottom ) / 2;
+	
+	if (e.altKey){
+		e.preventDefault();
+
+		delete_annotation = false; // disable deleting events
+
+        document.querySelector('body').style.cursor = 'cell';
+
+		key_perform = true;
+
+		var azimuth_item_index = findUndefinedAzimuth();
+		var elevation_item_index = findUndefinedElevation();
+
+		document.addEventListener('click', function(e){
+			e.preventDefault();
+
+			enable_head = calculateRadius(e.pageX, e.pageY, head_cx, head_cy);
+			enable_front = calculateRadius(e.pageX, e.pageY, front_cx, front_cy);
+			enable_side = calculateRadius(e.pageX, e.pageY, side_cx, side_cy);
+			click_3d_head = calculate3dClick(e.pageX, e.pageY, three_cx, three_cy);
+
+			if (click_3d_head){
+				window.alert("Please annotate the sound using the 2D views"); 
+                document.querySelector('body').style.cursor = 'default';
+				key_perform = false;
+				document.onclick = null;
+				document.onkeydown = null; 
+				return;
+			}
+
+			if (enable_head){
+				if ( azimuth_item_index == -1 ){
+					window.alert("You have already annotated " + source_count + " horizontal locations. Please update the number of distinct sounds before continuing."); 
+					document.querySelector('body').style.cursor = 'default'; 
+					key_perform = false;
+					enable_head = false;
+					// prevent undesired events
+					document.onclick = null;
+					document.onkeydown = null; 
+					return;
+				}
+
+				if ((azimuth_item_index > elevation_item_index) && elevation_item_index != -1) {
+					window.alert("You must annotate a vertical location before adding a new sound annotation"); 
+					document.querySelector('body').style.cursor = 'default'; 
+					key_perform = false;
+					enable_head = false;
+
+					// prevent undesired events
+					document.onclick = null;
+					document.onkeydown = null; 
+					return;
+				}
+
+				azimuth_item_index += 1;
+				curr_azimuth = calculateAzimuth(e.pageX, e.pageY, head_cx, head_cy);
+				curr_azimuth = (curr_azimuth == 360 ? 0 : curr_azimuth);
+
+				if ( document.getElementById('front-item-'+azimuth_item_index).style.display != 'none' ){
+					original_front = parseInt(document.getElementById('circularF'+azimuth_item_index).style.transform.replace('rotate(','').replace('deg)',''));
+					if ( (original_front < 180 && curr_azimuth > 180)
+					|| (original_front > 180 && curr_azimuth < 180) ) {
+						window.alert("The annotation for the horizontal location is inconsistent with the annotation for the vertical location"); 
+						document.querySelector('body').style.cursor = 'default'; 
+						key_perform = false;
+						enable_head = false;
+						document.onclick = null;
+						document.onkeydown = null;
+						return;
+					}
+
+					degree = parseInt(document.getElementById('circularF'+azimuth_item_index).style.transform.replace('rotate(','').replace('deg)',''));
+					
+					if ((curr_azimuth < 180 && degree > 180) || (curr_azimuth > 180 && degree < 180)){
+						document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)';
+					}
+
+					if (curr_azimuth < 22.5 || curr_azimuth > 337.5){
+						document.getElementById('front-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularF'+azimuth_item_index).style.display = 'none';
+
+						document.getElementById('side-item-'+azimuth_item_index).style.display = '';
+						document.getElementById('circularS'+azimuth_item_index).style.display = '';
+						if (degree > 180){ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+						else{ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)'; }
+					}
+					else if (curr_azimuth > 67.5 && curr_azimuth < 112.5){
+						document.getElementById('side-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularS'+azimuth_item_index).style.display = 'none';
+					}
+					else if (curr_azimuth > 157.5 && curr_azimuth < 202.5){ 
+						document.getElementById('front-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularF'+azimuth_item_index).style.display = 'none';
+
+						document.getElementById('side-item-'+azimuth_item_index).style.display = '';
+						document.getElementById('circularS'+azimuth_item_index).style.display = '';
+						if (degree < 180){ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+						else{ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)'; }
+					}
+					else if (curr_azimuth > 247.5 && curr_azimuth < 292.5){
+						document.getElementById('side-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularS'+azimuth_item_index).style.display = 'none';
+					}
+					else{
+						document.getElementById('side-item-'+azimuth_item_index).style.display = '';
+						document.getElementById('circularS'+azimuth_item_index).style.display = '';
+						if (curr_azimuth > 270 || curr_azimuth < 90){
+							if (degree < 180){ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)'; }
+							else{ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)';  }
+						}
+						else if (curr_azimuth < 270 && curr_azimuth > 90){
+							if (degree > 180){ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)';  }
+							else{ document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)';  }
+						}
+					}
+
+				}
+				else if ( document.getElementById('side-item-'+azimuth_item_index).style.display != 'none' ){
+					original_side = parseInt(document.getElementById('circularS'+azimuth_item_index).style.transform.replace('rotate(','').replace('deg)',''));
+					if ( ((curr_azimuth < 90 || curr_azimuth > 270) && (original_side > 180))
+					|| ((curr_azimuth > 90 && curr_azimuth < 270) && (original_side < 180)) ) {
+						window.alert("The annotation for the horizontal location is inconsistent with the annotation for the vertical location");
+						document.querySelector('body').style.cursor = 'default'; 
+						key_perform = false;
+						enable_head = false;
+
+						// prevent undesired events
+						document.onclick = null;
+						document.onkeydown = null;
+						return;
+					}
+
+					degree = parseInt(document.getElementById('circularS'+azimuth_item_index).style.transform.replace('rotate(','').replace('deg)',''));
+
+					if ( ((curr_azimuth > 270 || curr_azimuth < 90) && degree>180)
+						|| ((curr_azimuth < 270 && curr_azimuth > 90) && degree<180) ){
+							document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)'; 
+					}
+
+					if (curr_azimuth < 22.5 || curr_azimuth > 337.5){
+						document.getElementById('front-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularF'+azimuth_item_index).style.display = 'none';
+					}
+					else if (curr_azimuth > 67.5 && curr_azimuth < 112.5){
+						document.getElementById('side-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularS'+azimuth_item_index).style.display = 'none';
+
+						document.getElementById('front-item-'+azimuth_item_index).style.display = '';
+						document.getElementById('circularF'+azimuth_item_index).style.display = '';
+						if (degree > 180){ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+						else{ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)'; }
+					}
+					else if (curr_azimuth > 157.5 && curr_azimuth < 202.5){ 
+						document.getElementById('front-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularF'+azimuth_item_index).style.display = 'none';
+					}
+					else if (curr_azimuth > 247.5 && curr_azimuth < 292.5){
+						document.getElementById('side-item-'+azimuth_item_index).style.display = 'none';
+						document.getElementById('circularS'+azimuth_item_index).style.display = 'none';
+
+						document.getElementById('front-item-'+azimuth_item_index).style.display = '';
+						document.getElementById('circularF'+azimuth_item_index).style.display = '';
+						if (degree < 180){ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+						else{ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)'; }
+					}
+					else{
+						document.getElementById('front-item-'+azimuth_item_index).style.display = '';
+						document.getElementById('circularF'+azimuth_item_index).style.display = '';
+						if (curr_azimuth < 180){
+							if (degree > 180){ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+							else{ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)';  }
+						}
+						else if (curr_azimuth > 180){
+							if (degree < 180){ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)';  }
+							else{ document.getElementById('circularF'+azimuth_item_index).style.transform = 'rotate('+degree+'deg)'; }
+						}
+					}
+				}
+
+				azimuth[azimuth_item_index - 1] = curr_azimuth;
+				document.getElementById('circular'+azimuth_item_index).setAttribute('style','');
+				document.getElementById('circular'+azimuth_item_index).style.transform = 'rotate('+curr_azimuth+'deg)';
+				document.getElementById('head-item-'+azimuth_item_index).setAttribute('style','');
+				changeSize(azimuth_item_index); 
+				displayBall(curr_azimuth - 180, (elevation[azimuth_item_index-1] != undefined ? elevation[azimuth_item_index-1] : 0) , azimuth_item_index); // display 3D azimuth
+
+				document.getElementById('p-azimuth').innerHTML = curr_azimuth + " degrees";
+				document.getElementById('p-elevation').innerHTML = (elevation[azimuth_item_index-1] != undefined ? elevation[azimuth_item_index-1] : 0) + " degrees";
+
+				current_colors_index = azimuth_item_index-1;
+				color_hex = '000000'+colors[azimuth_item_index-1].toString(16);
+				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+
+				key_perform = false;
+				enable_head = false;
+
+				// prevent undesired events
+				document.onclick = null;
+				document.onkeydown = null;
+
+				value = (curr_azimuth == 360 ? 0 : curr_azimuth);
+				timestamp = Date.now();
+				action_type = 'azimuth';
+				ajax_interaction();
+			}
+			else if (enable_front){
+				if ( elevation_item_index == -1 ){
+					window.alert("You have already annotated " + source_count + " vertical locations. Please update the number of distinct sounds before continuing."); 
+					document.querySelector('body').style.cursor = 'default'; 
+					key_perform = false;
+					enable_front = false;
+
+					// prevent undesired events
+					document.onclick = null;
+					document.onkeydown = null;
+					return;
+				}
+
+				if ((elevation_item_index > azimuth_item_index) && azimuth_item_index != -1) {
+					window.alert("You must annotate a horizontal location before adding a new sound annotation"); 
+					document.querySelector('body').style.cursor = 'default'; 
+					key_perform = false;
+					enable_front = false;
+
+					// prevent undesired events
+					document.onclick = null;
+					document.onkeydown = null;
+					return;
+				}
+
+				elevation_item_index += 1;
+				temp_azimuth = calculateAzimuth(e.pageX, e.pageY, front_cx, front_cy);
+
+				if (azimuth[elevation_item_index-1] != undefined){
+
+					if (azimuth[elevation_item_index-1] > 180 && temp_azimuth < 180){ temp_azimuth = 360 - temp_azimuth; }
+					else if (azimuth[elevation_item_index-1] < 180 && temp_azimuth > 180){ temp_azimuth = 360 - temp_azimuth; }
+
+					if (azimuth[elevation_item_index-1] >= 22.5 && azimuth[elevation_item_index-1] <= 67.5) {
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else if (azimuth[elevation_item_index-1] >= 112.5 && azimuth[elevation_item_index-1] <= 157.5) {
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else if (azimuth[elevation_item_index-1] >= 202.5 && azimuth[elevation_item_index-1] <= 247.5) {
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else if (azimuth[elevation_item_index-1] >= 292.5 && azimuth[elevation_item_index-1] <= 337.5) {
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else{
+						if (azimuth[elevation_item_index-1] > 157.5 && azimuth[elevation_item_index-1] <= 180){
+							document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+							document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else if (azimuth[elevation_item_index-1] < 202.5 && azimuth[elevation_item_index-1] > 180){
+							document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+							document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else if (azimuth[elevation_item_index-1] > 337.5){
+							document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+							document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else if (azimuth[elevation_item_index-1] < 22.5){
+							document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+							document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else{
+							document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+							document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+						}
+					}
+				}
+				else{
+					document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+					document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+					document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+				}
+
+				// calculate the displayed elevation
+				if (temp_azimuth <= 180){ curr_elevation = 90 - temp_azimuth; }
+				else{ curr_elevation = (temp_azimuth - 180) - 90 }
+				
+				elevation[elevation_item_index-1] = curr_elevation;
+				temp_azimuth = azimuth[elevation_item_index-1] != undefined ? azimuth[elevation_item_index-1] - 180 : -180;
+				changeSize(elevation_item_index); 
+				displayBall(temp_azimuth, curr_elevation, elevation_item_index);
+
+				// display azimuth and elevation
+				document.getElementById('p-azimuth').innerHTML = (azimuth[elevation_item_index-1] != undefined ? azimuth[elevation_item_index-1] : 0) + " degrees";
+				document.getElementById('p-elevation').innerHTML = curr_elevation + " degrees";
+
+				// color display
+				current_colors_index = elevation_item_index-1;
+				color_hex = '000000'+colors[elevation_item_index-1].toString(16);
+				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+
+				enable_front = false; 
+				// enable_head = false;
+				// enable_side = false;
+
+				key_perform = false;
+				enable_front = false;
+
+				// prevent undesired events
+				document.onclick = null;
+				document.onkeydown = null;
+
+				value = curr_elevation
+				timestamp = Date.now();
+				action_type = 'elevation'
+				ajax_interaction();
+			}
+			else if (enable_side){
+				if (elevation_item_index == -1){
+					window.alert("You have already annotated " + source_count + " vertical locations. Please update the number of distinct sounds before continuing."); 
+					document.querySelector('body').style.cursor = 'default';
+					key_perform = false;
+					enable_side = false;
+
+					// prevent undesired events
+					document.onclick = null;
+					document.onkeydown = null;
+					return;
+				}
+
+				if ((elevation_item_index > azimuth_item_index) && azimuth_item_index != -1) {
+					window.alert("You must annotate a horizontal location before adding a new sound annotation"); 
+					document.querySelector('body').style.cursor = 'default'; 
+					key_perform = false;
+					enable_side = false;
+
+					// prevent undesired events
+					document.onclick = null;
+					document.onkeydown = null;
+					return;
+				}
+
+				elevation_item_index += 1;
+				temp_azimuth = calculateAzimuth(e.pageX, e.pageY, side_cx, side_cy);
+
+				if (azimuth[elevation_item_index-1] != undefined){
+
+					if (azimuth[elevation_item_index-1] < 90 || azimuth[elevation_item_index-1] > 270){ if (temp_azimuth > 180){ temp_azimuth = 360 - temp_azimuth; } }
+					else if (azimuth[elevation_item_index-1] > 90 && azimuth[elevation_item_index-1]< 270){ if (temp_azimuth < 180){ temp_azimuth = 360 - temp_azimuth; } }
+					
+					if (azimuth[elevation_item_index-1] >= 22.5 && azimuth[elevation_item_index-1] <= 67.5) {
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else if (azimuth[elevation_item_index-1] >= 112.5 && azimuth[elevation_item_index-1] <= 157.5) {
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else if (azimuth[elevation_item_index-1] >= 202.5 && azimuth[elevation_item_index-1] <= 247.5) {
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else if (azimuth[elevation_item_index-1] >= 292.5 && azimuth[elevation_item_index-1] <= 337.5) {
+						document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+						document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+
+						document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+						document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+						document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+					}
+					else{
+						if (azimuth[elevation_item_index-1] > 67.5 && azimuth[elevation_item_index-1] <= 90){
+							document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+							document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else if (azimuth[elevation_item_index-1] > 90 && azimuth[elevation_item_index-1] < 112.5){
+							document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+							document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else if (azimuth[elevation_item_index-1] > 257.5 && azimuth[elevation_item_index-1] <= 270){
+							document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+							document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else if (azimuth[elevation_item_index-1] > 270 && azimuth[elevation_item_index-1] < 292.5){
+							document.getElementById('circularF'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularF'+elevation_item_index).style.transform = 'rotate('+(360-temp_azimuth)+'deg)';
+							document.getElementById('front-item-'+elevation_item_index).setAttribute('style','');
+						}
+						else{
+							document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+							document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+							document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+						}
+					}
+				}
+				else{
+					document.getElementById('circularS'+elevation_item_index).setAttribute('style','');
+					document.getElementById('circularS'+elevation_item_index).style.transform = 'rotate('+temp_azimuth+'deg)';
+					document.getElementById('side-item-'+elevation_item_index).setAttribute('style','');
+				}
+
+				// calculate the displayed elevation
+				if (temp_azimuth <= 180){ curr_elevation = 90 - temp_azimuth; }
+				else{ curr_elevation = (temp_azimuth - 180) - 90 }
+
+				elevation[elevation_item_index-1] = curr_elevation;
+				temp_azimuth = azimuth[elevation_item_index-1] != undefined ? azimuth[elevation_item_index-1] - 180 : -180;
+				changeSize(elevation_item_index); 
+				displayBall(temp_azimuth, curr_elevation, elevation_item_index);
+
+				// display azimuth and elevation
+				document.getElementById('p-azimuth').innerHTML = (azimuth[elevation_item_index-1] != undefined ? azimuth[elevation_item_index-1] : 0) + " degrees";
+				document.getElementById('p-elevation').innerHTML = curr_elevation + " degrees";
+
+				// color display
+				current_colors_index = elevation_item_index-1;
+				color_hex = '000000'+colors[elevation_item_index-1].toString(16);
+				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+
+				enable_side = false;
+
+				// prevent undesired events
+				document.onclick = null;
+				document.onkeydown = null;
+
+				value = curr_elevation
+				timestamp = Date.now();
+				action_type = 'elevation'
+				ajax_interaction();
+			}
+
+			key_perform = false;
+
+		}, {once:true});
+	}
+	return;
+}
+
+function findDefinedAnnotation(flag){
+	let index = 0
+	let store_index = -1;
+	while (index < azimuth.length || index < elevation.length){
+		if (index > flag-1){
+			if (elevation[index] != undefined || azimuth[index] != undefined){
+				store_index = index;
+				return store_index;
+			}
+		}
+		else{
+			if (elevation[index] != undefined || azimuth[index] != undefined) store_index = index;
+			if ((index == flag-1) && store_index != -1) return store_index;
+		}
+		index += 1;
+	}
+	return (store_index == -1 ? -1 : store_index);
+}
+
+document.getElementById('head-item-1').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[0] = undefined;
+		elevation[0] = undefined;
+		changeSize(1);
+
+		document.getElementById('head-item-1').style.display = 'none';
+		document.getElementById('front-item-1').style.display = 'none';
+		document.getElementById('side-item-1').style.display = 'none';
+		document.getElementById('circular1').style.display = 'none';
+		document.getElementById('circularF1').style.display = 'none';
+		document.getElementById('circularS1').style.display = 'none';
+
+		key_perform = true;
+		let annotation = findDefinedAnnotation(1);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = 0;
+		deleteBall(1);
+
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[0] == undefined ? 0 : azimuth[0]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[0] == undefined ? 0 : elevation[0]) + " degrees";
+		color_hex = '000000'+colors[0].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 0;
+
+		suppress = false;
+		dragElement(1,0,0);
+	}
+});
+document.getElementById('head-item-2').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[1] = undefined;
+		elevation[1] = undefined;
+		changeSize(2);
+
+		document.getElementById('head-item-2').style.display = 'none';
+		document.getElementById('front-item-2').style.display = 'none';
+		document.getElementById('side-item-2').style.display = 'none';
+		document.getElementById('circular2').style.display = 'none';
+		document.getElementById('circularF2').style.display = 'none';
+		document.getElementById('circularS2').style.display = 'none';
+		key_perform = true;
+		let annotation = findDefinedAnnotation(2);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+ 		document.getElementById('p-elevation').innerHTML = (annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(2);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[1] == undefined ? 0 : azimuth[1]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[1] == undefined ? 0 : elevation[1]) + " degrees";
+		color_hex = '000000'+colors[1].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 1;
+
+		suppress = false;
+		dragElement(2,0,1);
+	}
+});
+document.getElementById('head-item-3').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[2] = undefined;
+		elevation[2] = undefined;
+		changeSize(3);
+
+		document.getElementById('head-item-3').style.display = 'none';
+		document.getElementById('front-item-3').style.display = 'none';
+		document.getElementById('side-item-3').style.display = 'none';
+		document.getElementById('circular3').style.display = 'none';
+		document.getElementById('circularF3').style.display = 'none';
+		document.getElementById('circularS3').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(3);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(3);
+
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[2] == undefined ? 0 : azimuth[2]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[2] == undefined ? 0 : elevation[2]) + " degrees";
+		color_hex = '000000'+colors[2].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 2;
+		suppress = false
+		dragElement(3,0,2);
+	}
+});
+document.getElementById('head-item-4').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[3] = undefined;
+		elevation[3] = undefined;
+		changeSize(4);
+
+		document.getElementById('head-item-4').style.display = 'none';
+		document.getElementById('front-item-4').style.display = 'none';
+		document.getElementById('side-item-4').style.display = 'none';
+		document.getElementById('circular4').style.display = 'none';
+		document.getElementById('circularF4').style.display = 'none';
+		document.getElementById('circularS4').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(4);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(4);
+
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[3] == undefined ? 0 : azimuth[3]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[3] == undefined ? 0 : elevation[3]) + " degrees";
+		color_hex = '000000'+colors[3].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 3;
+		suppress = false;
+		dragElement(4,0,3);
+	}
+});
+document.getElementById('head-item-5').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[4] = undefined;
+		elevation[4] = undefined;
+		changeSize(5);
+
+		document.getElementById('head-item-5').style.display = 'none';
+		document.getElementById('front-item-5').style.display = 'none';
+		document.getElementById('side-item-5').style.display = 'none';
+		document.getElementById('circular5').style.display = 'none';
+		document.getElementById('circularF5').style.display = 'none';
+		document.getElementById('circularS5').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(5);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(5);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[4] == undefined ? 0 : azimuth[4]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[4] == undefined ? 0 : elevation[4]) + " degrees";
+		color_hex = '000000'+colors[4].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 4;
+		suppress = false;
+		dragElement(5,0,4);
+	}
+});
+document.getElementById('head-item-6').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[5] = undefined;
+		elevation[5] = undefined;
+		changeSize(6);
+
+		document.getElementById('head-item-6').style.display = 'none';
+		document.getElementById('front-item-6').style.display = 'none';
+		document.getElementById('side-item-6').style.display = 'none';
+		document.getElementById('circular6').style.display = 'none';
+		document.getElementById('circularF6').style.display = 'none';
+		document.getElementById('circularS6').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(6);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(6);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[5] == undefined ? 0 : azimuth[5])+ " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[5] == undefined ? 0 : elevation[5]) + " degrees";
+		color_hex = '000000'+colors[5].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 5;
+		suppress = false
+		dragElement(6,0,5);
+	}
+});
+document.getElementById('head-item-7').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[6] = undefined;
+		elevation[6] = undefined;
+		changeSize(7);
+
+		document.getElementById('head-item-7').style.display = 'none';
+		document.getElementById('front-item-7').style.display = 'none';
+		document.getElementById('side-item-7').style.display = 'none';
+		document.getElementById('circular7').style.display = 'none';
+		document.getElementById('circularF7').style.display = 'none';
+		document.getElementById('circularS7').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(7);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation]))+ " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(7);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[6] == undefined ? 0 : azimuth[6]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[6] == undefined ? 0 : elevation[6]) + " degrees";
+		color_hex = '000000'+colors[6].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 6;
+		suppress = false;
+		dragElement(7,0,6);
+	}
+});
+document.getElementById('head-item-8').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[7] = undefined;
+		elevation[7] = undefined;
+		changeSize(8);
+
+		document.getElementById('head-item-8').style.display = 'none';
+		document.getElementById('front-item-8').style.display = 'none';
+		document.getElementById('side-item-8').style.display = 'none';
+		document.getElementById('circular8').style.display = 'none';
+		document.getElementById('circularF8').style.display = 'none';
+		document.getElementById('circularS8').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(8);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation]))+ " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation]))+ " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(8);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[7] == undefined ? 0 : azimuth[7])+ " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[7] == undefined ? 0 : elevation[7])+ " degrees";
+		color_hex = '000000'+colors[7].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 7;
+		suppress = false;
+		dragElement(8,0,7);
+	}
+});
+document.getElementById('head-item-9').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[8] = undefined;
+		elevation[8] = undefined;
+		changeSize(9);
+
+		document.getElementById('head-item-9').style.display = 'none';
+		document.getElementById('front-item-9').style.display = 'none';
+		document.getElementById('side-item-9').style.display = 'none';
+		document.getElementById('circular9').style.display = 'none';
+		document.getElementById('circularF9').style.display = 'none';
+		document.getElementById('circularS9').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(9);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(9);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[8] == undefined ? 0 : azimuth[8]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[8] == undefined ? 0 : elevation[8]) + " degrees";
+		color_hex = '000000'+colors[8].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 8;
+		suppress = false;
+		dragElement(9,0,8);
+	}
+});
+document.getElementById('head-item-10').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[9] = undefined;
+		elevation[9] = undefined;
+		changeSize(10);
+
+		document.getElementById('head-item-10').style.display = 'none';
+		document.getElementById('front-item-10').style.display = 'none';
+		document.getElementById('side-item-10').style.display = 'none';
+		document.getElementById('circular10').style.display = 'none';
+		document.getElementById('circularF10').style.display = 'none';
+		document.getElementById('circularS10').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(10);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(10);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[9] == undefined ? 0 : azimuth[9]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[9] == undefined ? 0 : elevation[9]) + " degrees";
+		color_hex = '000000'+colors[9].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 9;
+		suppress = false;
+		dragElement(10,0,9);
+	}
+});
+document.getElementById('front-item-1').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[0] = undefined;
+		elevation[0] = undefined;
+		changeSize(1);
+
+		document.getElementById('head-item-1').style.display = 'none';
+		document.getElementById('front-item-1').style.display = 'none';
+		document.getElementById('side-item-1').style.display = 'none';
+		document.getElementById('circular1').style.display = 'none';
+		document.getElementById('circularF1').style.display = 'none';
+		document.getElementById('circularS1').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(1);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = 0;
+		deleteBall(1);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[0] == undefined ? 0 : azimuth[0]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[0] == undefined ? 0 : elevation[0]) + " degrees";
+		color_hex = '000000'+colors[0].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 0;
+		suppress = false;
+		dragElement(1,1,0);
+	}
+});
+document.getElementById('front-item-2').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[1] = undefined;
+		elevation[1] = undefined;
+		changeSize(2);
+
+		document.getElementById('head-item-2').style.display = 'none';
+		document.getElementById('front-item-2').style.display = 'none';
+		document.getElementById('side-item-2').style.display = 'none';
+		document.getElementById('circular2').style.display = 'none';
+		document.getElementById('circularF2').style.display = 'none';
+		document.getElementById('circularS2').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(2);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation]))+ " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(2);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[1] == undefined ? 0 : azimuth[1]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[1] == undefined ? 0 : elevation[1])+ " degrees";
+		color_hex = '000000'+colors[1].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 1;
+		suppress = false;
+		dragElement(2,1,1);
+	}
+});
+document.getElementById('front-item-3').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[2] = undefined;
+		elevation[2] = undefined;
+		changeSize(3);
+
+		document.getElementById('head-item-3').style.display = 'none';
+		document.getElementById('front-item-3').style.display = 'none';
+		document.getElementById('side-item-3').style.display = 'none';
+		document.getElementById('circular3').style.display = 'none';
+		document.getElementById('circularF3').style.display = 'none';
+		document.getElementById('circularS3').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(3);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(3);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[2] == undefined ? 0 : azimuth[2]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[2] == undefined ? 0 : elevation[2]) + " degrees";
+		color_hex = '000000'+colors[2].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 2;
+		suppress = false;
+		dragElement(3,1,2);
+	}
+});
+document.getElementById('front-item-4').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[3] = undefined;
+		elevation[3] = undefined;
+		changeSize(4);
+
+		document.getElementById('head-item-4').style.display = 'none';
+		document.getElementById('front-item-4').style.display = 'none';
+		document.getElementById('side-item-4').style.display = 'none';
+		document.getElementById('circular4').style.display = 'none';
+		document.getElementById('circularF4').style.display = 'none';
+		document.getElementById('circularS4').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(4);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation]))+ " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(4);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[3] == undefined ? 0 : azimuth[3])+ " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[3] == undefined ? 0 : elevation[3]) + " degrees";
+		color_hex = '000000'+colors[3].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 3;
+		suppress = false;
+		dragElement(4,1,3);
+	}
+});
+document.getElementById('front-item-5').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[4] = undefined;
+		elevation[4] = undefined;
+		changeSize(5);
+
+		document.getElementById('head-item-5').style.display = 'none';
+		document.getElementById('front-item-5').style.display = 'none';
+		document.getElementById('side-item-5').style.display = 'none';
+		document.getElementById('circular5').style.display = 'none';
+		document.getElementById('circularF5').style.display = 'none';
+		document.getElementById('circularS5').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(5);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(5);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[4] == undefined ? 0 : azimuth[4]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[4] == undefined ? 0 : elevation[4]) + " degrees";
+		color_hex = '000000'+colors[4].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 4;
+		suppress = false;
+		dragElement(5,1,4);
+	}
+});
+document.getElementById('front-item-6').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[5] = undefined;
+		elevation[5] = undefined;
+		changeSize(6);
+
+		document.getElementById('head-item-6').style.display = 'none';
+		document.getElementById('front-item-6').style.display = 'none';
+		document.getElementById('side-item-6').style.display = 'none';
+		document.getElementById('circular6').style.display = 'none';
+		document.getElementById('circularF6').style.display = 'none';
+		document.getElementById('circularS6').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(6);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(6);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[5] == undefined ? 0 : azimuth[5]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[5] == undefined ? 0 : elevation[5])+ " degrees";
+		color_hex = '000000'+colors[5].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 5;
+		suppress = false;
+		dragElement(6,1,5);
+	}
+});
+document.getElementById('front-item-7').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[6] = undefined;
+		elevation[6] = undefined;
+		changeSize(7);
+
+		document.getElementById('head-item-7').style.display = 'none';
+		document.getElementById('front-item-7').style.display = 'none';
+		document.getElementById('side-item-7').style.display = 'none';
+		document.getElementById('circular7').style.display = 'none';
+		document.getElementById('circularF7').style.display = 'none';
+		document.getElementById('circularS7').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(7);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(7);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[6] == undefined ? 0 : azimuth[6])+ " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[6] == undefined ? 0 : elevation[6]) + " degrees";
+		color_hex = '000000'+colors[6].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 6;
+		suppress = false;
+		dragElement(7,1,6);
+	}
+});
+document.getElementById('front-item-8').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[7] = undefined;
+		elevation[7] = undefined;
+		changeSize(8);
+
+		document.getElementById('head-item-8').style.display = 'none';
+		document.getElementById('front-item-8').style.display = 'none';
+		document.getElementById('side-item-8').style.display = 'none';
+		document.getElementById('circular8').style.display = 'none';
+		document.getElementById('circularF8').style.display = 'none';
+		document.getElementById('circularS8').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(8);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation]))+ " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation]))+ " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(8);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[7] == undefined ? 0 : azimuth[7])+ " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[7] == undefined ? 0 : elevation[7]) + " degrees";
+		color_hex = '000000'+colors[7].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 7;
+		suppress = false;
+		dragElement(8,1,7);
+	}
+});
+document.getElementById('front-item-9').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[8] = undefined;
+		elevation[8] = undefined;
+		changeSize(9);
+
+		document.getElementById('head-item-9').style.display = 'none';
+		document.getElementById('front-item-9').style.display = 'none';
+		document.getElementById('side-item-9').style.display = 'none';
+		document.getElementById('circular9').style.display = 'none';
+		document.getElementById('circularF9').style.display = 'none';
+		document.getElementById('circularS9').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(9);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(9);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[8] == undefined ? 0 : azimuth[8]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[8] == undefined ? 0 : elevation[8])+ " degrees";
+		color_hex = '000000'+colors[8].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 8;
+		suppress = false;
+		dragElement(9,1,8);
+	}
+});
+document.getElementById('front-item-10').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[9] = undefined;
+		elevation[9] = undefined;
+		changeSize(10);
+
+		document.getElementById('head-item-10').style.display = 'none';
+		document.getElementById('front-item-10').style.display = 'none';
+		document.getElementById('side-item-10').style.display = 'none';
+		document.getElementById('circular10').style.display = 'none';
+		document.getElementById('circularF10').style.display = 'none';
+		document.getElementById('circularS10').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(10);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(10);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[9] == undefined ? 0 : azimuth[9])+ " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[9] == undefined ? 0 : elevation[9]) + " degrees";
+		color_hex = '000000'+colors[9].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 9;
+		suppress = false;
+		dragElement(10,1,9);
+	}
+});
+
+document.getElementById('side-item-1').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[0] = undefined;
+		elevation[0] = undefined;
+		changeSize(1);
+
+		document.getElementById('head-item-1').style.display = 'none';
+		document.getElementById('front-item-1').style.display = 'none';
+		document.getElementById('side-item-1').style.display = 'none';
+		document.getElementById('circular1').style.display = 'none';
+		document.getElementById('circularF1').style.display = 'none';
+		document.getElementById('circularS1').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(1);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = 0;
+		deleteBall(1);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[0] == undefined ? 0 : azimuth[0]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[0] == undefined ? 0 : elevation[0]) + " degrees";
+		color_hex = '000000'+colors[0].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 0;
+		suppress = false;
+		dragElement(1,2,0);
+	}
+});
+document.getElementById('side-item-2').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[1] = undefined;
+		elevation[1] = undefined;
+		changeSize(2);
+
+		document.getElementById('head-item-2').style.display = 'none';
+		document.getElementById('front-item-2').style.display = 'none';
+		document.getElementById('side-item-2').style.display = 'none';
+		document.getElementById('circular2').style.display = 'none';
+		document.getElementById('circularF2').style.display = 'none';
+		document.getElementById('circularS2').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(2);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(2);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[1] == undefined ? 0 : azimuth[1]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[1] == undefined ? 0 : elevation[1]) + " degrees";
+		color_hex = '000000'+colors[1].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 1;
+		suppress = false;
+		dragElement(2,2,1);
+	}
+});
+document.getElementById('side-item-3').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[2] = undefined;
+		elevation[2] = undefined;
+		changeSize(3);
+
+		document.getElementById('head-item-3').style.display = 'none';
+		document.getElementById('front-item-3').style.display = 'none';
+		document.getElementById('side-item-3').style.display = 'none';
+		document.getElementById('circular3').style.display = 'none';
+		document.getElementById('circularF3').style.display = 'none';
+		document.getElementById('circularS3').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(3);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation]))+ " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation]))+ " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(3);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[2] == undefined ? 0 : azimuth[2])  + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[2] == undefined ? 0 : elevation[2])  + " degrees";
+		color_hex = '000000'+colors[2].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 2;
+		suppress = false;
+		dragElement(3,2,2);
+	}
+});
+document.getElementById('side-item-4').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[3] = undefined;
+		elevation[3] = undefined;
+		changeSize(4);
+
+		document.getElementById('head-item-4').style.display = 'none';
+		document.getElementById('front-item-4').style.display = 'none';
+		document.getElementById('side-item-4').style.display = 'none';
+		document.getElementById('circular4').style.display = 'none';
+		document.getElementById('circularF4').style.display = 'none';
+		document.getElementById('circularS4').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(4);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation]))  + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation]))  + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(4);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[3] == undefined ? 0 : azimuth[3]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[3] == undefined ? 0 : elevation[3])  + " degrees";
+		color_hex = '000000'+colors[3].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 3;
+		suppress = false;
+		dragElement(4,2,3);
+	}
+});
+document.getElementById('side-item-5').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[4] = undefined;
+		elevation[4] = undefined;
+		changeSize(5);
+
+		document.getElementById('head-item-5').style.display = 'none';
+		document.getElementById('front-item-5').style.display = 'none';
+		document.getElementById('side-item-5').style.display = 'none';
+		document.getElementById('circular5').style.display = 'none';
+		document.getElementById('circularF5').style.display = 'none';
+		document.getElementById('circularS5').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(5);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(5);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[4] == undefined ? 0 : azimuth[4]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[4] == undefined ? 0 : elevation[4]) + " degrees";
+		color_hex = '000000'+colors[4].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 4;
+		suppress = false;
+		dragElement(5,2,4);
+	}
+});
+document.getElementById('side-item-6').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[5] = undefined;
+		elevation[5] = undefined;
+		changeSize(6);
+
+		document.getElementById('head-item-6').style.display = 'none';
+		document.getElementById('front-item-6').style.display = 'none';
+		document.getElementById('side-item-6').style.display = 'none';
+		document.getElementById('circular6').style.display = 'none';
+		document.getElementById('circularF6').style.display = 'none';
+		document.getElementById('circularS6').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(6);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(6);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[5] == undefined ? 0 : azimuth[5]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[5] == undefined ? 0 : elevation[5]) + " degrees";
+		color_hex = '000000'+colors[5].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 5;
+		suppress = false;
+		dragElement(6,2,5);
+	}
+});
+document.getElementById('side-item-7').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[6] = undefined;
+		elevation[6] = undefined;
+		changeSize(7);
+
+		document.getElementById('head-item-7').style.display = 'none';
+		document.getElementById('front-item-7').style.display = 'none';
+		document.getElementById('side-item-7').style.display = 'none';
+		document.getElementById('circular7').style.display = 'none';
+		document.getElementById('circularF7').style.display = 'none';
+		document.getElementById('circularS7').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(7);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(7);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[6] == undefined ? 0 : azimuth[6]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[6] == undefined ? 0 : elevation[6]) + " degrees";
+		color_hex = '000000'+colors[6].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 6;
+		suppress = false;
+		dragElement(7,2,6);
+	}
+});
+document.getElementById('side-item-8').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[7] = undefined;
+		elevation[7] = undefined;
+		changeSize(8);
+
+		document.getElementById('head-item-8').style.display = 'none';
+		document.getElementById('front-item-8').style.display = 'none';
+		document.getElementById('side-item-8').style.display = 'none';
+		document.getElementById('circular8').style.display = 'none';
+		document.getElementById('circularF8').style.display = 'none';
+		document.getElementById('circularS8').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(8);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(8);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[7] == undefined ? 0 : azimuth[7]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[7] == undefined ? 0 : elevation[7]) + " degrees";
+		color_hex = '000000'+colors[7].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 7;
+		suppress = false;
+		dragElement(8,2,7);
+	}
+});
+document.getElementById('side-item-9').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[8] = undefined;
+		elevation[8] = undefined;
+		changeSize(9);
+
+		document.getElementById('head-item-9').style.display = 'none';
+		document.getElementById('front-item-9').style.display = 'none';
+		document.getElementById('side-item-9').style.display = 'none';
+		document.getElementById('circular9').style.display = 'none';
+		document.getElementById('circularF9').style.display = 'none';
+		document.getElementById('circularS9').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(9);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(9);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[8] == undefined ? 0 : azimuth[8]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[8] == undefined ? 0 : elevation[8]) + " degrees";
+		color_hex = '000000'+colors[8].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 8;
+		suppress = false;
+		dragElement(9,2,8);
+	}
+});
+document.getElementById('side-item-10').addEventListener("mousedown",function(e){
+	e.preventDefault(); // Prevent dragging text event of the current draggable
+	
+	if (delete_annotation){
+		suppress = true;
+
+		azimuth[9] = undefined;
+		elevation[9] = undefined;
+		changeSize(10);
+
+		document.getElementById('head-item-10').style.display = 'none';
+		document.getElementById('front-item-10').style.display = 'none';
+		document.getElementById('side-item-10').style.display = 'none';
+		document.getElementById('circular10').style.display = 'none';
+		document.getElementById('circularF10').style.display = 'none';
+		document.getElementById('circularS10').style.display = 'none';
+				
+		key_perform = true;
+		let annotation = findDefinedAnnotation(10);
+		document.getElementById('p-azimuth').innerHTML = (annotation == -1 ? '' : (azimuth[annotation] == undefined ? 0 : azimuth[annotation])) + " degrees";
+		document.getElementById('p-elevation').innerHTML =(annotation == -1 ? '' : (elevation[annotation] == undefined ? 0 : elevation[annotation])) + " degrees";
+		if (annotation != -1){
+			color_hex = '000000'+colors[annotation].toString(16);
+			document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+			document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		}
+		else{
+			document.getElementById('azimuth-dot').style.backgroundColor = '';
+			document.getElementById('elevation-dot').style.backgroundColor = '';
+		}
+		key_perform = false;
+		current_colors_index = annotation;
+		deleteBall(10);
+		
+		// disable further deletion
+		delete_annotation = false;
+		e.ctrlKey = false;
+
+		// prevent undesired events
+		document.onmousedown = null; 
+		document.onkeydown = null;
+	}
+	else if (document.querySelector('body').style.cursor == 'default') {
+		document.getElementById('p-azimuth').innerHTML = (azimuth[9] == undefined ? 0 : azimuth[9]) + " degrees";
+		document.getElementById('p-elevation').innerHTML = (elevation[9] == undefined ? 0 : elevation[9]) + " degrees";
+		color_hex = '000000'+colors[9].toString(16);
+		document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
+		current_colors_index = 9;
+		suppress = false;
+		dragElement(10,2,9);
+	}
+});
+
+/* Three.js */
+
+container = document.getElementById('3d-head');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+var light = new THREE.HemisphereLight(0xffffff, 1);
+scene.add(light);
+
+// front light
+var pointLight = new THREE.PointLight(0xffffff, 0.8, 0);
+pointLight.position.set(30, 30, 250);
+scene.add(pointLight);
+
+// back light
+var pointLight2 = new THREE.PointLight(0xffffff, 0.8, 0);
+pointLight2.position.set(30, 30, -250);
+scene.add(pointLight2);
+
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+camera.position.z = 30;
+
+var sphereGeometry = new THREE.SphereGeometry(8,60,30);
+var sphereMaterial = new THREE.MeshLambertMaterial({
+	map: new THREE.TextureLoader().load('/templates/interface/img/face.png'),
+	color: 0xefd8c3
+});
+var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+sphere.position.set(0,0,0);
+
+var ear1Geometry = new THREE.TorusGeometry(1,1.2,30,100);
+var ear1Material = new THREE.MeshLambertMaterial({
+	color: 0xc2a68b
+});
+var ear1 = new THREE.Mesh(ear1Geometry, ear1Material);
+ear1.position.set(7.8,0,0);
+
+var ear2Geometry = new THREE.TorusGeometry(1,1.2,30,100);
+var ear2Material = new THREE.MeshLambertMaterial({
+	color: 0xc2a68b
+});
+var ear2 = new THREE.Mesh(ear2Geometry, ear2Material);
+ear2.position.set(-7.8,0,0);
+
+var noseGeometry = new THREE.TorusGeometry(0.3,0.8,30,100);
+var noseMaterial = new THREE.MeshLambertMaterial({
+	color: 0xc2a68b
+});
+var nose = new THREE.Mesh(noseGeometry, noseMaterial);
+nose.position.set(0,0,7.4);
+nose.rotation.y = 90;
+
+var frameGeometry = new THREE.SphereBufferGeometry(15,20,20);
+var frameMaterial = new THREE.MeshLambertMaterial({});
+var frame = new THREE.Mesh(frameGeometry, frameMaterial);
+var edgesGeometry = new THREE.EdgesGeometry(frameGeometry);
+var wireframe = new THREE.LineSegments(edgesGeometry, new THREE.LineBasicMaterial({color: 0x0000ff})); 
+
+var frontGeometry = new THREE.TorusGeometry(15,0.1,30,100);
+var frontMaterial = new THREE.MeshLambertMaterial({
+	color: 0x808000
+});
+var front = new THREE.Mesh(frontGeometry, frontMaterial);
+front.position.set(0,0,0);
+
+
+var sideGeometry = new THREE.TorusGeometry(15,0.1,30,100);
+var sideMaterial = new THREE.MeshLambertMaterial({
+	color: 0x964b00
+});
+var side = new THREE.Mesh(sideGeometry, sideMaterial);
+side.rotation.y = Math.PI / 2;
+
+
+var headGeometry = new THREE.TorusGeometry(15,0.1,30,100);
+var headMaterial = new THREE.MeshLambertMaterial({
+	color: 0x6a0dad
+});
+var head = new THREE.Mesh(headGeometry, headMaterial);
+head.rotation.x = Math.PI / 2;
+
+var ballGeometry;
+var ballMaterial;
+
+function toRadian(angle){
+	return angle * Math.PI / 180;
+}
+
+function polarToCartesian(lon, lat, radius) {
+	var phi = ( 90 - lat ) * Math.PI / 180
+	var theta = ( lon + 180 ) * Math.PI / 180
+	return {
+	  x: -(radius * Math.sin(phi) * Math.sin(theta)),
+	  y: radius * Math.cos(phi),
+	  z: radius * Math.sin(phi) * Math.cos(theta),
+	}
+}
+
+const clock = new THREE.Clock()
+
+function displayBall(azimuth, elevation, number){
+	var returnlist = polarToCartesian(azimuth, elevation, 15);
+	ballGeometry = new THREE.SphereGeometry(0.8,60,30);
+	ballMaterial = new THREE.MeshLambertMaterial({
+		map: new THREE.TextureLoader().load('/templates/interface/img/item-'+number+'.jpg')
+	});
+	var ball = new THREE.Mesh(ballGeometry, ballMaterial);
+	ball.name = 'ball'+number;
+	ball.position.set(returnlist['x'], returnlist['y'], returnlist['z']);
+	scene.remove(scene.getObjectByName('ball'+number));
+	scene.add(ball);
+
+	return ball;
+}
+
+function deleteBall(number){ 
+	if (document.getElementById('p-azimuth').innerHTML == " degrees") {
+		document.getElementById('p-azimuth').innerHTML ='';
+		document.getElementById('p-elevation').innerHTML = '';
+	}
+	scene.remove(scene.getObjectByName('ball'+number)); 
+}
+
+function removeAllBalls(){
+	var index = 0;
+	while (index < 10){
+		scene.remove(scene.getObjectByName('ball'+(index + 1)));
+		index += 1;
+	}
+}
+scene.add(wireframe);
+scene.add(head);
+scene.add(side);
+scene.add(front);
+scene.add(sphere);
+scene.add(ear1);
+scene.add(ear2);
+scene.add(nose);
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(500,500);
+container.appendChild(renderer.domElement);
+
+camera.lookAt(sphere.position);
+
+controls = new THREE.OrbitControls(camera,renderer.domElement);
+controls.minDistance = 1;
+controls.maxDistance = 500;
+
+function animate(){
+	requestAnimationFrame(animate);
+	// create rotation to all 3D annotations
+	for (let i=0 ; i<10; i++){
+		if (scene.getObjectByName('ball'+(i + 1)) != null) scene.getObjectByName('ball'+(i + 1)).rotation.y += 0.05;
+	}
+	controls.update();
+	renderer.render(scene,camera); 
+}
+animate();
