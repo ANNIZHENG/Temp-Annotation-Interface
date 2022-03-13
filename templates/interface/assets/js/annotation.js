@@ -1,8 +1,5 @@
-if (localStorage.getItem('stereo') != '1' 
-	|| localStorage.getItem('headphone') != '1' 
-	|| localStorage.getItem('survey_id') == undefined
-	|| localStorage.getItem('survey_id') == null){
-		window.location = '/templates/interface/incomplete.html';
+if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined || localStorage.getItem('survey_id') == null){
+	window.location = '/templates/interface/incomplete.html';
 }
 
 if (parseInt(localStorage.getItem('complete_practice')) != 1){

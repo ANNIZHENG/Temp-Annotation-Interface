@@ -1,7 +1,4 @@
-if (localStorage.getItem('stereo') != '1' 
-	|| localStorage.getItem('headphone') != '1' 
-	|| localStorage.getItem('survey_id') == undefined
-	|| localStorage.getItem('survey_id') == null){
+if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined || localStorage.getItem('survey_id') == null){
 		window.location = '/templates/interface/incomplete.html';
 }
 
