@@ -1,24 +1,22 @@
-if (localStorage.getItem('stereo') != '1' 
-	|| localStorage.getItem('headphone') != '1' 
-	|| localStorage.getItem('survey_id') == undefined
-	|| localStorage.getItem('survey_id') == null){
-		window.location = '/templates/interface/incomplete.html';
-}
+// if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
+// 	window.location = '/templates/interface/incomplete.html';
+// }
 
 var survey_id = '';
 var curr_recording = 0;
 var totalInstructions = 8;
 var practice = 1;
+var gaussian = document.querySelector('.gaussian');
 const totalPractice = 4;
 const audio_path = '/templates/interface/assets/audio/practice/';
-const recording_names = ['sources_3_recording_8.wav', 
-'sources_3_recording_57.wav', 'sources_3_recording_130.wav', 'sources_3_recording_150.wav', 
-'sources_3_recording_160.wav'];
+const recording_names = ['sources_3_recording_8.wav', 'sources_3_recording_57.wav', 'sources_3_recording_130.wav', 'sources_3_recording_150.wav', 'sources_3_recording_160.wav'];
+const angle_list=[[[0,-45],[0,-30],[0,-15],[0,0],[0,15],[0,30],[0,45],[0,60],[0,75],[30,-30],[30,0],[32,18],[36,44],[60,-50],[62,-16],[60,0],[60,30],[90,-30],[90,0],[90,15],[90,45],[115,-45],[119,-15],[120,0],[120,30],[150,-30],[150,0],[151,15],[155,45],[180,-45],[180,-30],[180,-15],[180,0],[180,15],[180,30],[180,45],[205,-45],[209,-15],[210,0],[210,30],[240,-30],[240,0],[241,15],[245,45],[270,-45],[270,-15],[270,0],[270,30],[300,-30],[300,0],[302,18],[300,42],[330,-50],[328,-18],[330,0],[330,30]],['gaussian_rec_0_azimuth_0_elevation_-45.wav','gaussian_rec_1_azimuth_0_elevation_-30.wav','gaussian_rec_2_azimuth_0_elevation_-15.wav','gaussian_rec_3_azimuth_0_elevation_0.wav','gaussian_rec_4_azimuth_0_elevation_15.wav','gaussian_rec_5_azimuth_0_elevation_30.wav','gaussian_rec_6_azimuth_0_elevation_45.wav','gaussian_rec_7_azimuth_0_elevation_60.wav','gaussian_rec_8_azimuth_0_elevation_75.wav','gaussian_rec_9_azimuth_30_elevation_-30.wav','gaussian_rec_10_azimuth_30_elevation_0.wav','gaussian_rec_11_azimuth_30_elevation_15.wav','gaussian_rec_12_azimuth_30_elevation_45.wav','gaussian_rec_13_azimuth_60_elevation_-45.wav','gaussian_rec_14_azimuth_60_elevation_-15.wav','gaussian_rec_15_azimuth_60_elevation_0.wav','gaussian_rec_16_azimuth_60_elevation_30.wav','gaussian_rec_17_azimuth_90_elevation_-30.wav','gaussian_rec_18_azimuth_90_elevation_0.wav','gaussian_rec_19_azimuth_90_elevation_15.wav','gaussian_rec_20_azimuth_90_elevation_45.wav','gaussian_rec_21_azimuth_120_elevation_-45.wav','gaussian_rec_22_azimuth_120_elevation_-15.wav','gaussian_rec_23_azimuth_120_elevation_0.wav','gaussian_rec_24_azimuth_120_elevation_30.wav','gaussian_rec_25_azimuth_150_elevation_-30.wav','gaussian_rec_26_azimuth_150_elevation_0.wav','gaussian_rec_27_azimuth_150_elevation_15.wav','gaussian_rec_28_azimuth_150_elevation_45.wav','gaussian_rec_29_azimuth_180_elevation_-45.wav','gaussian_rec_30_azimuth_180_elevation_-30.wav','gaussian_rec_31_azimuth_180_elevation_-15.wav','gaussian_rec_32_azimuth_180_elevation_0.wav','gaussian_rec_33_azimuth_180_elevation_15.wav','gaussian_rec_34_azimuth_180_elevation_30.wav','gaussian_rec_35_azimuth_180_elevation_45.wav','gaussian_rec_36_azimuth_210_elevation_-45.wav','gaussian_rec_37_azimuth_210_elevation_-15.wav','gaussian_rec_38_azimuth_210_elevation_0.wav','gaussian_rec_39_azimuth_210_elevation_30.wav','gaussian_rec_40_azimuth_240_elevation_-30.wav','gaussian_rec_41_azimuth_240_elevation_0.wav','gaussian_rec_42_azimuth_240_elevation_15.wav','gaussian_rec_43_azimuth_240_elevation_45.wav','gaussian_rec_44_azimuth_270_elevation_-45.wav','gaussian_rec_45_azimuth_270_elevation_-15.wav','gaussian_rec_46_azimuth_270_elevation_0.wav','gaussian_rec_47_azimuth_270_elevation_30.wav','gaussian_rec_48_azimuth_300_elevation_-30.wav','gaussian_rec_49_azimuth_300_elevation_0.wav','gaussian_rec_50_azimuth_300_elevation_15.wav','gaussian_rec_51_azimuth_300_elevation_45.wav','gaussian_rec_52_azimuth_330_elevation_-45.wav','gaussian_rec_53_azimuth_330_elevation_-15.wav','gaussian_rec_54_azimuth_330_elevation_0.wav','gaussian_rec_55_azimuth_330_elevation_30.wav']];
 
 survey_id = localStorage.getItem('survey_id');
 
 // check if the user goes through the whole instruction
 var read_all_rules = false;
+read_all_rules = true; //! Waiting to Be Change Back
 
 // To confirm that it is the practice round
 localStorage.setItem('practice_boolean', 1);
@@ -186,6 +184,29 @@ document.getElementById('azimuth-plus').addEventListener("click",move_azimuth_pl
 document.getElementById('elevation-plus').addEventListener("click",move_elevation_plus);
 document.getElementById('azimuth-minus').addEventListener("click",move_azimuth_minus);
 document.getElementById('elevation-minus').addEventListener("click",move_elevation_minus);
+
+function find_gaussian(true_angles, min, store_index){
+    for (let i=0; i<angle_list[0].length; i++){
+        let dis = angular_distance(true_angles,angle_list[0][i]);
+        if ( dis < min ) {
+            min = dis;
+            store_index = i;
+        }
+    }
+	gaussian = new Audio("https://assets-audio.s3.amazonaws.com/audio/gaussian/"+angle_list[1][store_index]);
+	gaussian.play();
+	return store_index;
+}
+
+function angular_distance(true_angles, estimated_angles) {
+    let array = [true_angles[0], 90 - true_angles[1]];
+    let value = [estimated_angles[0], 90 - estimated_angles[1]];
+    let unit_vect_1 = [array[0] * Math.PI / 180, array[1] * Math.PI / 180];
+    let unit_vect_2 = [value[0] * Math.PI / 180, value[1] * Math.PI / 180];
+    let dot_product = Math.sin(unit_vect_1[1]) * Math.sin(unit_vect_2[1]) * Math.cos(unit_vect_1[0] - unit_vect_2[0]) + Math.cos(unit_vect_1[1]) * Math.cos(unit_vect_2[1]);
+    let distance = Math.acos( Math.round(dot_product * 100000) / 100000 ); // round to decimal place = 5
+    return distance;
+}
 
 function popKeyRules(e){
 	e.preventDefault();
@@ -1149,6 +1170,9 @@ function move_azimuth_plus(e){
 	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
 	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
 
+	// TODO: Play Audio
+	if (elevation[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
+
 	value = temp_azimuth;
 	timestamp = Date.now();
 	action_type = 'azimuth';
@@ -1188,6 +1212,9 @@ function move_azimuth_minus(e){
 	changeSize(current_colors_index+1);
 	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
 	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
+
+	// TODO: Play Audio
+	if (elevation[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = temp_azimuth;
 	timestamp = Date.now();
@@ -1241,6 +1268,9 @@ function move_elevation_plus(e){
 	}
 
 	changeSize(current_colors_index+1);
+
+	// TODO: Play Audio
+	if (azimuth[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = new_elevation;
 	timestamp = Date.now();
@@ -1297,6 +1327,9 @@ function move_elevation_minus(e){
 
 	changeSize(current_colors_index+1);
 
+	// TODO: Play Audio
+	if (azimuth[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
+
 	value = new_elevation;
 	timestamp = Date.now();
 	action_type = 'elevation';
@@ -1334,6 +1367,9 @@ function dragElement(index,indicator,add_index){
 		document.onmousemove = mouse;
 		document.onmouseup = function(){
 			if(not_moving){
+				// TODO: Play Audio
+				if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+
 				// prevent undesired behaviors
 				document.onmousedown = null;
 				document.onmouseup = null;
@@ -1389,6 +1425,9 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
+			// TODO: Play Audio
+			if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+
 			value = curr_elevation;
 			timestamp = Date.now();
 			action_type = "elevation";
@@ -1416,6 +1455,9 @@ function dragElement(index,indicator,add_index){
 		document.onmousemove = mouse;
 		document.onmouseup = function(e){
 			if (not_moving){
+				// TODO: Play Audio
+				if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+
 				// prevent undesired behaviors
 				document.onmousedown = null;
 				document.onmouseup = null;
@@ -1471,6 +1513,9 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
+			// TODO: Play Audio
+			if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+
 			value = curr_elevation;
 			timestamp = Date.now();
 			action_type = "elevation";
@@ -1487,13 +1532,26 @@ function dragElement(index,indicator,add_index){
 	}
 
 	item.onmousedown = function() {
-		if (suppress) return;
+		if(suppress) {
+			// prevent undesired behaviors
+			document.onmousedown = null;
+			document.onmouseup = null;
+			document.onmousemove = null;
+			return; 
+		}
 
    		document.onmousemove = mouse;
 		document.onmouseup = function(e) {
-			if (suppress) return; 
-			e.preventDefault();
-			suppress = true;
+			if (not_moving){
+				// TODO: Play Audio
+				if (elevation[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+
+				// prevent undesired behaviors
+				document.onmousedown = null;
+				document.onmouseup = null;
+				document.onmousemove = null;
+				return;
+			}
 
 			temp_azimuth = parseInt(document.getElementById('p-azimuth').innerHTML);
 
@@ -1517,6 +1575,9 @@ function dragElement(index,indicator,add_index){
 			azimuth[add_index] = curr_azimuth;
 
 			changeSize(index);
+
+			// TODO: Play Audio
+			if (elevation[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 			value = curr_azimuth;
 			timestamp = Date.now();
@@ -1858,6 +1919,9 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
+				// TODO: Play Audio
+				if (elevation[azimuth_item_index-1]) find_gaussian([curr_azimuth, elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
+
 				key_perform = false;
 				enable_head = false;
 
@@ -1992,9 +2056,10 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
+				// TODO: Play Audio
+				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
+
 				enable_front = false; 
-				// enable_head = false;
-				// enable_side = false;
 
 				key_perform = false;
 				enable_front = false;
@@ -2130,6 +2195,9 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
+				// TODO: Play Audio
+				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
+
 				enable_side = false;
 
 				// prevent undesired events
@@ -2167,6 +2235,8 @@ function findDefinedAnnotation(flag){
 	}
 	return (store_index == -1 ? -1 : store_index);
 }
+
+// Item Events
 
 document.getElementById('head-item-1').addEventListener("mousedown",function(e){
 	e.preventDefault(); // Prevent dragging text event of the current draggable
@@ -2211,6 +2281,7 @@ document.getElementById('head-item-1').addEventListener("mousedown",function(e){
 		document.onkeydown = null;
 	}
 	else if (document.querySelector('body').style.cursor == 'default') {
+		// if (elevation[0] && azimuth[0]) find_gaussian([azimuth[0], elevation[0]], Number.MAX_VALUE, -1);
 		document.getElementById('p-azimuth').innerHTML = (azimuth[0] == undefined ? 0 : azimuth[0]) + " degrees";
 		document.getElementById('p-elevation').innerHTML = (elevation[0] == undefined ? 0 : elevation[0]) + " degrees";
 		color_hex = '000000'+colors[0].toString(16);
