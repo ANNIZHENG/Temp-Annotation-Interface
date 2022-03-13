@@ -174,6 +174,26 @@ document.getElementById('elevation-plus').addEventListener("click",move_elevatio
 document.getElementById('azimuth-minus').addEventListener("click",move_azimuth_minus);
 document.getElementById('elevation-minus').addEventListener("click",move_elevation_minus);
 
+function find_gaussian(true_angles, min, store_index){
+    for (let i=0; i<angles_list[0].length; i++){
+        let dis = angular_distance(true_angles,angles_list[0][i]);
+        if ( dis < min ) {
+            min = dis;
+            store_index = i;
+        }
+    } return store_index;
+}
+
+function angular_distance(true_angles, estimated_angles) {
+    let array = [true_angles[0], 90 - true_angles[1]];
+    let value = [estimated_angles[0], 90 - estimated_angles[1]];
+    let unit_vect_1 = [array[0] * Math.PI / 180, array[1] * Math.PI / 180];
+    let unit_vect_2 = [value[0] * Math.PI / 180, value[1] * Math.PI / 180];
+    let dot_product = Math.sin(unit_vect_1[1]) * Math.sin(unit_vect_2[1]) * Math.cos(unit_vect_1[0] - unit_vect_2[0]) + Math.cos(unit_vect_1[1]) * Math.cos(unit_vect_2[1]);
+    let distance = Math.acos( Math.round(dot_product * 100000) / 100000 ); // round to decimal place = 5
+    return distance;
+}
+
 function popKeyRules(e){
 	e.preventDefault();
 	window.alert("Press [Option] or [Alt] key to add an annotation once you see the cursor turning to '+'. Press the [Control] or [Ctrl] key to delete an annotation once you see the cursor turning to '-'. Deleting an annotation means to delete both its annotated horizontal location and vertical location.")
