@@ -150,6 +150,7 @@ document.addEventListener('click', function(e){
 
 document.querySelector('body').addEventListener("mouseup",function(){ // for the case when the user deletes nothing
 	delete_annotation = false;
+	suppress = false;
 	document.querySelector('body').style.cursor = 'default';
 });
 

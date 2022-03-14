@@ -162,6 +162,7 @@ document.addEventListener('click', function(e) {
 
 document.querySelector('body').addEventListener("mouseup", () => { // for the case when the user deletes nothing
 	delete_annotation = false;
+	suppress = false;
 	document.querySelector('body').style.cursor = 'default';
 });
 
@@ -190,6 +191,7 @@ function find_gaussian(true_angles, min, store_index){
         }
     }
 	// TODO: Modify Full Audio File
+	console.log(angle_list[0][store_index], angle_list[1][store_index]);
 	gaussian = new Audio("https://assets-audio.s3.amazonaws.com/audio/gaussian/"+angle_list[1][store_index]);
 	gaussian.play();
 	let audio = document.getElementById('audio');
@@ -1347,6 +1349,7 @@ function move_elevation_minus(e){
 }
 
 function dragElement(index,indicator,add_index){
+	console.log("dragElement "+suppress);
 	var item, itemF, itemS;
 
 	item = document.getElementById('circular'+index); 
