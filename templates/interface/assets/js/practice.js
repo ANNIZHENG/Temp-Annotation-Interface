@@ -1,6 +1,6 @@
-// if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
-// 	window.location = '/templates/interface/incomplete.html';
-// }
+if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
+	window.location = '/templates/interface/incomplete.html';
+}
 
 var survey_id = '';
 var curr_recording = 0;
@@ -16,7 +16,6 @@ survey_id = localStorage.getItem('survey_id');
 
 // check if the user goes through the whole instruction
 var read_all_rules = false;
-read_all_rules = true; //! Waiting to Be Change Back
 
 // To confirm that it is the practice round
 localStorage.setItem('practice_boolean', 1);
