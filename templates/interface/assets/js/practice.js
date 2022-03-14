@@ -189,16 +189,25 @@ function find_gaussian(true_angles, min, store_index){
             store_index = i;
         }
     }
+	// TODO: Modify Full Audio File
 	gaussian = new Audio("https://assets-audio.s3.amazonaws.com/audio/gaussian/"+angle_list[1][store_index]);
 	gaussian.play();
+	let audio = document.getElementById('audio');
+	var noise_down;
+	var noise_up;
 	gaussian.addEventListener('playing', () => {
-		document.getElementById('audio').volume = 0.5;
+		clearInterval(noise_up);
+		noise_down = setInterval(function () {
+			if (audio.volume > 0.7) audio.volume -= 0.1;
+			else clearInterval(noise_down);
+		},50);
 	});
 	gaussian.addEventListener('pause', () => {
-		let audio = document.getElementById('audio');
-		for (let i = 0.5; i <=1 ; i = i + 0.001) {
-			audio.volume = i;
-		}
+		clearInterval(noise_down);
+		noise_up = setInterval(function () {
+			if (audio.volume < 1) audio.volume += 0.1;
+			else clearInterval(noise_up);
+		},50);
 	})
 	return store_index;
 }
