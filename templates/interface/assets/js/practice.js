@@ -1,6 +1,6 @@
-if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
-	window.location = '/templates/interface/incomplete.html';
-}
+// if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
+// 	window.location = '/templates/interface/incomplete.html';
+// }
 
 var survey_id = '';
 var curr_recording = 0;
@@ -16,6 +16,7 @@ survey_id = localStorage.getItem('survey_id');
 
 // check if the user goes through the whole instruction
 var read_all_rules = false;
+read_all_rules = true; //! Waiting to Be Change Back
 
 // To confirm that it is the practice round
 localStorage.setItem('practice_boolean', 1);
@@ -165,20 +166,16 @@ document.querySelector('body').addEventListener("mouseup", () => { // for the ca
 });
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-
 document.getElementById('key-message').addEventListener("click",popKeyRules);
 document.getElementById('message').addEventListener("click",popRules);
 document.getElementById('instruction-right').addEventListener("click",move_instruction_next);
 document.getElementById('instruction-left').addEventListener("click",move_instruction_last);
 document.getElementById('instruction-proceed').addEventListener("click",closeRules);
 document.getElementById('sign').addEventListener("click",closeRules);
-
 document.getElementById('audio-frame').addEventListener("click",addPlaying);
 document.getElementById('audio').addEventListener("ended",displaySelection);
 document.getElementById('audio').addEventListener("timeupdate",audioTracker);
-
 document.getElementById('count').addEventListener("change",addSourceCount);
-
 document.getElementById('azimuth-plus').addEventListener("click",move_azimuth_plus);
 document.getElementById('elevation-plus').addEventListener("click",move_elevation_plus);
 document.getElementById('azimuth-minus').addEventListener("click",move_azimuth_minus);
@@ -194,6 +191,15 @@ function find_gaussian(true_angles, min, store_index){
     }
 	gaussian = new Audio("https://assets-audio.s3.amazonaws.com/audio/gaussian/"+angle_list[1][store_index]);
 	gaussian.play();
+	gaussian.addEventListener('playing', () => {
+		document.getElementById('audio').volume = 0.5;
+	});
+	gaussian.addEventListener('pause', () => {
+		let audio = document.getElementById('audio');
+		for (let i = 0.5; i <=1 ; i = i + 0.001) {
+			audio.volume = i;
+		}
+	})
 	return store_index;
 }
 

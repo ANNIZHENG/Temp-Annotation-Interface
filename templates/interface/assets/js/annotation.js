@@ -1,11 +1,11 @@
-if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined || localStorage.getItem('survey_id') == null){
-	window.location = '/templates/interface/incomplete.html';
-}
+// if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined || localStorage.getItem('survey_id') == null){
+// 	window.location = '/templates/interface/incomplete.html';
+// }
 
-if (parseInt(localStorage.getItem('complete_practice')) != 1){
-	window.location = '/templates/interface/practice.html';
-	window.alert("You must complete the Practice Round before entering the Annotation Interface");
-}
+// if (parseInt(localStorage.getItem('complete_practice')) != 1){
+// 	window.location = '/templates/interface/practice.html';
+// 	window.alert("You must complete the Practice Round before entering the Annotation Interface");
+// }
 
 var survey_id = localStorage.getItem('survey_id');
 var practice = 0;
@@ -13,7 +13,7 @@ var recording_name = '';
 var vertical = -1;
 var totalInstructions = 8;
 var gaussian = document.querySelector('.gaussian');
-const angle_list=[[[0,-45],[0,-30],[0,-15],[0,0],[0,15],[0,30],[0,45],[0,60],[0,75],[30,-30],[30,0],[32,18],[36,44],[60,-50],[62,-16],[60,0],[60,30],[90,-30],[90,0],[90,15],[90,45],[115,-45],[119,-15],[120,0],[120,30],[150,-30],[150,0],[151,15],[155,45],[180,-45],[180,-30],[180,-15],[180,0],[180,15],[180,30],[180,45],[205,-45],[209,-15],[210,0],[210,30],[240,-30],[240,0],[241,15],[245,45],[270,-45],[270,-15],[270,0],[270,30],[300,-30],[300,0],[302,18],[300,42],[330,-50],[328,-18],[330,0],[330,30]],['gaussian_rec_0_azimuth_0_elevation_-45.wav','gaussian_rec_1_azimuth_0_elevation_-30.wav','gaussian_rec_2_azimuth_0_elevation_-15.wav','gaussian_rec_3_azimuth_0_elevation_0.wav','gaussian_rec_4_azimuth_0_elevation_15.wav','gaussian_rec_5_azimuth_0_elevation_30.wav','gaussian_rec_6_azimuth_0_elevation_45.wav','gaussian_rec_7_azimuth_0_elevation_60.wav','gaussian_rec_8_azimuth_0_elevation_75.wav','gaussian_rec_9_azimuth_30_elevation_-30.wav','gaussian_rec_10_azimuth_30_elevation_0.wav','gaussian_rec_11_azimuth_30_elevation_15.wav','gaussian_rec_12_azimuth_30_elevation_45.wav','gaussian_rec_13_azimuth_60_elevation_-45.wav','gaussian_rec_14_azimuth_60_elevation_-15.wav','gaussian_rec_15_azimuth_60_elevation_0.wav','gaussian_rec_16_azimuth_60_elevation_30.wav','gaussian_rec_17_azimuth_90_elevation_-30.wav','gaussian_rec_18_azimuth_90_elevation_0.wav','gaussian_rec_19_azimuth_90_elevation_15.wav','gaussian_rec_20_azimuth_90_elevation_45.wav','gaussian_rec_21_azimuth_120_elevation_-45.wav','gaussian_rec_22_azimuth_120_elevation_-15.wav','gaussian_rec_23_azimuth_120_elevation_0.wav','gaussian_rec_24_azimuth_120_elevation_30.wav','gaussian_rec_25_azimuth_150_elevation_-30.wav','gaussian_rec_26_azimuth_150_elevation_0.wav','gaussian_rec_27_azimuth_150_elevation_15.wav','gaussian_rec_28_azimuth_150_elevation_45.wav','gaussian_rec_29_azimuth_180_elevation_-45.wav','gaussian_rec_30_azimuth_180_elevation_-30.wav','gaussian_rec_31_azimuth_180_elevation_-15.wav','gaussian_rec_32_azimuth_180_elevation_0.wav','gaussian_rec_33_azimuth_180_elevation_15.wav','gaussian_rec_34_azimuth_180_elevation_30.wav','gaussian_rec_35_azimuth_180_elevation_45.wav','gaussian_rec_36_azimuth_210_elevation_-45.wav','gaussian_rec_37_azimuth_210_elevation_-15.wav','gaussian_rec_38_azimuth_210_elevation_0.wav','gaussian_rec_39_azimuth_210_elevation_30.wav','gaussian_rec_40_azimuth_240_elevation_-30.wav','gaussian_rec_41_azimuth_240_elevation_0.wav','gaussian_rec_42_azimuth_240_elevation_15.wav','gaussian_rec_43_azimuth_240_elevation_45.wav','gaussian_rec_44_azimuth_270_elevation_-45.wav','gaussian_rec_45_azimuth_270_elevation_-15.wav','gaussian_rec_46_azimuth_270_elevation_0.wav','gaussian_rec_47_azimuth_270_elevation_30.wav','gaussian_rec_48_azimuth_300_elevation_-30.wav','gaussian_rec_49_azimuth_300_elevation_0.wav','gaussian_rec_50_azimuth_300_elevation_15.wav','gaussian_rec_51_azimuth_300_elevation_45.wav','gaussian_rec_52_azimuth_330_elevation_-45.wav','gaussian_rec_53_azimuth_330_elevation_-15.wav','gaussian_rec_54_azimuth_330_elevation_0.wav','gaussian_rec_55_azimuth_330_elevation_30.wav']];
+const angle_list = [[[0,-45],[0,-30],[0,-15],[0,0],[0,15],[0,30],[0,45],[0,60],[0,75],[30,-30],[30,0],[32,18],[36,44],[60,-50],[62,-16],[60,0],[60,30],[90,-30],[90,0],[90,15],[90,45],[115,-45],[119,-15],[120,0],[120,30],[150,-30],[150,0],[151,15],[155,45],[180,-45],[180,-30],[180,-15],[180,0],[180,15],[180,30],[180,45],[205,-45],[209,-15],[210,0],[210,30],[240,-30],[240,0],[241,15],[245,45],[270,-45],[270,-15],[270,0],[270,30],[300,-30],[300,0],[302,18],[300,42],[330,-50],[328,-18],[330,0],[330,30]],['gaussian_rec_0_azimuth_0_elevation_-45.wav','gaussian_rec_1_azimuth_0_elevation_-30.wav','gaussian_rec_2_azimuth_0_elevation_-15.wav','gaussian_rec_3_azimuth_0_elevation_0.wav','gaussian_rec_4_azimuth_0_elevation_15.wav','gaussian_rec_5_azimuth_0_elevation_30.wav','gaussian_rec_6_azimuth_0_elevation_45.wav','gaussian_rec_7_azimuth_0_elevation_60.wav','gaussian_rec_8_azimuth_0_elevation_75.wav','gaussian_rec_9_azimuth_30_elevation_-30.wav','gaussian_rec_10_azimuth_30_elevation_0.wav','gaussian_rec_11_azimuth_30_elevation_15.wav','gaussian_rec_12_azimuth_30_elevation_45.wav','gaussian_rec_13_azimuth_60_elevation_-45.wav','gaussian_rec_14_azimuth_60_elevation_-15.wav','gaussian_rec_15_azimuth_60_elevation_0.wav','gaussian_rec_16_azimuth_60_elevation_30.wav','gaussian_rec_17_azimuth_90_elevation_-30.wav','gaussian_rec_18_azimuth_90_elevation_0.wav','gaussian_rec_19_azimuth_90_elevation_15.wav','gaussian_rec_20_azimuth_90_elevation_45.wav','gaussian_rec_21_azimuth_120_elevation_-45.wav','gaussian_rec_22_azimuth_120_elevation_-15.wav','gaussian_rec_23_azimuth_120_elevation_0.wav','gaussian_rec_24_azimuth_120_elevation_30.wav','gaussian_rec_25_azimuth_150_elevation_-30.wav','gaussian_rec_26_azimuth_150_elevation_0.wav','gaussian_rec_27_azimuth_150_elevation_15.wav','gaussian_rec_28_azimuth_150_elevation_45.wav','gaussian_rec_29_azimuth_180_elevation_-45.wav','gaussian_rec_30_azimuth_180_elevation_-30.wav','gaussian_rec_31_azimuth_180_elevation_-15.wav','gaussian_rec_32_azimuth_180_elevation_0.wav','gaussian_rec_33_azimuth_180_elevation_15.wav','gaussian_rec_34_azimuth_180_elevation_30.wav','gaussian_rec_35_azimuth_180_elevation_45.wav','gaussian_rec_36_azimuth_210_elevation_-45.wav','gaussian_rec_37_azimuth_210_elevation_-15.wav','gaussian_rec_38_azimuth_210_elevation_0.wav','gaussian_rec_39_azimuth_210_elevation_30.wav','gaussian_rec_40_azimuth_240_elevation_-30.wav','gaussian_rec_41_azimuth_240_elevation_0.wav','gaussian_rec_42_azimuth_240_elevation_15.wav','gaussian_rec_43_azimuth_240_elevation_45.wav','gaussian_rec_44_azimuth_270_elevation_-45.wav','gaussian_rec_45_azimuth_270_elevation_-15.wav','gaussian_rec_46_azimuth_270_elevation_0.wav','gaussian_rec_47_azimuth_270_elevation_30.wav','gaussian_rec_48_azimuth_300_elevation_-30.wav','gaussian_rec_49_azimuth_300_elevation_0.wav','gaussian_rec_50_azimuth_300_elevation_15.wav','gaussian_rec_51_azimuth_300_elevation_45.wav','gaussian_rec_52_azimuth_330_elevation_-45.wav','gaussian_rec_53_azimuth_330_elevation_-15.wav','gaussian_rec_54_azimuth_330_elevation_0.wav','gaussian_rec_55_azimuth_330_elevation_30.wav']];
 const audio_path = 'https://assets-audio.s3.amazonaws.com/audio';
 
 ajax_select_recording();
@@ -154,20 +154,16 @@ document.querySelector('body').addEventListener("mouseup",function(){ // for the
 });
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-
 document.getElementById('key-message').addEventListener("click",popKeyRules);
 document.getElementById('message').addEventListener("click",popRules);
 document.getElementById('instruction-left').addEventListener("click",move_instruction_last);
 document.getElementById('instruction-right').addEventListener("click",move_instruction_next);
 document.getElementById('instruction-proceed').addEventListener("click",closeRules);
 document.getElementById('sign').addEventListener("click",closeRules);
-
 document.getElementById('audio-frame').addEventListener("click",addPlaying);
 document.getElementById('audio').addEventListener("ended",displaySelection);
 document.getElementById('audio').addEventListener("timeupdate",audioTracker);
-
 document.getElementById('count').addEventListener("change",addSourceCount);
-
 document.getElementById('azimuth-plus').addEventListener("click",move_azimuth_plus);
 document.getElementById('elevation-plus').addEventListener("click",move_elevation_plus);
 document.getElementById('azimuth-minus').addEventListener("click",move_azimuth_minus);
@@ -183,6 +179,15 @@ function find_gaussian(true_angles, min, store_index){
     }
 	gaussian = new Audio("https://assets-audio.s3.amazonaws.com/audio/gaussian/"+angle_list[1][store_index]);
 	gaussian.play();
+	gaussian.addEventListener('playing', () => {
+		document.getElementById('audio').volume = 0.5;
+	});
+	gaussian.addEventListener('pause', () => {
+		let audio = document.getElementById('audio');
+		for (let i = 0.5; i <=1 ; i = i + 0.001) {
+			audio.volume = i;
+		}
+	})
 	return store_index;
 }
 
