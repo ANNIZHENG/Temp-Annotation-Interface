@@ -52,6 +52,7 @@ const colors = [0x009dff, 0xff7f0e, 0x00ff00, 0xff0000, 0x9467bd, 0xd3d3d3, 0xc3
 var current_colors_index = 0;
 
 // prevent deletion and mousemove happen at the same time
+// suppress is to suppress the dragging event (for the benefit of deletion)
 var suppress = false;
 
 // prevent moving and clicking happening at the same time
@@ -1349,7 +1350,6 @@ function move_elevation_minus(e){
 }
 
 function dragElement(index,indicator,add_index){
-	console.log("dragElement "+suppress);
 	var item, itemF, itemS;
 
 	item = document.getElementById('circular'+index); 
@@ -1444,7 +1444,6 @@ function dragElement(index,indicator,add_index){
 			action_type = "elevation";
 			ajax_interaction();
 
-			suppress = true;
 			not_moving = true;
 
 			// prevent undesired behaviors
@@ -1530,7 +1529,6 @@ function dragElement(index,indicator,add_index){
 			action_type = "elevation";
 			ajax_interaction();
 
-			suppress = true;
 			not_moving = true;
 
 			// prevent undesired behaviors
@@ -1591,7 +1589,6 @@ function dragElement(index,indicator,add_index){
 			action_type = "elevation";
 			ajax_interaction();
 
-			suppress = true;
 			not_moving = true;
 
 			// prevent undesired behaviors

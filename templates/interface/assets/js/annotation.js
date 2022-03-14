@@ -1246,7 +1246,6 @@ function dragElement(index,indicator,add_index){
 			action_type = "elevation";
 			ajax_interaction();
 
-			suppress = true;
 			not_moving = true;
 
 			// prevent undesired behaviors
@@ -1332,7 +1331,6 @@ function dragElement(index,indicator,add_index){
 			action_type = "elevation";
 			ajax_interaction();
 
-			suppress = true;
 			not_moving = true;
 
 			// prevent undesired behaviors
@@ -1393,7 +1391,6 @@ function dragElement(index,indicator,add_index){
 			action_type = "elevation";
 			ajax_interaction();
 
-			suppress = true;
 			not_moving = true;
 
 			// prevent undesired behaviors
