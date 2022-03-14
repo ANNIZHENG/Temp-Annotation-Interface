@@ -1170,7 +1170,6 @@ function move_azimuth_plus(e){
 	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
 	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
 
-	// TODO: Play Audio
 	if (elevation[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = temp_azimuth;
@@ -1213,7 +1212,6 @@ function move_azimuth_minus(e){
 	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
 	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
 
-	// TODO: Play Audio
 	if (elevation[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = temp_azimuth;
@@ -1269,7 +1267,6 @@ function move_elevation_plus(e){
 
 	changeSize(current_colors_index+1);
 
-	// TODO: Play Audio
 	if (azimuth[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = new_elevation;
@@ -1327,7 +1324,6 @@ function move_elevation_minus(e){
 
 	changeSize(current_colors_index+1);
 
-	// TODO: Play Audio
 	if (azimuth[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = new_elevation;
@@ -1367,7 +1363,6 @@ function dragElement(index,indicator,add_index){
 		document.onmousemove = mouse;
 		document.onmouseup = function(){
 			if(not_moving){
-				// TODO: Play Audio
 				if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 				// prevent undesired behaviors
@@ -1425,7 +1420,6 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
-			// TODO: Play Audio
 			if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 			value = curr_elevation;
@@ -1455,7 +1449,6 @@ function dragElement(index,indicator,add_index){
 		document.onmousemove = mouse;
 		document.onmouseup = function(e){
 			if (not_moving){
-				// TODO: Play Audio
 				if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 				// prevent undesired behaviors
@@ -1513,7 +1506,6 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
-			// TODO: Play Audio
 			if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 			value = curr_elevation;
@@ -1543,7 +1535,6 @@ function dragElement(index,indicator,add_index){
    		document.onmousemove = mouse;
 		document.onmouseup = function(e) {
 			if (not_moving){
-				// TODO: Play Audio
 				if (elevation[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 				// prevent undesired behaviors
@@ -1576,7 +1567,6 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
-			// TODO: Play Audio
 			if (elevation[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 			value = curr_azimuth;
@@ -1919,7 +1909,6 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				// TODO: Play Audio
 				if (elevation[azimuth_item_index-1]) find_gaussian([curr_azimuth, elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
 
 				key_perform = false;
@@ -2056,7 +2045,6 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				// TODO: Play Audio
 				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
 
 				enable_front = false; 
@@ -2195,7 +2183,6 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				// TODO: Play Audio
 				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
 
 				enable_side = false;
@@ -2281,7 +2268,6 @@ document.getElementById('head-item-1').addEventListener("mousedown",function(e){
 		document.onkeydown = null;
 	}
 	else if (document.querySelector('body').style.cursor == 'default') {
-		// if (elevation[0] && azimuth[0]) find_gaussian([azimuth[0], elevation[0]], Number.MAX_VALUE, -1);
 		document.getElementById('p-azimuth').innerHTML = (azimuth[0] == undefined ? 0 : azimuth[0]) + " degrees";
 		document.getElementById('p-elevation').innerHTML = (elevation[0] == undefined ? 0 : elevation[0]) + " degrees";
 		color_hex = '000000'+colors[0].toString(16);
