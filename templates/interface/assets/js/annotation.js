@@ -481,9 +481,12 @@ function displayBoth(hasFront, index, temp_azimuth, degree){
 			document.getElementById('circularS'+index).style.display = 'none';
 			document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';
 		}
-		else{
+		else{ // When Both Items Should Be Displayed
+
+			// Adjust Side Items
 			document.getElementById('side-item-'+index).style.display = '';
 			document.getElementById('circularS'+index).style.display = '';
+
 			if (temp_azimuth > 270 || temp_azimuth < 90){
 				if (degree > 180) { document.getElementById('circularS'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
 				else { document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)'; }
@@ -491,6 +494,19 @@ function displayBoth(hasFront, index, temp_azimuth, degree){
 			else if (temp_azimuth < 270 && temp_azimuth > 90){
 				if (degree < 180) { document.getElementById('circularS'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
 				else { document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)'; }
+			}
+
+			// Adjust Front Items
+			document.getElementById('front-item-'+index).style.display = '';
+			document.getElementById('circularF'+index).style.display = '';
+
+			if (temp_azimuth < 180){
+				if (degree > 180){ document.getElementById('circularF'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+				else{ document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';  }
+			}
+			else if (temp_azimuth > 180){
+				if (degree < 180){ document.getElementById('circularF'+index).style.transform = 'rotate('+(360-degree)+'deg)';  }
+				else{ document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)'; }
 			}
 		}
 	}
@@ -521,9 +537,25 @@ function displayBoth(hasFront, index, temp_azimuth, degree){
 			document.getElementById('circularF'+index).style.display = '';
 			document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';
 		}
-		else{
+		else{ // When Both Items Should Be Displayed
+
+			// Adjust Side Items
+			document.getElementById('side-item-'+index).style.display = '';
+			document.getElementById('circularS'+index).style.display = '';
+
+			if (temp_azimuth > 270 || temp_azimuth < 90){
+				if (degree > 180) { document.getElementById('circularS'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+				else { document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)'; }
+			}
+			else if (temp_azimuth < 270 && temp_azimuth > 90){
+				if (degree < 180) { document.getElementById('circularS'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
+				else { document.getElementById('circularS'+index).style.transform = 'rotate('+degree+'deg)'; }
+			}
+
+			// Adjust Front Items
 			document.getElementById('front-item-'+index).style.display = '';
 			document.getElementById('circularF'+index).style.display = '';
+
 			if (temp_azimuth < 180){
 				if (degree > 180){ document.getElementById('circularF'+index).style.transform = 'rotate('+(360-degree)+'deg)'; }
 				else{ document.getElementById('circularF'+index).style.transform = 'rotate('+degree+'deg)';  }
@@ -998,7 +1030,7 @@ function move_azimuth_plus(e){
 	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
 	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
 
-	if (elevation[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
+	if (elevation[current_colors_index] != null) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = temp_azimuth;
 	timestamp = Date.now();
@@ -1040,7 +1072,7 @@ function move_azimuth_minus(e){
 	current_elevation = (elevation[current_colors_index] == undefined ? 0 : elevation[current_colors_index]);
 	displayBall((azimuth[current_colors_index]-180), current_elevation, (current_colors_index+1));
 
-	if (elevation[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
+	if (elevation[current_colors_index] != null) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = temp_azimuth;
 	timestamp = Date.now();
@@ -1095,7 +1127,7 @@ function move_elevation_plus(e){
 
 	changeSize(current_colors_index+1);
 
-	if (azimuth[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
+	if (azimuth[current_colors_index] != null) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = new_elevation;
 	timestamp = Date.now();
@@ -1152,7 +1184,7 @@ function move_elevation_minus(e){
 
 	changeSize(current_colors_index+1);
 
-	if (azimuth[current_colors_index]) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
+	if (azimuth[current_colors_index] != null) find_gaussian([azimuth[current_colors_index], elevation[current_colors_index]], Number.MAX_VALUE, -1);
 
 	value = new_elevation;
 	timestamp = Date.now();
@@ -1191,7 +1223,7 @@ function dragElement(index,indicator,add_index){
 		document.onmousemove = mouse;
 		document.onmouseup = function(){
 			if(not_moving){
-				if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+				if (azimuth[add_index] != null) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 				// prevent undesired behaviors
 				document.onmousedown = null;
@@ -1248,7 +1280,7 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
-			if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+			if (azimuth[add_index] != null) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 			value = curr_elevation;
 			timestamp = Date.now();
@@ -1276,7 +1308,7 @@ function dragElement(index,indicator,add_index){
 		document.onmousemove = mouse;
 		document.onmouseup = function(e){
 			if (not_moving){
-				if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+				if (azimuth[add_index] != null) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 				// prevent undesired behaviors
 				document.onmousedown = null;
@@ -1333,7 +1365,7 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
-			if (azimuth[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+			if (azimuth[add_index] != null) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 			value = curr_elevation;
 			timestamp = Date.now();
@@ -1361,7 +1393,7 @@ function dragElement(index,indicator,add_index){
    		document.onmousemove = mouse;
 		document.onmouseup = function(e) {
 			if (not_moving){
-				if (elevation[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+				if (elevation[add_index] != null) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 				// prevent undesired behaviors
 				document.onmousedown = null;
@@ -1374,16 +1406,13 @@ function dragElement(index,indicator,add_index){
 
 			if (document.getElementById('front-item-'+index).style.display != 'none'){
 				degree = parseInt(document.getElementById('circularF'+index).style.transform.replace('rotate(','').replace('deg)',''));
-
-				if ((temp_azimuth < 180 && degree > 180) || (temp_azimuth > 180 && degree < 180)){ degree = 360 - degree; }
+				// if ((temp_azimuth < 180 && degree > 180) || (temp_azimuth > 180 && degree < 180)){ degree = 360 - degree; }
 				displayBoth(true, index, temp_azimuth, degree);
 			}
 
 			if (document.getElementById('side-item-'+index).style.display != 'none'){
 				degree = parseInt(document.getElementById('circularS'+index).style.transform.replace('rotate(','').replace('deg)',''));
-
-				if ( ((temp_azimuth > 270 || temp_azimuth < 90) && degree>180)
-					|| ((temp_azimuth < 270 && temp_azimuth > 90) && degree<180) ){ degree = 360 - degree; }
+				// if ( ((temp_azimuth > 270 || temp_azimuth < 90) && degree>180) || ((temp_azimuth < 270 && temp_azimuth > 90) && degree<180) ){ degree = 360 - degree; }
 				displayBoth(false, index, temp_azimuth, degree);
 			}
 
@@ -1393,7 +1422,7 @@ function dragElement(index,indicator,add_index){
 
 			changeSize(index);
 
-			if (elevation[add_index]) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
+			if (elevation[add_index] != null) find_gaussian([azimuth[add_index], elevation[add_index]], Number.MAX_VALUE, -1);
 
 			value = curr_azimuth;
 			timestamp = Date.now();
@@ -1656,8 +1685,7 @@ function keyboardEvents(e){
 
 				if ( document.getElementById('front-item-'+azimuth_item_index).style.display != 'none' ){
 					original_front = parseInt(document.getElementById('circularF'+azimuth_item_index).style.transform.replace('rotate(','').replace('deg)',''));
-					if ( (original_front < 180 && curr_azimuth > 180)
-					|| (original_front > 180 && curr_azimuth < 180) ) {
+					if ( (original_front < 180 && curr_azimuth > 180) || (original_front > 180 && curr_azimuth < 180) ) {
 						window.alert("The annotation for the horizontal location is inconsistent with the annotation for the vertical location"); 
 						document.querySelector('body').style.cursor = 'default'; 
 						key_perform = false;
@@ -1713,10 +1741,10 @@ function keyboardEvents(e){
 					}
 
 				}
-				else if ( document.getElementById('side-item-'+azimuth_item_index).style.display != 'none' ){
+				
+				if ( document.getElementById('side-item-'+azimuth_item_index).style.display != 'none' ){
 					original_side = parseInt(document.getElementById('circularS'+azimuth_item_index).style.transform.replace('rotate(','').replace('deg)',''));
-					if ( ((curr_azimuth < 90 || curr_azimuth > 270) && (original_side > 180))
-					|| ((curr_azimuth > 90 && curr_azimuth < 270) && (original_side < 180)) ) {
+					if ( ((curr_azimuth < 90 || curr_azimuth > 270) && (original_side > 180)) || ((curr_azimuth > 90 && curr_azimuth < 270) && (original_side < 180)) ) {
 						window.alert("The annotation for the horizontal location is inconsistent with the annotation for the vertical location");
 						document.querySelector('body').style.cursor = 'default'; 
 						key_perform = false;
@@ -1730,8 +1758,7 @@ function keyboardEvents(e){
 
 					degree = parseInt(document.getElementById('circularS'+azimuth_item_index).style.transform.replace('rotate(','').replace('deg)',''));
 
-					if ( ((curr_azimuth > 270 || curr_azimuth < 90) && degree>180)
-						|| ((curr_azimuth < 270 && curr_azimuth > 90) && degree<180) ){
+					if ( ((curr_azimuth > 270 || curr_azimuth < 90) && degree>180) || ((curr_azimuth < 270 && curr_azimuth > 90) && degree<180) ){
 							document.getElementById('circularS'+azimuth_item_index).style.transform = 'rotate('+(360-degree)+'deg)'; 
 					}
 
@@ -1790,7 +1817,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (elevation[azimuth_item_index-1]) find_gaussian([azimuth[azimuth_item_index-1], elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
+				if (elevation[azimuth_item_index-1] != null) find_gaussian([azimuth[azimuth_item_index-1], elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
 
 				key_perform = false;
 				enable_head = false;
@@ -1926,7 +1953,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
+				if (azimuth[elevation_item_index-1] != null) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
 
 				enable_front = false; 
 
@@ -2064,7 +2091,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
+				if (azimuth[elevation_item_index-1] != null) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
 
 				enable_side = false;
 
