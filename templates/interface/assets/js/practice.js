@@ -1729,7 +1729,8 @@ function keyboardEvents(e){
 	if (e.altKey){
 		e.preventDefault();
 
-		delete_annotation = false; // disable deleting events
+		// disable deleting events
+		delete_annotation = false;
 
         document.querySelector('body').style.cursor = 'cell';
 
@@ -1737,6 +1738,9 @@ function keyboardEvents(e){
 
 		var azimuth_item_index = findUndefinedAzimuth();
 		var elevation_item_index = findUndefinedElevation();
+
+		// disable drag events
+		suppress = true;
 
 		document.addEventListener('click', function(e){
 			e.preventDefault();

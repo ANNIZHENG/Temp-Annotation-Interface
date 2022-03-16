@@ -171,8 +171,8 @@ document.getElementById('azimuth-minus').addEventListener("click",move_azimuth_m
 document.getElementById('elevation-minus').addEventListener("click",move_elevation_minus);
 
 function find_gaussian(true_angles, min, store_index){
-    for (let i=0; i<angle_list[0].length; i++){
-        let dis = angular_distance(true_angles,angle_list[0][i]);
+    for (let i=0; i<angle_list.length; i++){
+        let dis = angular_distance(true_angles,angle_list[i]);
         if ( dis < min ) {
             min = dis;
             store_index = i;
@@ -1593,12 +1593,19 @@ function keyboardEvents(e){
 
 	if (e.altKey){
 		e.preventDefault();
+
 		// disable deleting events
 		delete_annotation = false;
+
 		document.querySelector('body').style.cursor = 'cell';
+		
 		key_perform = true;
+
 		var azimuth_item_index = findUndefinedAzimuth();
 		var elevation_item_index = findUndefinedElevation();
+
+		// disable drag events
+		suppress = true;
 
 		document.addEventListener('click', function(e){
 
