@@ -196,7 +196,7 @@ function find_gaussian(true_angles, min, store_index){
 			if (audio.volume < 1) audio.volume += 0.1;
 			else clearInterval(noise_up);
 		},50);
-	})
+	});
 	return store_index;
 }
 
