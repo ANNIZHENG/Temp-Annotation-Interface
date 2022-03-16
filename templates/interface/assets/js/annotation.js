@@ -180,14 +180,22 @@ function find_gaussian(true_angles, min, store_index){
     }
 	gaussian = new Audio("https://assets-audio.s3.amazonaws.com/audio/gaussian/"+angle_list[1][store_index]);
 	gaussian.play();
+	let audio = document.getElementById('audio');
+	var noise_down;
+	var noise_up;
 	gaussian.addEventListener('playing', () => {
-		document.getElementById('audio').volume = 0.5;
+		clearInterval(noise_up);
+		noise_down = setInterval(function () {
+			if (audio.volume > 0.7) audio.volume -= 0.1;
+			else clearInterval(noise_down);
+		},50);
 	});
 	gaussian.addEventListener('pause', () => {
-		let audio = document.getElementById('audio');
-		for (let i = 0.5; i <=1 ; i = i + 0.001) {
-			audio.volume = i;
-		}
+		clearInterval(noise_down);
+		noise_up = setInterval(function () {
+			if (audio.volume < 1) audio.volume += 0.1;
+			else clearInterval(noise_up);
+		},50);
 	})
 	return store_index;
 }
@@ -346,7 +354,8 @@ function move_instruction_last(e){
 
 function addSourceCount(){
 	document.getElementById('2d-question').innerHTML = "Please identify the location of each sound:";
-	document.getElementById('feedback').setAttribute('style',"display:inline-block;");
+	document.getElementById('feedback').style.visibility = '';
+	document.getElementById('feedback').style.display = 'inline-block';
 	document.getElementById('head-wrapper').style.display = 'inline-block';
 	document.getElementById('front-wrapper').style.display = 'inline-block';
 	document.getElementById('side-wrapper').style.display = 'inline-block';
@@ -1771,7 +1780,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (elevation[azimuth_item_index-1]) find_gaussian([curr_azimuth, elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
+				if (elevation[azimuth_item_index-1]) find_gaussian([azimuth[azimuth_item_index-1], elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
 
 				key_perform = false;
 				enable_head = false;
@@ -1907,7 +1916,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
+ 				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
 
 				enable_front = false; 
 
@@ -2045,7 +2054,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
+				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
 
 				enable_side = false;
 

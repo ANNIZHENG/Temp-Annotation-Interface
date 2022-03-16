@@ -1,6 +1,6 @@
-// if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
-// 	window.location = '/templates/interface/incomplete.html';
-// }
+if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
+	window.location = '/templates/interface/incomplete.html';
+}
 
 var survey_id = '';
 var curr_recording = 0;
@@ -21,8 +21,7 @@ document.getElementById('sign').style.visibility = ''; //TODO: Change Back
 // To confirm that it is the practice round
 localStorage.setItem('practice_boolean', 1);
 
-if (localStorage.getItem('practice') == undefined 
-|| localStorage.getItem('practice') == null) {
+if (localStorage.getItem('practice') == undefined || localStorage.getItem('practice') == null) {
 	curr_recording = 0;
 	localStorage.setItem('practice', 0);
 	localStorage.setItem('read_all_rules', 0);
@@ -191,8 +190,6 @@ function find_gaussian(true_angles, min, store_index){
             store_index = i;
         }
     }
-	// TODO: Modify Full Audio File
-	console.log(angle_list[0][store_index], angle_list[1][store_index]);
 	gaussian = new Audio("https://assets-audio.s3.amazonaws.com/audio/gaussian/"+angle_list[1][store_index]);
 	gaussian.play();
 	let audio = document.getElementById('audio');
@@ -1923,7 +1920,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (elevation[azimuth_item_index-1]) find_gaussian([curr_azimuth, elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
+				if (elevation[azimuth_item_index-1]) find_gaussian([azimuth[azimuth_item_index-1], elevation[azimuth_item_index-1]], Number.MAX_VALUE, -1);
 
 				key_perform = false;
 				enable_head = false;
@@ -2059,7 +2056,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
+				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
 
 				enable_front = false; 
 
@@ -2197,7 +2194,7 @@ function keyboardEvents(e){
 				document.getElementById('azimuth-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 				document.getElementById('elevation-dot').style.backgroundColor = '#'+color_hex.substring(color_hex.length-6,color_hex.length);
 
-				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], curr_elevation], Number.MAX_VALUE, -1);
+				if (azimuth[elevation_item_index-1]) find_gaussian([azimuth[elevation_item_index-1], elevation[elevation_item_index-1]], Number.MAX_VALUE, -1);
 
 				enable_side = false;
 
