@@ -1591,13 +1591,13 @@ function dragElement(index,indicator,add_index){
 
 			if (document.getElementById('front-item-'+index).style.display != 'none'){
 				degree = parseInt(document.getElementById('circularF'+index).style.transform.replace('rotate(','').replace('deg)',''));
-				// if ((temp_azimuth < 180 && degree > 180) || (temp_azimuth > 180 && degree < 180)){ degree = 360 - degree; }
+				if ((temp_azimuth < 180 && degree > 180) || (temp_azimuth > 180 && degree < 180)){ degree = 360 - degree; }
 				displayBoth(true, index, temp_azimuth, degree);
 			}
 
 			if (document.getElementById('side-item-'+index).style.display != 'none'){
 				degree = parseInt(document.getElementById('circularS'+index).style.transform.replace('rotate(','').replace('deg)',''));
-				// if ( ((temp_azimuth > 270 || temp_azimuth < 90) && degree > 180) || ((temp_azimuth < 270 && temp_azimuth > 90) && degree < 180) ){ degree = 360 - degree; }
+				if ( ((temp_azimuth > 270 || temp_azimuth < 90) && degree > 180) || ((temp_azimuth < 270 && temp_azimuth > 90) && degree < 180) ){ degree = 360 - degree; }
 				displayBoth(false, index, temp_azimuth, degree);
 			}
 
