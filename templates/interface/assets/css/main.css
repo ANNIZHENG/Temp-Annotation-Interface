@@ -11,25 +11,22 @@ body{
 }
 
 .container-3D{
+	height: 100vh;
 	float: left;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-shrink: 1.5;
+	background-color: black;
 }
 
 .container{
+	background-color: white; 
 	height: 100vh;
 	width: 1000px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.container{ background-color: white; }
-
-.container-3D{
-	flex-shrink: 1.5;
-	background-color: black;
 }
 
 #message, #key-message{
@@ -41,6 +38,7 @@ body{
 	padding-top: 8px;
 	padding-bottom: 8px;
 	border: 1px solid black;
+	margin-top: 30px;
 }
 
 #modal {

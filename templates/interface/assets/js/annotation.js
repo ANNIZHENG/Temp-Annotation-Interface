@@ -353,6 +353,7 @@ function move_instruction_last(e){
 }
 
 function addSourceCount(){
+	document.querySelector(".container").style.height = "100%";
 	document.getElementById('2d-question').innerHTML = "Please identify the location of each sound:";
 	document.getElementById('feedback').style.visibility = '';
 	document.getElementById('feedback').style.display = 'inline-block';
