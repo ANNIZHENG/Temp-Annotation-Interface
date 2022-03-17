@@ -1,6 +1,6 @@
-if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
-	window.location = '/templates/interface/incomplete.html';
-}
+// if (localStorage.getItem('stereo') != '1' || localStorage.getItem('headphone') != '1' || localStorage.getItem('survey_id') == undefined|| localStorage.getItem('survey_id') == null){
+// 	window.location = '/templates/interface/incomplete.html';
+// }
 
 var survey_id = '';
 var curr_recording = 0;
@@ -15,7 +15,8 @@ const angle_list=[[0,-90],[0,-75],[90,-75],[180,-75],[270,-75],[100,-70],[270,-7
 survey_id = localStorage.getItem('survey_id');
 
 // check if the user goes through the whole instruction
-var read_all_rules = false;
+var read_all_rules = true;
+document.getElementById("sign").style.visibility = '';
 
 // To confirm that it is the practice round
 localStorage.setItem('practice_boolean', 1);
