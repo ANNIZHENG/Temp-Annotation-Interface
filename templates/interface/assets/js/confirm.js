@@ -65,6 +65,21 @@ document.getElementById('instruction-left').addEventListener("click",move_instru
 document.getElementById('instruction-right').addEventListener("click",move_instruction_next);
 document.getElementById('instruction-proceed').addEventListener("click",closeRules);
 document.getElementById('sign').addEventListener("click",closeRules);
+window.addEventListener('load', scaleWindow);
+window.addEventListener('resize', scaleWindow);
+
+function scaleWindow() {
+	const body = document.querySelector('body');
+	body.style.transform = 'scale(1)';
+
+	if (window.innerWidth < 950 || window.innerHeight < 800) {
+		let percentage_height = Math.floor(window.innerWidth / 1100 * 100) / 100;
+		let percentage_width = Math.floor(window.innerHeight / 800 * 100) / 100;
+
+		if (percentage_height < percentage_width) body.style.transform = 'scale(' + percentage_height + ')';
+		else body.style.transform = 'scale(' + percentage_width + ')';
+	}
+}
 
 function popRules(e){ 
 	e.preventDefault();

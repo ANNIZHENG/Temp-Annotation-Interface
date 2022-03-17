@@ -181,6 +181,21 @@ document.getElementById('azimuth-plus').addEventListener("click",move_azimuth_pl
 document.getElementById('elevation-plus').addEventListener("click",move_elevation_plus);
 document.getElementById('azimuth-minus').addEventListener("click",move_azimuth_minus);
 document.getElementById('elevation-minus').addEventListener("click",move_elevation_minus);
+window.addEventListener('load', scaleWindow);
+window.addEventListener('resize', scaleWindow);
+
+function scaleWindow() {
+	const body = document.querySelector('body');
+	body.style.transform = 'scale(1)';
+
+	if (window.innerWidth < 950 || window.innerHeight < 800) {
+		let percentage_height = Math.floor(window.innerWidth / 1100 * 100) / 100;
+		let percentage_width = Math.floor(window.innerHeight / 800 * 100) / 100;
+
+		if (percentage_height < percentage_width) body.style.transform = 'scale(' + percentage_height + ')';
+		else body.style.transform = 'scale(' + percentage_width + ')';
+	}
+}
 
 function find_gaussian(true_angles, min, store_index){
     for (let i=0; i<angle_list.length; i++){
@@ -529,7 +544,6 @@ function addPlaying(e){
 function displaySelection(){ 
 	isPlaying = false;
 	document.getElementById('audio-frame').innerHTML = 'Play Audio';
-	// document.getElementById('count').style.display = '';
 	document.getElementById('count').style.visibility = '';
 }
 
