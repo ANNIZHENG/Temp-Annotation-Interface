@@ -177,8 +177,8 @@ function scaleWindow() {
 	body.style.transform = 'scale(1)';
 
 	if (window.innerWidth < 950 || window.innerHeight < 800) {
-		let percentage_height = Math.floor(window.innerWidth / 1100 * 100) / 100;
-		let percentage_width = Math.floor(window.innerHeight / 800 * 100) / 100;
+		let percentage_height = Math.floor(window.innerWidth / 1000 * 100) / 100;
+		let percentage_width = Math.floor(window.innerHeight / 780 * 100) / 100;
 
 		if (percentage_height < percentage_width) body.style.transform = 'scale(' + percentage_height + ')';
 		else body.style.transform = 'scale(' + percentage_width + ')';
