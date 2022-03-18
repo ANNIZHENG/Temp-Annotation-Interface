@@ -285,6 +285,19 @@ function closeRules(e){
 function move_instruction_next(e){
 	e.preventDefault();
 
+	let instruction_video_1 = document.getElementById('instruction-video-1');
+	let instruction_video_1_remain = document.querySelector('.instruction-video-1-remain');
+	let instruction_video_2 = document.getElementById('instruction-video-2');
+	let instruction_video_2_remain = document.querySelector('.instruction-video-2-remain');
+	let instruction_video_3 = document.getElementById('instruction-video-3');
+	let instruction_video_3_remain = document.querySelector('.instruction-video-3-remain');
+	let instruction_video_4 = document.getElementById('instruction-video-4');
+	let instruction_video_4_remain = document.querySelector('.instruction-video-4-remain');
+	let instruction_video_5 = document.getElementById('instruction-video-5');
+	let instruction_video_5_remain = document.querySelector('.instruction-video-5-remain');
+	let instruction_video_6 = document.getElementById('instruction-video-6');
+	let instruction_video_6_remain = document.querySelector('.instruction-video-6-remain');
+
 	if (curr_instruction == 1) {
 		if (!read_all_rules){
 			action_type = "enter instruction page 1";
@@ -292,11 +305,17 @@ function move_instruction_next(e){
 			timestamp = Date.now();
 			ajax_interaction();
 		}
-		document.getElementById('instruction-video-1').currentTime = 0;
-		document.getElementById('instruction-video-1').play();
+
+		instruction_video_1.currentTime = 0;
+
+		instruction_video_1.addEventListener('timeupdate', () => {
+			instruction_video_1_remain.innerHTML = (Math.round(instruction_video_1.currentTime * 100) / 100).toFixed(2) + "  /  " + (Math.round(instruction_video_1.duration * 100) / 100).toFixed(2);
+		});
+
+		instruction_video_1.play();
 	}
 	else if (curr_instruction == 2) {
-		if ( !read_all_rules && (document.getElementById('instruction-video-1').currentTime != document.getElementById('instruction-video-1').duration) ) {
+		if ( !read_all_rules && instruction_video_1.currentTime != instruction_video_1.duration ) {
 			window.alert("Please finish watching the current video first");
 			return;
 		}
@@ -306,7 +325,9 @@ function move_instruction_next(e){
 			timestamp = Date.now();
 			ajax_interaction();
 		}
-		document.getElementById('instruction-video-1').pause();
+
+		instruction_video_1.pause();
+
 	}
 
 	if (curr_instruction == 3){
@@ -322,12 +343,18 @@ function move_instruction_next(e){
 			timestamp = Date.now();
 			ajax_interaction();
 		}
-		document.getElementById('instruction-video-2').currentTime = 0;
-		document.getElementById('instruction-video-2').play();
+		
+		instruction_video_2.currentTime = 0;
+
+		instruction_video_2.addEventListener('timeupdate', () => {
+			instruction_video_2_remain.innerHTML = (Math.round(instruction_video_2.currentTime * 100) / 100).toFixed(2) + "  /  " + (Math.round(instruction_video_2.duration * 100) / 100).toFixed(2);
+		});
+
+		instruction_video_2.play();
 	}
 
 	if (curr_instruction == 4) {
-		if ( !read_all_rules && (document.getElementById('instruction-video-2').currentTime != document.getElementById('instruction-video-2').duration) ) {
+		if ( !read_all_rules && (instruction_video_2.currentTime != instruction_video_2.duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
 		}
@@ -337,13 +364,20 @@ function move_instruction_next(e){
 			timestamp = Date.now();
 			ajax_interaction();
 		}
-		document.getElementById('instruction-video-2').pause();
-		document.getElementById('instruction-video-3').currentTime = 0;
-		document.getElementById('instruction-video-3').play();
+
+		instruction_video_2.pause();
+
+		instruction_video_3.currentTime = 0;
+
+		instruction_video_3.addEventListener('timeupdate', () => {
+			instruction_video_3_remain.innerHTML = (Math.round(instruction_video_3.currentTime * 100) / 100).toFixed(2) + "  /  " + (Math.round(instruction_video_3.duration * 100) / 100).toFixed(2);
+		});
+
+		instruction_video_3.play();
 	}
 
 	if (curr_instruction == 5) {
-		if ( !read_all_rules && (document.getElementById('instruction-video-3').currentTime != document.getElementById('instruction-video-3').duration) ) {
+		if ( !read_all_rules && (instruction_video_3.currentTime != instruction_video_3.duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
 		}
@@ -353,13 +387,20 @@ function move_instruction_next(e){
 			timestamp = Date.now();
 			ajax_interaction();
 		}
-		document.getElementById('instruction-video-3').pause();
-		document.getElementById('instruction-video-4').currentTime = 0;
-		document.getElementById('instruction-video-4').play();
+
+		instruction_video_3.pause();
+
+		instruction_video_4.currentTime = 0;
+
+		instruction_video_4.addEventListener('timeupdate', () => {
+			instruction_video_4_remain.innerHTML = (Math.round(instruction_video_4.currentTime * 100) / 100).toFixed(2) + "  /  " + (Math.round(instruction_video_4.duration * 100) / 100).toFixed(2);
+		});
+
+		instruction_video_4.play();
 	}
 
 	if (curr_instruction == 6) {
-		if (!read_all_rules && (document.getElementById('instruction-video-4').currentTime != document.getElementById('instruction-video-4').duration) ) {
+		if (!read_all_rules && (instruction_video_4.currentTime != instruction_video_4.duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
 		}
@@ -369,13 +410,20 @@ function move_instruction_next(e){
 			timestamp = Date.now();
 			ajax_interaction();
 		}
-		document.getElementById('instruction-video-4').pause();
-		document.getElementById('instruction-video-5').currentTime = 0;
-		document.getElementById('instruction-video-5').play();
+
+		instruction_video_4.pause();
+
+		instruction_video_5.currentTime = 0;
+
+		instruction_video_5.addEventListener('timeupdate', () => {
+			instruction_video_5_remain.innerHTML = (Math.round(instruction_video_5.currentTime * 100) / 100).toFixed(2) + "  /  " + (Math.round(instruction_video_5.duration * 100) / 100).toFixed(2);
+		});
+
+		instruction_video_5.play();
 	}
 
 	if (curr_instruction == 7) {
-		if (!read_all_rules &&  (document.getElementById('instruction-video-5').currentTime != document.getElementById('instruction-video-5').duration) ) {
+		if (!read_all_rules &&  (instruction_video_5.currentTime != instruction_video_5.duration) ) {
 			window.alert("Please finish watching the current video first");
 			return;
 		}
@@ -385,9 +433,16 @@ function move_instruction_next(e){
 			timestamp = Date.now();
 			ajax_interaction();
 		}
-		document.getElementById('instruction-video-5').pause();
-		document.getElementById('instruction-video-6').currentTime = 0;
-		document.getElementById('instruction-video-6').play();
+
+		instruction_video_5.pause();
+
+		instruction_video_6.currentTime = 0;
+
+		instruction_video_6.addEventListener('timeupdate', () => {
+			instruction_video_6_remain.innerHTML = (Math.round(instruction_video_6.currentTime * 100) / 100).toFixed(2) + "  /  " + (Math.round(instruction_video_6.duration * 100) / 100).toFixed(2);
+		});
+
+		instruction_video_6.play();
 	}
 
 	if (curr_instruction < totalInstructions) {
