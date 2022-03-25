@@ -3,11 +3,6 @@
 	font-family: Monaco, Consolas;
 }
 
-html {
-	background-color: black;
-	background-size: cover;
-}
-
 body{
 	transform-origin: top left;
 	padding:0;
