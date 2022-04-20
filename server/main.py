@@ -102,7 +102,7 @@ def next():
 @app.route('/select_recording', methods=['GET', 'POST'])
 def select_recording():
     while (True):
-        recording = randrange(192) + 1 # 1 - 192
+        recording = randrange(192) + 1
         result = eng.execute('''select num_annotation, recording_name from "Recording" where id = ''' + str(recording))
 
         for r in result:
